@@ -1,15 +1,17 @@
 // DataStorage.cpp
 #include "../../include/storage/dataStorage.h"
 
+DataStorage::DataStorage() : fileHelper() {}
+
+
 void DataStorage::saveToFile(const std::map<std::string, nlohmann::json>& newData, const std::string& filename)
-{
-    
-    std::string filePath = FileHelper::getFilePath(filename);
+{    
+    std::string filePath = fileHelper.getFilePath(filename);
     if(filePath != ""){        
         std::map<std::string, nlohmann::json> existingData;
 
         // Vérifiez si le fichier existe
-        if (FileHelper::fileExists(filePath)) {
+        if (fileHelper.fileExists(filePath)) {
             std::ifstream i(filePath);
             nlohmann::json j;
             i >> j;
@@ -33,13 +35,13 @@ void DataStorage::saveToFile(const std::map<std::string, nlohmann::json>& newDat
 
 std::map<std::string, nlohmann::json> DataStorage::readFromFile(const std::string& filename)
 {
-    std::string filePath = FileHelper::getFilePath(filename);
+    std::string filePath = fileHelper.getFilePath(filename);
     if(filePath != ""){   
         
         std::map<std::string, nlohmann::json> existingData;
 
         // Vérifiez si le fichier existe
-        if (FileHelper::fileExists(filePath)) {
+        if (fileHelper.fileExists(filePath)) {
             std::ifstream i(filePath);
             nlohmann::json j;
             i >> j;

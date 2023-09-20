@@ -11,16 +11,18 @@
 
 #include "../connectApi/observable.h"
 #include "../connectApi/apiHandler.h"
+#include "../gdGeneration/PieChartGenerator.h"
 
 class PeriodicFetcher {
     
 public:
-    PeriodicFetcher(Observable& observable) : observable(observable), stopFetching(false) {};
+    PeriodicFetcher(Observable& observable) : observable(observable), stopFetching(false), pieChartGen(){};
 
     void start();
     void stop() { stopFetching = true; }
 
 private:
+    PieChartGenerator pieChartGen;
     Observable& observable;
     bool stopFetching;
 };

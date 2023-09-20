@@ -6,7 +6,7 @@
 #include "include/connectApi/apiHandler.h" 
 #include "include/connectApi/concreteObserver.h"
 #include "include/service/periodicFetcher.h"
-int main() {
+int main(int argc, char **argv) {
 
     ConcreteObserver observerUnique;
     ConcreteObserver observerDaily;
@@ -23,7 +23,7 @@ int main() {
     std::thread fetchThread(&PeriodicFetcher::start, &fetcher);
     // Pause de 30 secondes pour tester
     std::this_thread::sleep_for(std::chrono::seconds(10));
-    cout << "30 seconds passed" << endl;
+    cout << "...Sleep over" << endl;
 
     fetcher.stop();
     fetchThread.join();
