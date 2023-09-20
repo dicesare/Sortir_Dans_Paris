@@ -1,19 +1,28 @@
 #include "../../include/connectApi/observable.h"
 
-void Observable::addObserver(Observer *o)
+void Observable::addObserver(Observer* observer)
 {
-    observers.push_back(o);
+    observers.push_back(observer);
 }
 
-void Observable::removeObserver(Observer *o)
+void Observable::removeObserver(Observer* observer)
 {
-    observers.erase(std::remove(observers.begin(), observers.end(), o), observers.end());
+    observers.erase(std::remove(observers.begin(), observers.end(), observer), observers.end());
 }
 
-void Observable::notifyObservers(const std::string &message)
+void Observable::notifyObservers(const std::map<std::string, nlohmann::json>& newEvents)
 {
-    for (auto o : observers)
+    for (auto observer : observers)
     {
-        o->update(message);
+        observer->update(newEvents);
     }
 }
+void Observable::notifyDailyObservers(const std::map<std::string, nlohmann::json>& newDailyEvents)
+{
+    std::cout << "Notification: " << observers.size() << " observer(s) in list." << std::endl;
+    for (auto observer : observers)
+    {
+        observer->dailyUpdate(newDailyEvents);
+    }
+}
+
