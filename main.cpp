@@ -1,20 +1,32 @@
 #include <iostream>
 #include <string>
+#include <thread>
+#include <chrono>
 
-#include "include/connectApi/apiHandler.h" // Incluez le fichier d'en-tête de APIHandler
-#include "include/connectApi/concreteObserver.h" // Incluez le fichier d'en-tête de ConcreteObserver
-
-
+#include "include/connectApi/apiHandler.h" 
+#include "include/connectApi/concreteObserver.h"
+#include "include/service/periodicFetcher.h"
 int main() {
-    ConcreteObserver observer1;
-    ConcreteObserver observer2;
 
-    APIHandler apiHandler; // Créez une instance de APIHandler
-    apiHandler.addObserver(&observer1);
-    apiHandler.addObserver(&observer2);
+    ConcreteObserver observerUnique;
+    ConcreteObserver observerDaily;
 
-    // Appel à l'API et notification des observateurs
-    apiHandler.fetchData();
+    APIHandler apiHandlerForUnique;
+    APIHandler apiHandlerForDaily;
+
+    apiHandlerForUnique.addObserver(&observerUnique);
+    apiHandlerForDaily.addObserver(&observerDaily);
+
+    // // Appel à l'API et notification des observateurs
+    apiHandlerForUnique.fetchData();
+    PeriodicFetcher fetcher(apiHandlerForDaily);
+    std::thread fetchThread(&PeriodicFetcher::start, &fetcher);
+    // Pause de 30 secondes pour tester
+    std::this_thread::sleep_for(std::chrono::seconds(10));
+    cout << "30 seconds passed" << endl;
+
+    fetcher.stop();
+    fetchThread.join();
 
     return 0;
 }
