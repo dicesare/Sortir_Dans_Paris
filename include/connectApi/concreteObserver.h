@@ -9,8 +9,9 @@
 class ConcreteObserver : public Observer {
 private:
     std::map<std::string, nlohmann::json> currentAndUpcomingEvents;
+    DataStorage dataStorage;
 public:
-    // ConcreteObserver() = default;
+    ConcreteObserver();
     void update(const std::map<std::string, nlohmann::json>& newEvents) override;
     void dailyUpdate(const std::map<std::string, nlohmann::json>& newDailyEvents) override;
     void removeExpiredEvents() override;

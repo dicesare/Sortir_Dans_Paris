@@ -38,7 +38,7 @@ std::map<std::string, nlohmann::json> APIHandler::fetchTodaysEvents()
 
 	std::string encodedWhere = "&where=%28date_start%3C%3D%22" + currentDate + "%22%20AND%20date_end%3E%3D%22" + currentDate + "%22%29";
 
-	std::string queryUrl = baseUrl + "select=id%2Cdate_start%2Cdate_end" + encodedWhere + "&limit=100";
+	std::string queryUrl = baseUrl + "select=id%2Cdate_start%2Cdate_end%2Caddress_zipcode" + encodedWhere + "&limit=100";
 
 	std::map<std::string, nlohmann::json> allEventIds;
 

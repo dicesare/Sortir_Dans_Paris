@@ -12,8 +12,12 @@
 class DataStorage
 {
 public:
-    static void saveToFile(const std::map<std::string, nlohmann::json>& data, const std::string& filename);
-    static std::map<std::string, nlohmann::json> readFromFile(const std::string& filename);
+    DataStorage();
+    std::map<std::string, nlohmann::json> loadFromFile(const std::string& filename);
+    void saveToFile(const std::map<std::string, nlohmann::json>& data, const std::string& filename);
+    std::map<std::string, nlohmann::json> readFromFile(const std::string& filename);
+private:
+    FileHelper fileHelper;
 };
 
 #endif // DATASTORAGE_H
