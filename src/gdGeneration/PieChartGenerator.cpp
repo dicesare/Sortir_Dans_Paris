@@ -1,14 +1,22 @@
 #include "../../include/gdGeneration/PieChartGenerator.h"
+#include "PieChartGenerator.h"
 
 PieChartGenerator::PieChartGenerator() : fileHelper() {}
+PieChartGenerator::~PieChartGenerator() {}
 
-Color generate_random_color()
+
+Color PieChartGenerator::generate_random_color()
 {
+    std::random_device rd;
+    std::mt19937 gen(rd());
+    std::uniform_int_distribution<> distrib(0, 255);
+    
     Color color;
-    color.r = rand() % 256;
-    color.g = rand() % 256;
-    color.b = rand() % 256;
+    color.r = distrib(gen);
+    color.g = distrib(gen);
+    color.b = distrib(gen);
     return color;
+    return Color();
 }
 
 void PieChartGenerator::generatePieChart(const std::map<std::string, nlohmann::json>& dataForPie) {
@@ -113,9 +121,10 @@ void PieChartGenerator::draw_segment_and_label(gdImagePtr img, PieChartSegment* 
         // Draw segment
         int x_end, y_end;
         double end_angle = start_angle + (segments[i].percentage * 360) / 100;
-        Color color = generate_random_color();
-        int img_color = gdImageColorAllocate(img, color.r, color.g, color.b);
-        gdImageFilledArc(img, x, y, 2 * radius, 2 * radius, start_angle, end_angle, img_color, gdPie);
+        // appeller la methode generate_ramdom_color de la structure Color
+        Color randColor = generate_random_color();
+        int pieColor = gdImageColorAllocate(img, randColor.r, randColor.g, randColor.b);
+        gdImageFilledArc(img, x, y, 2 * radius, 2 * radius, start_angle, end_angle, pieColor, gdPie);
         gdImageArc(img, x, y, 2 * radius, 2 * radius, start_angle, end_angle, black);
         calculate_coordinates(x, y, radius, end_angle, &x_end, &y_end);
         gdImageLine(img, x, y, x_end, y_end, black);
@@ -188,4 +197,5 @@ void PieChartGenerator::saveImage(gdImagePtr img, const std::string& filename) {
     }
     gdImagePng(img, fp);
     fclose(fp);
+    gdImageDestroy(img);
 }

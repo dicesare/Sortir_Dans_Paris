@@ -1,12 +1,13 @@
 #include "../../include/connectApi/concreteObserver.h"
 
-ConcreteObserver::ConcreteObserver() : dataStorage() {}
+ConcreteObserver::ConcreteObserver() : dataStorage(), barPlotGenerator() {}
 
 void ConcreteObserver::update(const std::map<std::string, nlohmann::json>& newEvents)
 {
 	currentAndUpcomingEvents = newEvents;
 	// Maintenant, mettez à jour le dataset et retirez les événements expirés
 	dataStorage.saveToFile(newEvents, "dataStorageSortirDansParis.json");
+	generateBarPlotFromData(newEvents);
 }
 void ConcreteObserver::dailyUpdate(const std::map<std::string, nlohmann::json>& newDailyEvents)
 {
@@ -31,4 +32,9 @@ void ConcreteObserver::removeExpiredEvents()
 		}
 	}
 	dataStorage.saveToFile(currentEvents, "dataStorageSortirDansParis.json");
+}
+
+void ConcreteObserver::generateBarPlotFromData(const std::map<std::string, nlohmann::json>& newTagsJson) {
+	barPlotGenerator.loadDataFromJson(newTagsJson);
+    barPlotGenerator.generateBarPlot("histogram_of_number_of_event_types.png");
 }

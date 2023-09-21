@@ -19,18 +19,8 @@
 #include <iostream> 
 #include "../fileManagement/fileHelper.h"
 #include "utils.h"
-/**
-* @brief Structure to represent a color in the RGB color space.
-*
-* This structure is used to define a color using its red (r), green (g), and blue (b) components.
-* It can be used to represent a specific color for various graphical elements.
-*/
-typedef struct Color
-{
-    int r; ///< Red component of the color, in the range 0-255.
-    int g; ///< Green component of the color, in the range 0-255.
-    int b; ///< Blue component of the color, in the range 0-255.
-} Color;
+#include "GraphicsUtils.h"
+
 /**
  * @brief Structure to represent a segment in a pie chart.
  *
@@ -43,6 +33,7 @@ typedef struct PieChartSegment
     std::string label;         ///< The label for this segment (e.g., the name of the category).
     Color color;    ///< The color used to draw this segment in the pie chart.
 } PieChartSegment;
+
 /**
  * @brief Classe permettant de générer un graphique circulaire.
  *
@@ -52,6 +43,10 @@ typedef struct PieChartSegment
 class PieChartGenerator {
 public:
     PieChartGenerator();
+    ~PieChartGenerator();
+
+    Color generate_random_color();
+
     void generatePieChart(const std::map<std::string, nlohmann::json>& dataForPie);
 private:
     FileHelper fileHelper;
