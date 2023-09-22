@@ -5,10 +5,10 @@
 1. [Introduction](#introduction)
 2. [Features](#features)
 3. [Technologies](#technologies)
-4. [And about the doc](#documentation)
+4. [And about the doc](#and-about-the-doc)
 5. [Getting Started](#getting-started)
-   - Prerequisites
-   - Installation
+   - [Prerequisites](#prerequisites)
+   - [Installation](#installation)
    - [Usage](#usage)
 6. [Architecture](#architecture)
 7. [Contributing](#contributing)
@@ -58,16 +58,15 @@ Code documentation is generated with Doxygen. [See section below](#documentation
 ### Installation
 
 1. Clone the
-   ``bash
+   ```bash
    git clone https://github.com/dicesare/Sortir_Dans_Paris.git
     ```
 
 2. Go to the project directory and compile :
-
-  bash
-  cd path_to_the_directory
-  make
-  ```
+     ```bash
+     cd path_to_the_directory
+     make
+     ```
 
 ### Usage
 
@@ -124,46 +123,46 @@ Linux_emb/
 ---
 ## Documentation
 
-La documentation du code est générée avec Doxygen. Voici comment générer et consulter la documentation.
+Code documentation is generated with Doxygen. Here's how to generate and consult the documentation.
 
-### Installation de Doxygen
+### Installing Doxygen
 
-Si vous utilisez Ubuntu, vous pouvez installer Doxygen en utilisant la commande suivante :
+If you're using Ubuntu, you can install Doxygen using the following command:
 
-\`\`\`bash
+```bash
 sudo apt-get install doxygen
-\`\`\`
+```
 
-### Générer la Documentation
+### Generate documentation
 
-1. Placez-vous à la racine du projet où se trouve le fichier `Doxyfile`.
-2. Exécutez la commande suivante :
+1. Go to the project root where the `Doxyfile` file is located.
+2. Run the following command:
 
-\`\`\`bash
+```bash
 doxygen Doxyfile
-\`\`\`
+```
 
-Cela générera la documentation dans le répertoire que vous aurez spécifié dans le champ `OUTPUT_DIRECTORY` de votre fichier `Doxyfile`.
+This will generate the documentation in the directory you specify in the `OUTPUT_DIRECTORY` field of your `Doxyfile` file.
 
-### Lire la Documentation
+### Read documentation
 
-#### Documentation HTML
+#### HTML documentation
 
-1. Accédez au répertoire contenant la documentation (généralement un sous-dossier nommé `html`).
-2. Ouvrez le fichier `index.html` avec votre navigateur web.
+1. Go to the directory containing the documentation (usually a sub-folder named `html`).
+2. Open the `index.html` file in your web browser.
 
-#### Documentation LaTeX
+#### LaTeX documentation
 
-1. Accédez au répertoire contenant la documentation LaTeX (généralement un sous-dossier nommé `latex`).
-2. Utilisez un éditeur LaTeX pour compiler les fichiers en PDF ou exécutez `pdflatex` en ligne de commande.
+1. Go to the directory containing the LaTeX documentation (usually a sub-folder named `latex`).
+2. Use a LaTeX editor to compile PDF files, or run `pdflatex` from the command line.
 
-### Utilisation de Doxywizard
+### Using Doxywizard
 
-Si vous préférez utiliser une interface graphique :
+If you prefer to use a graphical interface :
 
-1. Ouvrez Doxywizard.
-2. Utilisez l'option "Fichier > Ouvrir..." pour ouvrir un fichier `Doxyfile` existant.
-3. Cliquez sur "Run doxygen" pour générer la documentation.
+1. Open Doxywizard.
+2. Use the "File > Open..." option to open an existing `Doxyfile`.
+3. Click on "Run doxygen" to generate the documentation.
 
 ## Contributing
 
