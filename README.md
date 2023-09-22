@@ -5,7 +5,7 @@
 1. [Introduction](#introduction)
 2. [Features](#features)
 3. [Technologies](#technologies)
-4. [And about the doc](#documentation)
+4. [And about the doc](#And about the doc)
 5. [Getting Started](#getting-started)
    - Prerequisites
    - Installation
