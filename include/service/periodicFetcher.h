@@ -8,24 +8,26 @@
 #include <thread>
 #include <chrono>
 #include <mutex>
+#include <atomic>
+#include <csignal>
 
 #include "../connectApi/observable.h"
 #include "../connectApi/apiHandler.h"
 #include "../gdGeneration/PieChartGenerator.h"
 
 class PeriodicFetcher {
-    
 public:
-    PeriodicFetcher(Observable& observable) : observable(observable), stopFetching(false), pieChartGen(){};
-
+    PeriodicFetcher(Observable& observable);
     void start();
-    void stop() { stopFetching = true; }
 
 private:
     PieChartGenerator pieChartGen;
     Observable& observable;
-    bool stopFetching;
-};
+    std::atomic<bool> stopRequested;
+    std::mutex mtx;
 
+    static PeriodicFetcher* instance; // Déclaration du pointeur statique vers l'instance
+    static void signalHandler(int signum);
+};
 
 #endif // PERIODICFETCHER_H
