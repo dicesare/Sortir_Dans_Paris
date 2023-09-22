@@ -1,0 +1,56 @@
+\hypertarget{periodicFetcher_8h}{}\doxysection{include/service/periodic\+Fetcher.h File Reference}
+\label{periodicFetcher_8h}\index{include/service/periodicFetcher.h@{include/service/periodicFetcher.h}}
+
+
+Provides the \mbox{\hyperlink{classPeriodicFetcher}{Periodic\+Fetcher}} class for periodic data fetching and processing.  
+
+
+{\ttfamily \#include $<$iostream$>$}\newline
+{\ttfamily \#include $<$string$>$}\newline
+{\ttfamily \#include $<$vector$>$}\newline
+{\ttfamily \#include $<$map$>$}\newline
+{\ttfamily \#include $<$thread$>$}\newline
+{\ttfamily \#include $<$chrono$>$}\newline
+{\ttfamily \#include $<$mutex$>$}\newline
+{\ttfamily \#include $<$atomic$>$}\newline
+{\ttfamily \#include $<$csignal$>$}\newline
+{\ttfamily \#include \char`\"{}../connect\+Api/observable.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}../connect\+Api/api\+Handler.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}../gd\+Generation/\+Pie\+Chart\+Generator.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}fetch\+Interval\+Time\+Unit.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}signal\+Handler.\+h\char`\"{}}\newline
+Include dependency graph for periodic\+Fetcher.\+h\+:
+% FIG 0
+This graph shows which files directly or indirectly include this file\+:
+% FIG 1
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{classPeriodicFetcher}{Periodic\+Fetcher}}
+\begin{DoxyCompactList}\small\item\em Handles periodic data fetching, processing, and notifying Observables. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Namespaces}
+\begin{DoxyCompactItemize}
+\item 
+namespace \mbox{\hyperlink{namespaceFetchIntervalTimeUnit}{Fetch\+Interval\+Time\+Unit}}
+\begin{DoxyCompactList}\small\item\em Contains definitions related to time unit intervals. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Provides the \mbox{\hyperlink{classPeriodicFetcher}{Periodic\+Fetcher}} class for periodic data fetching and processing. 
+
+\begin{DoxyAuthor}{Author}
+Antony Coco (\href{mailto:antony.coco.pro@gmail.com}{\texttt{ antony.\+coco.\+pro@gmail.\+com}})
+\end{DoxyAuthor}
+The \mbox{\hyperlink{classPeriodicFetcher}{Periodic\+Fetcher}} class is responsible for periodic retrieval of data, processing the data, and updating any associated Observables. Furthermore, this class leverages the \mbox{\hyperlink{classPieChartGenerator}{Pie\+Chart\+Generator}} for visualization needs. \begin{DoxyVersion}{Version}
+0.\+1 
+\end{DoxyVersion}
+\begin{DoxyDate}{Date}
+2023-\/09-\/22 
+\end{DoxyDate}
+\begin{DoxyCopyright}{Copyright}
+Copyright (c) 2023 
+\end{DoxyCopyright}
+
+
+Definition in file \mbox{\hyperlink{periodicFetcher_8h_source}{periodic\+Fetcher.\+h}}.
+

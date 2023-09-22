@@ -1,0 +1,107 @@
+\hypertarget{apiHandler_8cpp_source}{}\doxysection{api\+Handler.\+cpp}
+\label{apiHandler_8cpp_source}\index{src/connectApi/apiHandler.cpp@{src/connectApi/apiHandler.cpp}}
+\mbox{\hyperlink{apiHandler_8cpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{apiHandler_8cpp_source_l00001}00001 \textcolor{preprocessor}{\#include "{}../../include/connectApi/apiHandler.h"{}}}
+\DoxyCodeLine{\Hypertarget{apiHandler_8cpp_source_l00002}00002 }
+\DoxyCodeLine{\Hypertarget{apiHandler_8cpp_source_l00003}00003 }
+\DoxyCodeLine{\Hypertarget{apiHandler_8cpp_source_l00004}00004 \textcolor{keyword}{static} \textcolor{keywordtype}{size\_t} WriteCallback(\textcolor{keywordtype}{void}* contents, \textcolor{keywordtype}{size\_t} size, \textcolor{keywordtype}{size\_t} nmemb, \textcolor{keywordtype}{void}* userp)}
+\DoxyCodeLine{\Hypertarget{apiHandler_8cpp_source_l00005}00005 \{}
+\DoxyCodeLine{\Hypertarget{apiHandler_8cpp_source_l00006}00006     ((std::string*)userp)-\/>append((\textcolor{keywordtype}{char}*)contents, size * nmemb);}
+\DoxyCodeLine{\Hypertarget{apiHandler_8cpp_source_l00007}00007     \textcolor{keywordflow}{return} size * nmemb;}
+\DoxyCodeLine{\Hypertarget{apiHandler_8cpp_source_l00008}00008 \}}
+\DoxyCodeLine{\Hypertarget{apiHandler_8cpp_source_l00009}00009 }
+\DoxyCodeLine{\Hypertarget{apiHandler_8cpp_source_l00010}\mbox{\hyperlink{classAPIHandler_ac33916a544c830ab1248410cb855bf59}{00010}} \mbox{\hyperlink{classAPIHandler_ac33916a544c830ab1248410cb855bf59}{APIHandler::APIHandler}}() \{}
+\DoxyCodeLine{\Hypertarget{apiHandler_8cpp_source_l00011}00011     curl\_global\_init(CURL\_GLOBAL\_DEFAULT);}
+\DoxyCodeLine{\Hypertarget{apiHandler_8cpp_source_l00012}00012 \}}
+\DoxyCodeLine{\Hypertarget{apiHandler_8cpp_source_l00013}00013 }
+\DoxyCodeLine{\Hypertarget{apiHandler_8cpp_source_l00014}\mbox{\hyperlink{classAPIHandler_ab91de6f9d05aa213b671f54f2a0315eb}{00014}} \mbox{\hyperlink{classAPIHandler_ab91de6f9d05aa213b671f54f2a0315eb}{APIHandler::\string~APIHandler}}() \{}
+\DoxyCodeLine{\Hypertarget{apiHandler_8cpp_source_l00015}00015     curl\_global\_cleanup();}
+\DoxyCodeLine{\Hypertarget{apiHandler_8cpp_source_l00016}00016 \}}
+\DoxyCodeLine{\Hypertarget{apiHandler_8cpp_source_l00017}00017 }
+\DoxyCodeLine{\Hypertarget{apiHandler_8cpp_source_l00018}\mbox{\hyperlink{classAPIHandler_a1f4ab7c08b86cfa50d2840a7c2c49a8f}{00018}} \textcolor{keywordtype}{void} \mbox{\hyperlink{classAPIHandler_a1f4ab7c08b86cfa50d2840a7c2c49a8f}{APIHandler::fetchData}}()}
+\DoxyCodeLine{\Hypertarget{apiHandler_8cpp_source_l00019}00019 \{}
+\DoxyCodeLine{\Hypertarget{apiHandler_8cpp_source_l00020}00020 }
+\DoxyCodeLine{\Hypertarget{apiHandler_8cpp_source_l00021}00021     std::string queryUrl = \mbox{\hyperlink{classAPIHandler_adbf28a22bb5e388af13e7c190a6cefc1}{baseUrl}} + \textcolor{stringliteral}{"{}select=id\%2Ctags\&limit=100"{}};}
+\DoxyCodeLine{\Hypertarget{apiHandler_8cpp_source_l00022}00022     std::map<std::string, nlohmann::json> allEventIds;}
+\DoxyCodeLine{\Hypertarget{apiHandler_8cpp_source_l00023}00023 }
+\DoxyCodeLine{\Hypertarget{apiHandler_8cpp_source_l00024}00024     \textcolor{keywordtype}{int} offset = 0;}
+\DoxyCodeLine{\Hypertarget{apiHandler_8cpp_source_l00025}00025     \textcolor{keywordflow}{while} (\textcolor{keyword}{true}) \{}
+\DoxyCodeLine{\Hypertarget{apiHandler_8cpp_source_l00026}00026         std::string urlWithOffset = queryUrl + \textcolor{stringliteral}{"{}\&offset="{}} + std::to\_string(offset);}
+\DoxyCodeLine{\Hypertarget{apiHandler_8cpp_source_l00027}00027         std::map<std::string, nlohmann::json> eventIds = \mbox{\hyperlink{classAPIHandler_a4bfdc7673d871bce4390ced1fe56dcaa}{makeRequest}}(urlWithOffset);}
+\DoxyCodeLine{\Hypertarget{apiHandler_8cpp_source_l00028}00028         \textcolor{keywordflow}{if} (eventIds.empty()) \{}
+\DoxyCodeLine{\Hypertarget{apiHandler_8cpp_source_l00029}00029             \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\Hypertarget{apiHandler_8cpp_source_l00030}00030         \}}
+\DoxyCodeLine{\Hypertarget{apiHandler_8cpp_source_l00031}00031         allEventIds.insert(eventIds.begin(), eventIds.end());}
+\DoxyCodeLine{\Hypertarget{apiHandler_8cpp_source_l00032}00032         offset += 100;}
+\DoxyCodeLine{\Hypertarget{apiHandler_8cpp_source_l00033}00033     \}}
+\DoxyCodeLine{\Hypertarget{apiHandler_8cpp_source_l00034}00034     \mbox{\hyperlink{classObservable_a98235ce794949ba4827df63e571fb14b}{notifyObservers}}(allEventIds); \textcolor{comment}{// Suppose Observable::notifyObservers takes std::map}}
+\DoxyCodeLine{\Hypertarget{apiHandler_8cpp_source_l00035}00035 }
+\DoxyCodeLine{\Hypertarget{apiHandler_8cpp_source_l00036}00036 \}}
+\DoxyCodeLine{\Hypertarget{apiHandler_8cpp_source_l00037}00037 }
+\DoxyCodeLine{\Hypertarget{apiHandler_8cpp_source_l00038}\mbox{\hyperlink{classAPIHandler_a9689d8f7c4ec016cca6ef5fa047b3b05}{00038}} std::map<std::string, nlohmann::json> \mbox{\hyperlink{classAPIHandler_a9689d8f7c4ec016cca6ef5fa047b3b05}{APIHandler::fetchTodaysEvents}}()}
+\DoxyCodeLine{\Hypertarget{apiHandler_8cpp_source_l00039}00039 \{}
+\DoxyCodeLine{\Hypertarget{apiHandler_8cpp_source_l00040}00040     \textcolor{comment}{// Obtenez la date du jour au format YYYY-\/MM-\/DD}}
+\DoxyCodeLine{\Hypertarget{apiHandler_8cpp_source_l00041}00041     std::time\_t t = std::time(\textcolor{keyword}{nullptr});}
+\DoxyCodeLine{\Hypertarget{apiHandler_8cpp_source_l00042}00042     \textcolor{keywordtype}{char} buffer[11];}
+\DoxyCodeLine{\Hypertarget{apiHandler_8cpp_source_l00043}00043     std::strftime(buffer, \textcolor{keyword}{sizeof}(buffer), \textcolor{stringliteral}{"{}\%Y-\/\%m-\/\%d"{}}, std::localtime(\&t));}
+\DoxyCodeLine{\Hypertarget{apiHandler_8cpp_source_l00044}00044     std::string currentDate(buffer);}
+\DoxyCodeLine{\Hypertarget{apiHandler_8cpp_source_l00045}00045 }
+\DoxyCodeLine{\Hypertarget{apiHandler_8cpp_source_l00046}00046     std::string encodedWhere = \textcolor{stringliteral}{"{}\&where=\%28date\_start\%3C\%3D\%22"{}} + currentDate + \textcolor{stringliteral}{"{}\%22\%20AND\%20date\_end\%3E\%3D\%22"{}} + currentDate + \textcolor{stringliteral}{"{}\%22\%29"{}};}
+\DoxyCodeLine{\Hypertarget{apiHandler_8cpp_source_l00047}00047 }
+\DoxyCodeLine{\Hypertarget{apiHandler_8cpp_source_l00048}00048     std::string queryUrl = \mbox{\hyperlink{classAPIHandler_adbf28a22bb5e388af13e7c190a6cefc1}{baseUrl}} + \textcolor{stringliteral}{"{}select=id\%2Cdate\_start\%2Cdate\_end\%2Caddress\_zipcode"{}} + encodedWhere + \textcolor{stringliteral}{"{}\&limit=100"{}};}
+\DoxyCodeLine{\Hypertarget{apiHandler_8cpp_source_l00049}00049 }
+\DoxyCodeLine{\Hypertarget{apiHandler_8cpp_source_l00050}00050     std::map<std::string, nlohmann::json> allEventIds;}
+\DoxyCodeLine{\Hypertarget{apiHandler_8cpp_source_l00051}00051 }
+\DoxyCodeLine{\Hypertarget{apiHandler_8cpp_source_l00052}00052     \textcolor{keywordtype}{int} offset = 0;}
+\DoxyCodeLine{\Hypertarget{apiHandler_8cpp_source_l00053}00053     \textcolor{keywordflow}{while} (\textcolor{keyword}{true}) \{}
+\DoxyCodeLine{\Hypertarget{apiHandler_8cpp_source_l00054}00054         std::string urlWithOffset = queryUrl + \textcolor{stringliteral}{"{}\&offset="{}} + std::to\_string(offset);}
+\DoxyCodeLine{\Hypertarget{apiHandler_8cpp_source_l00055}00055         std::map<std::string, nlohmann::json> eventIds = \mbox{\hyperlink{classAPIHandler_a4bfdc7673d871bce4390ced1fe56dcaa}{makeRequest}}(urlWithOffset);}
+\DoxyCodeLine{\Hypertarget{apiHandler_8cpp_source_l00056}00056         \textcolor{keywordflow}{if} (eventIds.empty()) \{}
+\DoxyCodeLine{\Hypertarget{apiHandler_8cpp_source_l00057}00057             \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\Hypertarget{apiHandler_8cpp_source_l00058}00058         \}}
+\DoxyCodeLine{\Hypertarget{apiHandler_8cpp_source_l00059}00059         allEventIds.insert(eventIds.begin(), eventIds.end());}
+\DoxyCodeLine{\Hypertarget{apiHandler_8cpp_source_l00060}00060         offset += 100;}
+\DoxyCodeLine{\Hypertarget{apiHandler_8cpp_source_l00061}00061     \}}
+\DoxyCodeLine{\Hypertarget{apiHandler_8cpp_source_l00062}00062     \textcolor{keywordflow}{for} (\mbox{\hyperlink{classObserver}{Observer}}* observer : \mbox{\hyperlink{classObservable_a12e80e23caa6669d5e118a649d66ef4b}{observers}}) \{}
+\DoxyCodeLine{\Hypertarget{apiHandler_8cpp_source_l00063}00063         observer-\/>removeExpiredEvents();}
+\DoxyCodeLine{\Hypertarget{apiHandler_8cpp_source_l00064}00064     \}}
+\DoxyCodeLine{\Hypertarget{apiHandler_8cpp_source_l00065}00065     \textcolor{keywordflow}{return} allEventIds;}
+\DoxyCodeLine{\Hypertarget{apiHandler_8cpp_source_l00066}00066 \}}
+\DoxyCodeLine{\Hypertarget{apiHandler_8cpp_source_l00067}00067 }
+\DoxyCodeLine{\Hypertarget{apiHandler_8cpp_source_l00068}\mbox{\hyperlink{classAPIHandler_a4bfdc7673d871bce4390ced1fe56dcaa}{00068}} std::map<std::string, nlohmann::json> \mbox{\hyperlink{classAPIHandler_a4bfdc7673d871bce4390ced1fe56dcaa}{APIHandler::makeRequest}}(\textcolor{keyword}{const} std::string\& url) \{}
+\DoxyCodeLine{\Hypertarget{apiHandler_8cpp_source_l00069}00069     CURL* curl;}
+\DoxyCodeLine{\Hypertarget{apiHandler_8cpp_source_l00070}00070     CURLcode res;}
+\DoxyCodeLine{\Hypertarget{apiHandler_8cpp_source_l00071}00071     std::string readBuffer;}
+\DoxyCodeLine{\Hypertarget{apiHandler_8cpp_source_l00072}00072     std::map<std::string, nlohmann::json> eventIds;}
+\DoxyCodeLine{\Hypertarget{apiHandler_8cpp_source_l00073}00073 }
+\DoxyCodeLine{\Hypertarget{apiHandler_8cpp_source_l00074}00074     curl = curl\_easy\_init();}
+\DoxyCodeLine{\Hypertarget{apiHandler_8cpp_source_l00075}00075 }
+\DoxyCodeLine{\Hypertarget{apiHandler_8cpp_source_l00076}00076     \textcolor{keywordflow}{if} (curl) \{}
+\DoxyCodeLine{\Hypertarget{apiHandler_8cpp_source_l00077}00077         curl\_easy\_setopt(curl, CURLOPT\_URL, url.c\_str());}
+\DoxyCodeLine{\Hypertarget{apiHandler_8cpp_source_l00078}00078         curl\_easy\_setopt(curl, CURLOPT\_WRITEFUNCTION, WriteCallback);  \textcolor{comment}{// Your existing WriteCallback function}}
+\DoxyCodeLine{\Hypertarget{apiHandler_8cpp_source_l00079}00079         curl\_easy\_setopt(curl, CURLOPT\_WRITEDATA, \&readBuffer);}
+\DoxyCodeLine{\Hypertarget{apiHandler_8cpp_source_l00080}00080 }
+\DoxyCodeLine{\Hypertarget{apiHandler_8cpp_source_l00081}00081         res = curl\_easy\_perform(curl);}
+\DoxyCodeLine{\Hypertarget{apiHandler_8cpp_source_l00082}00082         \textcolor{keywordflow}{if} (res != CURLE\_OK) \{}
+\DoxyCodeLine{\Hypertarget{apiHandler_8cpp_source_l00083}00083             fprintf(stderr, \textcolor{stringliteral}{"{}curl\_easy\_perform() failed: \%s\(\backslash\)n"{}}, curl\_easy\_strerror(res));}
+\DoxyCodeLine{\Hypertarget{apiHandler_8cpp_source_l00084}00084         \}}
+\DoxyCodeLine{\Hypertarget{apiHandler_8cpp_source_l00085}00085         \textcolor{keywordflow}{else} \{}
+\DoxyCodeLine{\Hypertarget{apiHandler_8cpp_source_l00086}00086             \textcolor{keyword}{auto} jsonResponse = nlohmann::json::parse(readBuffer);}
+\DoxyCodeLine{\Hypertarget{apiHandler_8cpp_source_l00087}00087             \textcolor{keywordflow}{if} (jsonResponse.contains(\textcolor{stringliteral}{"{}results"{}}) \&\& jsonResponse[\textcolor{stringliteral}{"{}results"{}}].is\_array()) \{}
+\DoxyCodeLine{\Hypertarget{apiHandler_8cpp_source_l00088}00088                 \textcolor{keywordflow}{for} (\textcolor{keyword}{const} \textcolor{keyword}{auto}\& event : jsonResponse[\textcolor{stringliteral}{"{}results"{}}]) \{}
+\DoxyCodeLine{\Hypertarget{apiHandler_8cpp_source_l00089}00089                     \textcolor{keywordflow}{if} (event.is\_object()) \{}
+\DoxyCodeLine{\Hypertarget{apiHandler_8cpp_source_l00090}00090                         std::string \textcolor{keywordtype}{id} = \textcolor{keyword}{event}.value(\textcolor{stringliteral}{"{}id"{}}, \textcolor{stringliteral}{"{}"{}});}
+\DoxyCodeLine{\Hypertarget{apiHandler_8cpp_source_l00091}00091                         \textcolor{keywordflow}{if} (!\textcolor{keywordtype}{id}.empty()) \{}
+\DoxyCodeLine{\Hypertarget{apiHandler_8cpp_source_l00092}00092                             eventIds[id] = event;}
+\DoxyCodeLine{\Hypertarget{apiHandler_8cpp_source_l00093}00093                         \}}
+\DoxyCodeLine{\Hypertarget{apiHandler_8cpp_source_l00094}00094                     \}}
+\DoxyCodeLine{\Hypertarget{apiHandler_8cpp_source_l00095}00095                 \}}
+\DoxyCodeLine{\Hypertarget{apiHandler_8cpp_source_l00096}00096             \}}
+\DoxyCodeLine{\Hypertarget{apiHandler_8cpp_source_l00097}00097         \}}
+\DoxyCodeLine{\Hypertarget{apiHandler_8cpp_source_l00098}00098         curl\_easy\_cleanup(curl);}
+\DoxyCodeLine{\Hypertarget{apiHandler_8cpp_source_l00099}00099     \}}
+\DoxyCodeLine{\Hypertarget{apiHandler_8cpp_source_l00100}00100     \textcolor{keywordflow}{return} eventIds;}
+\DoxyCodeLine{\Hypertarget{apiHandler_8cpp_source_l00101}00101 \}}
+
+\end{DoxyCode}

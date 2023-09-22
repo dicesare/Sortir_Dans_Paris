@@ -1,0 +1,221 @@
+\hypertarget{classConcreteObserver}{}\doxysection{Concrete\+Observer Class Reference}
+\label{classConcreteObserver}\index{ConcreteObserver@{ConcreteObserver}}
+
+
+Represents a specific observer that reacts to changes in the observable.  
+
+
+
+
+{\ttfamily \#include $<$concrete\+Observer.\+h$>$}
+
+
+
+Inheritance diagram for Concrete\+Observer\+:
+% FIG 0
+
+
+Collaboration diagram for Concrete\+Observer\+:
+% FIG 1
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classConcreteObserver_ad71cc1d2f42011af25bcf3d425436bab}{Concrete\+Observer}} ()
+\begin{DoxyCompactList}\small\item\em Default constructor for the \mbox{\hyperlink{classConcreteObserver}{Concrete\+Observer}}. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classConcreteObserver_aaadc4aa059a1f755786336760892a170}{update}} (const std\+::map$<$ std\+::string, nlohmann\+::json $>$ \&new\+Events) override
+\begin{DoxyCompactList}\small\item\em Overrides the \mbox{\hyperlink{classObserver}{Observer}} interface\textquotesingle{}s update method. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classConcreteObserver_a272dd1a5865949f826d14b9ff6807b39}{daily\+Update}} (const std\+::map$<$ std\+::string, nlohmann\+::json $>$ \&new\+Daily\+Events) override
+\begin{DoxyCompactList}\small\item\em Overrides the \mbox{\hyperlink{classObserver}{Observer}} interface\textquotesingle{}s daily\+Update method. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classConcreteObserver_ac15637491bf8949de8f87302143126de}{remove\+Expired\+Events}} () override
+\begin{DoxyCompactList}\small\item\em Removes expired events from the observer\textquotesingle{}s state. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{classConcreteObserver_ab1b07477988958e5c596e3484380d8a2}{generate\+Bar\+Plot\+From\+Data}} (const std\+::map$<$ std\+::string, nlohmann\+::json $>$ \&new\+Tags\+Json)
+\begin{DoxyCompactList}\small\item\em Generates a bar plot from the provided tag data. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+std\+::map$<$ std\+::string, nlohmann\+::json $>$ \mbox{\hyperlink{classConcreteObserver_a2e7642148516c9209326e1518bc5f02b}{current\+And\+Upcoming\+Events}}
+\begin{DoxyCompactList}\small\item\em Holds the current and upcoming events. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classDataStorage}{Data\+Storage}} \mbox{\hyperlink{classConcreteObserver_a5a3cde88dbd31c116a2426bba75b5baf}{data\+Storage}}
+\begin{DoxyCompactList}\small\item\em Data storage mechanism for the observer. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classBarPlotGenerator}{Bar\+Plot\+Generator}} \mbox{\hyperlink{classConcreteObserver_a1fe19d874fe5e1532a0b95812e533a86}{bar\+Plot\+Generator}}
+\begin{DoxyCompactList}\small\item\em Tool for generating bar plots from data. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Represents a specific observer that reacts to changes in the observable. 
+
+The \mbox{\hyperlink{classConcreteObserver}{Concrete\+Observer}} class provides specific actions to perform in response to the changes in the observable subject. It holds its internal state, which is updated upon receiving notifications from the observable subject. This class also has the capability to generate a bar plot from the data it receives. 
+
+Definition at line \mbox{\hyperlink{concreteObserver_8h_source_l00031}{31}} of file \mbox{\hyperlink{concreteObserver_8h_source}{concrete\+Observer.\+h}}.
+
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classConcreteObserver_ad71cc1d2f42011af25bcf3d425436bab}\label{classConcreteObserver_ad71cc1d2f42011af25bcf3d425436bab}} 
+\index{ConcreteObserver@{ConcreteObserver}!ConcreteObserver@{ConcreteObserver}}
+\index{ConcreteObserver@{ConcreteObserver}!ConcreteObserver@{ConcreteObserver}}
+\doxysubsubsection{\texorpdfstring{ConcreteObserver()}{ConcreteObserver()}}
+{\footnotesize\ttfamily Concrete\+Observer\+::\+Concrete\+Observer (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Default constructor for the \mbox{\hyperlink{classConcreteObserver}{Concrete\+Observer}}. 
+
+
+
+Definition at line \mbox{\hyperlink{concreteObserver_8cpp_source_l00003}{3}} of file \mbox{\hyperlink{concreteObserver_8cpp_source}{concrete\+Observer.\+cpp}}.
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classConcreteObserver_a272dd1a5865949f826d14b9ff6807b39}\label{classConcreteObserver_a272dd1a5865949f826d14b9ff6807b39}} 
+\index{ConcreteObserver@{ConcreteObserver}!dailyUpdate@{dailyUpdate}}
+\index{dailyUpdate@{dailyUpdate}!ConcreteObserver@{ConcreteObserver}}
+\doxysubsubsection{\texorpdfstring{dailyUpdate()}{dailyUpdate()}}
+{\footnotesize\ttfamily void Concrete\+Observer\+::daily\+Update (\begin{DoxyParamCaption}\item[{const std\+::map$<$ std\+::string, nlohmann\+::json $>$ \&}]{new\+Daily\+Events }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Overrides the \mbox{\hyperlink{classObserver}{Observer}} interface\textquotesingle{}s daily\+Update method. 
+
+Provides daily specific updates to the observer, updating its state and possibly triggering other actions.
+
+
+\begin{DoxyParams}{Parameters}
+{\em new\+Daily\+Events} & Data about the new daily events, represented as a map. \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{classObserver_a1adfe80fa80a5051480be13f1a746800}{Observer}}.
+
+
+
+Definition at line \mbox{\hyperlink{concreteObserver_8cpp_source_l00013}{13}} of file \mbox{\hyperlink{concreteObserver_8cpp_source}{concrete\+Observer.\+cpp}}.
+
+Here is the call graph for this function\+:
+% FIG 2
+\mbox{\Hypertarget{classConcreteObserver_ab1b07477988958e5c596e3484380d8a2}\label{classConcreteObserver_ab1b07477988958e5c596e3484380d8a2}} 
+\index{ConcreteObserver@{ConcreteObserver}!generateBarPlotFromData@{generateBarPlotFromData}}
+\index{generateBarPlotFromData@{generateBarPlotFromData}!ConcreteObserver@{ConcreteObserver}}
+\doxysubsubsection{\texorpdfstring{generateBarPlotFromData()}{generateBarPlotFromData()}}
+{\footnotesize\ttfamily void Concrete\+Observer\+::generate\+Bar\+Plot\+From\+Data (\begin{DoxyParamCaption}\item[{const std\+::map$<$ std\+::string, nlohmann\+::json $>$ \&}]{new\+Tags\+Json }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Generates a bar plot from the provided tag data. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em new\+Tags\+Json} & Data represented in JSON format, used to generate the bar plot. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{concreteObserver_8cpp_source_l00039}{39}} of file \mbox{\hyperlink{concreteObserver_8cpp_source}{concrete\+Observer.\+cpp}}.
+
+Here is the call graph for this function\+:
+% FIG 3
+Here is the caller graph for this function\+:
+% FIG 4
+\mbox{\Hypertarget{classConcreteObserver_ac15637491bf8949de8f87302143126de}\label{classConcreteObserver_ac15637491bf8949de8f87302143126de}} 
+\index{ConcreteObserver@{ConcreteObserver}!removeExpiredEvents@{removeExpiredEvents}}
+\index{removeExpiredEvents@{removeExpiredEvents}!ConcreteObserver@{ConcreteObserver}}
+\doxysubsubsection{\texorpdfstring{removeExpiredEvents()}{removeExpiredEvents()}}
+{\footnotesize\ttfamily void Concrete\+Observer\+::remove\+Expired\+Events (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Removes expired events from the observer\textquotesingle{}s state. 
+
+This method is responsible for cleaning up and ensuring that the observer\textquotesingle{}s state remains up-\/to-\/date by removing events that are no longer relevant. 
+
+Implements \mbox{\hyperlink{classObserver_addf80a7da36e332655a7338601149bec}{Observer}}.
+
+
+
+Definition at line \mbox{\hyperlink{concreteObserver_8cpp_source_l00020}{20}} of file \mbox{\hyperlink{concreteObserver_8cpp_source}{concrete\+Observer.\+cpp}}.
+
+Here is the call graph for this function\+:
+% FIG 5
+\mbox{\Hypertarget{classConcreteObserver_aaadc4aa059a1f755786336760892a170}\label{classConcreteObserver_aaadc4aa059a1f755786336760892a170}} 
+\index{ConcreteObserver@{ConcreteObserver}!update@{update}}
+\index{update@{update}!ConcreteObserver@{ConcreteObserver}}
+\doxysubsubsection{\texorpdfstring{update()}{update()}}
+{\footnotesize\ttfamily void Concrete\+Observer\+::update (\begin{DoxyParamCaption}\item[{const std\+::map$<$ std\+::string, nlohmann\+::json $>$ \&}]{new\+Events }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Overrides the \mbox{\hyperlink{classObserver}{Observer}} interface\textquotesingle{}s update method. 
+
+being notified of new events, this method updates the observer\textquotesingle{}s internal state and may trigger other relevant methods, such as generating a bar plot.
+
+
+\begin{DoxyParams}{Parameters}
+{\em new\+Events} & Data about the new events, represented as a map. \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{classObserver_ac933f7a66c117394d87d232923523ee0}{Observer}}.
+
+
+
+Definition at line \mbox{\hyperlink{concreteObserver_8cpp_source_l00005}{5}} of file \mbox{\hyperlink{concreteObserver_8cpp_source}{concrete\+Observer.\+cpp}}.
+
+Here is the call graph for this function\+:
+% FIG 6
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{classConcreteObserver_a1fe19d874fe5e1532a0b95812e533a86}\label{classConcreteObserver_a1fe19d874fe5e1532a0b95812e533a86}} 
+\index{ConcreteObserver@{ConcreteObserver}!barPlotGenerator@{barPlotGenerator}}
+\index{barPlotGenerator@{barPlotGenerator}!ConcreteObserver@{ConcreteObserver}}
+\doxysubsubsection{\texorpdfstring{barPlotGenerator}{barPlotGenerator}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classBarPlotGenerator}{Bar\+Plot\+Generator}} Concrete\+Observer\+::bar\+Plot\+Generator\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Tool for generating bar plots from data. 
+
+
+
+Definition at line \mbox{\hyperlink{concreteObserver_8h_source_l00035}{35}} of file \mbox{\hyperlink{concreteObserver_8h_source}{concrete\+Observer.\+h}}.
+
+\mbox{\Hypertarget{classConcreteObserver_a2e7642148516c9209326e1518bc5f02b}\label{classConcreteObserver_a2e7642148516c9209326e1518bc5f02b}} 
+\index{ConcreteObserver@{ConcreteObserver}!currentAndUpcomingEvents@{currentAndUpcomingEvents}}
+\index{currentAndUpcomingEvents@{currentAndUpcomingEvents}!ConcreteObserver@{ConcreteObserver}}
+\doxysubsubsection{\texorpdfstring{currentAndUpcomingEvents}{currentAndUpcomingEvents}}
+{\footnotesize\ttfamily std\+::map$<$std\+::string, nlohmann\+::json$>$ Concrete\+Observer\+::current\+And\+Upcoming\+Events\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Holds the current and upcoming events. 
+
+
+
+Definition at line \mbox{\hyperlink{concreteObserver_8h_source_l00033}{33}} of file \mbox{\hyperlink{concreteObserver_8h_source}{concrete\+Observer.\+h}}.
+
+\mbox{\Hypertarget{classConcreteObserver_a5a3cde88dbd31c116a2426bba75b5baf}\label{classConcreteObserver_a5a3cde88dbd31c116a2426bba75b5baf}} 
+\index{ConcreteObserver@{ConcreteObserver}!dataStorage@{dataStorage}}
+\index{dataStorage@{dataStorage}!ConcreteObserver@{ConcreteObserver}}
+\doxysubsubsection{\texorpdfstring{dataStorage}{dataStorage}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classDataStorage}{Data\+Storage}} Concrete\+Observer\+::data\+Storage\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Data storage mechanism for the observer. 
+
+
+
+Definition at line \mbox{\hyperlink{concreteObserver_8h_source_l00034}{34}} of file \mbox{\hyperlink{concreteObserver_8h_source}{concrete\+Observer.\+h}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+include/connect\+Api/\mbox{\hyperlink{concreteObserver_8h}{concrete\+Observer.\+h}}\item 
+src/connect\+Api/\mbox{\hyperlink{concreteObserver_8cpp}{concrete\+Observer.\+cpp}}\end{DoxyCompactItemize}

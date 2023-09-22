@@ -1,0 +1,51 @@
+\hypertarget{periodicFetcher_8cpp_source}{}\doxysection{periodic\+Fetcher.\+cpp}
+\label{periodicFetcher_8cpp_source}\index{src/service/periodicFetcher.cpp@{src/service/periodicFetcher.cpp}}
+\mbox{\hyperlink{periodicFetcher_8cpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{periodicFetcher_8cpp_source_l00001}00001 \textcolor{preprocessor}{\#include "{}../../include/service/periodicFetcher.h"{}}}
+\DoxyCodeLine{\Hypertarget{periodicFetcher_8cpp_source_l00002}00002 }
+\DoxyCodeLine{\Hypertarget{periodicFetcher_8cpp_source_l00003}00003 \mbox{\hyperlink{classPeriodicFetcher}{PeriodicFetcher}}* \mbox{\hyperlink{classPeriodicFetcher_add7804e2a8043acb7f5d18de299b45c9}{PeriodicFetcher::instance}} = \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{\Hypertarget{periodicFetcher_8cpp_source_l00004}00004 }
+\DoxyCodeLine{\Hypertarget{periodicFetcher_8cpp_source_l00005}\mbox{\hyperlink{classPeriodicFetcher_a97424bbb533281b98e837ea0a9a0fdc7}{00005}} \mbox{\hyperlink{classPeriodicFetcher_a97424bbb533281b98e837ea0a9a0fdc7}{PeriodicFetcher::PeriodicFetcher}}(\mbox{\hyperlink{classObservable}{Observable}}\& observable, \textcolor{keywordtype}{int} interval, \mbox{\hyperlink{namespaceFetchIntervalTimeUnit_a258941b40a5a04eaa12b02e927572d24}{fitu}} unit)}
+\DoxyCodeLine{\Hypertarget{periodicFetcher_8cpp_source_l00006}00006     : observable(observable), stopRequested(false), pieChartGen(), fetchInterval(interval), timeUnit(unit) \{}
+\DoxyCodeLine{\Hypertarget{periodicFetcher_8cpp_source_l00007}00007     \mbox{\hyperlink{classSignalHandler_a15631110fc9c8fee4c1b2bf3bced2de3}{SignalHandler::getInstance}}().\mbox{\hyperlink{classSignalHandler_a90eff6c9610cdcd77a1706491f2ce28a}{setupSignalHandlers}}(); }
+\DoxyCodeLine{\Hypertarget{periodicFetcher_8cpp_source_l00008}00008 \}}
+\DoxyCodeLine{\Hypertarget{periodicFetcher_8cpp_source_l00009}00009 }
+\DoxyCodeLine{\Hypertarget{periodicFetcher_8cpp_source_l00010}\mbox{\hyperlink{classPeriodicFetcher_a84f9a218ccb184feb1a8027b2ac9ac44}{00010}} \textcolor{keywordtype}{void} \mbox{\hyperlink{classPeriodicFetcher_a84f9a218ccb184feb1a8027b2ac9ac44}{PeriodicFetcher::start}}() \{}
+\DoxyCodeLine{\Hypertarget{periodicFetcher_8cpp_source_l00011}00011     \mbox{\hyperlink{classAPIHandler}{APIHandler}} apiHandler;}
+\DoxyCodeLine{\Hypertarget{periodicFetcher_8cpp_source_l00012}00012     \textcolor{keywordflow}{while} (!\mbox{\hyperlink{classSignalHandler_a15631110fc9c8fee4c1b2bf3bced2de3}{SignalHandler::getInstance}}().isShutdownRequested()) \{}
+\DoxyCodeLine{\Hypertarget{periodicFetcher_8cpp_source_l00013}00013         \textcolor{keywordflow}{try} \{}
+\DoxyCodeLine{\Hypertarget{periodicFetcher_8cpp_source_l00014}00014             std::lock\_guard<std::mutex> lock(\mbox{\hyperlink{classPeriodicFetcher_ac9187e24e8d35ff8102e89a69ad99ba0}{mtx}});}
+\DoxyCodeLine{\Hypertarget{periodicFetcher_8cpp_source_l00015}00015             std::map<std::string, nlohmann::json> newEvents = apiHandler.\mbox{\hyperlink{classAPIHandler_a9689d8f7c4ec016cca6ef5fa047b3b05}{fetchTodaysEvents}}();}
+\DoxyCodeLine{\Hypertarget{periodicFetcher_8cpp_source_l00016}00016             \mbox{\hyperlink{classPeriodicFetcher_af49d8bd5f679e0c054fa64857d577298}{observable}}.\mbox{\hyperlink{classObservable_a22482fd8540852084485897519142960}{notifyDailyObservers}}(newEvents);}
+\DoxyCodeLine{\Hypertarget{periodicFetcher_8cpp_source_l00017}00017             \mbox{\hyperlink{classPeriodicFetcher_a9c64edbc5cfec664fe342cff679e0c25}{pieChartGen}}.\mbox{\hyperlink{classPieChartGenerator_a2f367ee64a37d9b971b24090f9842251}{generatePieChart}}(newEvents);}
+\DoxyCodeLine{\Hypertarget{periodicFetcher_8cpp_source_l00018}00018         \} \textcolor{keywordflow}{catch}(\textcolor{keyword}{const} std::exception\& e) \{}
+\DoxyCodeLine{\Hypertarget{periodicFetcher_8cpp_source_l00019}00019             \mbox{\hyperlink{classPeriodicFetcher_ac5f69e42cbe1e901419efca568485369}{log}}(\textcolor{stringliteral}{"{}Error during data fetching or processing: "{}} + std::string(e.what()));}
+\DoxyCodeLine{\Hypertarget{periodicFetcher_8cpp_source_l00020}00020         \}}
+\DoxyCodeLine{\Hypertarget{periodicFetcher_8cpp_source_l00021}00021         \textcolor{comment}{// Sleep for the configured fetch interval.}}
+\DoxyCodeLine{\Hypertarget{periodicFetcher_8cpp_source_l00022}00022         \textcolor{keywordflow}{switch} (\mbox{\hyperlink{classPeriodicFetcher_afd38cbbebb3539033f01465f4c1d37cb}{timeUnit}}) \{}
+\DoxyCodeLine{\Hypertarget{periodicFetcher_8cpp_source_l00023}00023             \textcolor{keywordflow}{case} \mbox{\hyperlink{namespaceFetchIntervalTimeUnit_a258941b40a5a04eaa12b02e927572d24a5b9ce2722e46b2ff22b6c014aea38ca3}{fitu::SEC}}:}
+\DoxyCodeLine{\Hypertarget{periodicFetcher_8cpp_source_l00024}00024                 std::this\_thread::sleep\_for(std::chrono::seconds(\mbox{\hyperlink{classPeriodicFetcher_ab107531c3a83011a369e5068532814d9}{fetchInterval}}));}
+\DoxyCodeLine{\Hypertarget{periodicFetcher_8cpp_source_l00025}00025                 \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\Hypertarget{periodicFetcher_8cpp_source_l00026}00026             \textcolor{keywordflow}{case} \mbox{\hyperlink{utils_8h_a3acffbd305ee72dcd4593c0d8af64a4f}{fitu::MIN}}:}
+\DoxyCodeLine{\Hypertarget{periodicFetcher_8cpp_source_l00027}00027                 std::this\_thread::sleep\_for(std::chrono::minutes(\mbox{\hyperlink{classPeriodicFetcher_ab107531c3a83011a369e5068532814d9}{fetchInterval}}));}
+\DoxyCodeLine{\Hypertarget{periodicFetcher_8cpp_source_l00028}00028                 \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\Hypertarget{periodicFetcher_8cpp_source_l00029}00029             \textcolor{keywordflow}{case} \mbox{\hyperlink{namespaceFetchIntervalTimeUnit_a258941b40a5a04eaa12b02e927572d24abe4457ef53f4dfd9490f525bac5cfad8}{fitu::HR}}:}
+\DoxyCodeLine{\Hypertarget{periodicFetcher_8cpp_source_l00030}00030                 std::this\_thread::sleep\_for(std::chrono::hours(\mbox{\hyperlink{classPeriodicFetcher_ab107531c3a83011a369e5068532814d9}{fetchInterval}}));}
+\DoxyCodeLine{\Hypertarget{periodicFetcher_8cpp_source_l00031}00031                 \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\Hypertarget{periodicFetcher_8cpp_source_l00032}00032             \textcolor{keywordflow}{default}:}
+\DoxyCodeLine{\Hypertarget{periodicFetcher_8cpp_source_l00033}00033                 \mbox{\hyperlink{classPeriodicFetcher_ac5f69e42cbe1e901419efca568485369}{log}}(\textcolor{stringliteral}{"{}Unrecognized interval!"{}});}
+\DoxyCodeLine{\Hypertarget{periodicFetcher_8cpp_source_l00034}00034                 \textcolor{keywordflow}{return};}
+\DoxyCodeLine{\Hypertarget{periodicFetcher_8cpp_source_l00035}00035         \}}
+\DoxyCodeLine{\Hypertarget{periodicFetcher_8cpp_source_l00036}00036     \}}
+\DoxyCodeLine{\Hypertarget{periodicFetcher_8cpp_source_l00037}00037 }
+\DoxyCodeLine{\Hypertarget{periodicFetcher_8cpp_source_l00038}00038     \mbox{\hyperlink{classPeriodicFetcher_ac5f69e42cbe1e901419efca568485369}{log}}(\textcolor{stringliteral}{"{}[PeriodicFetcher] Shutting down..."{}});}
+\DoxyCodeLine{\Hypertarget{periodicFetcher_8cpp_source_l00039}00039     \mbox{\hyperlink{classPeriodicFetcher_ac5f69e42cbe1e901419efca568485369}{log}}(\textcolor{stringliteral}{"{}[PeriodicFetcher] Fetcher thread: stopped."{}});}
+\DoxyCodeLine{\Hypertarget{periodicFetcher_8cpp_source_l00040}00040 \}}
+\DoxyCodeLine{\Hypertarget{periodicFetcher_8cpp_source_l00041}00041 }
+\DoxyCodeLine{\Hypertarget{periodicFetcher_8cpp_source_l00042}\mbox{\hyperlink{classPeriodicFetcher_ac5f69e42cbe1e901419efca568485369}{00042}} \textcolor{keywordtype}{void} \mbox{\hyperlink{classPeriodicFetcher_ac5f69e42cbe1e901419efca568485369}{PeriodicFetcher::log}}(\textcolor{keyword}{const} std::string\& message) \{}
+\DoxyCodeLine{\Hypertarget{periodicFetcher_8cpp_source_l00043}00043     \textcolor{comment}{// Placeholder: Replace with a proper logging library/method later.}}
+\DoxyCodeLine{\Hypertarget{periodicFetcher_8cpp_source_l00044}00044     std::cerr << \textcolor{stringliteral}{"{}[PeriodicFetcher Log] "{}} << message << std::endl;}
+\DoxyCodeLine{\Hypertarget{periodicFetcher_8cpp_source_l00045}00045 \}}
+
+\end{DoxyCode}

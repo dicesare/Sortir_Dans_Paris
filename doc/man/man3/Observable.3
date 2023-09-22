@@ -1,0 +1,114 @@
+.TH "Observable" 3 "Fri Sep 22 2023" "Version v0.1" "API de Paris - Documentation du Gestionnaire" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+Observable \- Represents the subject (or observable) in the \fBObserver\fP design pattern\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <observable\&.h>\fP
+.PP
+Inherited by \fBAPIHandler\fP\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "void \fBaddObserver\fP (\fBObserver\fP *o)"
+.br
+.RI "Registers an observer to the observable\&. "
+.ti -1c
+.RI "void \fBremoveObserver\fP (\fBObserver\fP *o)"
+.br
+.RI "Unregisters an observer from the observable\&. "
+.ti -1c
+.RI "void \fBnotifyObservers\fP (const std::map< std::string, nlohmann::json > &newEvents)"
+.br
+.RI "Sends updates to all registered observers\&. "
+.ti -1c
+.RI "void \fBnotifyDailyObservers\fP (const std::map< std::string, nlohmann::json > &newDailyEvents)"
+.br
+.RI "Sends daily-specific updates to all observers\&. "
+.in -1c
+.SS "Protected Attributes"
+
+.in +1c
+.ti -1c
+.RI "std::vector< \fBObserver\fP * > \fBobservers\fP"
+.br
+.RI "A collection of subscribers (observers) that listen to this observable\&. "
+.in -1c
+.SH "Detailed Description"
+.PP 
+Represents the subject (or observable) in the \fBObserver\fP design pattern\&. 
+
+The \fBObservable\fP class maintains a list of its subscribers and provides mechanisms to notify them upon state changes or specific events\&. This forms a central component in the \fBObserver\fP pattern, allowing for a decoupled interaction between various components of a system\&. 
+.PP
+Definition at line \fB36\fP of file \fBobservable\&.h\fP\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "void Observable::addObserver (\fBObserver\fP * o)"
+
+.PP
+Registers an observer to the observable\&. This method allows an observer to express its interest in receiving updates from this observable by adding it to the list of subscribers\&.
+.PP
+\fBParameters\fP
+.RS 4
+\fIo\fP A pointer to the observer that wishes to subscribe\&. 
+.RE
+.PP
+
+.PP
+Definition at line \fB3\fP of file \fBobservable\&.cpp\fP\&.
+.SS "void Observable::notifyDailyObservers (const std::map< std::string, nlohmann::json > & newDailyEvents)"
+
+.PP
+Sends daily-specific updates to all observers\&. Iterates over the list of observers and notifies them about daily-specific events using their \fCdailyUpdate\fP method\&.
+.PP
+\fBParameters\fP
+.RS 4
+\fInewDailyEvents\fP A collection of events specific to the day\&. 
+.RE
+.PP
+
+.PP
+Definition at line \fB21\fP of file \fBobservable\&.cpp\fP\&.
+.SS "void Observable::notifyObservers (const std::map< std::string, nlohmann::json > & newEvents)"
+
+.PP
+Sends updates to all registered observers\&. Iterates over the list of subscribed observers and invokes their update method, thereby informing them about the latest events\&.
+.PP
+\fBParameters\fP
+.RS 4
+\fInewEvents\fP A collection of new events to be disseminated to the observers\&. 
+.RE
+.PP
+
+.PP
+Definition at line \fB13\fP of file \fBobservable\&.cpp\fP\&.
+.SS "void Observable::removeObserver (\fBObserver\fP * o)"
+
+.PP
+Unregisters an observer from the observable\&. Removes an observer from the list of subscribers, ensuring that it will no longer receive notifications from this observable\&.
+.PP
+\fBParameters\fP
+.RS 4
+\fIo\fP A pointer to the observer to be unsubscribed\&. 
+.RE
+.PP
+
+.PP
+Definition at line \fB8\fP of file \fBobservable\&.cpp\fP\&.
+.SH "Member Data Documentation"
+.PP 
+.SS "std::vector<\fBObserver\fP*> Observable::observers\fC [protected]\fP"
+
+.PP
+A collection of subscribers (observers) that listen to this observable\&. 
+.PP
+Definition at line \fB38\fP of file \fBobservable\&.h\fP\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for API de Paris - Documentation du Gestionnaire from the source code\&.

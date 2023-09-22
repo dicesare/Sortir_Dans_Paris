@@ -1,0 +1,53 @@
+\hypertarget{PieChartGenerator_8h_source}{}\doxysection{Pie\+Chart\+Generator.\+h}
+\label{PieChartGenerator_8h_source}\index{include/gdGeneration/PieChartGenerator.h@{include/gdGeneration/PieChartGenerator.h}}
+\mbox{\hyperlink{PieChartGenerator_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{PieChartGenerator_8h_source_l00001}00001 }
+\DoxyCodeLine{\Hypertarget{PieChartGenerator_8h_source_l00011}00011 \textcolor{preprocessor}{\#ifndef PIECHARTGENERATOR\_H}}
+\DoxyCodeLine{\Hypertarget{PieChartGenerator_8h_source_l00012}00012 \textcolor{preprocessor}{\#define PIECHARTGENERATOR\_H}}
+\DoxyCodeLine{\Hypertarget{PieChartGenerator_8h_source_l00013}00013 }
+\DoxyCodeLine{\Hypertarget{PieChartGenerator_8h_source_l00014}\mbox{\hyperlink{PieChartGenerator_8h_af326d9b4cced6fd44a9f9567dc666014}{00014}} \textcolor{preprocessor}{\#define FONT\_PATH "{}/usr/share/fonts/truetype/dejavu/DejaVuSans-\/Bold.ttf"{}}}
+\DoxyCodeLine{\Hypertarget{PieChartGenerator_8h_source_l00015}\mbox{\hyperlink{PieChartGenerator_8h_a3d277f5a5dec260aa85c464f96800b9e}{00015}} \textcolor{preprocessor}{\#define SIZE\_TITLE 64}}
+\DoxyCodeLine{\Hypertarget{PieChartGenerator_8h_source_l00016}\mbox{\hyperlink{PieChartGenerator_8h_a241aeeb764887ae5e3de58b98f04b16d}{00016}} \textcolor{preprocessor}{\#define WIDTH 4000}}
+\DoxyCodeLine{\Hypertarget{PieChartGenerator_8h_source_l00017}\mbox{\hyperlink{PieChartGenerator_8h_aed89bd71aee8be823e8a20ec4e093c1e}{00017}} \textcolor{preprocessor}{\#define HEIGHT 3000}}
+\DoxyCodeLine{\Hypertarget{PieChartGenerator_8h_source_l00018}00018 }
+\DoxyCodeLine{\Hypertarget{PieChartGenerator_8h_source_l00019}00019 \textcolor{preprocessor}{\#include <map>}}
+\DoxyCodeLine{\Hypertarget{PieChartGenerator_8h_source_l00020}00020 \textcolor{preprocessor}{\#include <string>}}
+\DoxyCodeLine{\Hypertarget{PieChartGenerator_8h_source_l00021}00021 \textcolor{preprocessor}{\#include <gd.h>} \textcolor{comment}{// GD Library}}
+\DoxyCodeLine{\Hypertarget{PieChartGenerator_8h_source_l00022}00022 \textcolor{preprocessor}{\#include <gdfonts.h>} \textcolor{comment}{// GD Library}}
+\DoxyCodeLine{\Hypertarget{PieChartGenerator_8h_source_l00023}00023 \textcolor{preprocessor}{\#include <nlohmann/json.hpp>}}
+\DoxyCodeLine{\Hypertarget{PieChartGenerator_8h_source_l00024}00024 \textcolor{preprocessor}{\#include <cmath>}}
+\DoxyCodeLine{\Hypertarget{PieChartGenerator_8h_source_l00025}00025 \textcolor{preprocessor}{\#include <cstdio>}}
+\DoxyCodeLine{\Hypertarget{PieChartGenerator_8h_source_l00026}00026 \textcolor{preprocessor}{\#include <cstring>}}
+\DoxyCodeLine{\Hypertarget{PieChartGenerator_8h_source_l00027}00027 \textcolor{preprocessor}{\#include <cctype>}}
+\DoxyCodeLine{\Hypertarget{PieChartGenerator_8h_source_l00028}00028 \textcolor{preprocessor}{\#include <vector>}}
+\DoxyCodeLine{\Hypertarget{PieChartGenerator_8h_source_l00029}00029 \textcolor{preprocessor}{\#include <iostream>}}
+\DoxyCodeLine{\Hypertarget{PieChartGenerator_8h_source_l00030}00030 \textcolor{preprocessor}{\#include "{}../fileManagement/fileHelper.h"{}}}
+\DoxyCodeLine{\Hypertarget{PieChartGenerator_8h_source_l00031}00031 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{utils_8h}{utils.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{PieChartGenerator_8h_source_l00032}00032 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{GraphicsUtils_8h}{GraphicsUtils.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{PieChartGenerator_8h_source_l00033}00033 }
+\DoxyCodeLine{\Hypertarget{PieChartGenerator_8h_source_l00040}\mbox{\hyperlink{structPieChartSegment}{00040}} \textcolor{keyword}{typedef} \textcolor{keyword}{struct }\mbox{\hyperlink{structPieChartSegment}{PieChartSegment}} \{}
+\DoxyCodeLine{\Hypertarget{PieChartGenerator_8h_source_l00041}\mbox{\hyperlink{structPieChartSegment_a63634575933d944376e476ae0bf7179e}{00041}}     \textcolor{keywordtype}{double} \mbox{\hyperlink{structPieChartSegment_a63634575933d944376e476ae0bf7179e}{percentage}};      }
+\DoxyCodeLine{\Hypertarget{PieChartGenerator_8h_source_l00042}\mbox{\hyperlink{structPieChartSegment_a19772bddca1bd42fea0b1ef2b2839c0c}{00042}}     std::string \mbox{\hyperlink{structPieChartSegment_a19772bddca1bd42fea0b1ef2b2839c0c}{label}};      }
+\DoxyCodeLine{\Hypertarget{PieChartGenerator_8h_source_l00043}\mbox{\hyperlink{structPieChartSegment_ab3d1e65f2edd1e8bf214e755eefc08cd}{00043}}     \mbox{\hyperlink{structColor}{Color}} \mbox{\hyperlink{structPieChartSegment_ab3d1e65f2edd1e8bf214e755eefc08cd}{color}};            }
+\DoxyCodeLine{\Hypertarget{PieChartGenerator_8h_source_l00044}\mbox{\hyperlink{PieChartGenerator_8h_afeb3dab77a1ef161adb7da9667c16637}{00044}} \} \mbox{\hyperlink{PieChartGenerator_8h_afeb3dab77a1ef161adb7da9667c16637}{PieChartSegment}};}
+\DoxyCodeLine{\Hypertarget{PieChartGenerator_8h_source_l00045}00045 }
+\DoxyCodeLine{\Hypertarget{PieChartGenerator_8h_source_l00052}\mbox{\hyperlink{classPieChartGenerator}{00052}} \textcolor{keyword}{class }\mbox{\hyperlink{classPieChartGenerator}{PieChartGenerator}} \{}
+\DoxyCodeLine{\Hypertarget{PieChartGenerator_8h_source_l00053}00053 \textcolor{keyword}{public}:}
+\DoxyCodeLine{\Hypertarget{PieChartGenerator_8h_source_l00054}00054     \mbox{\hyperlink{classPieChartGenerator_a83ee6fdb562d564d764d48ee3ebe71c7}{PieChartGenerator}}();}
+\DoxyCodeLine{\Hypertarget{PieChartGenerator_8h_source_l00055}00055     \mbox{\hyperlink{classPieChartGenerator_a43cdb09cfde85f6d76d798cdbd0bf448}{\string~PieChartGenerator}}();}
+\DoxyCodeLine{\Hypertarget{PieChartGenerator_8h_source_l00063}00063     \mbox{\hyperlink{structColor}{Color}} \mbox{\hyperlink{classPieChartGenerator_a11d2d5f8dfc51fcebd7ea1dfce678629}{generate\_random\_color}}(); }
+\DoxyCodeLine{\Hypertarget{PieChartGenerator_8h_source_l00071}00071     \textcolor{keywordtype}{void} \mbox{\hyperlink{classPieChartGenerator_a2f367ee64a37d9b971b24090f9842251}{generatePieChart}}(\textcolor{keyword}{const} std::map<std::string, nlohmann::json>\& dataForPie); }
+\DoxyCodeLine{\Hypertarget{PieChartGenerator_8h_source_l00072}00072 }
+\DoxyCodeLine{\Hypertarget{PieChartGenerator_8h_source_l00073}00073 \textcolor{keyword}{private}:}
+\DoxyCodeLine{\Hypertarget{PieChartGenerator_8h_source_l00074}\mbox{\hyperlink{classPieChartGenerator_a1444353e0ccde4f5efdf29735b2209be}{00074}}     \mbox{\hyperlink{classFileHelper}{FileHelper}} \mbox{\hyperlink{classPieChartGenerator_a1444353e0ccde4f5efdf29735b2209be}{fileHelper}};}
+\DoxyCodeLine{\Hypertarget{PieChartGenerator_8h_source_l00083}00083     gdImagePtr \mbox{\hyperlink{classPieChartGenerator_aa95dd31c6170513a9d82004d6db6cf15}{create\_pie\_chart\_image}}(\mbox{\hyperlink{structPieChartSegment}{PieChartSegment}}* segments, \textcolor{keywordtype}{int} segments\_count, \textcolor{keyword}{const} \textcolor{keywordtype}{char}* title);}
+\DoxyCodeLine{\Hypertarget{PieChartGenerator_8h_source_l00094}00094     \textcolor{keywordtype}{void} \mbox{\hyperlink{classPieChartGenerator_a5362987c296f3dfee24390ee2881ff2a}{calculate\_coordinates}}(\textcolor{keywordtype}{int} x, \textcolor{keywordtype}{int} y, \textcolor{keywordtype}{int} radius, \textcolor{keywordtype}{int} angle, \textcolor{keywordtype}{int}* coord\_x, \textcolor{keywordtype}{int}* coord\_y);}
+\DoxyCodeLine{\Hypertarget{PieChartGenerator_8h_source_l00107}00107     \textcolor{keywordtype}{void} \mbox{\hyperlink{classPieChartGenerator_a7a57c299567e171bc40bbd817e95954e}{draw\_segment\_and\_label}}(gdImagePtr img, \mbox{\hyperlink{structPieChartSegment}{PieChartSegment}}* segments, \textcolor{keywordtype}{int} length, \textcolor{keywordtype}{int} x, \textcolor{keywordtype}{int} y, \textcolor{keywordtype}{double} start\_angle, \textcolor{keywordtype}{int} radius, \textcolor{keywordtype}{int} black);}
+\DoxyCodeLine{\Hypertarget{PieChartGenerator_8h_source_l00117}00117     \textcolor{keywordtype}{void} \mbox{\hyperlink{classPieChartGenerator_a8ef9b7f0d5bf8aecb441c1bfbaf389f9}{draw\_title}}(gdImagePtr img, \textcolor{keyword}{const} \textcolor{keywordtype}{char}* title, \textcolor{keywordtype}{int} x, \textcolor{keywordtype}{int} y, \textcolor{keywordtype}{int} color);}
+\DoxyCodeLine{\Hypertarget{PieChartGenerator_8h_source_l00124}00124     \textcolor{keywordtype}{void} \mbox{\hyperlink{classPieChartGenerator_a2ef1ac6cd4ed58d5402b16daed87b773}{saveImage}}(gdImagePtr img, \textcolor{keyword}{const} std::string\& filename);}
+\DoxyCodeLine{\Hypertarget{PieChartGenerator_8h_source_l00125}00125 \};}
+\DoxyCodeLine{\Hypertarget{PieChartGenerator_8h_source_l00126}00126 }
+\DoxyCodeLine{\Hypertarget{PieChartGenerator_8h_source_l00127}00127 \textcolor{preprocessor}{\#endif }\textcolor{comment}{// PIECHARTGENERATOR\_H}}
+
+\end{DoxyCode}

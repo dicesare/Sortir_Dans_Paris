@@ -1,0 +1,162 @@
+.TH "PeriodicFetcher" 3 "Fri Sep 22 2023" "Version v0.1" "API de Paris - Documentation du Gestionnaire" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+PeriodicFetcher \- Handles periodic data fetching, processing, and notifying Observables\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <periodicFetcher\&.h>\fP
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBPeriodicFetcher\fP (\fBObservable\fP &\fBobservable\fP, int interval, \fBfitu\fP unit)"
+.br
+.RI "Construct a new Periodic Fetcher object\&. "
+.ti -1c
+.RI "void \fBstart\fP ()"
+.br
+.RI "Begin the periodic fetching and processing of data\&. "
+.in -1c
+.SS "Private Member Functions"
+
+.in +1c
+.ti -1c
+.RI "void \fBlog\fP (const std::string &message)"
+.br
+.RI "Log messages for debugging and monitoring purposes\&. "
+.in -1c
+.SS "Private Attributes"
+
+.in +1c
+.ti -1c
+.RI "int \fBfetchInterval\fP"
+.br
+.RI "Time duration specifying how often data is fetched\&. "
+.ti -1c
+.RI "\fBfitu\fP \fBtimeUnit\fP"
+.br
+.RI "Enumerated type representing the unit of fetch interval (e\&.g\&., SEC, MIN, HR)\&. "
+.ti -1c
+.RI "\fBPieChartGenerator\fP \fBpieChartGen\fP"
+.br
+.RI "Object used for generating pie charts from the fetched data\&. "
+.ti -1c
+.RI "\fBObservable\fP & \fBobservable\fP"
+.br
+.RI "Reference to \fBObservable\fP object to which updates are sent\&. "
+.ti -1c
+.RI "std::atomic< bool > \fBstopRequested\fP"
+.br
+.RI "Atomic flag indicating if the fetching process should be stopped\&. "
+.ti -1c
+.RI "std::mutex \fBmtx\fP"
+.br
+.RI "Mutex ensuring thread-safety during data fetch and processing\&. "
+.in -1c
+.SS "Static Private Attributes"
+
+.in +1c
+.ti -1c
+.RI "static \fBPeriodicFetcher\fP * \fBinstance\fP = nullptr"
+.br
+.RI "Singleton instance of the \fBPeriodicFetcher\fP class\&. "
+.in -1c
+.SH "Detailed Description"
+.PP 
+Handles periodic data fetching, processing, and notifying Observables\&. 
+
+The \fBPeriodicFetcher\fP class encapsulates functionality related to periodically fetching data from an external source, processing that data, and subsequently updating associated Observables\&. Additionally, it generates pie charts using the \fBPieChartGenerator\fP class for visualization of the data\&. 
+.PP
+Definition at line \fB46\fP of file \fBperiodicFetcher\&.h\fP\&.
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "PeriodicFetcher::PeriodicFetcher (\fBObservable\fP & observable, int interval, \fBfitu\fP unit)"
+
+.PP
+Construct a new Periodic Fetcher object\&. Initializes the fetcher with specified parameters and sets up required configurations\&.
+.PP
+\fBParameters\fP
+.RS 4
+\fIobservable\fP Reference to the \fBObservable\fP object that will be updated with fetched data\&. 
+.br
+\fIinterval\fP Time interval for periodic data fetching\&. 
+.br
+\fIunit\fP The unit of the fetch interval (e\&.g\&., seconds, minutes, hours)\&. 
+.RE
+.PP
+
+.PP
+Definition at line \fB5\fP of file \fBperiodicFetcher\&.cpp\fP\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "void PeriodicFetcher::log (const std::string & message)\fC [private]\fP"
+
+.PP
+Log messages for debugging and monitoring purposes\&. This function outputs messages to the console, which can be useful for debugging, error-handling, or monitoring the operation of the \fBPeriodicFetcher\fP\&.
+.PP
+\fBParameters\fP
+.RS 4
+\fImessage\fP String containing the message to be logged\&. 
+.RE
+.PP
+
+.PP
+Definition at line \fB42\fP of file \fBperiodicFetcher\&.cpp\fP\&.
+.SS "void PeriodicFetcher::start ()"
+
+.PP
+Begin the periodic fetching and processing of data\&. This method initiates the continuous loop that fetches, processes data and updates the Observables\&. The loop continues until a stop signal is received\&. 
+.PP
+Definition at line \fB10\fP of file \fBperiodicFetcher\&.cpp\fP\&.
+.SH "Member Data Documentation"
+.PP 
+.SS "int PeriodicFetcher::fetchInterval\fC [private]\fP"
+
+.PP
+Time duration specifying how often data is fetched\&. 
+.PP
+Definition at line \fB67\fP of file \fBperiodicFetcher\&.h\fP\&.
+.SS "\fBPeriodicFetcher\fP * PeriodicFetcher::instance = nullptr\fC [static]\fP, \fC [private]\fP"
+
+.PP
+Singleton instance of the \fBPeriodicFetcher\fP class\&. 
+.PP
+Definition at line \fB73\fP of file \fBperiodicFetcher\&.h\fP\&.
+.SS "std::mutex PeriodicFetcher::mtx\fC [private]\fP"
+
+.PP
+Mutex ensuring thread-safety during data fetch and processing\&. 
+.PP
+Definition at line \fB72\fP of file \fBperiodicFetcher\&.h\fP\&.
+.SS "\fBObservable\fP& PeriodicFetcher::observable\fC [private]\fP"
+
+.PP
+Reference to \fBObservable\fP object to which updates are sent\&. 
+.PP
+Definition at line \fB70\fP of file \fBperiodicFetcher\&.h\fP\&.
+.SS "\fBPieChartGenerator\fP PeriodicFetcher::pieChartGen\fC [private]\fP"
+
+.PP
+Object used for generating pie charts from the fetched data\&. 
+.PP
+Definition at line \fB69\fP of file \fBperiodicFetcher\&.h\fP\&.
+.SS "std::atomic<bool> PeriodicFetcher::stopRequested\fC [private]\fP"
+
+.PP
+Atomic flag indicating if the fetching process should be stopped\&. 
+.PP
+Definition at line \fB71\fP of file \fBperiodicFetcher\&.h\fP\&.
+.SS "\fBfitu\fP PeriodicFetcher::timeUnit\fC [private]\fP"
+
+.PP
+Enumerated type representing the unit of fetch interval (e\&.g\&., SEC, MIN, HR)\&. 
+.PP
+Definition at line \fB68\fP of file \fBperiodicFetcher\&.h\fP\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for API de Paris - Documentation du Gestionnaire from the source code\&.

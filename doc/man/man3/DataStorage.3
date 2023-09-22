@@ -1,0 +1,128 @@
+.TH "DataStorage" 3 "Fri Sep 22 2023" "Version v0.1" "API de Paris - Documentation du Gestionnaire" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+DataStorage \- Responsible for persisting data in JSON format\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <dataStorage\&.h>\fP
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBDataStorage\fP ()"
+.br
+.RI "Default constructor for \fBDataStorage\fP\&. "
+.ti -1c
+.RI "void \fBsaveToFile\fP (const std::map< std::string, nlohmann::json > &data, const std::string &filename)"
+.br
+.RI "Saves the provided data to the given file\&. "
+.ti -1c
+.RI "std::map< std::string, nlohmann::json > \fBreadFromFile\fP (const std::string &filename)"
+.br
+.RI "Reads data from the given file\&. "
+.in -1c
+.SS "Private Member Functions"
+
+.in +1c
+.ti -1c
+.RI "std::string \fBgetValidFilePath\fP (const std::string &filename)"
+.br
+.RI "Helper function to validate and get the file path\&. "
+.in -1c
+.SS "Private Attributes"
+
+.in +1c
+.ti -1c
+.RI "\fBFileHelper\fP \fBfileHelper\fP"
+.br
+.RI "Helper object for file-related operations\&. "
+.in -1c
+.SH "Detailed Description"
+.PP 
+Responsible for persisting data in JSON format\&. 
+
+The class allows saving of data items to files and reading them back\&. Data items are represented as JSON objects and are mapped to string keys for easy access and manipulation\&. 
+.PP
+Definition at line \fB29\fP of file \fBdataStorage\&.h\fP\&.
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "DataStorage::DataStorage ()"
+
+.PP
+Default constructor for \fBDataStorage\fP\&. 
+.PP
+Definition at line \fB4\fP of file \fBdataStorage\&.cpp\fP\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "std::string DataStorage::getValidFilePath (const std::string & filename)\fC [private]\fP"
+
+.PP
+Helper function to validate and get the file path\&. Uses the \fBFileHelper\fP object to retrieve the file path and checks its validity\&. If it's invalid, throws an exception\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIfilename\fP The name of the file for which to get the path\&. 
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+std::string The valid file path for the given filename\&. 
+.RE
+.PP
+\fBExceptions\fP
+.RS 4
+\fIstd::runtime_error\fP if unable to retrieve the user's home directory\&. 
+.RE
+.PP
+
+.PP
+Definition at line \fB7\fP of file \fBdataStorage\&.cpp\fP\&.
+.SS "std::map< std::string, nlohmann::json > DataStorage::readFromFile (const std::string & filename)"
+
+.PP
+Reads data from the given file\&. Accesses the given file and extracts the stored JSON data\&. The data is then returned in the form of a map\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIfilename\fP The name of the file from which to read the data\&. 
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+std::map<std::string, nlohmann::json> A map of data items\&. 
+.RE
+.PP
+
+.PP
+Definition at line \fB46\fP of file \fBdataStorage\&.cpp\fP\&.
+.SS "void DataStorage::saveToFile (const std::map< std::string, nlohmann::json > & data, const std::string & filename)"
+
+.PP
+Saves the provided data to the given file\&. Reads existing data from the file (if it exists), merges with the new data, and saves the combined data back to the file\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIdata\fP The data to be saved\&. 
+.br
+\fIfilename\fP The name of the file to which the data will be saved\&. 
+.RE
+.PP
+
+.PP
+Definition at line \fB15\fP of file \fBdataStorage\&.cpp\fP\&.
+.SH "Member Data Documentation"
+.PP 
+.SS "\fBFileHelper\fP DataStorage::fileHelper\fC [private]\fP"
+
+.PP
+Helper object for file-related operations\&. 
+.PP
+Definition at line \fB56\fP of file \fBdataStorage\&.h\fP\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for API de Paris - Documentation du Gestionnaire from the source code\&.

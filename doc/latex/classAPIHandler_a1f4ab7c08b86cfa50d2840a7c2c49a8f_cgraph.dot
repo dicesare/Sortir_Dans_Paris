@@ -1,0 +1,12 @@
+digraph "APIHandler::fetchData"
+{
+ // LATEX_PDF_SIZE
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  rankdir="LR";
+  Node1 [label="APIHandler::fetchData",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip="Fetches data from the API and notifies its observers."];
+  Node1 -> Node2 [color="midnightblue",fontsize="10",style="solid"];
+  Node2 [label="APIHandler::makeRequest",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classAPIHandler.html#a4bfdc7673d871bce4390ced1fe56dcaa",tooltip="Makes a request to the provided URL and returns the fetched data."];
+  Node1 -> Node3 [color="midnightblue",fontsize="10",style="solid"];
+  Node3 [label="Observable::notifyObservers",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classObservable.html#a98235ce794949ba4827df63e571fb14b",tooltip="Sends updates to all registered observers."];
+}

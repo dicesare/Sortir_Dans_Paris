@@ -1,0 +1,16 @@
+digraph "DataStorage::saveToFile"
+{
+ // LATEX_PDF_SIZE
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  rankdir="LR";
+  Node1 [label="DataStorage::saveToFile",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip="Saves the provided data to the given file."];
+  Node1 -> Node2 [color="midnightblue",fontsize="10",style="solid"];
+  Node2 [label="FileHelper::fileExists",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classFileHelper.html#ad75188b2ae6098e5dae2f23cb5576341",tooltip="Verifies if a file exists at the provided path."];
+  Node1 -> Node3 [color="midnightblue",fontsize="10",style="solid"];
+  Node3 [label="DataStorage::getValidFilePath",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classDataStorage.html#a4f7c8d0fc570f9ca75609f004974fa0b",tooltip="Helper function to validate and get the file path."];
+  Node3 -> Node4 [color="midnightblue",fontsize="10",style="solid"];
+  Node4 [label="FileHelper::getFilePath",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classFileHelper.html#a8a218e5dfb2e5ec90c4180671f868af1",tooltip="Constructs the full path for a file using the current subfolder."];
+  Node4 -> Node5 [color="midnightblue",fontsize="10",style="solid"];
+  Node5 [label="FileHelper::ensureDirectory\lExists",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classFileHelper.html#a34793345599cf91e9c91e92fa6095d9e",tooltip="Makes sure the provided directory exists."];
+}

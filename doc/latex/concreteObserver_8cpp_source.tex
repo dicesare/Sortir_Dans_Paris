@@ -1,0 +1,48 @@
+\hypertarget{concreteObserver_8cpp_source}{}\doxysection{concrete\+Observer.\+cpp}
+\label{concreteObserver_8cpp_source}\index{src/connectApi/concreteObserver.cpp@{src/connectApi/concreteObserver.cpp}}
+\mbox{\hyperlink{concreteObserver_8cpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{concreteObserver_8cpp_source_l00001}00001 \textcolor{preprocessor}{\#include "{}../../include/connectApi/concreteObserver.h"{}}}
+\DoxyCodeLine{\Hypertarget{concreteObserver_8cpp_source_l00002}00002 }
+\DoxyCodeLine{\Hypertarget{concreteObserver_8cpp_source_l00003}\mbox{\hyperlink{classConcreteObserver_ad71cc1d2f42011af25bcf3d425436bab}{00003}} \mbox{\hyperlink{classConcreteObserver_ad71cc1d2f42011af25bcf3d425436bab}{ConcreteObserver::ConcreteObserver}}() : dataStorage(), barPlotGenerator() \{\}}
+\DoxyCodeLine{\Hypertarget{concreteObserver_8cpp_source_l00004}00004 }
+\DoxyCodeLine{\Hypertarget{concreteObserver_8cpp_source_l00005}\mbox{\hyperlink{classConcreteObserver_aaadc4aa059a1f755786336760892a170}{00005}} \textcolor{keywordtype}{void} \mbox{\hyperlink{classConcreteObserver_aaadc4aa059a1f755786336760892a170}{ConcreteObserver::update}}(\textcolor{keyword}{const} std::map<std::string, nlohmann::json>\& newEvents)}
+\DoxyCodeLine{\Hypertarget{concreteObserver_8cpp_source_l00006}00006 \{}
+\DoxyCodeLine{\Hypertarget{concreteObserver_8cpp_source_l00007}00007     \mbox{\hyperlink{classConcreteObserver_a2e7642148516c9209326e1518bc5f02b}{currentAndUpcomingEvents}} = newEvents;}
+\DoxyCodeLine{\Hypertarget{concreteObserver_8cpp_source_l00008}00008     \textcolor{comment}{// Maintenant, mettez à jour le dataset et retirez les événements expirés}}
+\DoxyCodeLine{\Hypertarget{concreteObserver_8cpp_source_l00009}00009     \mbox{\hyperlink{classConcreteObserver_a5a3cde88dbd31c116a2426bba75b5baf}{dataStorage}}.\mbox{\hyperlink{classDataStorage_a3574d849493097410d0879263706ee69}{saveToFile}}(newEvents, \textcolor{stringliteral}{"{}dataStorageSortirDansParis.json"{}});}
+\DoxyCodeLine{\Hypertarget{concreteObserver_8cpp_source_l00010}00010     \mbox{\hyperlink{classConcreteObserver_ab1b07477988958e5c596e3484380d8a2}{generateBarPlotFromData}}(newEvents);}
+\DoxyCodeLine{\Hypertarget{concreteObserver_8cpp_source_l00011}00011 \}}
+\DoxyCodeLine{\Hypertarget{concreteObserver_8cpp_source_l00012}00012 }
+\DoxyCodeLine{\Hypertarget{concreteObserver_8cpp_source_l00013}\mbox{\hyperlink{classConcreteObserver_a272dd1a5865949f826d14b9ff6807b39}{00013}} \textcolor{keywordtype}{void} \mbox{\hyperlink{classConcreteObserver_a272dd1a5865949f826d14b9ff6807b39}{ConcreteObserver::dailyUpdate}}(\textcolor{keyword}{const} std::map<std::string, nlohmann::json>\& newDailyEvents)}
+\DoxyCodeLine{\Hypertarget{concreteObserver_8cpp_source_l00014}00014 \{}
+\DoxyCodeLine{\Hypertarget{concreteObserver_8cpp_source_l00015}00015     \mbox{\hyperlink{classConcreteObserver_a2e7642148516c9209326e1518bc5f02b}{currentAndUpcomingEvents}} = newDailyEvents;}
+\DoxyCodeLine{\Hypertarget{concreteObserver_8cpp_source_l00016}00016     \textcolor{comment}{// Maintenant, mettez à jour le dataset et retirez les événements expirés}}
+\DoxyCodeLine{\Hypertarget{concreteObserver_8cpp_source_l00017}00017     \mbox{\hyperlink{classConcreteObserver_a5a3cde88dbd31c116a2426bba75b5baf}{dataStorage}}.\mbox{\hyperlink{classDataStorage_a3574d849493097410d0879263706ee69}{saveToFile}}(newDailyEvents, \textcolor{stringliteral}{"{}updateDailyDataStorageSortirDansParis.json"{}});}
+\DoxyCodeLine{\Hypertarget{concreteObserver_8cpp_source_l00018}00018 \}}
+\DoxyCodeLine{\Hypertarget{concreteObserver_8cpp_source_l00019}00019 }
+\DoxyCodeLine{\Hypertarget{concreteObserver_8cpp_source_l00020}\mbox{\hyperlink{classConcreteObserver_ac15637491bf8949de8f87302143126de}{00020}} \textcolor{keywordtype}{void} \mbox{\hyperlink{classConcreteObserver_ac15637491bf8949de8f87302143126de}{ConcreteObserver::removeExpiredEvents}}()}
+\DoxyCodeLine{\Hypertarget{concreteObserver_8cpp_source_l00021}00021 \{}
+\DoxyCodeLine{\Hypertarget{concreteObserver_8cpp_source_l00022}00022     std::map<std::string, nlohmann::json> currentEvents = \mbox{\hyperlink{classConcreteObserver_a5a3cde88dbd31c116a2426bba75b5baf}{dataStorage}}.\mbox{\hyperlink{classDataStorage_a898ad89ba95776da063f62c95677f78c}{readFromFile}}(\textcolor{stringliteral}{"{}dataStorageSortirDansParis.json"{}});}
+\DoxyCodeLine{\Hypertarget{concreteObserver_8cpp_source_l00023}00023     std::time\_t timeNow = std::time(\textcolor{keyword}{nullptr});}
+\DoxyCodeLine{\Hypertarget{concreteObserver_8cpp_source_l00024}00024     \textcolor{keywordtype}{char} buffer[11];}
+\DoxyCodeLine{\Hypertarget{concreteObserver_8cpp_source_l00025}00025     std::strftime(buffer, 11, \textcolor{stringliteral}{"{}\%Y-\/\%m-\/\%d"{}}, std::localtime(\&timeNow));}
+\DoxyCodeLine{\Hypertarget{concreteObserver_8cpp_source_l00026}00026     std::string currentDate(buffer);}
+\DoxyCodeLine{\Hypertarget{concreteObserver_8cpp_source_l00027}00027 }
+\DoxyCodeLine{\Hypertarget{concreteObserver_8cpp_source_l00028}00028     \textcolor{keywordflow}{for} (\textcolor{keyword}{auto} it = currentEvents.begin(); it!= currentEvents.end();) \{}
+\DoxyCodeLine{\Hypertarget{concreteObserver_8cpp_source_l00029}00029         std::string eventDate = it-\/>second;}
+\DoxyCodeLine{\Hypertarget{concreteObserver_8cpp_source_l00030}00030         \textcolor{keywordflow}{if} (eventDate < currentDate) \{}
+\DoxyCodeLine{\Hypertarget{concreteObserver_8cpp_source_l00031}00031             it = currentEvents.erase(it);}
+\DoxyCodeLine{\Hypertarget{concreteObserver_8cpp_source_l00032}00032         \} \textcolor{keywordflow}{else} \{}
+\DoxyCodeLine{\Hypertarget{concreteObserver_8cpp_source_l00033}00033             ++it;}
+\DoxyCodeLine{\Hypertarget{concreteObserver_8cpp_source_l00034}00034         \}}
+\DoxyCodeLine{\Hypertarget{concreteObserver_8cpp_source_l00035}00035     \}}
+\DoxyCodeLine{\Hypertarget{concreteObserver_8cpp_source_l00036}00036     \mbox{\hyperlink{classConcreteObserver_a5a3cde88dbd31c116a2426bba75b5baf}{dataStorage}}.\mbox{\hyperlink{classDataStorage_a3574d849493097410d0879263706ee69}{saveToFile}}(currentEvents, \textcolor{stringliteral}{"{}dataStorageSortirDansParis.json"{}});}
+\DoxyCodeLine{\Hypertarget{concreteObserver_8cpp_source_l00037}00037 \}}
+\DoxyCodeLine{\Hypertarget{concreteObserver_8cpp_source_l00038}00038 }
+\DoxyCodeLine{\Hypertarget{concreteObserver_8cpp_source_l00039}\mbox{\hyperlink{classConcreteObserver_ab1b07477988958e5c596e3484380d8a2}{00039}} \textcolor{keywordtype}{void} \mbox{\hyperlink{classConcreteObserver_ab1b07477988958e5c596e3484380d8a2}{ConcreteObserver::generateBarPlotFromData}}(\textcolor{keyword}{const} std::map<std::string, nlohmann::json>\& newTagsJson) \{}
+\DoxyCodeLine{\Hypertarget{concreteObserver_8cpp_source_l00040}00040     \mbox{\hyperlink{classConcreteObserver_a1fe19d874fe5e1532a0b95812e533a86}{barPlotGenerator}}.\mbox{\hyperlink{classBarPlotGenerator_a6e101c7e9279aaabde95d62076331f75}{loadDataFromJson}}(newTagsJson);}
+\DoxyCodeLine{\Hypertarget{concreteObserver_8cpp_source_l00041}00041     \mbox{\hyperlink{classConcreteObserver_a1fe19d874fe5e1532a0b95812e533a86}{barPlotGenerator}}.\mbox{\hyperlink{classBarPlotGenerator_a8607516727d0c8f609e3f2017bf11c5e}{generateBarPlot}}(\textcolor{stringliteral}{"{}histogram\_of\_number\_of\_event\_types.png"{}});}
+\DoxyCodeLine{\Hypertarget{concreteObserver_8cpp_source_l00042}00042 \}}
+
+\end{DoxyCode}

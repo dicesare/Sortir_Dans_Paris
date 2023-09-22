@@ -1,0 +1,148 @@
+.TH "FileHelper" 3 "Fri Sep 22 2023" "Version v0.1" "API de Paris - Documentation du Gestionnaire" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+FileHelper \- Utility class for file and directory management\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <fileHelper\&.h>\fP
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBFileHelper\fP ()"
+.br
+.ti -1c
+.RI "void \fBsetSubfolder\fP (const std::string &subfolder)"
+.br
+.RI "Updates the default subfolder\&. "
+.ti -1c
+.RI "std::string \fBgetSubfolder\fP () const"
+.br
+.RI "Retrieves the active subfolder path\&. "
+.ti -1c
+.RI "void \fBensureDirectoryExists\fP (const std::string &path)"
+.br
+.RI "Makes sure the provided directory exists\&. "
+.ti -1c
+.RI "bool \fBfileExists\fP (const std::string &filePath)"
+.br
+.RI "Verifies if a file exists at the provided path\&. "
+.ti -1c
+.RI "std::string \fBgetFilePath\fP (const std::string &filename)"
+.br
+.RI "Constructs the full path for a file using the current subfolder\&. "
+.in -1c
+.SS "Private Attributes"
+
+.in +1c
+.ti -1c
+.RI "std::string \fBm_subfolder\fP"
+.br
+.RI "Defines the default subfolder here\&. "
+.in -1c
+.SH "Detailed Description"
+.PP 
+Utility class for file and directory management\&. 
+
+This class streamlines common file and directory operations, making it easier to perform checks, retrieve paths, and ensure directories exist\&. 
+.PP
+Definition at line \fB25\fP of file \fBfileHelper\&.h\fP\&.
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "FileHelper::FileHelper ()"
+
+.PP
+Definition at line \fB4\fP of file \fBfileHelper\&.cpp\fP\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "void FileHelper::ensureDirectoryExists (const std::string & path)"
+
+.PP
+Makes sure the provided directory exists\&. This function checks for the existence of a directory at the given path\&. If the directory does not exist, it attempts to create it\&.
+.PP
+\fBParameters\fP
+.RS 4
+\fIpath\fP Path to the directory to ensure\&. 
+.RE
+.PP
+
+.PP
+Definition at line \fB14\fP of file \fBfileHelper\&.cpp\fP\&.
+.SS "bool FileHelper::fileExists (const std::string & filePath)"
+
+.PP
+Verifies if a file exists at the provided path\&. This function checks the existence of a file at the specified path and returns a boolean value indicating its presence\&.
+.PP
+\fBParameters\fP
+.RS 4
+\fIfilePath\fP Path to the file to check\&. 
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+bool \fCtrue\fP if file exists, otherwise \fCfalse\fP\&. 
+.RE
+.PP
+
+.PP
+Definition at line \fB21\fP of file \fBfileHelper\&.cpp\fP\&.
+.SS "std::string FileHelper::getFilePath (const std::string & filename)"
+
+.PP
+Constructs the full path for a file using the current subfolder\&. This function constructs a complete file path by appending the filename to the currently set subfolder\&. Additionally, it ensures the existence of the directory before returning the path\&.
+.PP
+\fBParameters\fP
+.RS 4
+\fIfilename\fP The file name to use for path construction\&. 
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+std::string Constructed file path\&. 
+.RE
+.PP
+
+.PP
+Definition at line \fB26\fP of file \fBfileHelper\&.cpp\fP\&.
+.SS "std::string FileHelper::getSubfolder () const"
+
+.PP
+Retrieves the active subfolder path\&. This function fetches the currently set subfolder path, which is used in other operations of the \fBFileHelper\fP\&.
+.PP
+\fBReturns\fP
+.RS 4
+std::string Active subfolder path\&. 
+.RE
+.PP
+
+.PP
+Definition at line \fB10\fP of file \fBfileHelper\&.cpp\fP\&.
+.SS "void FileHelper::setSubfolder (const std::string & subfolder)"
+
+.PP
+Updates the default subfolder\&. This function updates the internal subfolder path, which affects subsequent file and directory operations using this helper\&.
+.PP
+\fBParameters\fP
+.RS 4
+\fIsubfolder\fP New subfolder path\&. 
+.RE
+.PP
+
+.PP
+Definition at line \fB6\fP of file \fBfileHelper\&.cpp\fP\&.
+.SH "Member Data Documentation"
+.PP 
+.SS "std::string FileHelper::m_subfolder\fC [private]\fP"
+
+.PP
+Defines the default subfolder here\&. 
+.PP
+Definition at line \fB78\fP of file \fBfileHelper\&.h\fP\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for API de Paris - Documentation du Gestionnaire from the source code\&.

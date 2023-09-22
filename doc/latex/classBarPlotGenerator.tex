@@ -1,0 +1,262 @@
+\hypertarget{classBarPlotGenerator}{}\doxysection{Bar\+Plot\+Generator Class Reference}
+\label{classBarPlotGenerator}\index{BarPlotGenerator@{BarPlotGenerator}}
+
+
+Responsible for generating bar plots based on given data.  
+
+
+
+
+{\ttfamily \#include $<$Bar\+Plot\+Generator.\+h$>$}
+
+
+
+Collaboration diagram for Bar\+Plot\+Generator\+:
+% FIG 0
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classBarPlotGenerator_a4c6fca86e7273d8f3778d1bd62eb9d19}{Bar\+Plot\+Generator}} ()
+\begin{DoxyCompactList}\small\item\em Constructor of the class. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classBarPlotGenerator_a46a4b4343db5a98f487c522f173950bc}{$\sim$\+Bar\+Plot\+Generator}} ()
+\begin{DoxyCompactList}\small\item\em Destructor of the class. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{structColor}{Color}} \mbox{\hyperlink{classBarPlotGenerator_a5d0ca705fe16f9ff03ca9c38bbd5ffb9}{generate\+\_\+random\+\_\+color}} ()
+\begin{DoxyCompactList}\small\item\em Generates a random RGB color. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classBarPlotGenerator_a6e101c7e9279aaabde95d62076331f75}{load\+Data\+From\+Json}} (const std\+::map$<$ std\+::string, nlohmann\+::json $>$ \&json\+Data)
+\begin{DoxyCompactList}\small\item\em Loads data from a given JSON map. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classBarPlotGenerator_a8607516727d0c8f609e3f2017bf11c5e}{generate\+Bar\+Plot}} (const std\+::string \&output\+Filename)
+\begin{DoxyCompactList}\small\item\em Generates a bar plot image and saves it. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classBarPlotGenerator_ab01e022ff2ff243415f4b3bed87acd69}{save\+Image}} (gd\+Image\+Ptr img, const std\+::string \&filename)
+\begin{DoxyCompactList}\small\item\em Saves a given GD image to a specified file. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+std\+::string \mbox{\hyperlink{classBarPlotGenerator_a0b6c4355989e09b9309c7f9585947cdf}{format\+Title}} (const std\+::string \&filename)
+\begin{DoxyCompactList}\small\item\em Formats the title of the image. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classBarPlotGenerator_ac9ff708e4d8b332109d37e0f1a619e31}{is\+Valid\+Tag}} (const std\+::string \&tag)
+\begin{DoxyCompactList}\small\item\em Validates a given tag. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classFileHelper}{File\+Helper}} \mbox{\hyperlink{classBarPlotGenerator_af5bdf6320e6399160ccadfd40ff546f1}{file\+Helper}}
+\begin{DoxyCompactList}\small\item\em Helper for file management operations. \end{DoxyCompactList}\item 
+std\+::map$<$ std\+::string, int $>$ \mbox{\hyperlink{classBarPlotGenerator_a4f8a589ae04a15c218cf705e2fce1e2e}{tag\+Frequency}}
+\begin{DoxyCompactList}\small\item\em Map containing the frequency of each tag. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Responsible for generating bar plots based on given data. 
+
+This class provides functionalities to generate bar plots using the GD library. It also manages the data preparation, loading, and saving of the generated images. 
+
+Definition at line \mbox{\hyperlink{BarPlotGenerator_8h_source_l00043}{43}} of file \mbox{\hyperlink{BarPlotGenerator_8h_source}{Bar\+Plot\+Generator.\+h}}.
+
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classBarPlotGenerator_a4c6fca86e7273d8f3778d1bd62eb9d19}\label{classBarPlotGenerator_a4c6fca86e7273d8f3778d1bd62eb9d19}} 
+\index{BarPlotGenerator@{BarPlotGenerator}!BarPlotGenerator@{BarPlotGenerator}}
+\index{BarPlotGenerator@{BarPlotGenerator}!BarPlotGenerator@{BarPlotGenerator}}
+\doxysubsubsection{\texorpdfstring{BarPlotGenerator()}{BarPlotGenerator()}}
+{\footnotesize\ttfamily Bar\+Plot\+Generator\+::\+Bar\+Plot\+Generator (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Constructor of the class. 
+
+
+
+Definition at line \mbox{\hyperlink{BarPlotGenerator_8cpp_source_l00005}{5}} of file \mbox{\hyperlink{BarPlotGenerator_8cpp_source}{Bar\+Plot\+Generator.\+cpp}}.
+
+\mbox{\Hypertarget{classBarPlotGenerator_a46a4b4343db5a98f487c522f173950bc}\label{classBarPlotGenerator_a46a4b4343db5a98f487c522f173950bc}} 
+\index{BarPlotGenerator@{BarPlotGenerator}!````~BarPlotGenerator@{$\sim$BarPlotGenerator}}
+\index{````~BarPlotGenerator@{$\sim$BarPlotGenerator}!BarPlotGenerator@{BarPlotGenerator}}
+\doxysubsubsection{\texorpdfstring{$\sim$BarPlotGenerator()}{~BarPlotGenerator()}}
+{\footnotesize\ttfamily Bar\+Plot\+Generator\+::$\sim$\+Bar\+Plot\+Generator (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Destructor of the class. 
+
+
+
+Definition at line \mbox{\hyperlink{BarPlotGenerator_8cpp_source_l00006}{6}} of file \mbox{\hyperlink{BarPlotGenerator_8cpp_source}{Bar\+Plot\+Generator.\+cpp}}.
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classBarPlotGenerator_a0b6c4355989e09b9309c7f9585947cdf}\label{classBarPlotGenerator_a0b6c4355989e09b9309c7f9585947cdf}} 
+\index{BarPlotGenerator@{BarPlotGenerator}!formatTitle@{formatTitle}}
+\index{formatTitle@{formatTitle}!BarPlotGenerator@{BarPlotGenerator}}
+\doxysubsubsection{\texorpdfstring{formatTitle()}{formatTitle()}}
+{\footnotesize\ttfamily std\+::string Bar\+Plot\+Generator\+::format\+Title (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{filename }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Formats the title of the image. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em filename} & The original filename to be formatted. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+std\+::string Formatted title. 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{BarPlotGenerator_8cpp_source_l00133}{133}} of file \mbox{\hyperlink{BarPlotGenerator_8cpp_source}{Bar\+Plot\+Generator.\+cpp}}.
+
+Here is the caller graph for this function\+:
+% FIG 1
+\mbox{\Hypertarget{classBarPlotGenerator_a5d0ca705fe16f9ff03ca9c38bbd5ffb9}\label{classBarPlotGenerator_a5d0ca705fe16f9ff03ca9c38bbd5ffb9}} 
+\index{BarPlotGenerator@{BarPlotGenerator}!generate\_random\_color@{generate\_random\_color}}
+\index{generate\_random\_color@{generate\_random\_color}!BarPlotGenerator@{BarPlotGenerator}}
+\doxysubsubsection{\texorpdfstring{generate\_random\_color()}{generate\_random\_color()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structColor}{Color}} Bar\+Plot\+Generator\+::generate\+\_\+random\+\_\+color (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Generates a random RGB color. 
+
+\begin{DoxyReturn}{Returns}
+\mbox{\hyperlink{structColor}{Color}} Randomly generated RGB color. 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{BarPlotGenerator_8cpp_source_l00008}{8}} of file \mbox{\hyperlink{BarPlotGenerator_8cpp_source}{Bar\+Plot\+Generator.\+cpp}}.
+
+Here is the caller graph for this function\+:
+% FIG 2
+\mbox{\Hypertarget{classBarPlotGenerator_a8607516727d0c8f609e3f2017bf11c5e}\label{classBarPlotGenerator_a8607516727d0c8f609e3f2017bf11c5e}} 
+\index{BarPlotGenerator@{BarPlotGenerator}!generateBarPlot@{generateBarPlot}}
+\index{generateBarPlot@{generateBarPlot}!BarPlotGenerator@{BarPlotGenerator}}
+\doxysubsubsection{\texorpdfstring{generateBarPlot()}{generateBarPlot()}}
+{\footnotesize\ttfamily void Bar\+Plot\+Generator\+::generate\+Bar\+Plot (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{output\+Filename }\end{DoxyParamCaption})}
+
+
+
+Generates a bar plot image and saves it. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em output\+Filename} & The name of the output image file. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{BarPlotGenerator_8cpp_source_l00045}{45}} of file \mbox{\hyperlink{BarPlotGenerator_8cpp_source}{Bar\+Plot\+Generator.\+cpp}}.
+
+Here is the call graph for this function\+:
+% FIG 3
+Here is the caller graph for this function\+:
+% FIG 4
+\mbox{\Hypertarget{classBarPlotGenerator_ac9ff708e4d8b332109d37e0f1a619e31}\label{classBarPlotGenerator_ac9ff708e4d8b332109d37e0f1a619e31}} 
+\index{BarPlotGenerator@{BarPlotGenerator}!isValidTag@{isValidTag}}
+\index{isValidTag@{isValidTag}!BarPlotGenerator@{BarPlotGenerator}}
+\doxysubsubsection{\texorpdfstring{isValidTag()}{isValidTag()}}
+{\footnotesize\ttfamily bool Bar\+Plot\+Generator\+::is\+Valid\+Tag (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{tag }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Validates a given tag. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em tag} & The tag to be validated. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true If the tag is valid. 
+
+false If the tag is invalid. 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{BarPlotGenerator_8cpp_source_l00038}{38}} of file \mbox{\hyperlink{BarPlotGenerator_8cpp_source}{Bar\+Plot\+Generator.\+cpp}}.
+
+Here is the caller graph for this function\+:
+% FIG 5
+\mbox{\Hypertarget{classBarPlotGenerator_a6e101c7e9279aaabde95d62076331f75}\label{classBarPlotGenerator_a6e101c7e9279aaabde95d62076331f75}} 
+\index{BarPlotGenerator@{BarPlotGenerator}!loadDataFromJson@{loadDataFromJson}}
+\index{loadDataFromJson@{loadDataFromJson}!BarPlotGenerator@{BarPlotGenerator}}
+\doxysubsubsection{\texorpdfstring{loadDataFromJson()}{loadDataFromJson()}}
+{\footnotesize\ttfamily void Bar\+Plot\+Generator\+::load\+Data\+From\+Json (\begin{DoxyParamCaption}\item[{const std\+::map$<$ std\+::string, nlohmann\+::json $>$ \&}]{json\+Data }\end{DoxyParamCaption})}
+
+
+
+Loads data from a given JSON map. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em json\+Data} & JSON data in a map format. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{BarPlotGenerator_8cpp_source_l00023}{23}} of file \mbox{\hyperlink{BarPlotGenerator_8cpp_source}{Bar\+Plot\+Generator.\+cpp}}.
+
+Here is the call graph for this function\+:
+% FIG 6
+Here is the caller graph for this function\+:
+% FIG 7
+\mbox{\Hypertarget{classBarPlotGenerator_ab01e022ff2ff243415f4b3bed87acd69}\label{classBarPlotGenerator_ab01e022ff2ff243415f4b3bed87acd69}} 
+\index{BarPlotGenerator@{BarPlotGenerator}!saveImage@{saveImage}}
+\index{saveImage@{saveImage}!BarPlotGenerator@{BarPlotGenerator}}
+\doxysubsubsection{\texorpdfstring{saveImage()}{saveImage()}}
+{\footnotesize\ttfamily void Bar\+Plot\+Generator\+::save\+Image (\begin{DoxyParamCaption}\item[{gd\+Image\+Ptr}]{img,  }\item[{const std\+::string \&}]{filename }\end{DoxyParamCaption})}
+
+
+
+Saves a given GD image to a specified file. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em img} & GD image pointer. \\
+\hline
+{\em filename} & Name of the file to save the image to. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{BarPlotGenerator_8cpp_source_l00122}{122}} of file \mbox{\hyperlink{BarPlotGenerator_8cpp_source}{Bar\+Plot\+Generator.\+cpp}}.
+
+Here is the caller graph for this function\+:
+% FIG 8
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{classBarPlotGenerator_af5bdf6320e6399160ccadfd40ff546f1}\label{classBarPlotGenerator_af5bdf6320e6399160ccadfd40ff546f1}} 
+\index{BarPlotGenerator@{BarPlotGenerator}!fileHelper@{fileHelper}}
+\index{fileHelper@{fileHelper}!BarPlotGenerator@{BarPlotGenerator}}
+\doxysubsubsection{\texorpdfstring{fileHelper}{fileHelper}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classFileHelper}{File\+Helper}} Bar\+Plot\+Generator\+::file\+Helper\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Helper for file management operations. 
+
+
+
+Definition at line \mbox{\hyperlink{BarPlotGenerator_8h_source_l00078}{78}} of file \mbox{\hyperlink{BarPlotGenerator_8h_source}{Bar\+Plot\+Generator.\+h}}.
+
+\mbox{\Hypertarget{classBarPlotGenerator_a4f8a589ae04a15c218cf705e2fce1e2e}\label{classBarPlotGenerator_a4f8a589ae04a15c218cf705e2fce1e2e}} 
+\index{BarPlotGenerator@{BarPlotGenerator}!tagFrequency@{tagFrequency}}
+\index{tagFrequency@{tagFrequency}!BarPlotGenerator@{BarPlotGenerator}}
+\doxysubsubsection{\texorpdfstring{tagFrequency}{tagFrequency}}
+{\footnotesize\ttfamily std\+::map$<$std\+::string, int$>$ Bar\+Plot\+Generator\+::tag\+Frequency\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Map containing the frequency of each tag. 
+
+
+
+Definition at line \mbox{\hyperlink{BarPlotGenerator_8h_source_l00079}{79}} of file \mbox{\hyperlink{BarPlotGenerator_8h_source}{Bar\+Plot\+Generator.\+h}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+include/gd\+Generation/\mbox{\hyperlink{BarPlotGenerator_8h}{Bar\+Plot\+Generator.\+h}}\item 
+src/gd\+Generation/\mbox{\hyperlink{BarPlotGenerator_8cpp}{Bar\+Plot\+Generator.\+cpp}}\end{DoxyCompactItemize}

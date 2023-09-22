@@ -1,0 +1,35 @@
+\hypertarget{concreteObserver_8h_source}{}\doxysection{concrete\+Observer.\+h}
+\label{concreteObserver_8h_source}\index{include/connectApi/concreteObserver.h@{include/connectApi/concreteObserver.h}}
+\mbox{\hyperlink{concreteObserver_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{concreteObserver_8h_source_l00001}00001 }
+\DoxyCodeLine{\Hypertarget{concreteObserver_8h_source_l00014}00014 \textcolor{preprocessor}{\#ifndef CONCRETEOBSERVER\_H}}
+\DoxyCodeLine{\Hypertarget{concreteObserver_8h_source_l00015}00015 \textcolor{preprocessor}{\#define CONCRETEOBSERVER\_H}}
+\DoxyCodeLine{\Hypertarget{concreteObserver_8h_source_l00016}00016 }
+\DoxyCodeLine{\Hypertarget{concreteObserver_8h_source_l00017}00017 \textcolor{preprocessor}{\#include <map>}}
+\DoxyCodeLine{\Hypertarget{concreteObserver_8h_source_l00018}00018 \textcolor{preprocessor}{\#include <nlohmann/json.hpp>}}
+\DoxyCodeLine{\Hypertarget{concreteObserver_8h_source_l00019}00019 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{observer_8h}{observer.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{concreteObserver_8h_source_l00020}00020 \textcolor{preprocessor}{\#include "{}../storage/dataStorage.h"{}}}
+\DoxyCodeLine{\Hypertarget{concreteObserver_8h_source_l00021}00021 \textcolor{preprocessor}{\#include "{}../gdGeneration/BarPlotGenerator.h"{}}}
+\DoxyCodeLine{\Hypertarget{concreteObserver_8h_source_l00022}00022 }
+\DoxyCodeLine{\Hypertarget{concreteObserver_8h_source_l00031}\mbox{\hyperlink{classConcreteObserver}{00031}} \textcolor{keyword}{class }\mbox{\hyperlink{classConcreteObserver}{ConcreteObserver}} : \textcolor{keyword}{public} \mbox{\hyperlink{classObserver}{Observer}} \{}
+\DoxyCodeLine{\Hypertarget{concreteObserver_8h_source_l00032}00032 \textcolor{keyword}{private}:}
+\DoxyCodeLine{\Hypertarget{concreteObserver_8h_source_l00033}\mbox{\hyperlink{classConcreteObserver_a2e7642148516c9209326e1518bc5f02b}{00033}}     std::map<std::string, nlohmann::json> \mbox{\hyperlink{classConcreteObserver_a2e7642148516c9209326e1518bc5f02b}{currentAndUpcomingEvents}}; }
+\DoxyCodeLine{\Hypertarget{concreteObserver_8h_source_l00034}\mbox{\hyperlink{classConcreteObserver_a5a3cde88dbd31c116a2426bba75b5baf}{00034}}     \mbox{\hyperlink{classDataStorage}{DataStorage}} \mbox{\hyperlink{classConcreteObserver_a5a3cde88dbd31c116a2426bba75b5baf}{dataStorage}}; }
+\DoxyCodeLine{\Hypertarget{concreteObserver_8h_source_l00035}\mbox{\hyperlink{classConcreteObserver_a1fe19d874fe5e1532a0b95812e533a86}{00035}}     \mbox{\hyperlink{classBarPlotGenerator}{BarPlotGenerator}} \mbox{\hyperlink{classConcreteObserver_a1fe19d874fe5e1532a0b95812e533a86}{barPlotGenerator}}; }
+\DoxyCodeLine{\Hypertarget{concreteObserver_8h_source_l00036}00036 }
+\DoxyCodeLine{\Hypertarget{concreteObserver_8h_source_l00042}00042     \textcolor{keywordtype}{void} \mbox{\hyperlink{classConcreteObserver_ab1b07477988958e5c596e3484380d8a2}{generateBarPlotFromData}}(\textcolor{keyword}{const} std::map<std::string, nlohmann::json>\& newTagsJson);}
+\DoxyCodeLine{\Hypertarget{concreteObserver_8h_source_l00043}00043 }
+\DoxyCodeLine{\Hypertarget{concreteObserver_8h_source_l00044}00044 \textcolor{keyword}{public}:}
+\DoxyCodeLine{\Hypertarget{concreteObserver_8h_source_l00048}00048     \mbox{\hyperlink{classConcreteObserver_ad71cc1d2f42011af25bcf3d425436bab}{ConcreteObserver}}();}
+\DoxyCodeLine{\Hypertarget{concreteObserver_8h_source_l00049}00049 }
+\DoxyCodeLine{\Hypertarget{concreteObserver_8h_source_l00058}00058     \textcolor{keywordtype}{void} \mbox{\hyperlink{classConcreteObserver_aaadc4aa059a1f755786336760892a170}{update}}(\textcolor{keyword}{const} std::map<std::string, nlohmann::json>\& newEvents) \textcolor{keyword}{override};}
+\DoxyCodeLine{\Hypertarget{concreteObserver_8h_source_l00059}00059 }
+\DoxyCodeLine{\Hypertarget{concreteObserver_8h_source_l00068}00068     \textcolor{keywordtype}{void} \mbox{\hyperlink{classConcreteObserver_a272dd1a5865949f826d14b9ff6807b39}{dailyUpdate}}(\textcolor{keyword}{const} std::map<std::string, nlohmann::json>\& newDailyEvents) \textcolor{keyword}{override};}
+\DoxyCodeLine{\Hypertarget{concreteObserver_8h_source_l00069}00069 }
+\DoxyCodeLine{\Hypertarget{concreteObserver_8h_source_l00076}00076     \textcolor{keywordtype}{void} \mbox{\hyperlink{classConcreteObserver_ac15637491bf8949de8f87302143126de}{removeExpiredEvents}}() \textcolor{keyword}{override};}
+\DoxyCodeLine{\Hypertarget{concreteObserver_8h_source_l00077}00077 \};}
+\DoxyCodeLine{\Hypertarget{concreteObserver_8h_source_l00078}00078 }
+\DoxyCodeLine{\Hypertarget{concreteObserver_8h_source_l00079}00079 \textcolor{preprocessor}{\#endif }\textcolor{comment}{// CONCRETEOBSERVER\_H}}
+
+\end{DoxyCode}

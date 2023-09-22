@@ -1,0 +1,43 @@
+\hypertarget{apiHandler_8h_source}{}\doxysection{api\+Handler.\+h}
+\label{apiHandler_8h_source}\index{include/connectApi/apiHandler.h@{include/connectApi/apiHandler.h}}
+\mbox{\hyperlink{apiHandler_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{apiHandler_8h_source_l00001}00001 }
+\DoxyCodeLine{\Hypertarget{apiHandler_8h_source_l00010}00010 \textcolor{preprocessor}{\#ifndef APIHANDLER\_H}}
+\DoxyCodeLine{\Hypertarget{apiHandler_8h_source_l00011}00011 \textcolor{preprocessor}{\#define APIHANDLER\_H}}
+\DoxyCodeLine{\Hypertarget{apiHandler_8h_source_l00012}00012 }
+\DoxyCodeLine{\Hypertarget{apiHandler_8h_source_l00013}00013 \textcolor{preprocessor}{\#include <stdio.h>}}
+\DoxyCodeLine{\Hypertarget{apiHandler_8h_source_l00014}00014 \textcolor{preprocessor}{\#include <stdlib.h>}}
+\DoxyCodeLine{\Hypertarget{apiHandler_8h_source_l00015}00015 \textcolor{preprocessor}{\#include <string.h>}}
+\DoxyCodeLine{\Hypertarget{apiHandler_8h_source_l00016}00016 \textcolor{preprocessor}{\#include <unistd.h>}}
+\DoxyCodeLine{\Hypertarget{apiHandler_8h_source_l00017}00017 \textcolor{preprocessor}{\#include <curl/curl.h>}}
+\DoxyCodeLine{\Hypertarget{apiHandler_8h_source_l00018}00018 \textcolor{preprocessor}{\#include <nlohmann/json.hpp>}}
+\DoxyCodeLine{\Hypertarget{apiHandler_8h_source_l00019}00019 \textcolor{preprocessor}{\#include <iostream>}}
+\DoxyCodeLine{\Hypertarget{apiHandler_8h_source_l00020}00020 \textcolor{preprocessor}{\#include <fstream>}}
+\DoxyCodeLine{\Hypertarget{apiHandler_8h_source_l00021}00021 \textcolor{preprocessor}{\#include <sstream>}}
+\DoxyCodeLine{\Hypertarget{apiHandler_8h_source_l00022}00022 \textcolor{preprocessor}{\#include <string>}}
+\DoxyCodeLine{\Hypertarget{apiHandler_8h_source_l00023}00023 \textcolor{preprocessor}{\#include <vector>}}
+\DoxyCodeLine{\Hypertarget{apiHandler_8h_source_l00024}00024 \textcolor{preprocessor}{\#include <set>}}
+\DoxyCodeLine{\Hypertarget{apiHandler_8h_source_l00025}00025 \textcolor{preprocessor}{\#include <map>}}
+\DoxyCodeLine{\Hypertarget{apiHandler_8h_source_l00026}00026 \textcolor{preprocessor}{\#include <variant>}}
+\DoxyCodeLine{\Hypertarget{apiHandler_8h_source_l00027}00027 }
+\DoxyCodeLine{\Hypertarget{apiHandler_8h_source_l00028}00028 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{observable_8h}{observable.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{apiHandler_8h_source_l00029}00029 }
+\DoxyCodeLine{\Hypertarget{apiHandler_8h_source_l00038}\mbox{\hyperlink{classAPIHandler}{00038}} \textcolor{keyword}{class }\mbox{\hyperlink{classAPIHandler}{APIHandler}} : \textcolor{keyword}{public} \mbox{\hyperlink{classObservable}{Observable}} \{}
+\DoxyCodeLine{\Hypertarget{apiHandler_8h_source_l00039}00039 \textcolor{keyword}{public}:}
+\DoxyCodeLine{\Hypertarget{apiHandler_8h_source_l00043}00043     \mbox{\hyperlink{classAPIHandler_ac33916a544c830ab1248410cb855bf59}{APIHandler}}();}
+\DoxyCodeLine{\Hypertarget{apiHandler_8h_source_l00047}00047     \mbox{\hyperlink{classAPIHandler_ab91de6f9d05aa213b671f54f2a0315eb}{\string~APIHandler}}();}
+\DoxyCodeLine{\Hypertarget{apiHandler_8h_source_l00048}00048 }
+\DoxyCodeLine{\Hypertarget{apiHandler_8h_source_l00055}00055     \textcolor{keywordtype}{void} \mbox{\hyperlink{classAPIHandler_a1f4ab7c08b86cfa50d2840a7c2c49a8f}{fetchData}}();}
+\DoxyCodeLine{\Hypertarget{apiHandler_8h_source_l00056}00056 }
+\DoxyCodeLine{\Hypertarget{apiHandler_8h_source_l00062}00062     std::map<std::string, nlohmann::json> \mbox{\hyperlink{classAPIHandler_a9689d8f7c4ec016cca6ef5fa047b3b05}{fetchTodaysEvents}}();}
+\DoxyCodeLine{\Hypertarget{apiHandler_8h_source_l00063}00063 }
+\DoxyCodeLine{\Hypertarget{apiHandler_8h_source_l00064}00064 \textcolor{keyword}{private}:}
+\DoxyCodeLine{\Hypertarget{apiHandler_8h_source_l00071}00071     std::map<std::string, nlohmann::json> \mbox{\hyperlink{classAPIHandler_a4bfdc7673d871bce4390ced1fe56dcaa}{makeRequest}}(\textcolor{keyword}{const} std::string\& url);}
+\DoxyCodeLine{\Hypertarget{apiHandler_8h_source_l00072}00072 }
+\DoxyCodeLine{\Hypertarget{apiHandler_8h_source_l00073}\mbox{\hyperlink{classAPIHandler_adbf28a22bb5e388af13e7c190a6cefc1}{00073}}     \textcolor{keyword}{const} std::string \mbox{\hyperlink{classAPIHandler_adbf28a22bb5e388af13e7c190a6cefc1}{baseUrl}} = \textcolor{stringliteral}{"{}https://opendata.paris.fr/api/explore/v2.1/catalog/datasets/que-\/faire-\/a-\/paris-\//records?"{}}; }
+\DoxyCodeLine{\Hypertarget{apiHandler_8h_source_l00074}00074 \};}
+\DoxyCodeLine{\Hypertarget{apiHandler_8h_source_l00075}00075 }
+\DoxyCodeLine{\Hypertarget{apiHandler_8h_source_l00076}00076 \textcolor{preprocessor}{\#endif }\textcolor{comment}{// APIHANDLER\_H}}
+
+\end{DoxyCode}

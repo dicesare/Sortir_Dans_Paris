@@ -1,0 +1,33 @@
+\hypertarget{signalHandler_8cpp_source}{}\doxysection{signal\+Handler.\+cpp}
+\label{signalHandler_8cpp_source}\index{src/service/signalHandler.cpp@{src/service/signalHandler.cpp}}
+\mbox{\hyperlink{signalHandler_8cpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{signalHandler_8cpp_source_l00001}00001 \textcolor{preprocessor}{\#include "{}../../include/service/signalHandler.h"{}}}
+\DoxyCodeLine{\Hypertarget{signalHandler_8cpp_source_l00002}00002 }
+\DoxyCodeLine{\Hypertarget{signalHandler_8cpp_source_l00003}00003 std::atomic<bool> \mbox{\hyperlink{classSignalHandler_a341bb6348f9e951f87757bb9685b9734}{SignalHandler::shutdownRequested}}(\textcolor{keyword}{false});}
+\DoxyCodeLine{\Hypertarget{signalHandler_8cpp_source_l00004}00004 }
+\DoxyCodeLine{\Hypertarget{signalHandler_8cpp_source_l00005}\mbox{\hyperlink{classSignalHandler_a15631110fc9c8fee4c1b2bf3bced2de3}{00005}} \mbox{\hyperlink{classSignalHandler}{SignalHandler}}\& \mbox{\hyperlink{classSignalHandler_a15631110fc9c8fee4c1b2bf3bced2de3}{SignalHandler::getInstance}}() \{}
+\DoxyCodeLine{\Hypertarget{signalHandler_8cpp_source_l00006}00006     \textcolor{keyword}{static} \mbox{\hyperlink{classSignalHandler}{SignalHandler}} instance; \textcolor{comment}{// Lazily initialized singleton instance.}}
+\DoxyCodeLine{\Hypertarget{signalHandler_8cpp_source_l00007}00007     \textcolor{keywordflow}{return} instance;}
+\DoxyCodeLine{\Hypertarget{signalHandler_8cpp_source_l00008}00008 \}}
+\DoxyCodeLine{\Hypertarget{signalHandler_8cpp_source_l00009}00009 }
+\DoxyCodeLine{\Hypertarget{signalHandler_8cpp_source_l00010}\mbox{\hyperlink{classSignalHandler_a3149ab1b5e1c8940d11b182f8059d916}{00010}} \mbox{\hyperlink{classSignalHandler_a3149ab1b5e1c8940d11b182f8059d916}{SignalHandler::SignalHandler}}() \{\}}
+\DoxyCodeLine{\Hypertarget{signalHandler_8cpp_source_l00011}00011 }
+\DoxyCodeLine{\Hypertarget{signalHandler_8cpp_source_l00012}\mbox{\hyperlink{classSignalHandler_addc8b5b0b969eb405376a77a369de007}{00012}} \mbox{\hyperlink{classSignalHandler_addc8b5b0b969eb405376a77a369de007}{SignalHandler::\string~SignalHandler}}() \{\}}
+\DoxyCodeLine{\Hypertarget{signalHandler_8cpp_source_l00013}00013 }
+\DoxyCodeLine{\Hypertarget{signalHandler_8cpp_source_l00014}\mbox{\hyperlink{classSignalHandler_a90eff6c9610cdcd77a1706491f2ce28a}{00014}} \textcolor{keywordtype}{void} \mbox{\hyperlink{classSignalHandler_a90eff6c9610cdcd77a1706491f2ce28a}{SignalHandler::setupSignalHandlers}}() \{}
+\DoxyCodeLine{\Hypertarget{signalHandler_8cpp_source_l00015}00015     std::signal(SIGINT, \mbox{\hyperlink{classSignalHandler_a0899d0c83b42582e862d2f4879e6a2e7}{handleSignal}}); \textcolor{comment}{// Setting up signal handler for SIGINT.}}
+\DoxyCodeLine{\Hypertarget{signalHandler_8cpp_source_l00016}00016 \}}
+\DoxyCodeLine{\Hypertarget{signalHandler_8cpp_source_l00017}00017 }
+\DoxyCodeLine{\Hypertarget{signalHandler_8cpp_source_l00018}\mbox{\hyperlink{classSignalHandler_a8030ca5796b5a5b4b0f54c3ff9405e84}{00018}} \textcolor{keywordtype}{bool} \mbox{\hyperlink{classSignalHandler_a8030ca5796b5a5b4b0f54c3ff9405e84}{SignalHandler::isShutdownRequested}}()\textcolor{keyword}{ const }\{}
+\DoxyCodeLine{\Hypertarget{signalHandler_8cpp_source_l00019}00019     \textcolor{keywordflow}{return} \mbox{\hyperlink{classSignalHandler_a341bb6348f9e951f87757bb9685b9734}{shutdownRequested}}.load(); \textcolor{comment}{// Checking if shutdown is requested.}}
+\DoxyCodeLine{\Hypertarget{signalHandler_8cpp_source_l00020}00020 \}}
+\DoxyCodeLine{\Hypertarget{signalHandler_8cpp_source_l00021}00021 }
+\DoxyCodeLine{\Hypertarget{signalHandler_8cpp_source_l00022}\mbox{\hyperlink{classSignalHandler_a0899d0c83b42582e862d2f4879e6a2e7}{00022}} \textcolor{keywordtype}{void} \mbox{\hyperlink{classSignalHandler_a0899d0c83b42582e862d2f4879e6a2e7}{SignalHandler::handleSignal}}(\textcolor{keywordtype}{int} signum) \{}
+\DoxyCodeLine{\Hypertarget{signalHandler_8cpp_source_l00023}00023     \textcolor{keywordflow}{if} (signum == SIGINT) \{}
+\DoxyCodeLine{\Hypertarget{signalHandler_8cpp_source_l00024}00024         std::cout << \textcolor{stringliteral}{"{}Received signal: "{}} << signum << \textcolor{stringliteral}{"{}. Shutdown requested."{}} << std::endl;}
+\DoxyCodeLine{\Hypertarget{signalHandler_8cpp_source_l00025}00025         \mbox{\hyperlink{classSignalHandler_a341bb6348f9e951f87757bb9685b9734}{shutdownRequested}}.store(\textcolor{keyword}{true}); \textcolor{comment}{// Indicating that shutdown is requested.}}
+\DoxyCodeLine{\Hypertarget{signalHandler_8cpp_source_l00026}00026     \}}
+\DoxyCodeLine{\Hypertarget{signalHandler_8cpp_source_l00027}00027 \}}
+
+\end{DoxyCode}

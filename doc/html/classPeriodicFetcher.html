@@ -150,6 +150,8 @@ Static Private Attributes</h2></td></tr>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p >Handles periodic data fetching, processing, and notifying Observables. </p>
 <p >The <a class="el" href="classPeriodicFetcher.html" title="Handles periodic data fetching, processing, and notifying Observables.">PeriodicFetcher</a> class encapsulates functionality related to periodically fetching data from an external source, processing that data, and subsequently updating associated Observables. Additionally, it generates pie charts using the <a class="el" href="classPieChartGenerator.html" title="Class responsible for generating pie charts.">PieChartGenerator</a> class for visualization of the data. </p>
+
+<p class="definition">Definition at line <a class="el" href="periodicFetcher_8h_source.html#l00046">46</a> of file <a class="el" href="periodicFetcher_8h_source.html">periodicFetcher.h</a>.</p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="a97424bbb533281b98e837ea0a9a0fdc7" name="a97424bbb533281b98e837ea0a9a0fdc7"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a97424bbb533281b98e837ea0a9a0fdc7">&#9670;&nbsp;</a></span>PeriodicFetcher()</h2>
@@ -193,6 +195,8 @@ Static Private Attributes</h2></td></tr>
   </table>
   </dd>
 </dl>
+
+<p class="definition">Definition at line <a class="el" href="periodicFetcher_8cpp_source.html#l00005">5</a> of file <a class="el" href="periodicFetcher_8cpp_source.html">periodicFetcher.cpp</a>.</p>
 <div id="dynsection-1" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-1-trigger" src="closed.png" alt="+"/> Here is the call graph for this function:</div>
 <div id="dynsection-1-summary" class="dynsummary" style="display:block;">
@@ -236,6 +240,8 @@ Static Private Attributes</h2></td></tr>
   </table>
   </dd>
 </dl>
+
+<p class="definition">Definition at line <a class="el" href="periodicFetcher_8cpp_source.html#l00042">42</a> of file <a class="el" href="periodicFetcher_8cpp_source.html">periodicFetcher.cpp</a>.</p>
 <div id="dynsection-2" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-2-trigger" src="closed.png" alt="+"/> Here is the caller graph for this function:</div>
 <div id="dynsection-2-summary" class="dynsummary" style="display:block;">
@@ -263,6 +269,8 @@ Static Private Attributes</h2></td></tr>
 
 <p>Begin the periodic fetching and processing of data. </p>
 <p >This method initiates the continuous loop that fetches, processes data and updates the Observables. The loop continues until a stop signal is received. </p>
+
+<p class="definition">Definition at line <a class="el" href="periodicFetcher_8cpp_source.html#l00010">10</a> of file <a class="el" href="periodicFetcher_8cpp_source.html">periodicFetcher.cpp</a>.</p>
 <div id="dynsection-3" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-3-trigger" src="closed.png" alt="+"/> Here is the call graph for this function:</div>
 <div id="dynsection-3-summary" class="dynsummary" style="display:block;">
@@ -296,6 +304,8 @@ Static Private Attributes</h2></td></tr>
 
 <p>Time duration specifying how often data is fetched. </p>
 
+<p class="definition">Definition at line <a class="el" href="periodicFetcher_8h_source.html#l00067">67</a> of file <a class="el" href="periodicFetcher_8h_source.html">periodicFetcher.h</a>.</p>
+
 </div>
 </div>
 <a id="add7804e2a8043acb7f5d18de299b45c9" name="add7804e2a8043acb7f5d18de299b45c9"></a>
@@ -319,6 +329,8 @@ Static Private Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Singleton instance of the <a class="el" href="classPeriodicFetcher.html" title="Handles periodic data fetching, processing, and notifying Observables.">PeriodicFetcher</a> class. </p>
+
+<p class="definition">Definition at line <a class="el" href="periodicFetcher_8h_source.html#l00073">73</a> of file <a class="el" href="periodicFetcher_8h_source.html">periodicFetcher.h</a>.</p>
 
 </div>
 </div>
@@ -344,6 +356,8 @@ Static Private Attributes</h2></td></tr>
 
 <p>Mutex ensuring thread-safety during data fetch and processing. </p>
 
+<p class="definition">Definition at line <a class="el" href="periodicFetcher_8h_source.html#l00072">72</a> of file <a class="el" href="periodicFetcher_8h_source.html">periodicFetcher.h</a>.</p>
+
 </div>
 </div>
 <a id="af49d8bd5f679e0c054fa64857d577298" name="af49d8bd5f679e0c054fa64857d577298"></a>
@@ -367,6 +381,8 @@ Static Private Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Reference to <a class="el" href="classObservable.html" title="Represents the subject (or observable) in the Observer design pattern.">Observable</a> object to which updates are sent. </p>
+
+<p class="definition">Definition at line <a class="el" href="periodicFetcher_8h_source.html#l00070">70</a> of file <a class="el" href="periodicFetcher_8h_source.html">periodicFetcher.h</a>.</p>
 
 </div>
 </div>
@@ -392,6 +408,8 @@ Static Private Attributes</h2></td></tr>
 
 <p>Object used for generating pie charts from the fetched data. </p>
 
+<p class="definition">Definition at line <a class="el" href="periodicFetcher_8h_source.html#l00069">69</a> of file <a class="el" href="periodicFetcher_8h_source.html">periodicFetcher.h</a>.</p>
+
 </div>
 </div>
 <a id="acd2bc4762e1b18c1d6b080ac19e756dc" name="acd2bc4762e1b18c1d6b080ac19e756dc"></a>
@@ -415,6 +433,8 @@ Static Private Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Atomic flag indicating if the fetching process should be stopped. </p>
+
+<p class="definition">Definition at line <a class="el" href="periodicFetcher_8h_source.html#l00071">71</a> of file <a class="el" href="periodicFetcher_8h_source.html">periodicFetcher.h</a>.</p>
 
 </div>
 </div>
@@ -440,11 +460,13 @@ Static Private Attributes</h2></td></tr>
 
 <p>Enumerated type representing the unit of fetch interval (e.g., SEC, MIN, HR). </p>
 
+<p class="definition">Definition at line <a class="el" href="periodicFetcher_8h_source.html#l00068">68</a> of file <a class="el" href="periodicFetcher_8h_source.html">periodicFetcher.h</a>.</p>
+
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following files:<ul>
 <li>include/service/<a class="el" href="periodicFetcher_8h_source.html">periodicFetcher.h</a></li>
-<li>src/service/<a class="el" href="periodicFetcher_8cpp.html">periodicFetcher.cpp</a></li>
+<li>src/service/<a class="el" href="periodicFetcher_8cpp_source.html">periodicFetcher.cpp</a></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->
@@ -452,7 +474,7 @@ Static Private Attributes</h2></td></tr>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="classPeriodicFetcher.html">PeriodicFetcher</a></li>
-    <li class="footer">Generated on Fri Sep 22 2023 17:03:35 for API de Paris - Documentation du Gestionnaire by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.4 </li>
+    <li class="footer">Generated on Fri Sep 22 2023 17:57:21 for API de Paris - Documentation du Gestionnaire by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.4 </li>
   </ul>
 </div>
 </body>

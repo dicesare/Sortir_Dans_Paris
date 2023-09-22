@@ -1,0 +1,201 @@
+\hypertarget{classSignalHandler}{}\doxysection{Signal\+Handler Class Reference}
+\label{classSignalHandler}\index{SignalHandler@{SignalHandler}}
+
+
+Singleton-\/based handler for system signals.  
+
+
+
+
+{\ttfamily \#include $<$signal\+Handler.\+h$>$}
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{classSignalHandler_a90eff6c9610cdcd77a1706491f2ce28a}{setup\+Signal\+Handlers}} ()
+\begin{DoxyCompactList}\small\item\em Initialize and set up signal handlers for the program. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classSignalHandler_a8030ca5796b5a5b4b0f54c3ff9405e84}{is\+Shutdown\+Requested}} () const
+\begin{DoxyCompactList}\small\item\em Determine if a shutdown signal has been received. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static \mbox{\hyperlink{classSignalHandler}{Signal\+Handler}} \& \mbox{\hyperlink{classSignalHandler_a15631110fc9c8fee4c1b2bf3bced2de3}{get\+Instance}} ()
+\begin{DoxyCompactList}\small\item\em Retrieve the singleton instance of \mbox{\hyperlink{classSignalHandler}{Signal\+Handler}}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classSignalHandler_a3149ab1b5e1c8940d11b182f8059d916}{Signal\+Handler}} ()
+\begin{DoxyCompactList}\small\item\em Private constructor to ensure the singleton pattern. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classSignalHandler_addc8b5b0b969eb405376a77a369de007}{$\sim$\+Signal\+Handler}} ()
+\begin{DoxyCompactList}\small\item\em Private destructor to prevent external deletion. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classSignalHandler_aa974b64751e65547b746c5fbfa4877c0}{Signal\+Handler}} (const \mbox{\hyperlink{classSignalHandler}{Signal\+Handler}} \&)=delete
+\item 
+\mbox{\hyperlink{classSignalHandler}{Signal\+Handler}} \& \mbox{\hyperlink{classSignalHandler_a4b822693a1aefcd12bb830b54ec3b988}{operator=}} (const \mbox{\hyperlink{classSignalHandler}{Signal\+Handler}} \&)=delete
+\end{DoxyCompactItemize}
+\doxysubsection*{Static Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static void \mbox{\hyperlink{classSignalHandler_a0899d0c83b42582e862d2f4879e6a2e7}{handle\+Signal}} (int signum)
+\begin{DoxyCompactList}\small\item\em Internal handler for system signals. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Static Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+static std\+::atomic$<$ bool $>$ \mbox{\hyperlink{classSignalHandler_a341bb6348f9e951f87757bb9685b9734}{shutdown\+Requested}}
+\begin{DoxyCompactList}\small\item\em Atomic flag to track if a shutdown signal has been received. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Singleton-\/based handler for system signals. 
+
+The \mbox{\hyperlink{classSignalHandler}{Signal\+Handler}} class provides methods to set up handlers for system signals, particularly for enabling graceful shutdown mechanisms. Being designed as a singleton ensures that only one instance handles all signals in a consistent manner. 
+
+Definition at line \mbox{\hyperlink{signalHandler_8h_source_l00028}{28}} of file \mbox{\hyperlink{signalHandler_8h_source}{signal\+Handler.\+h}}.
+
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classSignalHandler_a3149ab1b5e1c8940d11b182f8059d916}\label{classSignalHandler_a3149ab1b5e1c8940d11b182f8059d916}} 
+\index{SignalHandler@{SignalHandler}!SignalHandler@{SignalHandler}}
+\index{SignalHandler@{SignalHandler}!SignalHandler@{SignalHandler}}
+\doxysubsubsection{\texorpdfstring{SignalHandler()}{SignalHandler()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily Signal\+Handler\+::\+Signal\+Handler (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Private constructor to ensure the singleton pattern. 
+
+
+
+Definition at line \mbox{\hyperlink{signalHandler_8cpp_source_l00010}{10}} of file \mbox{\hyperlink{signalHandler_8cpp_source}{signal\+Handler.\+cpp}}.
+
+\mbox{\Hypertarget{classSignalHandler_addc8b5b0b969eb405376a77a369de007}\label{classSignalHandler_addc8b5b0b969eb405376a77a369de007}} 
+\index{SignalHandler@{SignalHandler}!````~SignalHandler@{$\sim$SignalHandler}}
+\index{````~SignalHandler@{$\sim$SignalHandler}!SignalHandler@{SignalHandler}}
+\doxysubsubsection{\texorpdfstring{$\sim$SignalHandler()}{~SignalHandler()}}
+{\footnotesize\ttfamily Signal\+Handler\+::$\sim$\+Signal\+Handler (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Private destructor to prevent external deletion. 
+
+
+
+Definition at line \mbox{\hyperlink{signalHandler_8cpp_source_l00012}{12}} of file \mbox{\hyperlink{signalHandler_8cpp_source}{signal\+Handler.\+cpp}}.
+
+\mbox{\Hypertarget{classSignalHandler_aa974b64751e65547b746c5fbfa4877c0}\label{classSignalHandler_aa974b64751e65547b746c5fbfa4877c0}} 
+\index{SignalHandler@{SignalHandler}!SignalHandler@{SignalHandler}}
+\index{SignalHandler@{SignalHandler}!SignalHandler@{SignalHandler}}
+\doxysubsubsection{\texorpdfstring{SignalHandler()}{SignalHandler()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily Signal\+Handler\+::\+Signal\+Handler (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classSignalHandler}{Signal\+Handler}} \&}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [delete]}}
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classSignalHandler_a15631110fc9c8fee4c1b2bf3bced2de3}\label{classSignalHandler_a15631110fc9c8fee4c1b2bf3bced2de3}} 
+\index{SignalHandler@{SignalHandler}!getInstance@{getInstance}}
+\index{getInstance@{getInstance}!SignalHandler@{SignalHandler}}
+\doxysubsubsection{\texorpdfstring{getInstance()}{getInstance()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classSignalHandler}{Signal\+Handler}} \& Signal\+Handler\+::get\+Instance (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Retrieve the singleton instance of \mbox{\hyperlink{classSignalHandler}{Signal\+Handler}}. 
+
+\begin{DoxyReturn}{Returns}
+\mbox{\hyperlink{classSignalHandler}{Signal\+Handler}}\& Singleton instance of the \mbox{\hyperlink{classSignalHandler}{Signal\+Handler}}. 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{signalHandler_8cpp_source_l00005}{5}} of file \mbox{\hyperlink{signalHandler_8cpp_source}{signal\+Handler.\+cpp}}.
+
+Here is the caller graph for this function\+:
+% FIG 0
+\mbox{\Hypertarget{classSignalHandler_a0899d0c83b42582e862d2f4879e6a2e7}\label{classSignalHandler_a0899d0c83b42582e862d2f4879e6a2e7}} 
+\index{SignalHandler@{SignalHandler}!handleSignal@{handleSignal}}
+\index{handleSignal@{handleSignal}!SignalHandler@{SignalHandler}}
+\doxysubsubsection{\texorpdfstring{handleSignal()}{handleSignal()}}
+{\footnotesize\ttfamily void Signal\+Handler\+::handle\+Signal (\begin{DoxyParamCaption}\item[{int}]{signum }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}
+
+
+
+Internal handler for system signals. 
+
+This function is invoked when specific signals (e.\+g., SIGINT) are received by the program. Its primary role is to set the shutdown flag, facilitating a graceful program termination.
+
+
+\begin{DoxyParams}{Parameters}
+{\em signum} & The number of the received signal. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{signalHandler_8cpp_source_l00022}{22}} of file \mbox{\hyperlink{signalHandler_8cpp_source}{signal\+Handler.\+cpp}}.
+
+Here is the caller graph for this function\+:
+% FIG 1
+\mbox{\Hypertarget{classSignalHandler_a8030ca5796b5a5b4b0f54c3ff9405e84}\label{classSignalHandler_a8030ca5796b5a5b4b0f54c3ff9405e84}} 
+\index{SignalHandler@{SignalHandler}!isShutdownRequested@{isShutdownRequested}}
+\index{isShutdownRequested@{isShutdownRequested}!SignalHandler@{SignalHandler}}
+\doxysubsubsection{\texorpdfstring{isShutdownRequested()}{isShutdownRequested()}}
+{\footnotesize\ttfamily bool Signal\+Handler\+::is\+Shutdown\+Requested (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Determine if a shutdown signal has been received. 
+
+\begin{DoxyReturn}{Returns}
+true if a shutdown signal is detected. 
+
+false otherwise. 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{signalHandler_8cpp_source_l00018}{18}} of file \mbox{\hyperlink{signalHandler_8cpp_source}{signal\+Handler.\+cpp}}.
+
+\mbox{\Hypertarget{classSignalHandler_a4b822693a1aefcd12bb830b54ec3b988}\label{classSignalHandler_a4b822693a1aefcd12bb830b54ec3b988}} 
+\index{SignalHandler@{SignalHandler}!operator=@{operator=}}
+\index{operator=@{operator=}!SignalHandler@{SignalHandler}}
+\doxysubsubsection{\texorpdfstring{operator=()}{operator=()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classSignalHandler}{Signal\+Handler}} \& Signal\+Handler\+::operator= (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classSignalHandler}{Signal\+Handler}} \&}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [delete]}}
+
+\mbox{\Hypertarget{classSignalHandler_a90eff6c9610cdcd77a1706491f2ce28a}\label{classSignalHandler_a90eff6c9610cdcd77a1706491f2ce28a}} 
+\index{SignalHandler@{SignalHandler}!setupSignalHandlers@{setupSignalHandlers}}
+\index{setupSignalHandlers@{setupSignalHandlers}!SignalHandler@{SignalHandler}}
+\doxysubsubsection{\texorpdfstring{setupSignalHandlers()}{setupSignalHandlers()}}
+{\footnotesize\ttfamily void Signal\+Handler\+::setup\+Signal\+Handlers (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Initialize and set up signal handlers for the program. 
+
+
+
+Definition at line \mbox{\hyperlink{signalHandler_8cpp_source_l00014}{14}} of file \mbox{\hyperlink{signalHandler_8cpp_source}{signal\+Handler.\+cpp}}.
+
+Here is the call graph for this function\+:
+% FIG 2
+Here is the caller graph for this function\+:
+% FIG 3
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{classSignalHandler_a341bb6348f9e951f87757bb9685b9734}\label{classSignalHandler_a341bb6348f9e951f87757bb9685b9734}} 
+\index{SignalHandler@{SignalHandler}!shutdownRequested@{shutdownRequested}}
+\index{shutdownRequested@{shutdownRequested}!SignalHandler@{SignalHandler}}
+\doxysubsubsection{\texorpdfstring{shutdownRequested}{shutdownRequested}}
+{\footnotesize\ttfamily std\+::atomic$<$ bool $>$ Signal\+Handler\+::shutdown\+Requested\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}
+
+
+
+Atomic flag to track if a shutdown signal has been received. 
+
+
+
+Definition at line \mbox{\hyperlink{signalHandler_8h_source_l00079}{79}} of file \mbox{\hyperlink{signalHandler_8h_source}{signal\+Handler.\+h}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+include/service/\mbox{\hyperlink{signalHandler_8h}{signal\+Handler.\+h}}\item 
+src/service/\mbox{\hyperlink{signalHandler_8cpp}{signal\+Handler.\+cpp}}\end{DoxyCompactItemize}

@@ -142,6 +142,8 @@ Static Private Attributes</h2></td></tr>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p >Singleton-based handler for system signals. </p>
 <p >The <a class="el" href="classSignalHandler.html" title="Singleton-based handler for system signals.">SignalHandler</a> class provides methods to set up handlers for system signals, particularly for enabling graceful shutdown mechanisms. Being designed as a singleton ensures that only one instance handles all signals in a consistent manner. </p>
+
+<p class="definition">Definition at line <a class="el" href="signalHandler_8h_source.html#l00028">28</a> of file <a class="el" href="signalHandler_8h_source.html">signalHandler.h</a>.</p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="a3149ab1b5e1c8940d11b182f8059d916" name="a3149ab1b5e1c8940d11b182f8059d916"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a3149ab1b5e1c8940d11b182f8059d916">&#9670;&nbsp;</a></span>SignalHandler() <span class="overload">[1/2]</span></h2>
@@ -167,6 +169,8 @@ Static Private Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Private constructor to ensure the singleton pattern. </p>
+
+<p class="definition">Definition at line <a class="el" href="signalHandler_8cpp_source.html#l00010">10</a> of file <a class="el" href="signalHandler_8cpp_source.html">signalHandler.cpp</a>.</p>
 
 </div>
 </div>
@@ -194,6 +198,8 @@ Static Private Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Private destructor to prevent external deletion. </p>
+
+<p class="definition">Definition at line <a class="el" href="signalHandler_8cpp_source.html#l00012">12</a> of file <a class="el" href="signalHandler_8cpp_source.html">signalHandler.cpp</a>.</p>
 
 </div>
 </div>
@@ -249,6 +255,8 @@ Static Private Attributes</h2></td></tr>
 
 <p>Retrieve the singleton instance of <a class="el" href="classSignalHandler.html" title="Singleton-based handler for system signals.">SignalHandler</a>. </p>
 <dl class="section return"><dt>Returns</dt><dd><a class="el" href="classSignalHandler.html" title="Singleton-based handler for system signals.">SignalHandler</a>&amp; Singleton instance of the <a class="el" href="classSignalHandler.html" title="Singleton-based handler for system signals.">SignalHandler</a>. </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="signalHandler_8cpp_source.html#l00005">5</a> of file <a class="el" href="signalHandler_8cpp_source.html">signalHandler.cpp</a>.</p>
 <div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-0-trigger" src="closed.png" alt="+"/> Here is the caller graph for this function:</div>
 <div id="dynsection-0-summary" class="dynsummary" style="display:block;">
@@ -291,6 +299,8 @@ Static Private Attributes</h2></td></tr>
   </table>
   </dd>
 </dl>
+
+<p class="definition">Definition at line <a class="el" href="signalHandler_8cpp_source.html#l00022">22</a> of file <a class="el" href="signalHandler_8cpp_source.html">signalHandler.cpp</a>.</p>
 <div id="dynsection-1" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-1-trigger" src="closed.png" alt="+"/> Here is the caller graph for this function:</div>
 <div id="dynsection-1-summary" class="dynsummary" style="display:block;">
@@ -320,6 +330,8 @@ Static Private Attributes</h2></td></tr>
 <dl class="section return"><dt>Returns</dt><dd>true if a shutdown signal is detected. </dd>
 <dd>
 false otherwise. </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="signalHandler_8cpp_source.html#l00018">18</a> of file <a class="el" href="signalHandler_8cpp_source.html">signalHandler.cpp</a>.</p>
 
 </div>
 </div>
@@ -365,6 +377,8 @@ false otherwise. </dd></dl>
 </div><div class="memdoc">
 
 <p>Initialize and set up signal handlers for the program. </p>
+
+<p class="definition">Definition at line <a class="el" href="signalHandler_8cpp_source.html#l00014">14</a> of file <a class="el" href="signalHandler_8cpp_source.html">signalHandler.cpp</a>.</p>
 <div id="dynsection-2" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-2-trigger" src="closed.png" alt="+"/> Here is the call graph for this function:</div>
 <div id="dynsection-2-summary" class="dynsummary" style="display:block;">
@@ -405,11 +419,13 @@ false otherwise. </dd></dl>
 
 <p>Atomic flag to track if a shutdown signal has been received. </p>
 
+<p class="definition">Definition at line <a class="el" href="signalHandler_8h_source.html#l00079">79</a> of file <a class="el" href="signalHandler_8h_source.html">signalHandler.h</a>.</p>
+
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following files:<ul>
 <li>include/service/<a class="el" href="signalHandler_8h_source.html">signalHandler.h</a></li>
-<li>src/service/<a class="el" href="signalHandler_8cpp.html">signalHandler.cpp</a></li>
+<li>src/service/<a class="el" href="signalHandler_8cpp_source.html">signalHandler.cpp</a></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->
@@ -417,7 +433,7 @@ false otherwise. </dd></dl>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="classSignalHandler.html">SignalHandler</a></li>
-    <li class="footer">Generated on Fri Sep 22 2023 17:03:35 for API de Paris - Documentation du Gestionnaire by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.4 </li>
+    <li class="footer">Generated on Fri Sep 22 2023 17:57:21 for API de Paris - Documentation du Gestionnaire by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.4 </li>
   </ul>
 </div>
 </body>

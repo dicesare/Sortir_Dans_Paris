@@ -1,0 +1,168 @@
+\hypertarget{classDataStorage}{}\doxysection{Data\+Storage Class Reference}
+\label{classDataStorage}\index{DataStorage@{DataStorage}}
+
+
+Responsible for persisting data in JSON format.  
+
+
+
+
+{\ttfamily \#include $<$data\+Storage.\+h$>$}
+
+
+
+Collaboration diagram for Data\+Storage\+:
+% FIG 0
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classDataStorage_a22825d40495dae6a5df46d629fb26a3f}{Data\+Storage}} ()
+\begin{DoxyCompactList}\small\item\em Default constructor for \mbox{\hyperlink{classDataStorage}{Data\+Storage}}. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classDataStorage_a3574d849493097410d0879263706ee69}{save\+To\+File}} (const std\+::map$<$ std\+::string, nlohmann\+::json $>$ \&data, const std\+::string \&filename)
+\begin{DoxyCompactList}\small\item\em Saves the provided data to the given file. \end{DoxyCompactList}\item 
+std\+::map$<$ std\+::string, nlohmann\+::json $>$ \mbox{\hyperlink{classDataStorage_a898ad89ba95776da063f62c95677f78c}{read\+From\+File}} (const std\+::string \&filename)
+\begin{DoxyCompactList}\small\item\em Reads data from the given file. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+std\+::string \mbox{\hyperlink{classDataStorage_a4f7c8d0fc570f9ca75609f004974fa0b}{get\+Valid\+File\+Path}} (const std\+::string \&filename)
+\begin{DoxyCompactList}\small\item\em Helper function to validate and get the file path. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classFileHelper}{File\+Helper}} \mbox{\hyperlink{classDataStorage_a1b36b28a8ce65819497dfdb1e03e66d1}{file\+Helper}}
+\begin{DoxyCompactList}\small\item\em Helper object for file-\/related operations. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Responsible for persisting data in JSON format. 
+
+The class allows saving of data items to files and reading them back. Data items are represented as JSON objects and are mapped to string keys for easy access and manipulation. 
+
+Definition at line \mbox{\hyperlink{dataStorage_8h_source_l00029}{29}} of file \mbox{\hyperlink{dataStorage_8h_source}{data\+Storage.\+h}}.
+
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classDataStorage_a22825d40495dae6a5df46d629fb26a3f}\label{classDataStorage_a22825d40495dae6a5df46d629fb26a3f}} 
+\index{DataStorage@{DataStorage}!DataStorage@{DataStorage}}
+\index{DataStorage@{DataStorage}!DataStorage@{DataStorage}}
+\doxysubsubsection{\texorpdfstring{DataStorage()}{DataStorage()}}
+{\footnotesize\ttfamily Data\+Storage\+::\+Data\+Storage (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Default constructor for \mbox{\hyperlink{classDataStorage}{Data\+Storage}}. 
+
+
+
+Definition at line \mbox{\hyperlink{dataStorage_8cpp_source_l00004}{4}} of file \mbox{\hyperlink{dataStorage_8cpp_source}{data\+Storage.\+cpp}}.
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classDataStorage_a4f7c8d0fc570f9ca75609f004974fa0b}\label{classDataStorage_a4f7c8d0fc570f9ca75609f004974fa0b}} 
+\index{DataStorage@{DataStorage}!getValidFilePath@{getValidFilePath}}
+\index{getValidFilePath@{getValidFilePath}!DataStorage@{DataStorage}}
+\doxysubsubsection{\texorpdfstring{getValidFilePath()}{getValidFilePath()}}
+{\footnotesize\ttfamily std\+::string Data\+Storage\+::get\+Valid\+File\+Path (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{filename }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Helper function to validate and get the file path. 
+
+Uses the \mbox{\hyperlink{classFileHelper}{File\+Helper}} object to retrieve the file path and checks its validity. If it\textquotesingle{}s invalid, throws an exception. 
+\begin{DoxyParams}{Parameters}
+{\em filename} & The name of the file for which to get the path. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+std\+::string The valid file path for the given filename. 
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em std\+::runtime\+\_\+error} & if unable to retrieve the user\textquotesingle{}s home directory. \\
+\hline
+\end{DoxyExceptions}
+
+
+Definition at line \mbox{\hyperlink{dataStorage_8cpp_source_l00007}{7}} of file \mbox{\hyperlink{dataStorage_8cpp_source}{data\+Storage.\+cpp}}.
+
+Here is the call graph for this function\+:
+% FIG 1
+Here is the caller graph for this function\+:
+% FIG 2
+\mbox{\Hypertarget{classDataStorage_a898ad89ba95776da063f62c95677f78c}\label{classDataStorage_a898ad89ba95776da063f62c95677f78c}} 
+\index{DataStorage@{DataStorage}!readFromFile@{readFromFile}}
+\index{readFromFile@{readFromFile}!DataStorage@{DataStorage}}
+\doxysubsubsection{\texorpdfstring{readFromFile()}{readFromFile()}}
+{\footnotesize\ttfamily std\+::map$<$ std\+::string, nlohmann\+::json $>$ Data\+Storage\+::read\+From\+File (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{filename }\end{DoxyParamCaption})}
+
+
+
+Reads data from the given file. 
+
+Accesses the given file and extracts the stored JSON data. The data is then returned in the form of a map. 
+\begin{DoxyParams}{Parameters}
+{\em filename} & The name of the file from which to read the data. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+std\+::map$<$std\+::string, nlohmann\+::json$>$ A map of data items. 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{dataStorage_8cpp_source_l00046}{46}} of file \mbox{\hyperlink{dataStorage_8cpp_source}{data\+Storage.\+cpp}}.
+
+Here is the call graph for this function\+:
+% FIG 3
+Here is the caller graph for this function\+:
+% FIG 4
+\mbox{\Hypertarget{classDataStorage_a3574d849493097410d0879263706ee69}\label{classDataStorage_a3574d849493097410d0879263706ee69}} 
+\index{DataStorage@{DataStorage}!saveToFile@{saveToFile}}
+\index{saveToFile@{saveToFile}!DataStorage@{DataStorage}}
+\doxysubsubsection{\texorpdfstring{saveToFile()}{saveToFile()}}
+{\footnotesize\ttfamily void Data\+Storage\+::save\+To\+File (\begin{DoxyParamCaption}\item[{const std\+::map$<$ std\+::string, nlohmann\+::json $>$ \&}]{data,  }\item[{const std\+::string \&}]{filename }\end{DoxyParamCaption})}
+
+
+
+Saves the provided data to the given file. 
+
+Reads existing data from the file (if it exists), merges with the new data, and saves the combined data back to the file. 
+\begin{DoxyParams}{Parameters}
+{\em data} & The data to be saved. \\
+\hline
+{\em filename} & The name of the file to which the data will be saved. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{dataStorage_8cpp_source_l00015}{15}} of file \mbox{\hyperlink{dataStorage_8cpp_source}{data\+Storage.\+cpp}}.
+
+Here is the call graph for this function\+:
+% FIG 5
+Here is the caller graph for this function\+:
+% FIG 6
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{classDataStorage_a1b36b28a8ce65819497dfdb1e03e66d1}\label{classDataStorage_a1b36b28a8ce65819497dfdb1e03e66d1}} 
+\index{DataStorage@{DataStorage}!fileHelper@{fileHelper}}
+\index{fileHelper@{fileHelper}!DataStorage@{DataStorage}}
+\doxysubsubsection{\texorpdfstring{fileHelper}{fileHelper}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classFileHelper}{File\+Helper}} Data\+Storage\+::file\+Helper\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Helper object for file-\/related operations. 
+
+
+
+Definition at line \mbox{\hyperlink{dataStorage_8h_source_l00056}{56}} of file \mbox{\hyperlink{dataStorage_8h_source}{data\+Storage.\+h}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+include/storage/\mbox{\hyperlink{dataStorage_8h}{data\+Storage.\+h}}\item 
+src/storage/\mbox{\hyperlink{dataStorage_8cpp}{data\+Storage.\+cpp}}\end{DoxyCompactItemize}

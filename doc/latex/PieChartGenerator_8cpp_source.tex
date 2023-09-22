@@ -1,0 +1,207 @@
+\hypertarget{PieChartGenerator_8cpp_source}{}\doxysection{Pie\+Chart\+Generator.\+cpp}
+\label{PieChartGenerator_8cpp_source}\index{src/gdGeneration/PieChartGenerator.cpp@{src/gdGeneration/PieChartGenerator.cpp}}
+\mbox{\hyperlink{PieChartGenerator_8cpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{PieChartGenerator_8cpp_source_l00001}00001 \textcolor{preprocessor}{\#include "{}../../include/gdGeneration/PieChartGenerator.h"{}}}
+\DoxyCodeLine{\Hypertarget{PieChartGenerator_8cpp_source_l00002}00002 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{PieChartGenerator_8h}{PieChartGenerator.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{PieChartGenerator_8cpp_source_l00003}00003 }
+\DoxyCodeLine{\Hypertarget{PieChartGenerator_8cpp_source_l00004}\mbox{\hyperlink{classPieChartGenerator_a83ee6fdb562d564d764d48ee3ebe71c7}{00004}} \mbox{\hyperlink{classPieChartGenerator_a83ee6fdb562d564d764d48ee3ebe71c7}{PieChartGenerator::PieChartGenerator}}() : fileHelper() \{\}}
+\DoxyCodeLine{\Hypertarget{PieChartGenerator_8cpp_source_l00005}\mbox{\hyperlink{classPieChartGenerator_a43cdb09cfde85f6d76d798cdbd0bf448}{00005}} \mbox{\hyperlink{classPieChartGenerator_a43cdb09cfde85f6d76d798cdbd0bf448}{PieChartGenerator::\string~PieChartGenerator}}() \{\}}
+\DoxyCodeLine{\Hypertarget{PieChartGenerator_8cpp_source_l00006}00006 }
+\DoxyCodeLine{\Hypertarget{PieChartGenerator_8cpp_source_l00007}00007 }
+\DoxyCodeLine{\Hypertarget{PieChartGenerator_8cpp_source_l00008}\mbox{\hyperlink{classPieChartGenerator_a11d2d5f8dfc51fcebd7ea1dfce678629}{00008}} \mbox{\hyperlink{structColor}{Color}} \mbox{\hyperlink{classPieChartGenerator_a11d2d5f8dfc51fcebd7ea1dfce678629}{PieChartGenerator::generate\_random\_color}}()}
+\DoxyCodeLine{\Hypertarget{PieChartGenerator_8cpp_source_l00009}00009 \{}
+\DoxyCodeLine{\Hypertarget{PieChartGenerator_8cpp_source_l00010}00010     std::random\_device rd;}
+\DoxyCodeLine{\Hypertarget{PieChartGenerator_8cpp_source_l00011}00011     std::mt19937 gen(rd());}
+\DoxyCodeLine{\Hypertarget{PieChartGenerator_8cpp_source_l00012}00012     std::uniform\_int\_distribution<> distrib(0, 255);}
+\DoxyCodeLine{\Hypertarget{PieChartGenerator_8cpp_source_l00013}00013     }
+\DoxyCodeLine{\Hypertarget{PieChartGenerator_8cpp_source_l00014}00014     \mbox{\hyperlink{structColor}{Color}} color;}
+\DoxyCodeLine{\Hypertarget{PieChartGenerator_8cpp_source_l00015}00015     color.\mbox{\hyperlink{structColor_a4954bdc9772da2a610401b8a438125cb}{r}} = distrib(gen);}
+\DoxyCodeLine{\Hypertarget{PieChartGenerator_8cpp_source_l00016}00016     color.\mbox{\hyperlink{structColor_ab5656e995bddd43d286c7ff5629a31dd}{g}} = distrib(gen);}
+\DoxyCodeLine{\Hypertarget{PieChartGenerator_8cpp_source_l00017}00017     color.\mbox{\hyperlink{structColor_ae11f00d34bf3ecd8c8278f68876b82bf}{b}} = distrib(gen);}
+\DoxyCodeLine{\Hypertarget{PieChartGenerator_8cpp_source_l00018}00018     \textcolor{keywordflow}{return} color;}
+\DoxyCodeLine{\Hypertarget{PieChartGenerator_8cpp_source_l00019}00019     \textcolor{keywordflow}{return} \mbox{\hyperlink{GraphicsUtils_8h_ab33e4c738cf60cbc3a0fc112a1e403cd}{Color}}();}
+\DoxyCodeLine{\Hypertarget{PieChartGenerator_8cpp_source_l00020}00020 \}}
+\DoxyCodeLine{\Hypertarget{PieChartGenerator_8cpp_source_l00021}00021 }
+\DoxyCodeLine{\Hypertarget{PieChartGenerator_8cpp_source_l00022}\mbox{\hyperlink{classPieChartGenerator_a2f367ee64a37d9b971b24090f9842251}{00022}} \textcolor{keywordtype}{void} \mbox{\hyperlink{classPieChartGenerator_a2f367ee64a37d9b971b24090f9842251}{PieChartGenerator::generatePieChart}}(\textcolor{keyword}{const} std::map<std::string, nlohmann::json>\& dataForPie) \{}
+\DoxyCodeLine{\Hypertarget{PieChartGenerator_8cpp_source_l00023}00023     std::map<std::string, int> zipCodeCounts; \textcolor{comment}{// Stocke le nombre d'événements pour chaque code postal}}
+\DoxyCodeLine{\Hypertarget{PieChartGenerator_8cpp_source_l00024}00024     std::vector<PieChartSegment> segments;}
+\DoxyCodeLine{\Hypertarget{PieChartGenerator_8cpp_source_l00025}00025 }
+\DoxyCodeLine{\Hypertarget{PieChartGenerator_8cpp_source_l00026}00026     \textcolor{comment}{// Extraire les codes postaux des données et les compter}}
+\DoxyCodeLine{\Hypertarget{PieChartGenerator_8cpp_source_l00027}00027     \textcolor{keywordflow}{for} (\textcolor{keyword}{const} \textcolor{keyword}{auto}\& [\textcolor{keywordtype}{id}, data] : dataForPie) \{}
+\DoxyCodeLine{\Hypertarget{PieChartGenerator_8cpp_source_l00028}00028         \textcolor{keywordflow}{if} (data.contains(\textcolor{stringliteral}{"{}address\_zipcode"{}}) \&\& !data[\textcolor{stringliteral}{"{}address\_zipcode"{}}].is\_null()) \{}
+\DoxyCodeLine{\Hypertarget{PieChartGenerator_8cpp_source_l00029}00029             std::string zipCodeString = data[\textcolor{stringliteral}{"{}address\_zipcode"{}}].get<std::string>();}
+\DoxyCodeLine{\Hypertarget{PieChartGenerator_8cpp_source_l00030}00030 }
+\DoxyCodeLine{\Hypertarget{PieChartGenerator_8cpp_source_l00031}00031             \textcolor{comment}{// Enlever tous les caractères qui ne sont pas des chiffres}}
+\DoxyCodeLine{\Hypertarget{PieChartGenerator_8cpp_source_l00032}00032             zipCodeString.erase(}
+\DoxyCodeLine{\Hypertarget{PieChartGenerator_8cpp_source_l00033}00033                 std::remove\_if(}
+\DoxyCodeLine{\Hypertarget{PieChartGenerator_8cpp_source_l00034}00034                     zipCodeString.begin(),}
+\DoxyCodeLine{\Hypertarget{PieChartGenerator_8cpp_source_l00035}00035                     zipCodeString.end(),}
+\DoxyCodeLine{\Hypertarget{PieChartGenerator_8cpp_source_l00036}00036                     [](\textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{char} x) \{return !std::isdigit(x);\}), zipCodeString.end());}
+\DoxyCodeLine{\Hypertarget{PieChartGenerator_8cpp_source_l00037}00037 }
+\DoxyCodeLine{\Hypertarget{PieChartGenerator_8cpp_source_l00038}00038             \textcolor{comment}{// Vérifier si la chaîne est un code postal valide après avoir enlevé les caractères non numériques}}
+\DoxyCodeLine{\Hypertarget{PieChartGenerator_8cpp_source_l00039}00039             \textcolor{keywordflow}{if} (zipCodeString.length() >= 5) \{}
+\DoxyCodeLine{\Hypertarget{PieChartGenerator_8cpp_source_l00040}00040                 zipCodeString = zipCodeString.substr(0, 5);}
+\DoxyCodeLine{\Hypertarget{PieChartGenerator_8cpp_source_l00041}00041                 zipCodeCounts[zipCodeString]++;}
+\DoxyCodeLine{\Hypertarget{PieChartGenerator_8cpp_source_l00042}00042             \}}
+\DoxyCodeLine{\Hypertarget{PieChartGenerator_8cpp_source_l00043}00043         \}}
+\DoxyCodeLine{\Hypertarget{PieChartGenerator_8cpp_source_l00044}00044     \}}
+\DoxyCodeLine{\Hypertarget{PieChartGenerator_8cpp_source_l00045}00045     \textcolor{comment}{//afficher la somme de comptage total des count de zipCodeCounts}}
+\DoxyCodeLine{\Hypertarget{PieChartGenerator_8cpp_source_l00046}00046     \textcolor{keywordtype}{int} sommeCount = 0;}
+\DoxyCodeLine{\Hypertarget{PieChartGenerator_8cpp_source_l00047}00047     \textcolor{keywordflow}{for} (\textcolor{keyword}{const} \textcolor{keyword}{auto}\& count : zipCodeCounts) \{}
+\DoxyCodeLine{\Hypertarget{PieChartGenerator_8cpp_source_l00048}00048         sommeCount += count.second;}
+\DoxyCodeLine{\Hypertarget{PieChartGenerator_8cpp_source_l00049}00049     \}}
+\DoxyCodeLine{\Hypertarget{PieChartGenerator_8cpp_source_l00050}00050     \textcolor{comment}{// Créer les segments du graphique}}
+\DoxyCodeLine{\Hypertarget{PieChartGenerator_8cpp_source_l00051}00051     \textcolor{keywordflow}{for} (\textcolor{keyword}{const} \textcolor{keyword}{auto}\& [zipCode, count] : zipCodeCounts) \{}
+\DoxyCodeLine{\Hypertarget{PieChartGenerator_8cpp_source_l00052}00052         \mbox{\hyperlink{structPieChartSegment}{PieChartSegment}} segment;}
+\DoxyCodeLine{\Hypertarget{PieChartGenerator_8cpp_source_l00053}00053         segment.\mbox{\hyperlink{structPieChartSegment_a63634575933d944376e476ae0bf7179e}{percentage}} = (\textcolor{keyword}{static\_cast<}\textcolor{keywordtype}{double}\textcolor{keyword}{>}(count) / sommeCount) * 100.0;}
+\DoxyCodeLine{\Hypertarget{PieChartGenerator_8cpp_source_l00054}00054         segment.\mbox{\hyperlink{structPieChartSegment_a19772bddca1bd42fea0b1ef2b2839c0c}{label}} = zipCode;}
+\DoxyCodeLine{\Hypertarget{PieChartGenerator_8cpp_source_l00055}00055         segments.push\_back(segment);}
+\DoxyCodeLine{\Hypertarget{PieChartGenerator_8cpp_source_l00056}00056     \}}
+\DoxyCodeLine{\Hypertarget{PieChartGenerator_8cpp_source_l00057}00057     \textcolor{keywordtype}{double} otherPercentage = 0.0;}
+\DoxyCodeLine{\Hypertarget{PieChartGenerator_8cpp_source_l00058}00058     std::vector<PieChartSegment> filteredSegments;}
+\DoxyCodeLine{\Hypertarget{PieChartGenerator_8cpp_source_l00059}00059 }
+\DoxyCodeLine{\Hypertarget{PieChartGenerator_8cpp_source_l00060}00060     \textcolor{comment}{// Trier les segments par ordre croissant de pourcentage}}
+\DoxyCodeLine{\Hypertarget{PieChartGenerator_8cpp_source_l00061}00061     std::sort(segments.begin(), segments.end(), [](\textcolor{keyword}{const} \mbox{\hyperlink{structPieChartSegment}{PieChartSegment}}\& a, \textcolor{keyword}{const} \mbox{\hyperlink{structPieChartSegment}{PieChartSegment}}\& b) \{}
+\DoxyCodeLine{\Hypertarget{PieChartGenerator_8cpp_source_l00062}00062         return a.percentage < b.percentage;}
+\DoxyCodeLine{\Hypertarget{PieChartGenerator_8cpp_source_l00063}00063         \});}
+\DoxyCodeLine{\Hypertarget{PieChartGenerator_8cpp_source_l00064}00064     \textcolor{comment}{// Vérifier si le nombre de segments est supérieur à 34}}
+\DoxyCodeLine{\Hypertarget{PieChartGenerator_8cpp_source_l00065}00065     \textcolor{keywordflow}{while} (segments.size() > 34) \{}
+\DoxyCodeLine{\Hypertarget{PieChartGenerator_8cpp_source_l00066}00066         \textcolor{comment}{// Regrouper les plus petits segments en un seul segment "{}Autres"{}}}
+\DoxyCodeLine{\Hypertarget{PieChartGenerator_8cpp_source_l00067}00067         \textcolor{keywordtype}{double} otherPercentage = 0.0;}
+\DoxyCodeLine{\Hypertarget{PieChartGenerator_8cpp_source_l00068}00068         \textcolor{keywordflow}{while} (segments.size() > 33) \{  \textcolor{comment}{// 33 pour laisser de la place pour le segment "{}Autres"{}}}
+\DoxyCodeLine{\Hypertarget{PieChartGenerator_8cpp_source_l00069}00069             otherPercentage += segments.front().percentage;}
+\DoxyCodeLine{\Hypertarget{PieChartGenerator_8cpp_source_l00070}00070             segments.erase(segments.begin());}
+\DoxyCodeLine{\Hypertarget{PieChartGenerator_8cpp_source_l00071}00071         \}}
+\DoxyCodeLine{\Hypertarget{PieChartGenerator_8cpp_source_l00072}00072 }
+\DoxyCodeLine{\Hypertarget{PieChartGenerator_8cpp_source_l00073}00073         \mbox{\hyperlink{structPieChartSegment}{PieChartSegment}} otherSegment;}
+\DoxyCodeLine{\Hypertarget{PieChartGenerator_8cpp_source_l00074}00074         otherSegment.\mbox{\hyperlink{structPieChartSegment_a63634575933d944376e476ae0bf7179e}{percentage}} = otherPercentage;}
+\DoxyCodeLine{\Hypertarget{PieChartGenerator_8cpp_source_l00075}00075         otherSegment.\mbox{\hyperlink{structPieChartSegment_a19772bddca1bd42fea0b1ef2b2839c0c}{label}} = \textcolor{stringliteral}{"{}Autres"{}};}
+\DoxyCodeLine{\Hypertarget{PieChartGenerator_8cpp_source_l00076}00076         segments.push\_back(otherSegment);}
+\DoxyCodeLine{\Hypertarget{PieChartGenerator_8cpp_source_l00077}00077     \}}
+\DoxyCodeLine{\Hypertarget{PieChartGenerator_8cpp_source_l00078}00078     \textcolor{comment}{// Créer l'image du graphique}}
+\DoxyCodeLine{\Hypertarget{PieChartGenerator_8cpp_source_l00079}00079     gdImagePtr img = \mbox{\hyperlink{classPieChartGenerator_aa95dd31c6170513a9d82004d6db6cf15}{create\_pie\_chart\_image}}(segments.data(), segments.size(), \textcolor{stringliteral}{"{}Evenements par code postal"{}});}
+\DoxyCodeLine{\Hypertarget{PieChartGenerator_8cpp_source_l00080}00080     \mbox{\hyperlink{classPieChartGenerator_a1444353e0ccde4f5efdf29735b2209be}{fileHelper}}.\mbox{\hyperlink{classFileHelper_ac8fb7747ed6cc254aab512ca4454d13d}{setSubfolder}}(\textcolor{stringliteral}{"{}resources/graphic"{}});}
+\DoxyCodeLine{\Hypertarget{PieChartGenerator_8cpp_source_l00081}00081     std::string output\_path = \mbox{\hyperlink{classPieChartGenerator_a1444353e0ccde4f5efdf29735b2209be}{fileHelper}}.\mbox{\hyperlink{classFileHelper_a8a218e5dfb2e5ec90c4180671f868af1}{getFilePath}}(\textcolor{stringliteral}{"{}pie\_chart.png"{}}); \textcolor{comment}{// Ou utilisez la méthode fileHelper pour obtenir le chemin complet}}
+\DoxyCodeLine{\Hypertarget{PieChartGenerator_8cpp_source_l00082}00082     \mbox{\hyperlink{classPieChartGenerator_a2ef1ac6cd4ed58d5402b16daed87b773}{saveImage}}(img, output\_path);}
+\DoxyCodeLine{\Hypertarget{PieChartGenerator_8cpp_source_l00083}00083 \}}
+\DoxyCodeLine{\Hypertarget{PieChartGenerator_8cpp_source_l00084}00084 }
+\DoxyCodeLine{\Hypertarget{PieChartGenerator_8cpp_source_l00085}\mbox{\hyperlink{classPieChartGenerator_aa95dd31c6170513a9d82004d6db6cf15}{00085}} gdImagePtr \mbox{\hyperlink{classPieChartGenerator_aa95dd31c6170513a9d82004d6db6cf15}{PieChartGenerator::create\_pie\_chart\_image}}(\mbox{\hyperlink{structPieChartSegment}{PieChartSegment}}* segments, \textcolor{keywordtype}{int} segments\_count, \textcolor{keyword}{const} \textcolor{keywordtype}{char}* title) \{}
+\DoxyCodeLine{\Hypertarget{PieChartGenerator_8cpp_source_l00086}00086 }
+\DoxyCodeLine{\Hypertarget{PieChartGenerator_8cpp_source_l00087}00087     \textcolor{comment}{// Create a new image with predefined dimensions}}
+\DoxyCodeLine{\Hypertarget{PieChartGenerator_8cpp_source_l00088}00088     gdImagePtr img = gdImageCreate(\mbox{\hyperlink{BarPlotGenerator_8h_a241aeeb764887ae5e3de58b98f04b16d}{WIDTH}}, \mbox{\hyperlink{BarPlotGenerator_8h_aed89bd71aee8be823e8a20ec4e093c1e}{HEIGHT}});}
+\DoxyCodeLine{\Hypertarget{PieChartGenerator_8cpp_source_l00089}00089 }
+\DoxyCodeLine{\Hypertarget{PieChartGenerator_8cpp_source_l00090}00090     \textcolor{comment}{// Set a background color (adjust as required)}}
+\DoxyCodeLine{\Hypertarget{PieChartGenerator_8cpp_source_l00091}00091     \textcolor{keywordtype}{int} backgroundColor = gdImageColorAllocate(img, 255, 255, 255);  \textcolor{comment}{// Blanc}}
+\DoxyCodeLine{\Hypertarget{PieChartGenerator_8cpp_source_l00092}00092     gdImageFill(img, 0, 0, backgroundColor);}
+\DoxyCodeLine{\Hypertarget{PieChartGenerator_8cpp_source_l00093}00093 }
+\DoxyCodeLine{\Hypertarget{PieChartGenerator_8cpp_source_l00094}00094     \textcolor{comment}{//futur develloper border function}}
+\DoxyCodeLine{\Hypertarget{PieChartGenerator_8cpp_source_l00095}00095 }
+\DoxyCodeLine{\Hypertarget{PieChartGenerator_8cpp_source_l00096}00096     \textcolor{comment}{// Draw the segments of the pie chart}}
+\DoxyCodeLine{\Hypertarget{PieChartGenerator_8cpp_source_l00097}00097     \textcolor{keywordtype}{int} black = gdImageColorAllocate(img, 0, 0, 0);  \textcolor{comment}{// Noir pour les bordures}}
+\DoxyCodeLine{\Hypertarget{PieChartGenerator_8cpp_source_l00098}00098     \mbox{\hyperlink{classPieChartGenerator_a7a57c299567e171bc40bbd817e95954e}{draw\_segment\_and\_label}}(img, segments, segments\_count, \mbox{\hyperlink{BarPlotGenerator_8h_a241aeeb764887ae5e3de58b98f04b16d}{WIDTH}} / 2, \mbox{\hyperlink{BarPlotGenerator_8h_aed89bd71aee8be823e8a20ec4e093c1e}{HEIGHT}} / 2, 0, \mbox{\hyperlink{utils_8h_a3acffbd305ee72dcd4593c0d8af64a4f}{MIN}}(\mbox{\hyperlink{BarPlotGenerator_8h_a241aeeb764887ae5e3de58b98f04b16d}{WIDTH}}, \mbox{\hyperlink{BarPlotGenerator_8h_aed89bd71aee8be823e8a20ec4e093c1e}{HEIGHT}}) / 3, black);}
+\DoxyCodeLine{\Hypertarget{PieChartGenerator_8cpp_source_l00099}00099     \textcolor{comment}{// Draw labels for the segments}}
+\DoxyCodeLine{\Hypertarget{PieChartGenerator_8cpp_source_l00100}00100     \textcolor{comment}{// draw\_label(img, segments, segments\_count, WIDTH / 2, HEIGHT / 2, 0, MIN(WIDTH, HEIGHT) / 3, black);}}
+\DoxyCodeLine{\Hypertarget{PieChartGenerator_8cpp_source_l00101}00101 }
+\DoxyCodeLine{\Hypertarget{PieChartGenerator_8cpp_source_l00102}00102     \textcolor{comment}{// Drawn the title}}
+\DoxyCodeLine{\Hypertarget{PieChartGenerator_8cpp_source_l00103}00103     \mbox{\hyperlink{classPieChartGenerator_a8ef9b7f0d5bf8aecb441c1bfbaf389f9}{draw\_title}}(img, title, \mbox{\hyperlink{BarPlotGenerator_8h_a241aeeb764887ae5e3de58b98f04b16d}{WIDTH}} / 2, \mbox{\hyperlink{BarPlotGenerator_8h_aed89bd71aee8be823e8a20ec4e093c1e}{HEIGHT}} / 10, black);}
+\DoxyCodeLine{\Hypertarget{PieChartGenerator_8cpp_source_l00104}00104 }
+\DoxyCodeLine{\Hypertarget{PieChartGenerator_8cpp_source_l00105}00105     \textcolor{keywordflow}{return} img;}
+\DoxyCodeLine{\Hypertarget{PieChartGenerator_8cpp_source_l00106}00106 \}}
+\DoxyCodeLine{\Hypertarget{PieChartGenerator_8cpp_source_l00107}00107 }
+\DoxyCodeLine{\Hypertarget{PieChartGenerator_8cpp_source_l00108}\mbox{\hyperlink{classPieChartGenerator_a5362987c296f3dfee24390ee2881ff2a}{00108}} \textcolor{keywordtype}{void} \mbox{\hyperlink{classPieChartGenerator_a5362987c296f3dfee24390ee2881ff2a}{PieChartGenerator::calculate\_coordinates}}(\textcolor{keywordtype}{int} x, \textcolor{keywordtype}{int} y, \textcolor{keywordtype}{int} radius, \textcolor{keywordtype}{int} angle, \textcolor{keywordtype}{int}* coord\_x, \textcolor{keywordtype}{int}* coord\_y)}
+\DoxyCodeLine{\Hypertarget{PieChartGenerator_8cpp_source_l00109}00109 \{}
+\DoxyCodeLine{\Hypertarget{PieChartGenerator_8cpp_source_l00110}00110     *coord\_x = x + radius * cos(angle * M\_PI / 180);}
+\DoxyCodeLine{\Hypertarget{PieChartGenerator_8cpp_source_l00111}00111     *coord\_y = y + radius * sin(angle * M\_PI / 180);}
+\DoxyCodeLine{\Hypertarget{PieChartGenerator_8cpp_source_l00112}00112 \}}
+\DoxyCodeLine{\Hypertarget{PieChartGenerator_8cpp_source_l00113}00113 }
+\DoxyCodeLine{\Hypertarget{PieChartGenerator_8cpp_source_l00114}\mbox{\hyperlink{classPieChartGenerator_a7a57c299567e171bc40bbd817e95954e}{00114}} \textcolor{keywordtype}{void} \mbox{\hyperlink{classPieChartGenerator_a7a57c299567e171bc40bbd817e95954e}{PieChartGenerator::draw\_segment\_and\_label}}(gdImagePtr img, \mbox{\hyperlink{structPieChartSegment}{PieChartSegment}}* segments, \textcolor{keywordtype}{int} length, \textcolor{keywordtype}{int} x, \textcolor{keywordtype}{int} y, \textcolor{keywordtype}{double} start\_angle, \textcolor{keywordtype}{int} radius, \textcolor{keywordtype}{int} black)}
+\DoxyCodeLine{\Hypertarget{PieChartGenerator_8cpp_source_l00115}00115 \{}
+\DoxyCodeLine{\Hypertarget{PieChartGenerator_8cpp_source_l00116}00116     \textcolor{keyword}{const} \textcolor{keywordtype}{char}* fontPath = \mbox{\hyperlink{BarPlotGenerator_8h_af326d9b4cced6fd44a9f9567dc666014}{FONT\_PATH}};}
+\DoxyCodeLine{\Hypertarget{PieChartGenerator_8cpp_source_l00117}00117     \textcolor{keywordtype}{double} fontSize = radius * 0.05;}
+\DoxyCodeLine{\Hypertarget{PieChartGenerator_8cpp_source_l00118}00118     \textcolor{keyword}{const} \textcolor{keywordtype}{int} PADDING = 10;}
+\DoxyCodeLine{\Hypertarget{PieChartGenerator_8cpp_source_l00119}00119 }
+\DoxyCodeLine{\Hypertarget{PieChartGenerator_8cpp_source_l00120}00120     \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i = 0; i < length; i++) \{}
+\DoxyCodeLine{\Hypertarget{PieChartGenerator_8cpp_source_l00121}00121         \textcolor{comment}{// Draw segment}}
+\DoxyCodeLine{\Hypertarget{PieChartGenerator_8cpp_source_l00122}00122         \textcolor{keywordtype}{int} x\_end, y\_end;}
+\DoxyCodeLine{\Hypertarget{PieChartGenerator_8cpp_source_l00123}00123         \textcolor{keywordtype}{double} end\_angle = start\_angle + (segments[i].\mbox{\hyperlink{structPieChartSegment_a63634575933d944376e476ae0bf7179e}{percentage}} * 360) / 100;}
+\DoxyCodeLine{\Hypertarget{PieChartGenerator_8cpp_source_l00124}00124         \textcolor{comment}{// appeller la methode generate\_ramdom\_color de la structure Color}}
+\DoxyCodeLine{\Hypertarget{PieChartGenerator_8cpp_source_l00125}00125         \mbox{\hyperlink{structColor}{Color}} randColor = \mbox{\hyperlink{classPieChartGenerator_a11d2d5f8dfc51fcebd7ea1dfce678629}{generate\_random\_color}}();}
+\DoxyCodeLine{\Hypertarget{PieChartGenerator_8cpp_source_l00126}00126         \textcolor{keywordtype}{int} pieColor = gdImageColorAllocate(img, randColor.r, randColor.g, randColor.b);}
+\DoxyCodeLine{\Hypertarget{PieChartGenerator_8cpp_source_l00127}00127         gdImageFilledArc(img, x, y, 2 * radius, 2 * radius, start\_angle, end\_angle, pieColor, gdPie);}
+\DoxyCodeLine{\Hypertarget{PieChartGenerator_8cpp_source_l00128}00128         gdImageArc(img, x, y, 2 * radius, 2 * radius, start\_angle, end\_angle, black);}
+\DoxyCodeLine{\Hypertarget{PieChartGenerator_8cpp_source_l00129}00129         \mbox{\hyperlink{classPieChartGenerator_a5362987c296f3dfee24390ee2881ff2a}{calculate\_coordinates}}(x, y, radius, end\_angle, \&x\_end, \&y\_end);}
+\DoxyCodeLine{\Hypertarget{PieChartGenerator_8cpp_source_l00130}00130         gdImageLine(img, x, y, x\_end, y\_end, black);}
+\DoxyCodeLine{\Hypertarget{PieChartGenerator_8cpp_source_l00131}00131         \textcolor{comment}{// Draw label}}
+\DoxyCodeLine{\Hypertarget{PieChartGenerator_8cpp_source_l00132}00132         \textcolor{keywordflow}{if} (segments[i].percentage >= 1.0)}
+\DoxyCodeLine{\Hypertarget{PieChartGenerator_8cpp_source_l00133}00133         \{}
+\DoxyCodeLine{\Hypertarget{PieChartGenerator_8cpp_source_l00134}00134             \textcolor{keywordtype}{double} median = (end\_angle + start\_angle) / 2.0;}
+\DoxyCodeLine{\Hypertarget{PieChartGenerator_8cpp_source_l00135}00135             \textcolor{keywordtype}{int} label\_x, label\_y;}
+\DoxyCodeLine{\Hypertarget{PieChartGenerator_8cpp_source_l00136}00136             \mbox{\hyperlink{classPieChartGenerator_a5362987c296f3dfee24390ee2881ff2a}{calculate\_coordinates}}(x, y, radius * 1.15, median, \&label\_x, \&label\_y);}
+\DoxyCodeLine{\Hypertarget{PieChartGenerator_8cpp_source_l00137}00137 }
+\DoxyCodeLine{\Hypertarget{PieChartGenerator_8cpp_source_l00138}00138             \textcolor{keywordtype}{int} brect[8];}
+\DoxyCodeLine{\Hypertarget{PieChartGenerator_8cpp_source_l00139}00139             gdImageStringFT(NULL, brect, black, fontPath, fontSize, 0, 0, 0, (\textcolor{keywordtype}{char}*)segments[i].label.c\_str());}
+\DoxyCodeLine{\Hypertarget{PieChartGenerator_8cpp_source_l00140}00140 }
+\DoxyCodeLine{\Hypertarget{PieChartGenerator_8cpp_source_l00141}00141             \textcolor{keywordtype}{int} text\_width = brect[2] -\/ brect[0];}
+\DoxyCodeLine{\Hypertarget{PieChartGenerator_8cpp_source_l00142}00142             \textcolor{keywordtype}{int} text\_height = brect[3] -\/ brect[5];}
+\DoxyCodeLine{\Hypertarget{PieChartGenerator_8cpp_source_l00143}00143             label\_x -\/= text\_width / 2;}
+\DoxyCodeLine{\Hypertarget{PieChartGenerator_8cpp_source_l00144}00144             label\_y += text\_height / 2;}
+\DoxyCodeLine{\Hypertarget{PieChartGenerator_8cpp_source_l00145}00145 }
+\DoxyCodeLine{\Hypertarget{PieChartGenerator_8cpp_source_l00146}00146             gdImageStringFT(img, brect, black, fontPath, fontSize, 0, label\_x, label\_y, (\textcolor{keywordtype}{char}*)segments[i].label.c\_str());}
+\DoxyCodeLine{\Hypertarget{PieChartGenerator_8cpp_source_l00147}00147 }
+\DoxyCodeLine{\Hypertarget{PieChartGenerator_8cpp_source_l00148}00148             \textcolor{comment}{// Draw rectangle around the label}}
+\DoxyCodeLine{\Hypertarget{PieChartGenerator_8cpp_source_l00149}00149             gdImageRectangle(img, brect[0] -\/ PADDING, brect[5] -\/ PADDING, brect[2] + PADDING, brect[3] + PADDING, black);}
+\DoxyCodeLine{\Hypertarget{PieChartGenerator_8cpp_source_l00150}00150 }
+\DoxyCodeLine{\Hypertarget{PieChartGenerator_8cpp_source_l00151}00151             \textcolor{comment}{// Calcul du point sur le bord du cercle}}
+\DoxyCodeLine{\Hypertarget{PieChartGenerator_8cpp_source_l00152}00152             \textcolor{keywordtype}{int} x\_border, y\_border;}
+\DoxyCodeLine{\Hypertarget{PieChartGenerator_8cpp_source_l00153}00153             \mbox{\hyperlink{classPieChartGenerator_a5362987c296f3dfee24390ee2881ff2a}{calculate\_coordinates}}(x, y, radius, median, \&x\_border, \&y\_border);}
+\DoxyCodeLine{\Hypertarget{PieChartGenerator_8cpp_source_l00154}00154             \textcolor{comment}{// Calcul d'un point intermédiaire sur la médiane}}
+\DoxyCodeLine{\Hypertarget{PieChartGenerator_8cpp_source_l00155}00155             \textcolor{keywordtype}{double} median\_rad = median * M\_PI / 180;}
+\DoxyCodeLine{\Hypertarget{PieChartGenerator_8cpp_source_l00156}00156             \textcolor{keywordtype}{double} mid\_radius = 1.05 * radius; \textcolor{comment}{// Vous pouvez ajuster cette valeur}}
+\DoxyCodeLine{\Hypertarget{PieChartGenerator_8cpp_source_l00157}00157             \textcolor{keywordtype}{int} x\_med = x + mid\_radius * cos(median\_rad);}
+\DoxyCodeLine{\Hypertarget{PieChartGenerator_8cpp_source_l00158}00158             \textcolor{keywordtype}{int} y\_med = y + mid\_radius * sin(median\_rad);}
+\DoxyCodeLine{\Hypertarget{PieChartGenerator_8cpp_source_l00159}00159             }
+\DoxyCodeLine{\Hypertarget{PieChartGenerator_8cpp_source_l00160}00160             \textcolor{comment}{// Dessinez la ligne du bord du cercle au point intermédiaire}}
+\DoxyCodeLine{\Hypertarget{PieChartGenerator_8cpp_source_l00161}00161             gdImageLine(img, x\_border, y\_border, x\_med, y\_med, black);}
+\DoxyCodeLine{\Hypertarget{PieChartGenerator_8cpp_source_l00162}00162         \}}
+\DoxyCodeLine{\Hypertarget{PieChartGenerator_8cpp_source_l00163}00163 }
+\DoxyCodeLine{\Hypertarget{PieChartGenerator_8cpp_source_l00164}00164         start\_angle = end\_angle;}
+\DoxyCodeLine{\Hypertarget{PieChartGenerator_8cpp_source_l00165}00165     \}}
+\DoxyCodeLine{\Hypertarget{PieChartGenerator_8cpp_source_l00166}00166 \}}
+\DoxyCodeLine{\Hypertarget{PieChartGenerator_8cpp_source_l00167}00167 }
+\DoxyCodeLine{\Hypertarget{PieChartGenerator_8cpp_source_l00168}00168 }
+\DoxyCodeLine{\Hypertarget{PieChartGenerator_8cpp_source_l00169}\mbox{\hyperlink{classPieChartGenerator_a8ef9b7f0d5bf8aecb441c1bfbaf389f9}{00169}} \textcolor{keywordtype}{void} \mbox{\hyperlink{classPieChartGenerator_a8ef9b7f0d5bf8aecb441c1bfbaf389f9}{PieChartGenerator::draw\_title}}(gdImagePtr img, \textcolor{keyword}{const} \textcolor{keywordtype}{char}* title, \textcolor{keywordtype}{int} x, \textcolor{keywordtype}{int} y, \textcolor{keywordtype}{int} color) \{}
+\DoxyCodeLine{\Hypertarget{PieChartGenerator_8cpp_source_l00170}00170     \textcolor{keywordtype}{int} brect[8];}
+\DoxyCodeLine{\Hypertarget{PieChartGenerator_8cpp_source_l00171}00171     \textcolor{keywordtype}{double} size = \mbox{\hyperlink{BarPlotGenerator_8h_a3d277f5a5dec260aa85c464f96800b9e}{SIZE\_TITLE}};}
+\DoxyCodeLine{\Hypertarget{PieChartGenerator_8cpp_source_l00172}00172     \textcolor{keywordtype}{char}* err;}
+\DoxyCodeLine{\Hypertarget{PieChartGenerator_8cpp_source_l00173}00173     \textcolor{keywordtype}{double} angle = 0.0;}
+\DoxyCodeLine{\Hypertarget{PieChartGenerator_8cpp_source_l00174}00174     \textcolor{keywordtype}{int} len = strlen(title);}
+\DoxyCodeLine{\Hypertarget{PieChartGenerator_8cpp_source_l00175}00175     \textcolor{keywordtype}{char} \textcolor{keywordtype}{string}[len + 1];}
+\DoxyCodeLine{\Hypertarget{PieChartGenerator_8cpp_source_l00176}00176     \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i = 0; i < len; i++)}
+\DoxyCodeLine{\Hypertarget{PieChartGenerator_8cpp_source_l00177}00177     \{}
+\DoxyCodeLine{\Hypertarget{PieChartGenerator_8cpp_source_l00178}00178         \textcolor{keywordtype}{string}[i] = toupper(title[i]);}
+\DoxyCodeLine{\Hypertarget{PieChartGenerator_8cpp_source_l00179}00179     \}}
+\DoxyCodeLine{\Hypertarget{PieChartGenerator_8cpp_source_l00180}00180     \textcolor{keywordtype}{string}[len] = \textcolor{charliteral}{'\(\backslash\)0'};}
+\DoxyCodeLine{\Hypertarget{PieChartGenerator_8cpp_source_l00181}00181 }
+\DoxyCodeLine{\Hypertarget{PieChartGenerator_8cpp_source_l00182}00182     err = gdImageStringFT(NULL, \&brect[0], color, \mbox{\hyperlink{BarPlotGenerator_8h_af326d9b4cced6fd44a9f9567dc666014}{FONT\_PATH}}, size, angle, 0, 0, \textcolor{keywordtype}{string});}
+\DoxyCodeLine{\Hypertarget{PieChartGenerator_8cpp_source_l00183}00183     \textcolor{keywordflow}{if} (err)}
+\DoxyCodeLine{\Hypertarget{PieChartGenerator_8cpp_source_l00184}00184     \{}
+\DoxyCodeLine{\Hypertarget{PieChartGenerator_8cpp_source_l00185}00185         fprintf(stderr, \textcolor{stringliteral}{"{}Impossible de rendre le titre: \%s\(\backslash\)n"{}}, err);}
+\DoxyCodeLine{\Hypertarget{PieChartGenerator_8cpp_source_l00186}00186         \textcolor{keywordflow}{return};}
+\DoxyCodeLine{\Hypertarget{PieChartGenerator_8cpp_source_l00187}00187     \}}
+\DoxyCodeLine{\Hypertarget{PieChartGenerator_8cpp_source_l00188}00188 }
+\DoxyCodeLine{\Hypertarget{PieChartGenerator_8cpp_source_l00189}00189     gdImageStringFT(img, \&brect[0], color, \mbox{\hyperlink{BarPlotGenerator_8h_af326d9b4cced6fd44a9f9567dc666014}{FONT\_PATH}}, size, angle, x -\/ brect[2] / 2, y -\/ 100, \textcolor{keywordtype}{string});}
+\DoxyCodeLine{\Hypertarget{PieChartGenerator_8cpp_source_l00190}00190 \}}
+\DoxyCodeLine{\Hypertarget{PieChartGenerator_8cpp_source_l00191}00191 }
+\DoxyCodeLine{\Hypertarget{PieChartGenerator_8cpp_source_l00192}\mbox{\hyperlink{classPieChartGenerator_a2ef1ac6cd4ed58d5402b16daed87b773}{00192}} \textcolor{keywordtype}{void} \mbox{\hyperlink{classPieChartGenerator_a2ef1ac6cd4ed58d5402b16daed87b773}{PieChartGenerator::saveImage}}(gdImagePtr img, \textcolor{keyword}{const} std::string\& filename) \{}
+\DoxyCodeLine{\Hypertarget{PieChartGenerator_8cpp_source_l00193}00193     FILE* fp = fopen(filename.c\_str(), \textcolor{stringliteral}{"{}wb+"{}});}
+\DoxyCodeLine{\Hypertarget{PieChartGenerator_8cpp_source_l00194}00194     \textcolor{keywordflow}{if} (!fp) \{}
+\DoxyCodeLine{\Hypertarget{PieChartGenerator_8cpp_source_l00195}00195         perror(\textcolor{stringliteral}{"{}Error opening output file for writing"{}});}
+\DoxyCodeLine{\Hypertarget{PieChartGenerator_8cpp_source_l00196}00196         \textcolor{keywordflow}{return}; \textcolor{comment}{// Retourne void, ou vous pouvez gérer cette erreur comme vous le souhaitez}}
+\DoxyCodeLine{\Hypertarget{PieChartGenerator_8cpp_source_l00197}00197     \}}
+\DoxyCodeLine{\Hypertarget{PieChartGenerator_8cpp_source_l00198}00198     gdImagePng(img, fp);}
+\DoxyCodeLine{\Hypertarget{PieChartGenerator_8cpp_source_l00199}00199     fclose(fp);}
+\DoxyCodeLine{\Hypertarget{PieChartGenerator_8cpp_source_l00200}00200     gdImageDestroy(img);}
+\DoxyCodeLine{\Hypertarget{PieChartGenerator_8cpp_source_l00201}00201 \}}
+
+\end{DoxyCode}

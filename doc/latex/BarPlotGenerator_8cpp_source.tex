@@ -1,0 +1,166 @@
+\hypertarget{BarPlotGenerator_8cpp_source}{}\doxysection{Bar\+Plot\+Generator.\+cpp}
+\label{BarPlotGenerator_8cpp_source}\index{src/gdGeneration/BarPlotGenerator.cpp@{src/gdGeneration/BarPlotGenerator.cpp}}
+\mbox{\hyperlink{BarPlotGenerator_8cpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{BarPlotGenerator_8cpp_source_l00001}00001 \textcolor{preprocessor}{\#include "{}../../include/gdGeneration/BarPlotGenerator.h"{}}}
+\DoxyCodeLine{\Hypertarget{BarPlotGenerator_8cpp_source_l00002}00002 \textcolor{preprocessor}{\#include "{}../../include/gdGeneration/GraphicsUtils.h"{}}}
+\DoxyCodeLine{\Hypertarget{BarPlotGenerator_8cpp_source_l00003}00003 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{BarPlotGenerator_8h}{BarPlotGenerator.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{BarPlotGenerator_8cpp_source_l00004}00004 }
+\DoxyCodeLine{\Hypertarget{BarPlotGenerator_8cpp_source_l00005}\mbox{\hyperlink{classBarPlotGenerator_a4c6fca86e7273d8f3778d1bd62eb9d19}{00005}} \mbox{\hyperlink{classBarPlotGenerator_a4c6fca86e7273d8f3778d1bd62eb9d19}{BarPlotGenerator::BarPlotGenerator}}() : fileHelper() \{\}}
+\DoxyCodeLine{\Hypertarget{BarPlotGenerator_8cpp_source_l00006}\mbox{\hyperlink{classBarPlotGenerator_a46a4b4343db5a98f487c522f173950bc}{00006}} \mbox{\hyperlink{classBarPlotGenerator_a46a4b4343db5a98f487c522f173950bc}{BarPlotGenerator::\string~BarPlotGenerator}}() \{\}}
+\DoxyCodeLine{\Hypertarget{BarPlotGenerator_8cpp_source_l00007}00007 }
+\DoxyCodeLine{\Hypertarget{BarPlotGenerator_8cpp_source_l00008}\mbox{\hyperlink{classBarPlotGenerator_a5d0ca705fe16f9ff03ca9c38bbd5ffb9}{00008}} \mbox{\hyperlink{structColor}{Color}} \mbox{\hyperlink{classBarPlotGenerator_a5d0ca705fe16f9ff03ca9c38bbd5ffb9}{BarPlotGenerator::generate\_random\_color}}()}
+\DoxyCodeLine{\Hypertarget{BarPlotGenerator_8cpp_source_l00009}00009 \{}
+\DoxyCodeLine{\Hypertarget{BarPlotGenerator_8cpp_source_l00010}00010     std::random\_device rd;}
+\DoxyCodeLine{\Hypertarget{BarPlotGenerator_8cpp_source_l00011}00011     std::mt19937 gen(rd());}
+\DoxyCodeLine{\Hypertarget{BarPlotGenerator_8cpp_source_l00012}00012     std::uniform\_int\_distribution<> distrib(0, 255);}
+\DoxyCodeLine{\Hypertarget{BarPlotGenerator_8cpp_source_l00013}00013     }
+\DoxyCodeLine{\Hypertarget{BarPlotGenerator_8cpp_source_l00014}00014     \mbox{\hyperlink{structColor}{Color}} color;}
+\DoxyCodeLine{\Hypertarget{BarPlotGenerator_8cpp_source_l00015}00015     color.\mbox{\hyperlink{structColor_a4954bdc9772da2a610401b8a438125cb}{r}} = distrib(gen);}
+\DoxyCodeLine{\Hypertarget{BarPlotGenerator_8cpp_source_l00016}00016     color.\mbox{\hyperlink{structColor_ab5656e995bddd43d286c7ff5629a31dd}{g}} = distrib(gen);}
+\DoxyCodeLine{\Hypertarget{BarPlotGenerator_8cpp_source_l00017}00017     color.\mbox{\hyperlink{structColor_ae11f00d34bf3ecd8c8278f68876b82bf}{b}} = distrib(gen);}
+\DoxyCodeLine{\Hypertarget{BarPlotGenerator_8cpp_source_l00018}00018     \textcolor{keywordflow}{return} color;}
+\DoxyCodeLine{\Hypertarget{BarPlotGenerator_8cpp_source_l00019}00019     \textcolor{keywordflow}{return} \mbox{\hyperlink{GraphicsUtils_8h_ab33e4c738cf60cbc3a0fc112a1e403cd}{Color}}();}
+\DoxyCodeLine{\Hypertarget{BarPlotGenerator_8cpp_source_l00020}00020 \}}
+\DoxyCodeLine{\Hypertarget{BarPlotGenerator_8cpp_source_l00021}00021 }
+\DoxyCodeLine{\Hypertarget{BarPlotGenerator_8cpp_source_l00022}00022 }
+\DoxyCodeLine{\Hypertarget{BarPlotGenerator_8cpp_source_l00023}\mbox{\hyperlink{classBarPlotGenerator_a6e101c7e9279aaabde95d62076331f75}{00023}} \textcolor{keywordtype}{void} \mbox{\hyperlink{classBarPlotGenerator_a6e101c7e9279aaabde95d62076331f75}{BarPlotGenerator::loadDataFromJson}} (\textcolor{keyword}{const} std::map<std::string, nlohmann::json>\& jsonData) \{}
+\DoxyCodeLine{\Hypertarget{BarPlotGenerator_8cpp_source_l00024}00024     \textcolor{keywordflow}{for} (\textcolor{keyword}{const} \textcolor{keyword}{auto}\& [key, event] : jsonData) \{}
+\DoxyCodeLine{\Hypertarget{BarPlotGenerator_8cpp_source_l00025}00025         \textcolor{comment}{// Vérifiez que la clé "{}tags"{} est présente et est un tableau pour chaque événement}}
+\DoxyCodeLine{\Hypertarget{BarPlotGenerator_8cpp_source_l00026}00026         \textcolor{keywordflow}{if} (event.is\_object() \&\& event.find(\textcolor{stringliteral}{"{}tags"{}}) != event.end() \&\& event[\textcolor{stringliteral}{"{}tags"{}}].is\_array()) \{}
+\DoxyCodeLine{\Hypertarget{BarPlotGenerator_8cpp_source_l00027}00027             \textcolor{keywordflow}{for} (\textcolor{keyword}{const} \textcolor{keyword}{auto}\& tag : event[\textcolor{stringliteral}{"{}tags"{}}]) \{}
+\DoxyCodeLine{\Hypertarget{BarPlotGenerator_8cpp_source_l00028}00028                 \textcolor{keywordflow}{if} (tag.is\_null()) \textcolor{keywordflow}{continue};}
+\DoxyCodeLine{\Hypertarget{BarPlotGenerator_8cpp_source_l00029}00029                 std::string tagStr = tag.get<std::string>();}
+\DoxyCodeLine{\Hypertarget{BarPlotGenerator_8cpp_source_l00030}00030                 \textcolor{keywordflow}{if} (\mbox{\hyperlink{classBarPlotGenerator_ac9ff708e4d8b332109d37e0f1a619e31}{isValidTag}}(tagStr)) \{}
+\DoxyCodeLine{\Hypertarget{BarPlotGenerator_8cpp_source_l00031}00031                     \mbox{\hyperlink{classBarPlotGenerator_a4f8a589ae04a15c218cf705e2fce1e2e}{tagFrequency}}[tagStr]++;}
+\DoxyCodeLine{\Hypertarget{BarPlotGenerator_8cpp_source_l00032}00032                 \}}
+\DoxyCodeLine{\Hypertarget{BarPlotGenerator_8cpp_source_l00033}00033             \}}
+\DoxyCodeLine{\Hypertarget{BarPlotGenerator_8cpp_source_l00034}00034         \}}
+\DoxyCodeLine{\Hypertarget{BarPlotGenerator_8cpp_source_l00035}00035     \}}
+\DoxyCodeLine{\Hypertarget{BarPlotGenerator_8cpp_source_l00036}00036 \}}
+\DoxyCodeLine{\Hypertarget{BarPlotGenerator_8cpp_source_l00037}00037 }
+\DoxyCodeLine{\Hypertarget{BarPlotGenerator_8cpp_source_l00038}\mbox{\hyperlink{classBarPlotGenerator_ac9ff708e4d8b332109d37e0f1a619e31}{00038}} \textcolor{keywordtype}{bool} \mbox{\hyperlink{classBarPlotGenerator_ac9ff708e4d8b332109d37e0f1a619e31}{BarPlotGenerator::isValidTag}}(\textcolor{keyword}{const} std::string\& tag) \{}
+\DoxyCodeLine{\Hypertarget{BarPlotGenerator_8cpp_source_l00039}00039     \textcolor{keywordflow}{for} (\textcolor{keywordtype}{char} c : tag) \{}
+\DoxyCodeLine{\Hypertarget{BarPlotGenerator_8cpp_source_l00040}00040         \textcolor{keywordflow}{if} (!isalpha(c)) \textcolor{keywordflow}{return} \textcolor{keyword}{false};}
+\DoxyCodeLine{\Hypertarget{BarPlotGenerator_8cpp_source_l00041}00041     \}}
+\DoxyCodeLine{\Hypertarget{BarPlotGenerator_8cpp_source_l00042}00042     \textcolor{keywordflow}{return} \textcolor{keyword}{true};}
+\DoxyCodeLine{\Hypertarget{BarPlotGenerator_8cpp_source_l00043}00043 \}}
+\DoxyCodeLine{\Hypertarget{BarPlotGenerator_8cpp_source_l00044}00044 }
+\DoxyCodeLine{\Hypertarget{BarPlotGenerator_8cpp_source_l00045}\mbox{\hyperlink{classBarPlotGenerator_a8607516727d0c8f609e3f2017bf11c5e}{00045}} \textcolor{keywordtype}{void} \mbox{\hyperlink{classBarPlotGenerator_a8607516727d0c8f609e3f2017bf11c5e}{BarPlotGenerator::generateBarPlot}}(\textcolor{keyword}{const} std::string\& outputFilename) \{}
+\DoxyCodeLine{\Hypertarget{BarPlotGenerator_8cpp_source_l00046}00046     \textcolor{keyword}{const} \textcolor{keywordtype}{int} width = \mbox{\hyperlink{BarPlotGenerator_8h_a241aeeb764887ae5e3de58b98f04b16d}{WIDTH}};}
+\DoxyCodeLine{\Hypertarget{BarPlotGenerator_8cpp_source_l00047}00047     \textcolor{keyword}{const} \textcolor{keywordtype}{int} height = \mbox{\hyperlink{BarPlotGenerator_8h_aed89bd71aee8be823e8a20ec4e093c1e}{HEIGHT}};}
+\DoxyCodeLine{\Hypertarget{BarPlotGenerator_8cpp_source_l00048}00048     \textcolor{keyword}{const} \textcolor{keywordtype}{double} fontSize = height * 0.01;}
+\DoxyCodeLine{\Hypertarget{BarPlotGenerator_8cpp_source_l00049}00049     \textcolor{keyword}{const} \textcolor{keywordtype}{double} angle = 0.785398;  \textcolor{comment}{// 45° en radians}}
+\DoxyCodeLine{\Hypertarget{BarPlotGenerator_8cpp_source_l00050}00050     \textcolor{keywordtype}{double} titleFontSize = height * 0.04 ;  \textcolor{comment}{// Définissez une taille de police appropriée pour le titre}}
+\DoxyCodeLine{\Hypertarget{BarPlotGenerator_8cpp_source_l00051}00051     std::string title = \mbox{\hyperlink{classBarPlotGenerator_a0b6c4355989e09b9309c7f9585947cdf}{formatTitle}}(outputFilename);  \textcolor{comment}{// Formatage du titre de l'image}}
+\DoxyCodeLine{\Hypertarget{BarPlotGenerator_8cpp_source_l00052}00052     \textcolor{comment}{// Initialisation de l'image}}
+\DoxyCodeLine{\Hypertarget{BarPlotGenerator_8cpp_source_l00053}00053     gdImagePtr img = gdImageCreate(width, height);}
+\DoxyCodeLine{\Hypertarget{BarPlotGenerator_8cpp_source_l00054}00054     \textcolor{keywordtype}{int} white = gdImageColorAllocate(img, 255, 255, 255);}
+\DoxyCodeLine{\Hypertarget{BarPlotGenerator_8cpp_source_l00055}00055     \textcolor{keywordtype}{int} black = gdImageColorAllocate(img, 0, 0, 0);}
+\DoxyCodeLine{\Hypertarget{BarPlotGenerator_8cpp_source_l00056}00056 }
+\DoxyCodeLine{\Hypertarget{BarPlotGenerator_8cpp_source_l00057}00057     \textcolor{comment}{// Détermination de la valeur maximale de 'second' dans tagFrequency}}
+\DoxyCodeLine{\Hypertarget{BarPlotGenerator_8cpp_source_l00058}00058     \textcolor{keyword}{auto} maxIt = std::max\_element(\mbox{\hyperlink{classBarPlotGenerator_a4f8a589ae04a15c218cf705e2fce1e2e}{tagFrequency}}.begin(), \mbox{\hyperlink{classBarPlotGenerator_a4f8a589ae04a15c218cf705e2fce1e2e}{tagFrequency}}.end(),}
+\DoxyCodeLine{\Hypertarget{BarPlotGenerator_8cpp_source_l00059}00059                                   [](\textcolor{keyword}{const} \textcolor{keyword}{auto}\& a, \textcolor{keyword}{const} \textcolor{keyword}{auto}\& b) \{}
+\DoxyCodeLine{\Hypertarget{BarPlotGenerator_8cpp_source_l00060}00060                                       return a.second < b.second;}
+\DoxyCodeLine{\Hypertarget{BarPlotGenerator_8cpp_source_l00061}00061                                   \});}
+\DoxyCodeLine{\Hypertarget{BarPlotGenerator_8cpp_source_l00062}00062     \textcolor{keywordtype}{int} maxValue = maxIt-\/>second;}
+\DoxyCodeLine{\Hypertarget{BarPlotGenerator_8cpp_source_l00063}00063 }
+\DoxyCodeLine{\Hypertarget{BarPlotGenerator_8cpp_source_l00064}00064     \textcolor{comment}{// Calcul de la largeur de barre en prenant en compte les marges à droite et à gauche}}
+\DoxyCodeLine{\Hypertarget{BarPlotGenerator_8cpp_source_l00065}00065     \textcolor{keywordtype}{int} effectiveWidth = width * 0.8;  \textcolor{comment}{// 80\% de la largeur totale après prise en compte des marges de 10\% à gauche et à droite}}
+\DoxyCodeLine{\Hypertarget{BarPlotGenerator_8cpp_source_l00066}00066     \textcolor{keywordtype}{int} barWidth = effectiveWidth / (2 * \mbox{\hyperlink{classBarPlotGenerator_a4f8a589ae04a15c218cf705e2fce1e2e}{tagFrequency}}.size());}
+\DoxyCodeLine{\Hypertarget{BarPlotGenerator_8cpp_source_l00067}00067     \textcolor{keywordtype}{int} barHeightProp = height * 0.7 / maxValue;}
+\DoxyCodeLine{\Hypertarget{BarPlotGenerator_8cpp_source_l00068}00068 }
+\DoxyCodeLine{\Hypertarget{BarPlotGenerator_8cpp_source_l00069}00069     \textcolor{keywordtype}{int} x = width * 0.1 + barWidth;  \textcolor{comment}{// Position initiale pour la première barre avec marge de 10\%}}
+\DoxyCodeLine{\Hypertarget{BarPlotGenerator_8cpp_source_l00070}00070     \textcolor{keyword}{const} \textcolor{keywordtype}{int} baseLine = height * 0.9;  \textcolor{comment}{// L'axe des abscisses rehaussé de 10\%}}
+\DoxyCodeLine{\Hypertarget{BarPlotGenerator_8cpp_source_l00071}00071     \textcolor{keyword}{const} \textcolor{keywordtype}{int} tickLength = height * 0.01; \textcolor{comment}{// longueur du trait vertical de 2 \% de la hauteur de l'image}}
+\DoxyCodeLine{\Hypertarget{BarPlotGenerator_8cpp_source_l00072}00072     \textcolor{keyword}{const} \textcolor{keywordtype}{int} tickWidth = 4; \textcolor{comment}{// largeur du trait vertical de 4 pixels}}
+\DoxyCodeLine{\Hypertarget{BarPlotGenerator_8cpp_source_l00073}00073     \textcolor{keywordtype}{int} brectTitle[8];}
+\DoxyCodeLine{\Hypertarget{BarPlotGenerator_8cpp_source_l00074}00074     }
+\DoxyCodeLine{\Hypertarget{BarPlotGenerator_8cpp_source_l00075}00075     gdImageStringFT(NULL, brectTitle, black, \mbox{\hyperlink{BarPlotGenerator_8h_af326d9b4cced6fd44a9f9567dc666014}{FONT\_PATH}}, titleFontSize, 0, 0, 0, title.c\_str());}
+\DoxyCodeLine{\Hypertarget{BarPlotGenerator_8cpp_source_l00076}00076     \textcolor{keywordtype}{int} titleWidth = brectTitle[2] -\/ brectTitle[0];}
+\DoxyCodeLine{\Hypertarget{BarPlotGenerator_8cpp_source_l00077}00077     \textcolor{keywordtype}{int} titleHeight = brectTitle[3] -\/ brectTitle[5];}
+\DoxyCodeLine{\Hypertarget{BarPlotGenerator_8cpp_source_l00078}00078     \textcolor{keywordtype}{int} titleX = (width -\/ titleWidth) / 2;}
+\DoxyCodeLine{\Hypertarget{BarPlotGenerator_8cpp_source_l00079}00079     \textcolor{keywordtype}{int} titleY = titleHeight + 20; \textcolor{comment}{// Donnez une marge de 20 pixels entre le haut de l'image et le titre}}
+\DoxyCodeLine{\Hypertarget{BarPlotGenerator_8cpp_source_l00080}00080 }
+\DoxyCodeLine{\Hypertarget{BarPlotGenerator_8cpp_source_l00081}00081     gdImageStringFT(img, brectTitle, black, \mbox{\hyperlink{BarPlotGenerator_8h_af326d9b4cced6fd44a9f9567dc666014}{FONT\_PATH}}, titleFontSize, 0, titleX, titleY, title.c\_str());}
+\DoxyCodeLine{\Hypertarget{BarPlotGenerator_8cpp_source_l00082}00082 }
+\DoxyCodeLine{\Hypertarget{BarPlotGenerator_8cpp_source_l00083}00083     \textcolor{keywordflow}{for} (\textcolor{keyword}{const} \textcolor{keyword}{auto}\& bar : \mbox{\hyperlink{classBarPlotGenerator_a4f8a589ae04a15c218cf705e2fce1e2e}{tagFrequency}}) \{}
+\DoxyCodeLine{\Hypertarget{BarPlotGenerator_8cpp_source_l00084}00084         \textcolor{comment}{// Couleur aléatoire pour la barre}}
+\DoxyCodeLine{\Hypertarget{BarPlotGenerator_8cpp_source_l00085}00085         \mbox{\hyperlink{structColor}{Color}} randColor = \mbox{\hyperlink{classBarPlotGenerator_a5d0ca705fe16f9ff03ca9c38bbd5ffb9}{generate\_random\_color}}();}
+\DoxyCodeLine{\Hypertarget{BarPlotGenerator_8cpp_source_l00086}00086         \textcolor{keywordtype}{int} barColor = gdImageColorAllocate(img, randColor.\mbox{\hyperlink{structColor_a4954bdc9772da2a610401b8a438125cb}{r}}, randColor.\mbox{\hyperlink{structColor_ab5656e995bddd43d286c7ff5629a31dd}{g}}, randColor.\mbox{\hyperlink{structColor_ae11f00d34bf3ecd8c8278f68876b82bf}{b}});}
+\DoxyCodeLine{\Hypertarget{BarPlotGenerator_8cpp_source_l00087}00087 }
+\DoxyCodeLine{\Hypertarget{BarPlotGenerator_8cpp_source_l00088}00088         \textcolor{comment}{// Calcul de la hauteur de la barre}}
+\DoxyCodeLine{\Hypertarget{BarPlotGenerator_8cpp_source_l00089}00089         \textcolor{keywordtype}{int} barHeight = bar.second * barHeightProp;}
+\DoxyCodeLine{\Hypertarget{BarPlotGenerator_8cpp_source_l00090}00090         }
+\DoxyCodeLine{\Hypertarget{BarPlotGenerator_8cpp_source_l00091}00091         \textcolor{comment}{// Dessin de la barre}}
+\DoxyCodeLine{\Hypertarget{BarPlotGenerator_8cpp_source_l00092}00092         gdImageFilledRectangle(img, x, baseLine -\/ barHeight, x + barWidth, baseLine, barColor);}
+\DoxyCodeLine{\Hypertarget{BarPlotGenerator_8cpp_source_l00093}00093 }
+\DoxyCodeLine{\Hypertarget{BarPlotGenerator_8cpp_source_l00094}00094          \textcolor{comment}{// Ajout du petit rectangle sous la barre comme trait vertical "{}large"{}}}
+\DoxyCodeLine{\Hypertarget{BarPlotGenerator_8cpp_source_l00095}00095         \textcolor{keywordtype}{int} tickLeft = x + (barWidth -\/ tickWidth) / 2;}
+\DoxyCodeLine{\Hypertarget{BarPlotGenerator_8cpp_source_l00096}00096         \textcolor{keywordtype}{int} tickRight = tickLeft + tickWidth;}
+\DoxyCodeLine{\Hypertarget{BarPlotGenerator_8cpp_source_l00097}00097         gdImageFilledRectangle(img, tickLeft, baseLine, tickRight, baseLine + tickLength, black);}
+\DoxyCodeLine{\Hypertarget{BarPlotGenerator_8cpp_source_l00098}00098 }
+\DoxyCodeLine{\Hypertarget{BarPlotGenerator_8cpp_source_l00099}00099         \textcolor{comment}{// Placement du texte incliné pour le label}}
+\DoxyCodeLine{\Hypertarget{BarPlotGenerator_8cpp_source_l00100}00100         \textcolor{keywordtype}{int} brect[8];}
+\DoxyCodeLine{\Hypertarget{BarPlotGenerator_8cpp_source_l00101}00101         gdImageStringFT(NULL, brect, black, \mbox{\hyperlink{BarPlotGenerator_8h_af326d9b4cced6fd44a9f9567dc666014}{FONT\_PATH}}, fontSize, angle, 0, 0, bar.first.c\_str());}
+\DoxyCodeLine{\Hypertarget{BarPlotGenerator_8cpp_source_l00102}00102         \textcolor{keywordtype}{int} text\_width = brect[2] -\/ brect[0];}
+\DoxyCodeLine{\Hypertarget{BarPlotGenerator_8cpp_source_l00103}00103         \textcolor{keywordtype}{int} text\_height = brect[1] -\/ brect[5];}
+\DoxyCodeLine{\Hypertarget{BarPlotGenerator_8cpp_source_l00104}00104         gdImageStringFT(img, brect, black, \mbox{\hyperlink{BarPlotGenerator_8h_af326d9b4cced6fd44a9f9567dc666014}{FONT\_PATH}}, fontSize, angle, x + barWidth -\/ text\_height, baseLine + text\_width * 1.5, bar.first.c\_str());}
+\DoxyCodeLine{\Hypertarget{BarPlotGenerator_8cpp_source_l00105}00105 }
+\DoxyCodeLine{\Hypertarget{BarPlotGenerator_8cpp_source_l00106}00106         \textcolor{comment}{// Affichage du nombre d'occurrences au-\/dessus de la barre}}
+\DoxyCodeLine{\Hypertarget{BarPlotGenerator_8cpp_source_l00107}00107         std::string occurrenceStr = std::to\_string(bar.second);}
+\DoxyCodeLine{\Hypertarget{BarPlotGenerator_8cpp_source_l00108}00108         gdImageStringFT(NULL, brect, black, \mbox{\hyperlink{BarPlotGenerator_8h_af326d9b4cced6fd44a9f9567dc666014}{FONT\_PATH}}, fontSize, 0, 0, 0, occurrenceStr.c\_str());}
+\DoxyCodeLine{\Hypertarget{BarPlotGenerator_8cpp_source_l00109}00109         text\_width = brect[2] -\/ brect[0];}
+\DoxyCodeLine{\Hypertarget{BarPlotGenerator_8cpp_source_l00110}00110         gdImageStringFT(img, brect, black, \mbox{\hyperlink{BarPlotGenerator_8h_af326d9b4cced6fd44a9f9567dc666014}{FONT\_PATH}}, fontSize, 0, x + barWidth / 2 -\/ text\_width / 2, baseLine -\/ barHeight -\/ 10, occurrenceStr.c\_str());}
+\DoxyCodeLine{\Hypertarget{BarPlotGenerator_8cpp_source_l00111}00111 }
+\DoxyCodeLine{\Hypertarget{BarPlotGenerator_8cpp_source_l00112}00112         x += 2 * barWidth;  \textcolor{comment}{// Mise à jour de la position x pour la prochaine barre}}
+\DoxyCodeLine{\Hypertarget{BarPlotGenerator_8cpp_source_l00113}00113     \}}
+\DoxyCodeLine{\Hypertarget{BarPlotGenerator_8cpp_source_l00114}00114 }
+\DoxyCodeLine{\Hypertarget{BarPlotGenerator_8cpp_source_l00115}00115     \textcolor{comment}{// Sauvegarde de l'image}}
+\DoxyCodeLine{\Hypertarget{BarPlotGenerator_8cpp_source_l00116}00116     \mbox{\hyperlink{classBarPlotGenerator_af5bdf6320e6399160ccadfd40ff546f1}{fileHelper}}.\mbox{\hyperlink{classFileHelper_ac8fb7747ed6cc254aab512ca4454d13d}{setSubfolder}}(\textcolor{stringliteral}{"{}resources/graphic"{}});}
+\DoxyCodeLine{\Hypertarget{BarPlotGenerator_8cpp_source_l00117}00117     std::string output\_path = \mbox{\hyperlink{classBarPlotGenerator_af5bdf6320e6399160ccadfd40ff546f1}{fileHelper}}.\mbox{\hyperlink{classFileHelper_a8a218e5dfb2e5ec90c4180671f868af1}{getFilePath}}(outputFilename);}
+\DoxyCodeLine{\Hypertarget{BarPlotGenerator_8cpp_source_l00118}00118     \mbox{\hyperlink{classBarPlotGenerator_ab01e022ff2ff243415f4b3bed87acd69}{saveImage}}(img, output\_path);}
+\DoxyCodeLine{\Hypertarget{BarPlotGenerator_8cpp_source_l00119}00119 \}}
+\DoxyCodeLine{\Hypertarget{BarPlotGenerator_8cpp_source_l00120}00120 }
+\DoxyCodeLine{\Hypertarget{BarPlotGenerator_8cpp_source_l00121}00121 }
+\DoxyCodeLine{\Hypertarget{BarPlotGenerator_8cpp_source_l00122}\mbox{\hyperlink{classBarPlotGenerator_ab01e022ff2ff243415f4b3bed87acd69}{00122}} \textcolor{keywordtype}{void} \mbox{\hyperlink{classBarPlotGenerator_ab01e022ff2ff243415f4b3bed87acd69}{BarPlotGenerator::saveImage}}(gdImagePtr img, \textcolor{keyword}{const} std::string\& filename) \{}
+\DoxyCodeLine{\Hypertarget{BarPlotGenerator_8cpp_source_l00123}00123     FILE* fp = fopen(filename.c\_str(), \textcolor{stringliteral}{"{}wb+"{}});}
+\DoxyCodeLine{\Hypertarget{BarPlotGenerator_8cpp_source_l00124}00124     \textcolor{keywordflow}{if} (!fp) \{}
+\DoxyCodeLine{\Hypertarget{BarPlotGenerator_8cpp_source_l00125}00125         perror(\textcolor{stringliteral}{"{}Error opening output file for writing"{}});}
+\DoxyCodeLine{\Hypertarget{BarPlotGenerator_8cpp_source_l00126}00126         \textcolor{keywordflow}{return}; \textcolor{comment}{// Retourne void, ou vous pouvez gérer cette erreur comme vous le souhaitez}}
+\DoxyCodeLine{\Hypertarget{BarPlotGenerator_8cpp_source_l00127}00127     \}}
+\DoxyCodeLine{\Hypertarget{BarPlotGenerator_8cpp_source_l00128}00128     gdImagePng(img, fp);}
+\DoxyCodeLine{\Hypertarget{BarPlotGenerator_8cpp_source_l00129}00129     fclose(fp);}
+\DoxyCodeLine{\Hypertarget{BarPlotGenerator_8cpp_source_l00130}00130     gdImageDestroy(img);}
+\DoxyCodeLine{\Hypertarget{BarPlotGenerator_8cpp_source_l00131}00131 \}}
+\DoxyCodeLine{\Hypertarget{BarPlotGenerator_8cpp_source_l00132}00132 }
+\DoxyCodeLine{\Hypertarget{BarPlotGenerator_8cpp_source_l00133}\mbox{\hyperlink{classBarPlotGenerator_a0b6c4355989e09b9309c7f9585947cdf}{00133}} std::string \mbox{\hyperlink{classBarPlotGenerator_a0b6c4355989e09b9309c7f9585947cdf}{BarPlotGenerator::formatTitle}}(\textcolor{keyword}{const} std::string\& filename) \{}
+\DoxyCodeLine{\Hypertarget{BarPlotGenerator_8cpp_source_l00134}00134     \textcolor{comment}{// Supprimez l'extension du fichier}}
+\DoxyCodeLine{\Hypertarget{BarPlotGenerator_8cpp_source_l00135}00135     std::string base = filename.substr(0, filename.find\_last\_of(\textcolor{stringliteral}{"{}."{}}));}
+\DoxyCodeLine{\Hypertarget{BarPlotGenerator_8cpp_source_l00136}00136 }
+\DoxyCodeLine{\Hypertarget{BarPlotGenerator_8cpp_source_l00137}00137     \textcolor{comment}{// Ne gardez que les lettres et ajoutez un espace entre chaque mot}}
+\DoxyCodeLine{\Hypertarget{BarPlotGenerator_8cpp_source_l00138}00138     std::string cleaned;}
+\DoxyCodeLine{\Hypertarget{BarPlotGenerator_8cpp_source_l00139}00139     \textcolor{keywordtype}{bool} lastWasLetter = \textcolor{keyword}{false};}
+\DoxyCodeLine{\Hypertarget{BarPlotGenerator_8cpp_source_l00140}00140     \textcolor{keywordflow}{for} (\textcolor{keywordtype}{char} c : base) \{}
+\DoxyCodeLine{\Hypertarget{BarPlotGenerator_8cpp_source_l00141}00141         \textcolor{keywordflow}{if} (std::isalpha(c)) \{}
+\DoxyCodeLine{\Hypertarget{BarPlotGenerator_8cpp_source_l00142}00142             \textcolor{keywordflow}{if} (lastWasLetter) \{}
+\DoxyCodeLine{\Hypertarget{BarPlotGenerator_8cpp_source_l00143}00143                 cleaned += std::tolower(c);}
+\DoxyCodeLine{\Hypertarget{BarPlotGenerator_8cpp_source_l00144}00144             \} \textcolor{keywordflow}{else} \{}
+\DoxyCodeLine{\Hypertarget{BarPlotGenerator_8cpp_source_l00145}00145                 cleaned += std::toupper(c);}
+\DoxyCodeLine{\Hypertarget{BarPlotGenerator_8cpp_source_l00146}00146                 lastWasLetter = \textcolor{keyword}{true};}
+\DoxyCodeLine{\Hypertarget{BarPlotGenerator_8cpp_source_l00147}00147             \}}
+\DoxyCodeLine{\Hypertarget{BarPlotGenerator_8cpp_source_l00148}00148         \} \textcolor{keywordflow}{else} \{}
+\DoxyCodeLine{\Hypertarget{BarPlotGenerator_8cpp_source_l00149}00149             cleaned += \textcolor{charliteral}{' '};}
+\DoxyCodeLine{\Hypertarget{BarPlotGenerator_8cpp_source_l00150}00150             lastWasLetter = \textcolor{keyword}{false};}
+\DoxyCodeLine{\Hypertarget{BarPlotGenerator_8cpp_source_l00151}00151         \}}
+\DoxyCodeLine{\Hypertarget{BarPlotGenerator_8cpp_source_l00152}00152     \}}
+\DoxyCodeLine{\Hypertarget{BarPlotGenerator_8cpp_source_l00153}00153 }
+\DoxyCodeLine{\Hypertarget{BarPlotGenerator_8cpp_source_l00154}00154     \textcolor{comment}{// Enlevez les espaces éventuels en début ou en fin de chaîne}}
+\DoxyCodeLine{\Hypertarget{BarPlotGenerator_8cpp_source_l00155}00155     cleaned.erase(0, cleaned.find\_first\_not\_of(\textcolor{charliteral}{' '})); \textcolor{comment}{// trim start}}
+\DoxyCodeLine{\Hypertarget{BarPlotGenerator_8cpp_source_l00156}00156     cleaned.erase(cleaned.find\_last\_not\_of(\textcolor{charliteral}{' '}) + 1); \textcolor{comment}{// trim end}}
+\DoxyCodeLine{\Hypertarget{BarPlotGenerator_8cpp_source_l00157}00157 }
+\DoxyCodeLine{\Hypertarget{BarPlotGenerator_8cpp_source_l00158}00158     \textcolor{keywordflow}{return} cleaned;}
+\DoxyCodeLine{\Hypertarget{BarPlotGenerator_8cpp_source_l00159}00159 \}}
+\DoxyCodeLine{\Hypertarget{BarPlotGenerator_8cpp_source_l00160}00160 }
+
+\end{DoxyCode}

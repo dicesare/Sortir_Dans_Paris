@@ -1,0 +1,233 @@
+.TH "PieChartGenerator" 3 "Fri Sep 22 2023" "Version v0.1" "API de Paris - Documentation du Gestionnaire" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+PieChartGenerator \- Class responsible for generating pie charts\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <PieChartGenerator\&.h>\fP
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBPieChartGenerator\fP ()"
+.br
+.ti -1c
+.RI "\fB~PieChartGenerator\fP ()"
+.br
+.ti -1c
+.RI "\fBColor\fP \fBgenerate_random_color\fP ()"
+.br
+.RI "Loads data from the given file\&. "
+.ti -1c
+.RI "void \fBgeneratePieChart\fP (const std::map< std::string, nlohmann::json > &dataForPie)"
+.br
+.RI "Loads data from the given file\&. "
+.in -1c
+.SS "Private Member Functions"
+
+.in +1c
+.ti -1c
+.RI "gdImagePtr \fBcreate_pie_chart_image\fP (\fBPieChartSegment\fP *segments, int segments_count, const char *title)"
+.br
+.RI "Creates an image representing the pie chart\&. "
+.ti -1c
+.RI "void \fBcalculate_coordinates\fP (int x, int y, int radius, int angle, int *coord_x, int *coord_y)"
+.br
+.RI "Calculates the coordinates for a given angle on the pie chart\&. "
+.ti -1c
+.RI "void \fBdraw_segment_and_label\fP (gdImagePtr img, \fBPieChartSegment\fP *segments, int length, int x, int y, double start_angle, int radius, int black)"
+.br
+.RI "Draws a segment and its corresponding label on the pie chart image\&. "
+.ti -1c
+.RI "void \fBdraw_title\fP (gdImagePtr img, const char *title, int x, int y, int color)"
+.br
+.RI "Draws the title of the pie chart on the image\&. "
+.ti -1c
+.RI "void \fBsaveImage\fP (gdImagePtr img, const std::string &filename)"
+.br
+.RI "Saves the pie chart image to a file\&. "
+.in -1c
+.SS "Private Attributes"
+
+.in +1c
+.ti -1c
+.RI "\fBFileHelper\fP \fBfileHelper\fP"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+Class responsible for generating pie charts\&. 
+
+This class provides the necessary methods and tools to generate pie charts based on input data\&. The charts are generated using the GD library\&. 
+.PP
+Definition at line \fB52\fP of file \fBPieChartGenerator\&.h\fP\&.
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "PieChartGenerator::PieChartGenerator ()"
+
+.PP
+Definition at line \fB4\fP of file \fBPieChartGenerator\&.cpp\fP\&.
+.SS "PieChartGenerator::~PieChartGenerator ()"
+
+.PP
+Definition at line \fB5\fP of file \fBPieChartGenerator\&.cpp\fP\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "void PieChartGenerator::calculate_coordinates (int x, int y, int radius, int angle, int * coord_x, int * coord_y)\fC [private]\fP"
+
+.PP
+Calculates the coordinates for a given angle on the pie chart\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIx\fP The x-coordinate of the pie chart's center\&. 
+.br
+\fIy\fP The y-coordinate of the pie chart's center\&. 
+.br
+\fIradius\fP The radius of the pie chart\&. 
+.br
+\fIangle\fP The angle at which to calculate the coordinates\&. 
+.br
+\fIcoord_x\fP Pointer to store the calculated x-coordinate\&. 
+.br
+\fIcoord_y\fP Pointer to store the calculated y-coordinate\&. 
+.RE
+.PP
+
+.PP
+Definition at line \fB108\fP of file \fBPieChartGenerator\&.cpp\fP\&.
+.SS "gdImagePtr PieChartGenerator::create_pie_chart_image (\fBPieChartSegment\fP * segments, int segments_count, const char * title)\fC [private]\fP"
+
+.PP
+Creates an image representing the pie chart\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIsegments\fP Array of segments to be drawn in the pie chart\&. 
+.br
+\fIsegments_count\fP The number of segments\&. 
+.br
+\fItitle\fP The title of the pie chart\&. 
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+gdImagePtr Pointer to the generated image\&. 
+.RE
+.PP
+
+.PP
+Definition at line \fB85\fP of file \fBPieChartGenerator\&.cpp\fP\&.
+.SS "void PieChartGenerator::draw_segment_and_label (gdImagePtr img, \fBPieChartSegment\fP * segments, int length, int x, int y, double start_angle, int radius, int black)\fC [private]\fP"
+
+.PP
+Draws a segment and its corresponding label on the pie chart image\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIimg\fP The image on which to draw\&. 
+.br
+\fIsegments\fP The array of segments\&. 
+.br
+\fIlength\fP The number of segments\&. 
+.br
+\fIx\fP The x-coordinate of the pie chart's center\&. 
+.br
+\fIy\fP The y-coordinate of the pie chart's center\&. 
+.br
+\fIstart_angle\fP The starting angle for the segment\&. 
+.br
+\fIradius\fP The radius of the pie chart\&. 
+.br
+\fIblack\fP The color to use for drawing (usually black)\&. 
+.RE
+.PP
+
+.PP
+Definition at line \fB114\fP of file \fBPieChartGenerator\&.cpp\fP\&.
+.SS "void PieChartGenerator::draw_title (gdImagePtr img, const char * title, int x, int y, int color)\fC [private]\fP"
+
+.PP
+Draws the title of the pie chart on the image\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIimg\fP The image on which to draw\&. 
+.br
+\fItitle\fP The title to draw\&. 
+.br
+\fIx\fP The x-coordinate for the title\&. 
+.br
+\fIy\fP The y-coordinate for the title\&. 
+.br
+\fIcolor\fP The color to use for the title text\&. 
+.RE
+.PP
+
+.PP
+Definition at line \fB169\fP of file \fBPieChartGenerator\&.cpp\fP\&.
+.SS "\fBColor\fP PieChartGenerator::generate_random_color ()"
+
+.PP
+Loads data from the given file\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIfilename\fP The name of the file from which to load the data\&. 
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+std::map<std::string, nlohmann::json> A map of data items, where each key-value pair represents a unique data item identified by the string key and its corresponding JSON value\&. Generates a random color\&. 
+.RE
+.PP
+
+.PP
+Definition at line \fB8\fP of file \fBPieChartGenerator\&.cpp\fP\&.
+.SS "void PieChartGenerator::generatePieChart (const std::map< std::string, nlohmann::json > & dataForPie)"
+
+.PP
+Loads data from the given file\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIfilename\fP The name of the file from which to load the data\&. 
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+std::map<std::string, nlohmann::json> A map of data items, where each key-value pair represents a unique data item identified by the string key and its corresponding JSON value\&. Generates a pie chart based on the input data\&. 
+.RE
+.PP
+
+.PP
+Definition at line \fB22\fP of file \fBPieChartGenerator\&.cpp\fP\&.
+.SS "void PieChartGenerator::saveImage (gdImagePtr img, const std::string & filename)\fC [private]\fP"
+
+.PP
+Saves the pie chart image to a file\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIimg\fP The pie chart image\&. 
+.br
+\fIfilename\fP The name of the file where the image will be saved\&. 
+.RE
+.PP
+
+.PP
+Definition at line \fB192\fP of file \fBPieChartGenerator\&.cpp\fP\&.
+.SH "Member Data Documentation"
+.PP 
+.SS "\fBFileHelper\fP PieChartGenerator::fileHelper\fC [private]\fP"
+
+.PP
+Definition at line \fB74\fP of file \fBPieChartGenerator\&.h\fP\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for API de Paris - Documentation du Gestionnaire from the source code\&.

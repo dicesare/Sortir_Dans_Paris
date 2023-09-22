@@ -1,0 +1,34 @@
+\hypertarget{dataStorage_8h_source}{}\doxysection{data\+Storage.\+h}
+\label{dataStorage_8h_source}\index{include/storage/dataStorage.h@{include/storage/dataStorage.h}}
+\mbox{\hyperlink{dataStorage_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{dataStorage_8h_source_l00001}00001 }
+\DoxyCodeLine{\Hypertarget{dataStorage_8h_source_l00012}00012 \textcolor{preprocessor}{\#ifndef DATASTORAGE\_H}}
+\DoxyCodeLine{\Hypertarget{dataStorage_8h_source_l00013}00013 \textcolor{preprocessor}{\#define DATASTORAGE\_H}}
+\DoxyCodeLine{\Hypertarget{dataStorage_8h_source_l00014}00014 }
+\DoxyCodeLine{\Hypertarget{dataStorage_8h_source_l00015}00015 \textcolor{preprocessor}{\#include <cstdlib>}}
+\DoxyCodeLine{\Hypertarget{dataStorage_8h_source_l00016}00016 \textcolor{preprocessor}{\#include <iostream>}}
+\DoxyCodeLine{\Hypertarget{dataStorage_8h_source_l00017}00017 \textcolor{preprocessor}{\#include <fstream>}}
+\DoxyCodeLine{\Hypertarget{dataStorage_8h_source_l00018}00018 \textcolor{preprocessor}{\#include <map>}}
+\DoxyCodeLine{\Hypertarget{dataStorage_8h_source_l00019}00019 \textcolor{preprocessor}{\#include <string>}}
+\DoxyCodeLine{\Hypertarget{dataStorage_8h_source_l00020}00020 \textcolor{preprocessor}{\#include <nlohmann/json.hpp>}}
+\DoxyCodeLine{\Hypertarget{dataStorage_8h_source_l00021}00021 \textcolor{preprocessor}{\#include "{}../fileManagement/fileHelper.h"{}}}
+\DoxyCodeLine{\Hypertarget{dataStorage_8h_source_l00022}00022 }
+\DoxyCodeLine{\Hypertarget{dataStorage_8h_source_l00029}\mbox{\hyperlink{classDataStorage}{00029}} \textcolor{keyword}{class }\mbox{\hyperlink{classDataStorage}{DataStorage}}}
+\DoxyCodeLine{\Hypertarget{dataStorage_8h_source_l00030}00030 \{}
+\DoxyCodeLine{\Hypertarget{dataStorage_8h_source_l00031}00031 \textcolor{keyword}{public}:}
+\DoxyCodeLine{\Hypertarget{dataStorage_8h_source_l00035}00035     \mbox{\hyperlink{classDataStorage_a22825d40495dae6a5df46d629fb26a3f}{DataStorage}}();}
+\DoxyCodeLine{\Hypertarget{dataStorage_8h_source_l00036}00036 }
+\DoxyCodeLine{\Hypertarget{dataStorage_8h_source_l00044}00044     \textcolor{keywordtype}{void} \mbox{\hyperlink{classDataStorage_a3574d849493097410d0879263706ee69}{saveToFile}}(\textcolor{keyword}{const} std::map<std::string, nlohmann::json>\& data, \textcolor{keyword}{const} std::string\& filename);}
+\DoxyCodeLine{\Hypertarget{dataStorage_8h_source_l00045}00045 }
+\DoxyCodeLine{\Hypertarget{dataStorage_8h_source_l00053}00053     std::map<std::string, nlohmann::json> \mbox{\hyperlink{classDataStorage_a898ad89ba95776da063f62c95677f78c}{readFromFile}}(\textcolor{keyword}{const} std::string\& filename);}
+\DoxyCodeLine{\Hypertarget{dataStorage_8h_source_l00054}00054 }
+\DoxyCodeLine{\Hypertarget{dataStorage_8h_source_l00055}00055 \textcolor{keyword}{private}:}
+\DoxyCodeLine{\Hypertarget{dataStorage_8h_source_l00056}\mbox{\hyperlink{classDataStorage_a1b36b28a8ce65819497dfdb1e03e66d1}{00056}}     \mbox{\hyperlink{classFileHelper}{FileHelper}} \mbox{\hyperlink{classDataStorage_a1b36b28a8ce65819497dfdb1e03e66d1}{fileHelper}}; }
+\DoxyCodeLine{\Hypertarget{dataStorage_8h_source_l00057}00057 }
+\DoxyCodeLine{\Hypertarget{dataStorage_8h_source_l00066}00066     std::string \mbox{\hyperlink{classDataStorage_a4f7c8d0fc570f9ca75609f004974fa0b}{getValidFilePath}}(\textcolor{keyword}{const} std::string\& filename);}
+\DoxyCodeLine{\Hypertarget{dataStorage_8h_source_l00067}00067 \};}
+\DoxyCodeLine{\Hypertarget{dataStorage_8h_source_l00068}00068 }
+\DoxyCodeLine{\Hypertarget{dataStorage_8h_source_l00069}00069 \textcolor{preprocessor}{\#endif }\textcolor{comment}{// DATASTORAGE\_H}}
+
+\end{DoxyCode}

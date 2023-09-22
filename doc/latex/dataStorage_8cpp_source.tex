@@ -1,0 +1,71 @@
+\hypertarget{dataStorage_8cpp_source}{}\doxysection{data\+Storage.\+cpp}
+\label{dataStorage_8cpp_source}\index{src/storage/dataStorage.cpp@{src/storage/dataStorage.cpp}}
+\mbox{\hyperlink{dataStorage_8cpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{dataStorage_8cpp_source_l00001}00001 \textcolor{comment}{// DataStorage.cpp}}
+\DoxyCodeLine{\Hypertarget{dataStorage_8cpp_source_l00002}00002 \textcolor{preprocessor}{\#include "{}../../include/storage/dataStorage.h"{}}}
+\DoxyCodeLine{\Hypertarget{dataStorage_8cpp_source_l00003}00003 }
+\DoxyCodeLine{\Hypertarget{dataStorage_8cpp_source_l00004}\mbox{\hyperlink{classDataStorage_a22825d40495dae6a5df46d629fb26a3f}{00004}} \mbox{\hyperlink{classDataStorage_a22825d40495dae6a5df46d629fb26a3f}{DataStorage::DataStorage}}() : fileHelper() \{\}}
+\DoxyCodeLine{\Hypertarget{dataStorage_8cpp_source_l00005}00005 }
+\DoxyCodeLine{\Hypertarget{dataStorage_8cpp_source_l00006}00006 \textcolor{comment}{// Helper function to validate and get the file path}}
+\DoxyCodeLine{\Hypertarget{dataStorage_8cpp_source_l00007}\mbox{\hyperlink{classDataStorage_a4f7c8d0fc570f9ca75609f004974fa0b}{00007}} std::string \mbox{\hyperlink{classDataStorage_a4f7c8d0fc570f9ca75609f004974fa0b}{DataStorage::getValidFilePath}}(\textcolor{keyword}{const} std::string\& filename) \{}
+\DoxyCodeLine{\Hypertarget{dataStorage_8cpp_source_l00008}00008     std::string filePath = \mbox{\hyperlink{classDataStorage_a1b36b28a8ce65819497dfdb1e03e66d1}{fileHelper}}.\mbox{\hyperlink{classFileHelper_a8a218e5dfb2e5ec90c4180671f868af1}{getFilePath}}(filename);}
+\DoxyCodeLine{\Hypertarget{dataStorage_8cpp_source_l00009}00009     \textcolor{keywordflow}{if}(filePath.empty()) \{}
+\DoxyCodeLine{\Hypertarget{dataStorage_8cpp_source_l00010}00010         \textcolor{keywordflow}{throw} std::runtime\_error(\textcolor{stringliteral}{"{}Unable to retrieve the user's home directory."{}});}
+\DoxyCodeLine{\Hypertarget{dataStorage_8cpp_source_l00011}00011     \}}
+\DoxyCodeLine{\Hypertarget{dataStorage_8cpp_source_l00012}00012     \textcolor{keywordflow}{return} filePath;}
+\DoxyCodeLine{\Hypertarget{dataStorage_8cpp_source_l00013}00013 \}}
+\DoxyCodeLine{\Hypertarget{dataStorage_8cpp_source_l00014}00014 }
+\DoxyCodeLine{\Hypertarget{dataStorage_8cpp_source_l00015}\mbox{\hyperlink{classDataStorage_a3574d849493097410d0879263706ee69}{00015}} \textcolor{keywordtype}{void} \mbox{\hyperlink{classDataStorage_a3574d849493097410d0879263706ee69}{DataStorage::saveToFile}}(\textcolor{keyword}{const} std::map<std::string, nlohmann::json>\& newData, \textcolor{keyword}{const} std::string\& filename)}
+\DoxyCodeLine{\Hypertarget{dataStorage_8cpp_source_l00016}00016 \{    }
+\DoxyCodeLine{\Hypertarget{dataStorage_8cpp_source_l00017}00017     std::string filePath = \mbox{\hyperlink{classDataStorage_a4f7c8d0fc570f9ca75609f004974fa0b}{getValidFilePath}}(filename);}
+\DoxyCodeLine{\Hypertarget{dataStorage_8cpp_source_l00018}00018 }
+\DoxyCodeLine{\Hypertarget{dataStorage_8cpp_source_l00019}00019     std::map<std::string, nlohmann::json> existingData;}
+\DoxyCodeLine{\Hypertarget{dataStorage_8cpp_source_l00020}00020 }
+\DoxyCodeLine{\Hypertarget{dataStorage_8cpp_source_l00021}00021     \textcolor{comment}{// Check if the file already exists}}
+\DoxyCodeLine{\Hypertarget{dataStorage_8cpp_source_l00022}00022     \textcolor{keywordflow}{if} (\mbox{\hyperlink{classDataStorage_a1b36b28a8ce65819497dfdb1e03e66d1}{fileHelper}}.\mbox{\hyperlink{classFileHelper_ad75188b2ae6098e5dae2f23cb5576341}{fileExists}}(filePath)) \{}
+\DoxyCodeLine{\Hypertarget{dataStorage_8cpp_source_l00023}00023         std::ifstream i(filePath);}
+\DoxyCodeLine{\Hypertarget{dataStorage_8cpp_source_l00024}00024         \textcolor{keywordflow}{if} (!i.is\_open() || !i.good()) \{}
+\DoxyCodeLine{\Hypertarget{dataStorage_8cpp_source_l00025}00025             \textcolor{keywordflow}{throw} std::runtime\_error(\textcolor{stringliteral}{"{}Error opening file for reading."{}});}
+\DoxyCodeLine{\Hypertarget{dataStorage_8cpp_source_l00026}00026         \}}
+\DoxyCodeLine{\Hypertarget{dataStorage_8cpp_source_l00027}00027         nlohmann::json j;}
+\DoxyCodeLine{\Hypertarget{dataStorage_8cpp_source_l00028}00028         i >> j;}
+\DoxyCodeLine{\Hypertarget{dataStorage_8cpp_source_l00029}00029         i.close();}
+\DoxyCodeLine{\Hypertarget{dataStorage_8cpp_source_l00030}00030         existingData = j.at(\textcolor{stringliteral}{"{}events"{}}).get<std::map<std::string, nlohmann::json>>();}
+\DoxyCodeLine{\Hypertarget{dataStorage_8cpp_source_l00031}00031     \}}
+\DoxyCodeLine{\Hypertarget{dataStorage_8cpp_source_l00032}00032 }
+\DoxyCodeLine{\Hypertarget{dataStorage_8cpp_source_l00033}00033     \textcolor{comment}{// Merge the existing and new data}}
+\DoxyCodeLine{\Hypertarget{dataStorage_8cpp_source_l00034}00034     existingData.insert(newData.begin(), newData.end());}
+\DoxyCodeLine{\Hypertarget{dataStorage_8cpp_source_l00035}00035     }
+\DoxyCodeLine{\Hypertarget{dataStorage_8cpp_source_l00036}00036     std::ofstream o(filePath);}
+\DoxyCodeLine{\Hypertarget{dataStorage_8cpp_source_l00037}00037     \textcolor{keywordflow}{if} (!o.is\_open() || !o.good()) \{}
+\DoxyCodeLine{\Hypertarget{dataStorage_8cpp_source_l00038}00038         \textcolor{keywordflow}{throw} std::runtime\_error(\textcolor{stringliteral}{"{}Unable to open file for writing."{}});}
+\DoxyCodeLine{\Hypertarget{dataStorage_8cpp_source_l00039}00039     \}}
+\DoxyCodeLine{\Hypertarget{dataStorage_8cpp_source_l00040}00040     nlohmann::json j;}
+\DoxyCodeLine{\Hypertarget{dataStorage_8cpp_source_l00041}00041     j[\textcolor{stringliteral}{"{}events"{}}] = existingData;}
+\DoxyCodeLine{\Hypertarget{dataStorage_8cpp_source_l00042}00042     o << j.dump(4);}
+\DoxyCodeLine{\Hypertarget{dataStorage_8cpp_source_l00043}00043     o.close();}
+\DoxyCodeLine{\Hypertarget{dataStorage_8cpp_source_l00044}00044 \}}
+\DoxyCodeLine{\Hypertarget{dataStorage_8cpp_source_l00045}00045 }
+\DoxyCodeLine{\Hypertarget{dataStorage_8cpp_source_l00046}\mbox{\hyperlink{classDataStorage_a898ad89ba95776da063f62c95677f78c}{00046}} std::map<std::string, nlohmann::json> \mbox{\hyperlink{classDataStorage_a898ad89ba95776da063f62c95677f78c}{DataStorage::readFromFile}}(\textcolor{keyword}{const} std::string\& filename)}
+\DoxyCodeLine{\Hypertarget{dataStorage_8cpp_source_l00047}00047 \{}
+\DoxyCodeLine{\Hypertarget{dataStorage_8cpp_source_l00048}00048     std::string filePath = \mbox{\hyperlink{classDataStorage_a4f7c8d0fc570f9ca75609f004974fa0b}{getValidFilePath}}(filename);}
+\DoxyCodeLine{\Hypertarget{dataStorage_8cpp_source_l00049}00049         }
+\DoxyCodeLine{\Hypertarget{dataStorage_8cpp_source_l00050}00050     std::map<std::string, nlohmann::json> existingData;}
+\DoxyCodeLine{\Hypertarget{dataStorage_8cpp_source_l00051}00051 }
+\DoxyCodeLine{\Hypertarget{dataStorage_8cpp_source_l00052}00052     \textcolor{comment}{// Check if the file exists}}
+\DoxyCodeLine{\Hypertarget{dataStorage_8cpp_source_l00053}00053     \textcolor{keywordflow}{if} (\mbox{\hyperlink{classDataStorage_a1b36b28a8ce65819497dfdb1e03e66d1}{fileHelper}}.\mbox{\hyperlink{classFileHelper_ad75188b2ae6098e5dae2f23cb5576341}{fileExists}}(filePath)) \{}
+\DoxyCodeLine{\Hypertarget{dataStorage_8cpp_source_l00054}00054         std::ifstream i(filePath);}
+\DoxyCodeLine{\Hypertarget{dataStorage_8cpp_source_l00055}00055         \textcolor{keywordflow}{if} (!i.is\_open() || !i.good()) \{}
+\DoxyCodeLine{\Hypertarget{dataStorage_8cpp_source_l00056}00056             \textcolor{keywordflow}{throw} std::runtime\_error(\textcolor{stringliteral}{"{}Error opening file for reading."{}});}
+\DoxyCodeLine{\Hypertarget{dataStorage_8cpp_source_l00057}00057         \}}
+\DoxyCodeLine{\Hypertarget{dataStorage_8cpp_source_l00058}00058         nlohmann::json j;}
+\DoxyCodeLine{\Hypertarget{dataStorage_8cpp_source_l00059}00059         i >> j;}
+\DoxyCodeLine{\Hypertarget{dataStorage_8cpp_source_l00060}00060         i.close();}
+\DoxyCodeLine{\Hypertarget{dataStorage_8cpp_source_l00061}00061         existingData = j.at(\textcolor{stringliteral}{"{}events"{}}).get<std::map<std::string, nlohmann::json>>();}
+\DoxyCodeLine{\Hypertarget{dataStorage_8cpp_source_l00062}00062     \}}
+\DoxyCodeLine{\Hypertarget{dataStorage_8cpp_source_l00063}00063 }
+\DoxyCodeLine{\Hypertarget{dataStorage_8cpp_source_l00064}00064     \textcolor{keywordflow}{return} existingData;}
+\DoxyCodeLine{\Hypertarget{dataStorage_8cpp_source_l00065}00065 \}}
+
+\end{DoxyCode}

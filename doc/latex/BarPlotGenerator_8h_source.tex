@@ -1,0 +1,57 @@
+\hypertarget{BarPlotGenerator_8h_source}{}\doxysection{Bar\+Plot\+Generator.\+h}
+\label{BarPlotGenerator_8h_source}\index{include/gdGeneration/BarPlotGenerator.h@{include/gdGeneration/BarPlotGenerator.h}}
+\mbox{\hyperlink{BarPlotGenerator_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{BarPlotGenerator_8h_source_l00001}00001 }
+\DoxyCodeLine{\Hypertarget{BarPlotGenerator_8h_source_l00010}00010 \textcolor{preprocessor}{\#ifndef BARPLOTGENERATOR\_H}}
+\DoxyCodeLine{\Hypertarget{BarPlotGenerator_8h_source_l00011}00011 \textcolor{preprocessor}{\#define BARPLOTGENERATOR\_H}}
+\DoxyCodeLine{\Hypertarget{BarPlotGenerator_8h_source_l00012}00012 }
+\DoxyCodeLine{\Hypertarget{BarPlotGenerator_8h_source_l00013}\mbox{\hyperlink{BarPlotGenerator_8h_af326d9b4cced6fd44a9f9567dc666014}{00013}} \textcolor{preprocessor}{\#define FONT\_PATH "{}/usr/share/fonts/truetype/dejavu/DejaVuSans-\/Bold.ttf"{}}}
+\DoxyCodeLine{\Hypertarget{BarPlotGenerator_8h_source_l00014}\mbox{\hyperlink{BarPlotGenerator_8h_a3d277f5a5dec260aa85c464f96800b9e}{00014}} \textcolor{preprocessor}{\#define SIZE\_TITLE 64}}
+\DoxyCodeLine{\Hypertarget{BarPlotGenerator_8h_source_l00015}\mbox{\hyperlink{BarPlotGenerator_8h_a241aeeb764887ae5e3de58b98f04b16d}{00015}} \textcolor{preprocessor}{\#define WIDTH 4000}}
+\DoxyCodeLine{\Hypertarget{BarPlotGenerator_8h_source_l00016}\mbox{\hyperlink{BarPlotGenerator_8h_aed89bd71aee8be823e8a20ec4e093c1e}{00016}} \textcolor{preprocessor}{\#define HEIGHT 3000}}
+\DoxyCodeLine{\Hypertarget{BarPlotGenerator_8h_source_l00017}00017 }
+\DoxyCodeLine{\Hypertarget{BarPlotGenerator_8h_source_l00018}00018 \textcolor{comment}{// System and library headers}}
+\DoxyCodeLine{\Hypertarget{BarPlotGenerator_8h_source_l00019}00019 \textcolor{preprocessor}{\#include <map>}}
+\DoxyCodeLine{\Hypertarget{BarPlotGenerator_8h_source_l00020}00020 \textcolor{preprocessor}{\#include <string>}}
+\DoxyCodeLine{\Hypertarget{BarPlotGenerator_8h_source_l00021}00021 \textcolor{preprocessor}{\#include <gd.h>} \textcolor{comment}{// GD Library}}
+\DoxyCodeLine{\Hypertarget{BarPlotGenerator_8h_source_l00022}00022 \textcolor{preprocessor}{\#include <gdfonts.h>} \textcolor{comment}{// GD Library}}
+\DoxyCodeLine{\Hypertarget{BarPlotGenerator_8h_source_l00023}00023 \textcolor{preprocessor}{\#include <nlohmann/json.hpp>}}
+\DoxyCodeLine{\Hypertarget{BarPlotGenerator_8h_source_l00024}00024 \textcolor{preprocessor}{\#include <cmath>}}
+\DoxyCodeLine{\Hypertarget{BarPlotGenerator_8h_source_l00025}00025 \textcolor{preprocessor}{\#include <cstdio>}}
+\DoxyCodeLine{\Hypertarget{BarPlotGenerator_8h_source_l00026}00026 \textcolor{preprocessor}{\#include <cstring>}}
+\DoxyCodeLine{\Hypertarget{BarPlotGenerator_8h_source_l00027}00027 \textcolor{preprocessor}{\#include <cctype>}}
+\DoxyCodeLine{\Hypertarget{BarPlotGenerator_8h_source_l00028}00028 \textcolor{preprocessor}{\#include <vector>}}
+\DoxyCodeLine{\Hypertarget{BarPlotGenerator_8h_source_l00029}00029 \textcolor{preprocessor}{\#include <iostream>}}
+\DoxyCodeLine{\Hypertarget{BarPlotGenerator_8h_source_l00030}00030 \textcolor{preprocessor}{\#include <random>}}
+\DoxyCodeLine{\Hypertarget{BarPlotGenerator_8h_source_l00031}00031 }
+\DoxyCodeLine{\Hypertarget{BarPlotGenerator_8h_source_l00032}00032 \textcolor{comment}{// Project headers}}
+\DoxyCodeLine{\Hypertarget{BarPlotGenerator_8h_source_l00033}00033 \textcolor{preprocessor}{\#include "{}../fileManagement/fileHelper.h"{}}}
+\DoxyCodeLine{\Hypertarget{BarPlotGenerator_8h_source_l00034}00034 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{utils_8h}{utils.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{BarPlotGenerator_8h_source_l00035}00035 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{GraphicsUtils_8h}{GraphicsUtils.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{BarPlotGenerator_8h_source_l00036}00036 }
+\DoxyCodeLine{\Hypertarget{BarPlotGenerator_8h_source_l00043}\mbox{\hyperlink{classBarPlotGenerator}{00043}} \textcolor{keyword}{class }\mbox{\hyperlink{classBarPlotGenerator}{BarPlotGenerator}} \{}
+\DoxyCodeLine{\Hypertarget{BarPlotGenerator_8h_source_l00044}00044 \textcolor{keyword}{public}:}
+\DoxyCodeLine{\Hypertarget{BarPlotGenerator_8h_source_l00045}00045     \mbox{\hyperlink{classBarPlotGenerator_a4c6fca86e7273d8f3778d1bd62eb9d19}{BarPlotGenerator}}(); }
+\DoxyCodeLine{\Hypertarget{BarPlotGenerator_8h_source_l00046}00046     \mbox{\hyperlink{classBarPlotGenerator_a46a4b4343db5a98f487c522f173950bc}{\string~BarPlotGenerator}}(); }
+\DoxyCodeLine{\Hypertarget{BarPlotGenerator_8h_source_l00047}00047 }
+\DoxyCodeLine{\Hypertarget{BarPlotGenerator_8h_source_l00053}00053     \mbox{\hyperlink{structColor}{Color}} \mbox{\hyperlink{classBarPlotGenerator_a5d0ca705fe16f9ff03ca9c38bbd5ffb9}{generate\_random\_color}}();}
+\DoxyCodeLine{\Hypertarget{BarPlotGenerator_8h_source_l00054}00054 }
+\DoxyCodeLine{\Hypertarget{BarPlotGenerator_8h_source_l00060}00060     \textcolor{keywordtype}{void} \mbox{\hyperlink{classBarPlotGenerator_a6e101c7e9279aaabde95d62076331f75}{loadDataFromJson}}(\textcolor{keyword}{const} std::map<std::string, nlohmann::json>\& jsonData);}
+\DoxyCodeLine{\Hypertarget{BarPlotGenerator_8h_source_l00061}00061 }
+\DoxyCodeLine{\Hypertarget{BarPlotGenerator_8h_source_l00067}00067     \textcolor{keywordtype}{void} \mbox{\hyperlink{classBarPlotGenerator_a8607516727d0c8f609e3f2017bf11c5e}{generateBarPlot}}(\textcolor{keyword}{const} std::string\& outputFilename);}
+\DoxyCodeLine{\Hypertarget{BarPlotGenerator_8h_source_l00068}00068 }
+\DoxyCodeLine{\Hypertarget{BarPlotGenerator_8h_source_l00075}00075     \textcolor{keywordtype}{void} \mbox{\hyperlink{classBarPlotGenerator_ab01e022ff2ff243415f4b3bed87acd69}{saveImage}}(gdImagePtr img, \textcolor{keyword}{const} std::string\& filename);}
+\DoxyCodeLine{\Hypertarget{BarPlotGenerator_8h_source_l00076}00076 }
+\DoxyCodeLine{\Hypertarget{BarPlotGenerator_8h_source_l00077}00077 \textcolor{keyword}{private}:}
+\DoxyCodeLine{\Hypertarget{BarPlotGenerator_8h_source_l00078}\mbox{\hyperlink{classBarPlotGenerator_af5bdf6320e6399160ccadfd40ff546f1}{00078}}     \mbox{\hyperlink{classFileHelper}{FileHelper}} \mbox{\hyperlink{classBarPlotGenerator_af5bdf6320e6399160ccadfd40ff546f1}{fileHelper}}; }
+\DoxyCodeLine{\Hypertarget{BarPlotGenerator_8h_source_l00079}\mbox{\hyperlink{classBarPlotGenerator_a4f8a589ae04a15c218cf705e2fce1e2e}{00079}}     std::map<std::string, int> \mbox{\hyperlink{classBarPlotGenerator_a4f8a589ae04a15c218cf705e2fce1e2e}{tagFrequency}}; }
+\DoxyCodeLine{\Hypertarget{BarPlotGenerator_8h_source_l00080}00080 }
+\DoxyCodeLine{\Hypertarget{BarPlotGenerator_8h_source_l00087}00087     std::string \mbox{\hyperlink{classBarPlotGenerator_a0b6c4355989e09b9309c7f9585947cdf}{formatTitle}}(\textcolor{keyword}{const} std::string\& filename);}
+\DoxyCodeLine{\Hypertarget{BarPlotGenerator_8h_source_l00088}00088 }
+\DoxyCodeLine{\Hypertarget{BarPlotGenerator_8h_source_l00096}00096     \textcolor{keywordtype}{bool} \mbox{\hyperlink{classBarPlotGenerator_ac9ff708e4d8b332109d37e0f1a619e31}{isValidTag}}(\textcolor{keyword}{const} std::string\& tag);}
+\DoxyCodeLine{\Hypertarget{BarPlotGenerator_8h_source_l00097}00097 \};}
+\DoxyCodeLine{\Hypertarget{BarPlotGenerator_8h_source_l00098}00098 }
+\DoxyCodeLine{\Hypertarget{BarPlotGenerator_8h_source_l00099}00099 \textcolor{preprocessor}{\#endif }\textcolor{comment}{// BARPLOTGENERATOR\_H}}
+
+\end{DoxyCode}

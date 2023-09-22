@@ -1,0 +1,37 @@
+\hypertarget{signalHandler_8h_source}{}\doxysection{signal\+Handler.\+h}
+\label{signalHandler_8h_source}\index{include/service/signalHandler.h@{include/service/signalHandler.h}}
+\mbox{\hyperlink{signalHandler_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{signalHandler_8h_source_l00001}00001 }
+\DoxyCodeLine{\Hypertarget{signalHandler_8h_source_l00013}00013 \textcolor{preprocessor}{\#ifndef SIGNALHANDLER\_H}}
+\DoxyCodeLine{\Hypertarget{signalHandler_8h_source_l00014}00014 \textcolor{preprocessor}{\#define SIGNALHANDLER\_H}}
+\DoxyCodeLine{\Hypertarget{signalHandler_8h_source_l00015}00015 }
+\DoxyCodeLine{\Hypertarget{signalHandler_8h_source_l00016}00016 \textcolor{preprocessor}{\#include <csignal>}}
+\DoxyCodeLine{\Hypertarget{signalHandler_8h_source_l00017}00017 \textcolor{preprocessor}{\#include <atomic>}}
+\DoxyCodeLine{\Hypertarget{signalHandler_8h_source_l00018}00018 \textcolor{preprocessor}{\#include <iostream>}}
+\DoxyCodeLine{\Hypertarget{signalHandler_8h_source_l00019}00019 }
+\DoxyCodeLine{\Hypertarget{signalHandler_8h_source_l00028}\mbox{\hyperlink{classSignalHandler}{00028}} \textcolor{keyword}{class }\mbox{\hyperlink{classSignalHandler}{SignalHandler}} \{}
+\DoxyCodeLine{\Hypertarget{signalHandler_8h_source_l00029}00029 \textcolor{keyword}{public}:}
+\DoxyCodeLine{\Hypertarget{signalHandler_8h_source_l00035}00035     \textcolor{keyword}{static} \mbox{\hyperlink{classSignalHandler}{SignalHandler}}\& \mbox{\hyperlink{classSignalHandler_a15631110fc9c8fee4c1b2bf3bced2de3}{getInstance}}();}
+\DoxyCodeLine{\Hypertarget{signalHandler_8h_source_l00036}00036 }
+\DoxyCodeLine{\Hypertarget{signalHandler_8h_source_l00040}00040     \textcolor{keywordtype}{void} \mbox{\hyperlink{classSignalHandler_a90eff6c9610cdcd77a1706491f2ce28a}{setupSignalHandlers}}();}
+\DoxyCodeLine{\Hypertarget{signalHandler_8h_source_l00041}00041 }
+\DoxyCodeLine{\Hypertarget{signalHandler_8h_source_l00048}00048     \textcolor{keywordtype}{bool} \mbox{\hyperlink{classSignalHandler_a8030ca5796b5a5b4b0f54c3ff9405e84}{isShutdownRequested}}() \textcolor{keyword}{const};}
+\DoxyCodeLine{\Hypertarget{signalHandler_8h_source_l00049}00049 }
+\DoxyCodeLine{\Hypertarget{signalHandler_8h_source_l00050}00050 \textcolor{keyword}{private}:}
+\DoxyCodeLine{\Hypertarget{signalHandler_8h_source_l00054}00054     \mbox{\hyperlink{classSignalHandler_a3149ab1b5e1c8940d11b182f8059d916}{SignalHandler}}();}
+\DoxyCodeLine{\Hypertarget{signalHandler_8h_source_l00055}00055 }
+\DoxyCodeLine{\Hypertarget{signalHandler_8h_source_l00059}00059     \mbox{\hyperlink{classSignalHandler_addc8b5b0b969eb405376a77a369de007}{\string~SignalHandler}}();}
+\DoxyCodeLine{\Hypertarget{signalHandler_8h_source_l00060}00060 }
+\DoxyCodeLine{\Hypertarget{signalHandler_8h_source_l00061}00061     \textcolor{comment}{// Deleted copy constructor and assignment operator to prevent copy operations.}}
+\DoxyCodeLine{\Hypertarget{signalHandler_8h_source_l00062}\mbox{\hyperlink{classSignalHandler_aa974b64751e65547b746c5fbfa4877c0}{00062}}     \mbox{\hyperlink{classSignalHandler_aa974b64751e65547b746c5fbfa4877c0}{SignalHandler}}(\textcolor{keyword}{const} \mbox{\hyperlink{classSignalHandler}{SignalHandler}}\&) = \textcolor{keyword}{delete};}
+\DoxyCodeLine{\Hypertarget{signalHandler_8h_source_l00063}\mbox{\hyperlink{classSignalHandler_a4b822693a1aefcd12bb830b54ec3b988}{00063}}     \mbox{\hyperlink{classSignalHandler}{SignalHandler}}\& \mbox{\hyperlink{classSignalHandler_a4b822693a1aefcd12bb830b54ec3b988}{operator=}}(\textcolor{keyword}{const} \mbox{\hyperlink{classSignalHandler}{SignalHandler}}\&) = \textcolor{keyword}{delete};}
+\DoxyCodeLine{\Hypertarget{signalHandler_8h_source_l00064}00064 }
+\DoxyCodeLine{\Hypertarget{signalHandler_8h_source_l00074}00074     \textcolor{keyword}{static} \textcolor{keywordtype}{void} \mbox{\hyperlink{classSignalHandler_a0899d0c83b42582e862d2f4879e6a2e7}{handleSignal}}(\textcolor{keywordtype}{int} signum);}
+\DoxyCodeLine{\Hypertarget{signalHandler_8h_source_l00075}00075 }
+\DoxyCodeLine{\Hypertarget{signalHandler_8h_source_l00079}\mbox{\hyperlink{classSignalHandler_a341bb6348f9e951f87757bb9685b9734}{00079}}     \textcolor{keyword}{static} std::atomic<bool> \mbox{\hyperlink{classSignalHandler_a341bb6348f9e951f87757bb9685b9734}{shutdownRequested}};}
+\DoxyCodeLine{\Hypertarget{signalHandler_8h_source_l00080}00080 \};}
+\DoxyCodeLine{\Hypertarget{signalHandler_8h_source_l00081}00081 }
+\DoxyCodeLine{\Hypertarget{signalHandler_8h_source_l00082}00082 \textcolor{preprocessor}{\#endif }\textcolor{comment}{// SIGNALHANDLER\_H}}
+
+\end{DoxyCode}

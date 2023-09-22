@@ -1,0 +1,154 @@
+\hypertarget{classObservable}{}\doxysection{Observable Class Reference}
+\label{classObservable}\index{Observable@{Observable}}
+
+
+Represents the subject (or observable) in the \mbox{\hyperlink{classObserver}{Observer}} design pattern.  
+
+
+
+
+{\ttfamily \#include $<$observable.\+h$>$}
+
+
+
+Inheritance diagram for Observable\+:
+% FIG 0
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{classObservable_a2c701f154eea3a37cc5ff283c23d6822}{add\+Observer}} (\mbox{\hyperlink{classObserver}{Observer}} $\ast$o)
+\begin{DoxyCompactList}\small\item\em Registers an observer to the observable. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classObservable_a2febd7dc96b219866d57964b72593f5d}{remove\+Observer}} (\mbox{\hyperlink{classObserver}{Observer}} $\ast$o)
+\begin{DoxyCompactList}\small\item\em Unregisters an observer from the observable. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classObservable_a98235ce794949ba4827df63e571fb14b}{notify\+Observers}} (const std\+::map$<$ std\+::string, nlohmann\+::json $>$ \&new\+Events)
+\begin{DoxyCompactList}\small\item\em Sends updates to all registered observers. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classObservable_a22482fd8540852084485897519142960}{notify\+Daily\+Observers}} (const std\+::map$<$ std\+::string, nlohmann\+::json $>$ \&new\+Daily\+Events)
+\begin{DoxyCompactList}\small\item\em Sends daily-\/specific updates to all observers. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+std\+::vector$<$ \mbox{\hyperlink{classObserver}{Observer}} $\ast$ $>$ \mbox{\hyperlink{classObservable_a12e80e23caa6669d5e118a649d66ef4b}{observers}}
+\begin{DoxyCompactList}\small\item\em A collection of subscribers (observers) that listen to this observable. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Represents the subject (or observable) in the \mbox{\hyperlink{classObserver}{Observer}} design pattern. 
+
+The \mbox{\hyperlink{classObservable}{Observable}} class maintains a list of its subscribers and provides mechanisms to notify them upon state changes or specific events. This forms a central component in the \mbox{\hyperlink{classObserver}{Observer}} pattern, allowing for a decoupled interaction between various components of a system. 
+
+Definition at line \mbox{\hyperlink{observable_8h_source_l00036}{36}} of file \mbox{\hyperlink{observable_8h_source}{observable.\+h}}.
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classObservable_a2c701f154eea3a37cc5ff283c23d6822}\label{classObservable_a2c701f154eea3a37cc5ff283c23d6822}} 
+\index{Observable@{Observable}!addObserver@{addObserver}}
+\index{addObserver@{addObserver}!Observable@{Observable}}
+\doxysubsubsection{\texorpdfstring{addObserver()}{addObserver()}}
+{\footnotesize\ttfamily void Observable\+::add\+Observer (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classObserver}{Observer}} $\ast$}]{o }\end{DoxyParamCaption})}
+
+
+
+Registers an observer to the observable. 
+
+This method allows an observer to express its interest in receiving updates from this observable by adding it to the list of subscribers.
+
+
+\begin{DoxyParams}{Parameters}
+{\em o} & A pointer to the observer that wishes to subscribe. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{observable_8cpp_source_l00003}{3}} of file \mbox{\hyperlink{observable_8cpp_source}{observable.\+cpp}}.
+
+\mbox{\Hypertarget{classObservable_a22482fd8540852084485897519142960}\label{classObservable_a22482fd8540852084485897519142960}} 
+\index{Observable@{Observable}!notifyDailyObservers@{notifyDailyObservers}}
+\index{notifyDailyObservers@{notifyDailyObservers}!Observable@{Observable}}
+\doxysubsubsection{\texorpdfstring{notifyDailyObservers()}{notifyDailyObservers()}}
+{\footnotesize\ttfamily void Observable\+::notify\+Daily\+Observers (\begin{DoxyParamCaption}\item[{const std\+::map$<$ std\+::string, nlohmann\+::json $>$ \&}]{new\+Daily\+Events }\end{DoxyParamCaption})}
+
+
+
+Sends daily-\/specific updates to all observers. 
+
+Iterates over the list of observers and notifies them about daily-\/specific events using their {\ttfamily daily\+Update} method.
+
+
+\begin{DoxyParams}{Parameters}
+{\em new\+Daily\+Events} & A collection of events specific to the day. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{observable_8cpp_source_l00021}{21}} of file \mbox{\hyperlink{observable_8cpp_source}{observable.\+cpp}}.
+
+Here is the caller graph for this function\+:
+% FIG 1
+\mbox{\Hypertarget{classObservable_a98235ce794949ba4827df63e571fb14b}\label{classObservable_a98235ce794949ba4827df63e571fb14b}} 
+\index{Observable@{Observable}!notifyObservers@{notifyObservers}}
+\index{notifyObservers@{notifyObservers}!Observable@{Observable}}
+\doxysubsubsection{\texorpdfstring{notifyObservers()}{notifyObservers()}}
+{\footnotesize\ttfamily void Observable\+::notify\+Observers (\begin{DoxyParamCaption}\item[{const std\+::map$<$ std\+::string, nlohmann\+::json $>$ \&}]{new\+Events }\end{DoxyParamCaption})}
+
+
+
+Sends updates to all registered observers. 
+
+Iterates over the list of subscribed observers and invokes their update method, thereby informing them about the latest events.
+
+
+\begin{DoxyParams}{Parameters}
+{\em new\+Events} & A collection of new events to be disseminated to the observers. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{observable_8cpp_source_l00013}{13}} of file \mbox{\hyperlink{observable_8cpp_source}{observable.\+cpp}}.
+
+Here is the caller graph for this function\+:
+% FIG 2
+\mbox{\Hypertarget{classObservable_a2febd7dc96b219866d57964b72593f5d}\label{classObservable_a2febd7dc96b219866d57964b72593f5d}} 
+\index{Observable@{Observable}!removeObserver@{removeObserver}}
+\index{removeObserver@{removeObserver}!Observable@{Observable}}
+\doxysubsubsection{\texorpdfstring{removeObserver()}{removeObserver()}}
+{\footnotesize\ttfamily void Observable\+::remove\+Observer (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classObserver}{Observer}} $\ast$}]{o }\end{DoxyParamCaption})}
+
+
+
+Unregisters an observer from the observable. 
+
+Removes an observer from the list of subscribers, ensuring that it will no longer receive notifications from this observable.
+
+
+\begin{DoxyParams}{Parameters}
+{\em o} & A pointer to the observer to be unsubscribed. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{observable_8cpp_source_l00008}{8}} of file \mbox{\hyperlink{observable_8cpp_source}{observable.\+cpp}}.
+
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{classObservable_a12e80e23caa6669d5e118a649d66ef4b}\label{classObservable_a12e80e23caa6669d5e118a649d66ef4b}} 
+\index{Observable@{Observable}!observers@{observers}}
+\index{observers@{observers}!Observable@{Observable}}
+\doxysubsubsection{\texorpdfstring{observers}{observers}}
+{\footnotesize\ttfamily std\+::vector$<$\mbox{\hyperlink{classObserver}{Observer}}$\ast$$>$ Observable\+::observers\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+A collection of subscribers (observers) that listen to this observable. 
+
+
+
+Definition at line \mbox{\hyperlink{observable_8h_source_l00038}{38}} of file \mbox{\hyperlink{observable_8h_source}{observable.\+h}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+include/connect\+Api/\mbox{\hyperlink{observable_8h}{observable.\+h}}\item 
+src/connect\+Api/\mbox{\hyperlink{observable_8cpp}{observable.\+cpp}}\end{DoxyCompactItemize}

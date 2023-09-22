@@ -1,0 +1,24 @@
+\hypertarget{observer_8h_source}{}\doxysection{observer.\+h}
+\label{observer_8h_source}\index{include/connectApi/observer.h@{include/connectApi/observer.h}}
+\mbox{\hyperlink{observer_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{observer_8h_source_l00001}00001 }
+\DoxyCodeLine{\Hypertarget{observer_8h_source_l00013}00013 \textcolor{preprocessor}{\#ifndef OBSERVER\_H}}
+\DoxyCodeLine{\Hypertarget{observer_8h_source_l00014}00014 \textcolor{preprocessor}{\#define OBSERVER\_H}}
+\DoxyCodeLine{\Hypertarget{observer_8h_source_l00015}00015 }
+\DoxyCodeLine{\Hypertarget{observer_8h_source_l00016}00016 \textcolor{preprocessor}{\#include <string>}}
+\DoxyCodeLine{\Hypertarget{observer_8h_source_l00017}00017 \textcolor{preprocessor}{\#include <map>}}
+\DoxyCodeLine{\Hypertarget{observer_8h_source_l00018}00018 \textcolor{preprocessor}{\#include <nlohmann/json.hpp>}}
+\DoxyCodeLine{\Hypertarget{observer_8h_source_l00019}00019 }
+\DoxyCodeLine{\Hypertarget{observer_8h_source_l00028}\mbox{\hyperlink{classObserver}{00028}} \textcolor{keyword}{class }\mbox{\hyperlink{classObserver}{Observer}} \{}
+\DoxyCodeLine{\Hypertarget{observer_8h_source_l00029}00029 \textcolor{keyword}{public}:}
+\DoxyCodeLine{\Hypertarget{observer_8h_source_l00037}\mbox{\hyperlink{classObserver_ac933f7a66c117394d87d232923523ee0}{00037}}     \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} \mbox{\hyperlink{classObserver_ac933f7a66c117394d87d232923523ee0}{update}}(\textcolor{keyword}{const} std::map<std::string, nlohmann::json>\& newEvents) = 0;}
+\DoxyCodeLine{\Hypertarget{observer_8h_source_l00038}00038 }
+\DoxyCodeLine{\Hypertarget{observer_8h_source_l00046}\mbox{\hyperlink{classObserver_a1adfe80fa80a5051480be13f1a746800}{00046}}     \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} \mbox{\hyperlink{classObserver_a1adfe80fa80a5051480be13f1a746800}{dailyUpdate}}(\textcolor{keyword}{const} std::map<std::string, nlohmann::json>\& newDailyEvents) = 0;}
+\DoxyCodeLine{\Hypertarget{observer_8h_source_l00047}00047 }
+\DoxyCodeLine{\Hypertarget{observer_8h_source_l00053}\mbox{\hyperlink{classObserver_addf80a7da36e332655a7338601149bec}{00053}}     \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} \mbox{\hyperlink{classObserver_addf80a7da36e332655a7338601149bec}{removeExpiredEvents}}() = 0;}
+\DoxyCodeLine{\Hypertarget{observer_8h_source_l00054}00054 \};}
+\DoxyCodeLine{\Hypertarget{observer_8h_source_l00055}00055 }
+\DoxyCodeLine{\Hypertarget{observer_8h_source_l00056}00056 \textcolor{preprocessor}{\#endif }\textcolor{comment}{// OBSERVER\_H}}
+
+\end{DoxyCode}
