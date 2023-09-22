@@ -7,7 +7,7 @@
 3. [Technologies](#technologies)
 4. [And about the doc](#and-about-the-doc)
 5. [Getting Started](#getting-started)
-   - [Prerequisites](#prerequisites]
+   - [Prerequisites](#prerequisites)
    - [Installation](#installation)
    - [Usage](#usage)
 6. [Architecture](#architecture)
