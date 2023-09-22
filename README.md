@@ -58,13 +58,13 @@ Code documentation is generated with Doxygen. [See section below](#documentation
 ### Installation
 
 1. Clone the
-   ``bash
+   ```bash
    git clone https://github.com/dicesare/Sortir_Dans_Paris.git
     ```
 
 2. Go to the project directory and compile :
 
-  bash
+  ```bash
   cd path_to_the_directory
   make
   ```
