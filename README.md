@@ -63,11 +63,10 @@ Code documentation is generated with Doxygen. [See section below](#documentation
     ```
 
 2. Go to the project directory and compile :
-
-  ```bash
-  cd path_to_the_directory
-  make
-  ```
+     ```bash
+     cd path_to_the_directory
+     make
+     ```
 
 ### Usage
 
