@@ -1,11 +1,15 @@
 /**
  * @file ConcreteObserver.h
  * @author Antony Coco (antony.coco.pro@gmail.com)
- * @brief Concrete implementation of the Observer interface.
+ * @brief Provides a concrete implementation of the Observer interface.
+ * @details The ConcreteObserver class showcases how specific observer implementations 
+ * can manage and respond to updates from the observable. This implementation is capable 
+ * of saving data, generating plots, and maintaining its event state.
  * @version 0.1
  * @date 2023-09-22
  * @copyright Copyright (c) 2023
  */
+
 
 #ifndef CONCRETEOBSERVER_H
 #define CONCRETEOBSERVER_H
@@ -17,9 +21,9 @@
 #include "../gdGeneration/BarPlotGenerator.h"
 
 /**
+ * @class ConcreteObserver
  * @brief Represents a specific observer that reacts to changes in the observable.
- * 
- * The ConcreteObserver class provides specific actions to perform in response to
+ * @details The ConcreteObserver class provides specific actions to perform in response to
  * the changes in the observable subject. It holds its internal state, which is updated
  * upon receiving notifications from the observable subject. This class also has the capability
  * to generate a bar plot from the data it receives.
@@ -46,7 +50,7 @@ public:
     /**
      * @brief Overrides the Observer interface's update method.
      * 
-     * On being notified of new events, this method updates the observer's internal state and may
+     * @details being notified of new events, this method updates the observer's internal state and may
      * trigger other relevant methods, such as generating a bar plot.
      * 
      * @param newEvents Data about the new events, represented as a map.
@@ -56,7 +60,7 @@ public:
     /**
      * @brief Overrides the Observer interface's dailyUpdate method.
      * 
-     * Provides daily specific updates to the observer, updating its state and possibly triggering
+     * @details Provides daily specific updates to the observer, updating its state and possibly triggering
      * other actions.
      * 
      * @param newDailyEvents Data about the new daily events, represented as a map.
@@ -66,7 +70,7 @@ public:
     /**
      * @brief Removes expired events from the observer's state.
      * 
-     * This method is responsible for cleaning up and ensuring that the observer's state remains
+     * @details This method is responsible for cleaning up and ensuring that the observer's state remains
      * up-to-date by removing events that are no longer relevant.
      */
     void removeExpiredEvents() override;

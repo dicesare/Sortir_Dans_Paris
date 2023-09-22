@@ -1,7 +1,10 @@
 /**
  * @file Observer.h
  * @author Antony Coco (antony.coco.pro@gmail.com)
- * @brief Defines an Observer interface for the Observer design pattern.
+ * @brief Provides the Observer interface as part of the Observer design pattern.
+ * @details The Observer design pattern enables a subject to keep its observers informed about any changes. 
+ * In this design, this Observer class acts as the interface that all concrete observers must implement 
+ * to receive and handle notifications from the subject.
  * @version 0.1
  * @date 2023-09-22
  * @copyright Copyright (c) 2023
@@ -11,42 +14,41 @@
 #define OBSERVER_H
 
 #include <string>
-#include <iostream>
 #include <map>
 #include <nlohmann/json.hpp>
 
 /**
+ * @class Observer
  * @brief Interface for the Observer in the Observer design pattern.
- * 
- * The Observer design pattern is used to create a one-to-many dependency 
- * between objects so that when one object changes its state, all its 
- * dependents are notified and updated automatically. This class provides 
- * the interface that Observers must implement to receive and process these notifications.
+ * @details In the context of the Observer design pattern, this interface establishes the 
+ * contract that all observers must fulfill. The observers are expected to receive updates 
+ * about new events, daily activities, and the removal of expired events. Concrete observer 
+ * classes should implement this interface to define their reactions to such notifications.
  */
 class Observer {
 public:
     /**
-     * @brief Notify the Observer of new events.
+     * @brief Updates the Observer with general events.
+     * @details This method notifies the observer about general events. Implementing classes 
+     * should process and react to these events as per their specific requirements.
      * 
-     * Implementing classes should handle the update based on the received events.
-     * 
-     * @param newEvents A map of new events represented by key-value pairs.
+     * @param newEvents A map of the latest events represented as key-value pairs.
      */
     virtual void update(const std::map<std::string, nlohmann::json>& newEvents) = 0;
 
     /**
-     * @brief Notify the Observer of daily updates.
+     * @brief Provides the Observer with daily-specific updates.
+     * @details Observers receive daily-specific events via this method. Concrete observers 
+     * should handle these events and adapt based on their individual business logic.
      * 
-     * Implementing classes should handle daily-specific updates based on the received events.
-     * 
-     * @param newDailyEvents A map of daily events represented by key-value pairs.
+     * @param newDailyEvents A map of daily events characterized by key-value pairs.
      */
     virtual void dailyUpdate(const std::map<std::string, nlohmann::json>& newDailyEvents) = 0;
 
     /**
-     * @brief Instruct the Observer to remove expired events.
-     * 
-     * Implementing classes should remove or handle any expired events.
+     * @brief Commands the Observer to address expired events.
+     * @details Implementing classes should take the necessary actions upon receiving 
+     * this instruction, such as removing or archiving the expired events.
      */
     virtual void removeExpiredEvents() = 0;
 };

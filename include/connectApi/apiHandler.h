@@ -28,9 +28,9 @@
 #include "observable.h"
 
 /**
+ * @class APIHandler
  * @brief The APIHandler class is responsible for fetching data from a given API.
- * 
- * The class provides methods to make requests to an external API and process the returned
+ * @details The class provides methods to make requests to an external API and process the returned
  * data. Once the data is fetched, it acts as an Observable, notifying its observers
  * of the new data. This class abstracts the details of making API requests and provides
  * a clean interface to obtain data for the application.
@@ -41,11 +41,15 @@ public:
      * @brief Default constructor for APIHandler.
      */
     APIHandler();
+    /**
+     * @brief Destructor for APIHandler.
+     */
+    ~APIHandler();
 
     /**
      * @brief Fetches data from the API and notifies its observers.
      * 
-     * This method communicates with the base URL of the API, retrieves data,
+     * @details This method communicates with the base URL of the API, retrieves data,
      * and then notifies all registered observers with this new data.
      */
     void fetchData();
@@ -66,7 +70,7 @@ private:
      */
     std::map<std::string, nlohmann::json> makeRequest(const std::string& url);
 
-    const std::string baseUrl; ///< The base URL for the API.
+    const std::string baseUrl = "https://opendata.paris.fr/api/explore/v2.1/catalog/datasets/que-faire-a-paris-/records?"; ///< The base URL for the API.
 };
 
 #endif // APIHANDLER_H

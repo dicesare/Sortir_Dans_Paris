@@ -1,0 +1,16 @@
+digraph "PieChartGenerator::calculate_coordinates"
+{
+ // LATEX_PDF_SIZE
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  rankdir="RL";
+  Node1 [label="PieChartGenerator::\lcalculate_coordinates",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip="Calculates the coordinates for a given angle on the pie chart."];
+  Node1 -> Node2 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node2 [label="PieChartGenerator::\ldraw_segment_and_label",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classPieChartGenerator.html#a7a57c299567e171bc40bbd817e95954e",tooltip="Draws a segment and its corresponding label on the pie chart image."];
+  Node2 -> Node3 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node3 [label="PieChartGenerator::\lcreate_pie_chart_image",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classPieChartGenerator.html#aa95dd31c6170513a9d82004d6db6cf15",tooltip="Creates an image representing the pie chart."];
+  Node3 -> Node4 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node4 [label="PieChartGenerator::\lgeneratePieChart",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classPieChartGenerator.html#a2f367ee64a37d9b971b24090f9842251",tooltip="Loads data from the given file."];
+  Node4 -> Node5 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node5 [label="PeriodicFetcher::start",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classPeriodicFetcher.html#a84f9a218ccb184feb1a8027b2ac9ac44",tooltip="Begin the periodic fetching and processing of data."];
+}

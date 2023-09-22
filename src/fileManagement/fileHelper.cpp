@@ -1,5 +1,4 @@
 #include "../../include/fileManagement/fileHelper.h"
-#include "fileHelper.h"
 
 
 FileHelper::FileHelper() : m_subfolder("resources") {}

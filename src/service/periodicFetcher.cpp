@@ -10,13 +10,14 @@ PeriodicFetcher::PeriodicFetcher(Observable& observable, int interval, fitu unit
 void PeriodicFetcher::start() {
     APIHandler apiHandler;
     while (!SignalHandler::getInstance().isShutdownRequested()) {
-        {
+        try {
             std::lock_guard<std::mutex> lock(mtx);
             std::map<std::string, nlohmann::json> newEvents = apiHandler.fetchTodaysEvents();
             observable.notifyDailyObservers(newEvents);
             pieChartGen.generatePieChart(newEvents);
+        } catch(const std::exception& e) {
+            log("Error during data fetching or processing: " + std::string(e.what()));
         }
-        
         // Sleep for the configured fetch interval.
         switch (timeUnit) {
             case fitu::SEC:
@@ -29,11 +30,16 @@ void PeriodicFetcher::start() {
                 std::this_thread::sleep_for(std::chrono::hours(fetchInterval));
                 break;
             default:
-                std::cerr << "Intervalle non reconnu!" << std::endl;
+                log("Unrecognized interval!");
                 return;
         }
     }
 
-    std::cout << "[PeriodicFetcher] Arrêt en cours..." << std::endl;
-    std::cout << "[PeriodicFetcher] Thread fetcher : arrêté." << std::endl;
+    log("[PeriodicFetcher] Shutting down...");
+    log("[PeriodicFetcher] Fetcher thread: stopped.");
+}
+
+void PeriodicFetcher::log(const std::string& message) {
+    // Placeholder: Replace with a proper logging library/method later.
+    std::cerr << "[PeriodicFetcher Log] " << message << std::endl;
 }

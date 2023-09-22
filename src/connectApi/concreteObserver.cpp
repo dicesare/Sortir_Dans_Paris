@@ -9,12 +9,14 @@ void ConcreteObserver::update(const std::map<std::string, nlohmann::json>& newEv
 	dataStorage.saveToFile(newEvents, "dataStorageSortirDansParis.json");
 	generateBarPlotFromData(newEvents);
 }
+
 void ConcreteObserver::dailyUpdate(const std::map<std::string, nlohmann::json>& newDailyEvents)
 {
 	currentAndUpcomingEvents = newDailyEvents;
 	// Maintenant, mettez à jour le dataset et retirez les événements expirés
 	dataStorage.saveToFile(newDailyEvents, "updateDailyDataStorageSortirDansParis.json");
 }
+
 void ConcreteObserver::removeExpiredEvents()
 {
 	std::map<std::string, nlohmann::json> currentEvents = dataStorage.readFromFile("dataStorageSortirDansParis.json");
