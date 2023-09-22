@@ -9,7 +9,6 @@ PeriodicFetcher::PeriodicFetcher(Observable& observable)
         instance = this;
         // Associer le signal SIGINT (CTRL+C) à notre gestionnaire de signal
         std::signal(SIGINT, signalHandler);
-
     }
 }
 
@@ -31,11 +30,13 @@ void PeriodicFetcher::start() {
             pieChartGen.generatePieChart(newEvents);
         }
 
-        std::cout << "[PeriodicFetcher] Nouveaux événements récupérés et traités." << std::endl;
+        //std::cout << "[PeriodicFetcher] Nouveaux événements récupérés et traités." << std::endl;
 
-        std::this_thread::sleep_for(std::chrono::hours(1));
+        // permet de temporiser l'intervale de temps entre chaque appel à l'API ici une heure,
+        // pour tester on peut passer à 5 secondes par exemple, et voir notre graphique s'actualiser à chaque requête.
+        std::this_thread::sleep_for(std::chrono::hours(1)); 
 
-        std::cout << "[PeriodicFetcher] Thread fetcher : encore en exécution." << std::endl;
+        //std::cout << "[PeriodicFetcher] Thread fetcher : encore en exécution." << std::endl;
     }
 
     std::cout << "[PeriodicFetcher] Arrêt en cours..." << std::endl;

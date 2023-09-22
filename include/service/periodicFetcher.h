@@ -26,7 +26,7 @@ private:
     std::atomic<bool> stopRequested;
     std::mutex mtx;
 
-    static PeriodicFetcher
+    static PeriodicFetcher* instance; // Déclaration du pointeur statique vers l'instance
     static void signalHandler(int signum);
 };
 
