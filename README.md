@@ -129,18 +129,18 @@ La documentation du code est générée avec Doxygen. Voici comment générer et
 
 Si vous utilisez Ubuntu, vous pouvez installer Doxygen en utilisant la commande suivante :
 
-\`\`\`bash
+```bash
 sudo apt-get install doxygen
-\`\`\`
+```
 
 ### Générer la Documentation
 
 1. Placez-vous à la racine du projet où se trouve le fichier `Doxyfile`.
 2. Exécutez la commande suivante :
 
-\`\`\`bash
+```bash
 doxygen Doxyfile
-\`\`\`
+```
 
 Cela générera la documentation dans le répertoire que vous aurez spécifié dans le champ `OUTPUT_DIRECTORY` de votre fichier `Doxyfile`.
 
