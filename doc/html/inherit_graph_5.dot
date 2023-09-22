@@ -1,0 +1,10 @@
+digraph "Graphical Class Hierarchy"
+{
+ // LATEX_PDF_SIZE
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  rankdir="LR";
+  Node0 [label="Observer",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classObserver.html",tooltip="Interface for the Observer in the Observer design pattern."];
+  Node0 -> Node1 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node1 [label="ConcreteObserver",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classConcreteObserver.html",tooltip="Represents a specific observer that reacts to changes in the observable."];
+}

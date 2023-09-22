@@ -1,72 +1,82 @@
 /**
  * @file signalHandler.h
  * @author Antony Coco (antony.coco.pro@gmail.com)
- * @brief
+ * @brief Provides a singleton-based handler for system signals.
+ * @details This header defines the SignalHandler class responsible for managing
+ *          system signals (like SIGINT) to ensure graceful shutdown of the program.
  * @version 0.1
  * @date 2023-09-22
- *
  * @copyright Copyright (c) 2023
  *
  */
+
 #ifndef SIGNALHANDLER_H
 #define SIGNALHANDLER_H
 
 #include <csignal>
 #include <atomic>
 #include <iostream>
- /**
-  * @brief
-  *
-  */
+
+/**
+ * @class SignalHandler
+ * @brief Singleton-based handler for system signals.
+ * 
+ * The SignalHandler class provides methods to set up handlers for system signals,
+ * particularly for enabling graceful shutdown mechanisms. Being designed as a 
+ * singleton ensures that only one instance handles all signals in a consistent manner.
+ */
 class SignalHandler {
 public:
     /**
-     * @brief Get the singleton instance of SignalHandler.
+     * @brief Retrieve the singleton instance of SignalHandler.
      * 
-     * @return SignalHandler& Singleton instance.
+     * @return SignalHandler& Singleton instance of the SignalHandler.
      */
     static SignalHandler& getInstance();
 
     /**
-     * @brief Set up signal handlers for the program.
+     * @brief Initialize and set up signal handlers for the program.
      */
     void setupSignalHandlers();
 
     /**
-     * @brief Check if a shutdown has been requested.
+     * @brief Determine if a shutdown signal has been received.
      * 
-     * @return true if shutdown is requested.
-     * @return false if no shutdown request.
+     * @return true if a shutdown signal is detected.
+     * @return false otherwise.
      */
     bool isShutdownRequested() const;
 
 private:
-    SignalHandler();  ///< private constructor
-    ~SignalHandler(); ///   ~private destructor
-    /***
-     *
-    */
-    SignalHandler(const SignalHandler&) = delete;
     /**
-     * @brief
-     *
-     * @return SignalHandler&
+     * @brief Private constructor to ensure the singleton pattern.
      */
-    SignalHandler& operator=(const SignalHandler&) = delete;
+    SignalHandler();
+
     /**
-     * @brief Signal handler to gracefully stop the program.
-     *
-     * This function is called when the program receives a signal, such as SIGINT.
-     * It stops the fetchThread and exits the program gracefully.
-     *
-     * @param signum The received signal number.
+     * @brief Private destructor to prevent external deletion.
+     */
+    ~SignalHandler();
+
+    // Deleted copy constructor and assignment operator to prevent copy operations.
+    SignalHandler(const SignalHandler&) = delete;
+    SignalHandler& operator=(const SignalHandler&) = delete;
+
+    /**
+     * @brief Internal handler for system signals.
+     * 
+     * This function is invoked when specific signals (e.g., SIGINT) are received by 
+     * the program. Its primary role is to set the shutdown flag, facilitating a 
+     * graceful program termination.
+     * 
+     * @param signum The number of the received signal.
      */
     static void handleSignal(int signum);
+
     /**
-     * @brief
-     *
+     * @brief Atomic flag to track if a shutdown signal has been received.
      */
-    static std::atomic<bool> shutdownRequested; ///< Atomic flag indicating if shutdown is requested.
+    static std::atomic<bool> shutdownRequested;
 };
 
 #endif // SIGNALHANDLER_H

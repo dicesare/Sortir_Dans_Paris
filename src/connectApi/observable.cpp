@@ -17,6 +17,7 @@ void Observable::notifyObservers(const std::map<std::string, nlohmann::json>& ne
         observer->update(newEvents);
     }
 }
+
 void Observable::notifyDailyObservers(const std::map<std::string, nlohmann::json>& newDailyEvents)
 {
     std::cout << "Notification: " << observers.size() << " observer(s) in list." << std::endl;
@@ -25,4 +26,3 @@ void Observable::notifyDailyObservers(const std::map<std::string, nlohmann::json
         observer->dailyUpdate(newDailyEvents);
     }
 }
-

@@ -1,0 +1,14 @@
+digraph "APIHandler::makeRequest"
+{
+ // LATEX_PDF_SIZE
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  rankdir="RL";
+  Node1 [label="APIHandler::makeRequest",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip="Makes a request to the provided URL and returns the fetched data."];
+  Node1 -> Node2 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node2 [label="APIHandler::fetchData",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classAPIHandler.html#a1f4ab7c08b86cfa50d2840a7c2c49a8f",tooltip="Fetches data from the API and notifies its observers."];
+  Node1 -> Node3 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node3 [label="APIHandler::fetchTodaysEvents",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classAPIHandler.html#a9689d8f7c4ec016cca6ef5fa047b3b05",tooltip="Fetches today's events from the API."];
+  Node3 -> Node4 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node4 [label="PeriodicFetcher::start",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classPeriodicFetcher.html#a84f9a218ccb184feb1a8027b2ac9ac44",tooltip="Begin the periodic fetching and processing of data."];
+}

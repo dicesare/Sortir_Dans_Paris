@@ -1,0 +1,12 @@
+digraph "PieChartGenerator::create_pie_chart_image"
+{
+ // LATEX_PDF_SIZE
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  rankdir="RL";
+  Node1 [label="PieChartGenerator::\lcreate_pie_chart_image",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip="Creates an image representing the pie chart."];
+  Node1 -> Node2 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node2 [label="PieChartGenerator::\lgeneratePieChart",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classPieChartGenerator.html#a2f367ee64a37d9b971b24090f9842251",tooltip="Loads data from the given file."];
+  Node2 -> Node3 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node3 [label="PeriodicFetcher::start",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classPeriodicFetcher.html#a84f9a218ccb184feb1a8027b2ac9ac44",tooltip="Begin the periodic fetching and processing of data."];
+}

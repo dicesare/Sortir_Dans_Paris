@@ -1,0 +1,142 @@
+\hypertarget{md__r_e_a_d_m_e_autotoc_md1}{}\doxysection{Table of Contents}\label{md__r_e_a_d_m_e_autotoc_md1}
+
+\begin{DoxyEnumerate}
+\item Introduction
+\item Features
+\item Technologies
+\item Documentation
+\item Getting Started
+\begin{DoxyItemize}
+\item Prerequisites
+\item Installation
+\item Usage
+\end{DoxyItemize}
+\item Architecture
+\item Contributing
+\item License
+\item Contact
+\end{DoxyEnumerate}
+
+\DoxyHorRuler{0}
+\hypertarget{md__r_e_a_d_m_e_autotoc_md3}{}\doxysection{Introduction}\label{md__r_e_a_d_m_e_autotoc_md3}
+The Paris API Manager is designed to interact with the \char`\"{}\+What to do in Paris?\char`\"{} public API, providing a clean, structured interface for retrieving event data and notifying relevant observers.
+
+\DoxyHorRuler{0}
+\hypertarget{md__r_e_a_d_m_e_autotoc_md5}{}\doxysection{Features}\label{md__r_e_a_d_m_e_autotoc_md5}
+
+\begin{DoxyItemize}
+\item Retrieve events from the Paris API.
+\item Notify registered observers of new events.
+\item Daily event retrieval.
+\item Generate graphs illustrating various event statistics.
+\end{DoxyItemize}
+
+\DoxyHorRuler{0}
+\hypertarget{md__r_e_a_d_m_e_autotoc_md7}{}\doxysection{Technologies}\label{md__r_e_a_d_m_e_autotoc_md7}
+
+\begin{DoxyItemize}
+\item C++
+\item {\ttfamily libcurl} library for HTTP requests.
+\item {\ttfamily nlohmann\+::json} library for JSON format management.
+\item Doxygen (for code documentation)
+\end{DoxyItemize}
+
+\DoxyHorRuler{0}
+\hypertarget{md__r_e_a_d_m_e_autotoc_md9}{}\doxysection{Documentation}\label{md__r_e_a_d_m_e_autotoc_md9}
+Code documentation is generated with Doxygen. See section below for details on how to generate and consult documentation.
+
+\DoxyHorRuler{0}
+\hypertarget{md__r_e_a_d_m_e_autotoc_md11}{}\doxysection{Getting Started}\label{md__r_e_a_d_m_e_autotoc_md11}
+\hypertarget{md__r_e_a_d_m_e_autotoc_md12}{}\doxysubsection{Prerequisites}\label{md__r_e_a_d_m_e_autotoc_md12}
+
+\begin{DoxyItemize}
+\item C++ Compiler (C++11 or higher recommended)
+\item {\ttfamily libcurl} library
+\item Library {\ttfamily nlohmann\+::json}
+\end{DoxyItemize}\hypertarget{md__r_e_a_d_m_e_autotoc_md13}{}\doxysubsection{Installation}\label{md__r_e_a_d_m_e_autotoc_md13}
+
+\begin{DoxyEnumerate}
+\item Clone the \`{}\`{}bash git clone \href{https://github.com/dicesare/Sortir_Dans_Paris.git}{\texttt{ https\+://github.\+com/dicesare/\+Sortir\+\_\+\+Dans\+\_\+\+Paris.\+git}} 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{2. Go to the project directory and compile :}
+\DoxyCodeLine{}
+\DoxyCodeLine{  bash}
+\DoxyCodeLine{  cd path\_to\_the\_directory}
+\DoxyCodeLine{  make}
+
+\end{DoxyCode}
+
+\end{DoxyEnumerate}\hypertarget{md__r_e_a_d_m_e_autotoc_md14}{}\doxysubsection{Usage}\label{md__r_e_a_d_m_e_autotoc_md14}
+
+\begin{DoxyEnumerate}
+\item Start the program.
+\item Follow the on-\/screen instructions to interact with the API and display events. (To include a time either --thread or -\/T)
+
+for a request every x seconds
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{./sortirDansParis -\/T 5sec}
+
+\end{DoxyCode}
+
+
+for a request every x minutes
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{./sortirDansParis -\/-\/thread 20min}
+
+\end{DoxyCode}
+
+
+for a request all x hours
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{./sortirDansParis -\/T 5hr}
+
+\end{DoxyCode}
+ by default, if you don\textquotesingle{}t specify a duration, it\textquotesingle{}s an hourly request
+\end{DoxyEnumerate}\hypertarget{md__r_e_a_d_m_e_autotoc_md15}{}\doxysection{Architecture}\label{md__r_e_a_d_m_e_autotoc_md15}
+Refer to the {\ttfamily docs/} folder for complete architecture and code documentation generated using Doxygen.\hypertarget{md__r_e_a_d_m_e_autotoc_md16}{}\doxysubsection{Project Structure}\label{md__r_e_a_d_m_e_autotoc_md16}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{Linux\_emb/}
+\DoxyCodeLine{|-\/-\/ sortirDansParis/}
+\DoxyCodeLine{|   |-\/-\/ include/}
+\DoxyCodeLine{|   |   |-\/-\/ connectApi/}
+\DoxyCodeLine{|   |   |-\/-\/ gdGeneration/}
+\DoxyCodeLine{|   |   |-\/-\/ fileManagement/}
+\DoxyCodeLine{|   |   |-\/-\/ service/}
+\DoxyCodeLine{|   |   |-\/-\/ storage/}
+\DoxyCodeLine{|   |-\/-\/ src/}
+\DoxyCodeLine{|   |   |-\/-\/ connectApi/}
+\DoxyCodeLine{|   |   |-\/-\/ gdGeneration/}
+\DoxyCodeLine{|   |   |-\/-\/ fileManagement/}
+\DoxyCodeLine{|   |   |-\/-\/ service/}
+\DoxyCodeLine{|   |   |-\/-\/ storage/}
+\DoxyCodeLine{|   |-\/-\/ main.cpp}
+\DoxyCodeLine{|   |-\/-\/ CMakeLists.txt}
+
+\end{DoxyCode}
+
+
+\DoxyHorRuler{0}
+\hypertarget{md__r_e_a_d_m_e_autotoc_md18}{}\doxysection{Contributing}\label{md__r_e_a_d_m_e_autotoc_md18}
+Contributions are always welcome! See {\ttfamily CONTRIBUTING.\+md} for ways to get started. Please adhere to this project\textquotesingle{}s {\ttfamily CODE\+\_\+\+OF\+\_\+\+CONDUCT.\+md}.
+
+\DoxyHorRuler{0}
+\hypertarget{md__r_e_a_d_m_e_autotoc_md20}{}\doxysection{License}\label{md__r_e_a_d_m_e_autotoc_md20}
+This project is licensed under the MIT License -\/ see the {\ttfamily LICENSE} file for details.
+
+\DoxyHorRuler{0}
+\hypertarget{md__r_e_a_d_m_e_autotoc_md22}{}\doxysection{Contact}\label{md__r_e_a_d_m_e_autotoc_md22}
+
+\begin{DoxyItemize}
+\item Antony COCO -\/ \href{https://www.linkedin.com/in/antonycoco/}{\texttt{ Linked\+In}}
+\item Email -\/ \href{mailto:antony.coco.pro@gmail.com}{\texttt{ antony.\+coco.\+pro@gmail.\+com}}
+\end{DoxyItemize}
+
+\DoxyHorRuler{0}
+ 

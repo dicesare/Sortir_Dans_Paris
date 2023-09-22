@@ -1,0 +1,93 @@
+\hypertarget{main_8cpp}{}\doxysection{main.\+cpp File Reference}
+\label{main_8cpp}\index{main.cpp@{main.cpp}}
+
+
+Main program to orchestrate the fetching and visualization of events in Paris.  
+
+
+{\ttfamily \#include $<$iostream$>$}\newline
+{\ttfamily \#include $<$string$>$}\newline
+{\ttfamily \#include $<$thread$>$}\newline
+{\ttfamily \#include $<$chrono$>$}\newline
+{\ttfamily \#include $<$cstdlib$>$}\newline
+{\ttfamily \#include \char`\"{}include/connect\+Api/api\+Handler.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}include/connect\+Api/concrete\+Observer.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}include/service/periodic\+Fetcher.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}include/service/signal\+Handler.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}include/service/fetch\+Interval\+Time\+Unit.\+h\char`\"{}}\newline
+Include dependency graph for main.\+cpp\+:
+% FIG 0
+\doxysubsection*{Namespaces}
+\begin{DoxyCompactItemize}
+\item 
+namespace \mbox{\hyperlink{namespace_fetch_interval_time_unit}{Fetch\+Interval\+Time\+Unit}}
+\begin{DoxyCompactList}\small\item\em Defines time unit intervals for periodic fetching. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+Fetch\+Interval\+Time\+Unit\+::fitu \mbox{\hyperlink{main_8cpp_ac8b7c21c56ac7b35d856a356bd3bb7d0}{string\+To\+Time\+Unit}} (const std\+::string \&str)
+\begin{DoxyCompactList}\small\item\em Converts string representation of a time unit to its corresponding enum value. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{main_8cpp_a3c04138a5bfe5d72780bb7e82a18e627}{main}} (int argc, char $\ast$$\ast$argv)
+\end{DoxyCompactItemize}
+\doxysubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{main_8cpp_a85c1d61a7146776c261770e6cf4e32e6}\label{main_8cpp_a85c1d61a7146776c261770e6cf4e32e6}} 
+std\+::thread {\bfseries fetch\+Thread}
+\begin{DoxyCompactList}\small\item\em Thread for executing periodic fetch operations. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Main program to orchestrate the fetching and visualization of events in Paris. 
+
+\begin{DoxyAuthor}{Author}
+Antony Coco (\href{mailto:antony.coco.pro@gmail.com}{\texttt{ antony.\+coco.\+pro@gmail.\+com}})
+\end{DoxyAuthor}
+The program fetches data from an external API both at regular intervals and upon program initialization, processes this data, and provides visualization capabilities. \begin{DoxyVersion}{Version}
+0.\+1 
+\end{DoxyVersion}
+\begin{DoxyDate}{Date}
+2023-\/09-\/22 
+\end{DoxyDate}
+\begin{DoxyCopyright}{Copyright}
+Copyright (c) 2023 
+\end{DoxyCopyright}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{main_8cpp_a3c04138a5bfe5d72780bb7e82a18e627}\label{main_8cpp_a3c04138a5bfe5d72780bb7e82a18e627}} 
+\index{main.cpp@{main.cpp}!main@{main}}
+\index{main@{main}!main.cpp@{main.cpp}}
+\doxysubsubsection{\texorpdfstring{main()}{main()}}
+{\footnotesize\ttfamily int main (\begin{DoxyParamCaption}\item[{int}]{argc,  }\item[{char $\ast$$\ast$}]{argv }\end{DoxyParamCaption})}
+
+\texorpdfstring{$<$}{<} Default fetch interval value, e.\+g., 1 hour.
+
+\texorpdfstring{$<$}{<} Default time unit, e.\+g., hour.
+
+\texorpdfstring{$<$}{<} Observer instance dedicated to unique event data.
+
+\texorpdfstring{$<$}{<} Observer instance dedicated to daily event data.
+
+\texorpdfstring{$<$}{<} API handler tailored for fetching unique event data.
+
+\texorpdfstring{$<$}{<} API handler tailored for fetching daily event data.\mbox{\Hypertarget{main_8cpp_ac8b7c21c56ac7b35d856a356bd3bb7d0}\label{main_8cpp_ac8b7c21c56ac7b35d856a356bd3bb7d0}} 
+\index{main.cpp@{main.cpp}!stringToTimeUnit@{stringToTimeUnit}}
+\index{stringToTimeUnit@{stringToTimeUnit}!main.cpp@{main.cpp}}
+\doxysubsubsection{\texorpdfstring{stringToTimeUnit()}{stringToTimeUnit()}}
+{\footnotesize\ttfamily Fetch\+Interval\+Time\+Unit\+::fitu string\+To\+Time\+Unit (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{str }\end{DoxyParamCaption})}
+
+
+
+Converts string representation of a time unit to its corresponding enum value. 
+
+This utility function is used primarily for parsing command-\/line arguments.
+
+
+\begin{DoxyParams}{Parameters}
+{\em str} & String representation of the time unit (e.\+g., \char`\"{}sec\char`\"{}, \char`\"{}min\char`\"{}, \char`\"{}hr\char`\"{}). \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Fetch\+Interval\+Time\+Unit\+::fitu Enumerated value corresponding to the provided string. 
+\end{DoxyReturn}

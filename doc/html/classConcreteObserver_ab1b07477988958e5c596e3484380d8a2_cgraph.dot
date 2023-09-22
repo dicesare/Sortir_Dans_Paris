@@ -1,0 +1,26 @@
+digraph "ConcreteObserver::generateBarPlotFromData"
+{
+ // LATEX_PDF_SIZE
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  rankdir="LR";
+  Node1 [label="ConcreteObserver::generate\lBarPlotFromData",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip="Generates a bar plot from the provided tag data."];
+  Node1 -> Node2 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node2 [label="BarPlotGenerator::generate\lBarPlot",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classBarPlotGenerator.html#a8607516727d0c8f609e3f2017bf11c5e",tooltip="Generates a bar plot image and saves it."];
+  Node2 -> Node3 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node3 [label="BarPlotGenerator::format\lTitle",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classBarPlotGenerator.html#a0b6c4355989e09b9309c7f9585947cdf",tooltip="Formats the title of the image."];
+  Node2 -> Node4 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node4 [label="BarPlotGenerator::generate\l_random_color",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classBarPlotGenerator.html#a5d0ca705fe16f9ff03ca9c38bbd5ffb9",tooltip="Generates a random RGB color."];
+  Node2 -> Node5 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node5 [label="FileHelper::getFilePath",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classFileHelper.html#a8a218e5dfb2e5ec90c4180671f868af1",tooltip="Constructs the full path for a file using the current subfolder."];
+  Node5 -> Node6 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node6 [label="FileHelper::ensureDirectory\lExists",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classFileHelper.html#a34793345599cf91e9c91e92fa6095d9e",tooltip="Makes sure the provided directory exists."];
+  Node2 -> Node7 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node7 [label="BarPlotGenerator::saveImage",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classBarPlotGenerator.html#ab01e022ff2ff243415f4b3bed87acd69",tooltip="Saves a given GD image to a specified file."];
+  Node2 -> Node8 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node8 [label="FileHelper::setSubfolder",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classFileHelper.html#ac8fb7747ed6cc254aab512ca4454d13d",tooltip="Updates the default subfolder."];
+  Node1 -> Node9 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node9 [label="BarPlotGenerator::loadData\lFromJson",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classBarPlotGenerator.html#a6e101c7e9279aaabde95d62076331f75",tooltip="Loads data from a given JSON map."];
+  Node9 -> Node10 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node10 [label="BarPlotGenerator::isValidTag",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classBarPlotGenerator.html#ac9ff708e4d8b332109d37e0f1a619e31",tooltip="Validates a given tag."];
+}

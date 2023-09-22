@@ -1,11 +1,18 @@
 #include "../../include/connectApi/apiHandler.h"
 
-APIHandler::APIHandler() : baseUrl("https://opendata.paris.fr/api/explore/v2.1/catalog/datasets/que-faire-a-paris-/records?") {}
 
 static size_t WriteCallback(void* contents, size_t size, size_t nmemb, void* userp)
 {
 	((std::string*)userp)->append((char*)contents, size * nmemb);
 	return size * nmemb;
+}
+
+APIHandler::APIHandler() {
+	curl_global_init(CURL_GLOBAL_DEFAULT);
+}
+
+APIHandler::~APIHandler() {
+    curl_global_cleanup();
 }
 
 void APIHandler::fetchData()
@@ -64,7 +71,6 @@ std::map<std::string, nlohmann::json> APIHandler::makeRequest(const std::string&
 	std::string readBuffer;
 	std::map<std::string, nlohmann::json> eventIds;
 
-	curl_global_init(CURL_GLOBAL_DEFAULT);
 	curl = curl_easy_init();
 
 	if (curl) {
@@ -74,36 +80,22 @@ std::map<std::string, nlohmann::json> APIHandler::makeRequest(const std::string&
 
 		res = curl_easy_perform(curl);
 		if (res != CURLE_OK) {
-			fprintf(stderr, "curl_easy_perform() failed: %s\n", curl_easy_strerror(res));
-			curl_easy_cleanup(curl);
-			curl_global_cleanup();
-			return eventIds;  // Return empty map on error
+            fprintf(stderr, "curl_easy_perform() failed: %s\n", curl_easy_strerror(res));
 		}
-
-		auto jsonResponse = nlohmann::json::parse(readBuffer);
-		if (jsonResponse.contains("results") && jsonResponse["results"].is_array()) {
-			for (const auto& event : jsonResponse["results"]) {
-				if (event.is_object()) {
-					std::string id;
-					nlohmann::json otherFields;
-					for (auto it = event.begin(); it != event.end(); ++it) {
-						if (it.key() == "id") {
-							id = it.value().get<std::string>();
-						}
-						else {
-							otherFields[it.key()] = it.value();
-						}
-					}
-					if (!id.empty()) {
-						eventIds[id] = otherFields;
-					}
-				}
-			}
-		}
-
+		else {
+            auto jsonResponse = nlohmann::json::parse(readBuffer);
+            if (jsonResponse.contains("results") && jsonResponse["results"].is_array()) {
+                for (const auto& event : jsonResponse["results"]) {
+                    if (event.is_object()) {
+                        std::string id = event.value("id", "");
+                        if (!id.empty()) {
+                            eventIds[id] = event;
+                        }
+                    }
+                }
+            }
+        }
 		curl_easy_cleanup(curl);
 	}
-	curl_global_cleanup();
-
 	return eventIds;
 }

@@ -1,0 +1,12 @@
+digraph "PieChartGenerator::draw_segment_and_label"
+{
+ // LATEX_PDF_SIZE
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  rankdir="LR";
+  Node1 [label="PieChartGenerator::\ldraw_segment_and_label",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip="Draws a segment and its corresponding label on the pie chart image."];
+  Node1 -> Node2 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node2 [label="PieChartGenerator::\lcalculate_coordinates",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classPieChartGenerator.html#a5362987c296f3dfee24390ee2881ff2a",tooltip="Calculates the coordinates for a given angle on the pie chart."];
+  Node1 -> Node3 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node3 [label="PieChartGenerator::\lgenerate_random_color",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classPieChartGenerator.html#a11d2d5f8dfc51fcebd7ea1dfce678629",tooltip="Loads data from the given file."];
+}
