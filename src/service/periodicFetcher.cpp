@@ -34,7 +34,7 @@ void PeriodicFetcher::start() {
 
         // permet de temporiser l'intervale de temps entre chaque appel à l'API ici une heure,
         // pour tester on peut passer à 5 secondes par exemple, et voir notre graphique s'actualiser à chaque requête.
-        std::this_thread::sleep_for(std::chrono::hours(1)); 
+        std::this_thread::sleep_for(std::chrono::seconds(5)); 
 
         //std::cout << "[PeriodicFetcher] Thread fetcher : encore en exécution." << std::endl;
     }

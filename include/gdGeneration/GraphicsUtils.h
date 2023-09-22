@@ -1,3 +1,13 @@
+/**
+ * @file GraphicsUtils.h
+ * @author Antony Coco (antony.coco.pro@gmail.com)
+ * @brief 
+ * @version 0.1
+ * @date 2023-09-22
+ * 
+ * @copyright Copyright (c) 2023
+ * 
+ */
 #ifndef GRAPHICS_UTILS_H
 #define GRAPHICS_UTILS_H
 
