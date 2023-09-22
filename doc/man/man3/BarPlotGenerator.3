@@ -1,0 +1,196 @@
+.TH "BarPlotGenerator" 3 "Fri Sep 22 2023" "Version v0.1" "API de Paris - Documentation du Gestionnaire" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+BarPlotGenerator \- Responsible for generating bar plots based on given data\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <BarPlotGenerator\&.h>\fP
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBBarPlotGenerator\fP ()"
+.br
+.RI "Constructor of the class\&. "
+.ti -1c
+.RI "\fB~BarPlotGenerator\fP ()"
+.br
+.RI "Destructor of the class\&. "
+.ti -1c
+.RI "\fBColor\fP \fBgenerate_random_color\fP ()"
+.br
+.RI "Generates a random RGB color\&. "
+.ti -1c
+.RI "void \fBloadDataFromJson\fP (const std::map< std::string, nlohmann::json > &jsonData)"
+.br
+.RI "Loads data from a given JSON map\&. "
+.ti -1c
+.RI "void \fBgenerateBarPlot\fP (const std::string &outputFilename)"
+.br
+.RI "Generates a bar plot image and saves it\&. "
+.ti -1c
+.RI "void \fBsaveImage\fP (gdImagePtr img, const std::string &filename)"
+.br
+.RI "Saves a given GD image to a specified file\&. "
+.in -1c
+.SS "Private Member Functions"
+
+.in +1c
+.ti -1c
+.RI "std::string \fBformatTitle\fP (const std::string &filename)"
+.br
+.RI "Formats the title of the image\&. "
+.ti -1c
+.RI "bool \fBisValidTag\fP (const std::string &tag)"
+.br
+.RI "Validates a given tag\&. "
+.in -1c
+.SS "Private Attributes"
+
+.in +1c
+.ti -1c
+.RI "\fBFileHelper\fP \fBfileHelper\fP"
+.br
+.RI "Helper for file management operations\&. "
+.ti -1c
+.RI "std::map< std::string, int > \fBtagFrequency\fP"
+.br
+.RI "Map containing the frequency of each tag\&. "
+.in -1c
+.SH "Detailed Description"
+.PP 
+Responsible for generating bar plots based on given data\&. 
+
+This class provides functionalities to generate bar plots using the GD library\&. It also manages the data preparation, loading, and saving of the generated images\&. 
+.PP
+Definition at line \fB43\fP of file \fBBarPlotGenerator\&.h\fP\&.
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "BarPlotGenerator::BarPlotGenerator ()"
+
+.PP
+Constructor of the class\&. 
+.PP
+Definition at line \fB5\fP of file \fBBarPlotGenerator\&.cpp\fP\&.
+.SS "BarPlotGenerator::~BarPlotGenerator ()"
+
+.PP
+Destructor of the class\&. 
+.PP
+Definition at line \fB6\fP of file \fBBarPlotGenerator\&.cpp\fP\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "std::string BarPlotGenerator::formatTitle (const std::string & filename)\fC [private]\fP"
+
+.PP
+Formats the title of the image\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIfilename\fP The original filename to be formatted\&. 
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+std::string Formatted title\&. 
+.RE
+.PP
+
+.PP
+Definition at line \fB133\fP of file \fBBarPlotGenerator\&.cpp\fP\&.
+.SS "\fBColor\fP BarPlotGenerator::generate_random_color ()"
+
+.PP
+Generates a random RGB color\&. 
+.PP
+\fBReturns\fP
+.RS 4
+\fBColor\fP Randomly generated RGB color\&. 
+.RE
+.PP
+
+.PP
+Definition at line \fB8\fP of file \fBBarPlotGenerator\&.cpp\fP\&.
+.SS "void BarPlotGenerator::generateBarPlot (const std::string & outputFilename)"
+
+.PP
+Generates a bar plot image and saves it\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIoutputFilename\fP The name of the output image file\&. 
+.RE
+.PP
+
+.PP
+Definition at line \fB45\fP of file \fBBarPlotGenerator\&.cpp\fP\&.
+.SS "bool BarPlotGenerator::isValidTag (const std::string & tag)\fC [private]\fP"
+
+.PP
+Validates a given tag\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fItag\fP The tag to be validated\&. 
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+true If the tag is valid\&. 
+.PP
+false If the tag is invalid\&. 
+.RE
+.PP
+
+.PP
+Definition at line \fB38\fP of file \fBBarPlotGenerator\&.cpp\fP\&.
+.SS "void BarPlotGenerator::loadDataFromJson (const std::map< std::string, nlohmann::json > & jsonData)"
+
+.PP
+Loads data from a given JSON map\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIjsonData\fP JSON data in a map format\&. 
+.RE
+.PP
+
+.PP
+Definition at line \fB23\fP of file \fBBarPlotGenerator\&.cpp\fP\&.
+.SS "void BarPlotGenerator::saveImage (gdImagePtr img, const std::string & filename)"
+
+.PP
+Saves a given GD image to a specified file\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIimg\fP GD image pointer\&. 
+.br
+\fIfilename\fP Name of the file to save the image to\&. 
+.RE
+.PP
+
+.PP
+Definition at line \fB122\fP of file \fBBarPlotGenerator\&.cpp\fP\&.
+.SH "Member Data Documentation"
+.PP 
+.SS "\fBFileHelper\fP BarPlotGenerator::fileHelper\fC [private]\fP"
+
+.PP
+Helper for file management operations\&. 
+.PP
+Definition at line \fB78\fP of file \fBBarPlotGenerator\&.h\fP\&.
+.SS "std::map<std::string, int> BarPlotGenerator::tagFrequency\fC [private]\fP"
+
+.PP
+Map containing the frequency of each tag\&. 
+.PP
+Definition at line \fB79\fP of file \fBBarPlotGenerator\&.h\fP\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for API de Paris - Documentation du Gestionnaire from the source code\&.

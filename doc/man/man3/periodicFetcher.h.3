@@ -1,0 +1,88 @@
+.TH "include/service/periodicFetcher.h" 3 "Fri Sep 22 2023" "Version v0.1" "API de Paris - Documentation du Gestionnaire" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+include/service/periodicFetcher.h \- Provides the \fBPeriodicFetcher\fP class for periodic data fetching and processing\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+\fC#include <iostream>\fP
+.br
+\fC#include <string>\fP
+.br
+\fC#include <vector>\fP
+.br
+\fC#include <map>\fP
+.br
+\fC#include <thread>\fP
+.br
+\fC#include <chrono>\fP
+.br
+\fC#include <mutex>\fP
+.br
+\fC#include <atomic>\fP
+.br
+\fC#include <csignal>\fP
+.br
+\fC#include '\&.\&./connectApi/observable\&.h'\fP
+.br
+\fC#include '\&.\&./connectApi/apiHandler\&.h'\fP
+.br
+\fC#include '\&.\&./gdGeneration/PieChartGenerator\&.h'\fP
+.br
+\fC#include 'fetchIntervalTimeUnit\&.h'\fP
+.br
+\fC#include 'signalHandler\&.h'\fP
+.br
+
+.SS "Classes"
+
+.in +1c
+.ti -1c
+.RI "class \fBPeriodicFetcher\fP"
+.br
+.RI "Handles periodic data fetching, processing, and notifying Observables\&. "
+.in -1c
+.SS "Namespaces"
+
+.in +1c
+.ti -1c
+.RI "namespace \fBFetchIntervalTimeUnit\fP"
+.br
+.RI "Contains definitions related to time unit intervals\&. "
+.in -1c
+.SH "Detailed Description"
+.PP 
+Provides the \fBPeriodicFetcher\fP class for periodic data fetching and processing\&. 
+
+
+.PP
+\fBAuthor\fP
+.RS 4
+Antony Coco (antony.coco.pro@gmail.com)
+.RE
+.PP
+The \fBPeriodicFetcher\fP class is responsible for periodic retrieval of data, processing the data, and updating any associated Observables\&. Furthermore, this class leverages the \fBPieChartGenerator\fP for visualization needs\&. 
+.PP
+\fBVersion\fP
+.RS 4
+0\&.1 
+.RE
+.PP
+\fBDate\fP
+.RS 4
+2023-09-22 
+.RE
+.PP
+\fBCopyright\fP
+.RS 4
+Copyright (c) 2023 
+.RE
+.PP
+
+.PP
+Definition in file \fBperiodicFetcher\&.h\fP\&.
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for API de Paris - Documentation du Gestionnaire from the source code\&.

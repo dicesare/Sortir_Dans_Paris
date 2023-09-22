@@ -1,0 +1,198 @@
+\hypertarget{classFileHelper}{}\doxysection{File\+Helper Class Reference}
+\label{classFileHelper}\index{FileHelper@{FileHelper}}
+
+
+Utility class for file and directory management.  
+
+
+
+
+{\ttfamily \#include $<$file\+Helper.\+h$>$}
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classFileHelper_aeb70acd6faa4d5ca838e6af25acf1841}{File\+Helper}} ()
+\item 
+void \mbox{\hyperlink{classFileHelper_ac8fb7747ed6cc254aab512ca4454d13d}{set\+Subfolder}} (const std\+::string \&subfolder)
+\begin{DoxyCompactList}\small\item\em Updates the default subfolder. \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{classFileHelper_aebf08c5f48f442cf9743809c7f25c49f}{get\+Subfolder}} () const
+\begin{DoxyCompactList}\small\item\em Retrieves the active subfolder path. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classFileHelper_a34793345599cf91e9c91e92fa6095d9e}{ensure\+Directory\+Exists}} (const std\+::string \&path)
+\begin{DoxyCompactList}\small\item\em Makes sure the provided directory exists. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classFileHelper_ad75188b2ae6098e5dae2f23cb5576341}{file\+Exists}} (const std\+::string \&file\+Path)
+\begin{DoxyCompactList}\small\item\em Verifies if a file exists at the provided path. \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{classFileHelper_a8a218e5dfb2e5ec90c4180671f868af1}{get\+File\+Path}} (const std\+::string \&filename)
+\begin{DoxyCompactList}\small\item\em Constructs the full path for a file using the current subfolder. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+std\+::string \mbox{\hyperlink{classFileHelper_afd98e8ca8128d71d1e1dea5b73849fdc}{m\+\_\+subfolder}}
+\begin{DoxyCompactList}\small\item\em Defines the default subfolder here. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Utility class for file and directory management. 
+
+This class streamlines common file and directory operations, making it easier to perform checks, retrieve paths, and ensure directories exist. 
+
+Definition at line \mbox{\hyperlink{fileHelper_8h_source_l00025}{25}} of file \mbox{\hyperlink{fileHelper_8h_source}{file\+Helper.\+h}}.
+
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classFileHelper_aeb70acd6faa4d5ca838e6af25acf1841}\label{classFileHelper_aeb70acd6faa4d5ca838e6af25acf1841}} 
+\index{FileHelper@{FileHelper}!FileHelper@{FileHelper}}
+\index{FileHelper@{FileHelper}!FileHelper@{FileHelper}}
+\doxysubsubsection{\texorpdfstring{FileHelper()}{FileHelper()}}
+{\footnotesize\ttfamily File\+Helper\+::\+File\+Helper (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{fileHelper_8cpp_source_l00004}{4}} of file \mbox{\hyperlink{fileHelper_8cpp_source}{file\+Helper.\+cpp}}.
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classFileHelper_a34793345599cf91e9c91e92fa6095d9e}\label{classFileHelper_a34793345599cf91e9c91e92fa6095d9e}} 
+\index{FileHelper@{FileHelper}!ensureDirectoryExists@{ensureDirectoryExists}}
+\index{ensureDirectoryExists@{ensureDirectoryExists}!FileHelper@{FileHelper}}
+\doxysubsubsection{\texorpdfstring{ensureDirectoryExists()}{ensureDirectoryExists()}}
+{\footnotesize\ttfamily void File\+Helper\+::ensure\+Directory\+Exists (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{path }\end{DoxyParamCaption})}
+
+
+
+Makes sure the provided directory exists. 
+
+This function checks for the existence of a directory at the given path. If the directory does not exist, it attempts to create it.
+
+
+\begin{DoxyParams}{Parameters}
+{\em path} & Path to the directory to ensure. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{fileHelper_8cpp_source_l00014}{14}} of file \mbox{\hyperlink{fileHelper_8cpp_source}{file\+Helper.\+cpp}}.
+
+Here is the caller graph for this function\+:
+% FIG 0
+\mbox{\Hypertarget{classFileHelper_ad75188b2ae6098e5dae2f23cb5576341}\label{classFileHelper_ad75188b2ae6098e5dae2f23cb5576341}} 
+\index{FileHelper@{FileHelper}!fileExists@{fileExists}}
+\index{fileExists@{fileExists}!FileHelper@{FileHelper}}
+\doxysubsubsection{\texorpdfstring{fileExists()}{fileExists()}}
+{\footnotesize\ttfamily bool File\+Helper\+::file\+Exists (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{file\+Path }\end{DoxyParamCaption})}
+
+
+
+Verifies if a file exists at the provided path. 
+
+This function checks the existence of a file at the specified path and returns a boolean value indicating its presence.
+
+
+\begin{DoxyParams}{Parameters}
+{\em file\+Path} & Path to the file to check. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+bool {\ttfamily true} if file exists, otherwise {\ttfamily false}. 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{fileHelper_8cpp_source_l00021}{21}} of file \mbox{\hyperlink{fileHelper_8cpp_source}{file\+Helper.\+cpp}}.
+
+Here is the caller graph for this function\+:
+% FIG 1
+\mbox{\Hypertarget{classFileHelper_a8a218e5dfb2e5ec90c4180671f868af1}\label{classFileHelper_a8a218e5dfb2e5ec90c4180671f868af1}} 
+\index{FileHelper@{FileHelper}!getFilePath@{getFilePath}}
+\index{getFilePath@{getFilePath}!FileHelper@{FileHelper}}
+\doxysubsubsection{\texorpdfstring{getFilePath()}{getFilePath()}}
+{\footnotesize\ttfamily std\+::string File\+Helper\+::get\+File\+Path (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{filename }\end{DoxyParamCaption})}
+
+
+
+Constructs the full path for a file using the current subfolder. 
+
+This function constructs a complete file path by appending the filename to the currently set subfolder. Additionally, it ensures the existence of the directory before returning the path.
+
+
+\begin{DoxyParams}{Parameters}
+{\em filename} & The file name to use for path construction. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+std\+::string Constructed file path. 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{fileHelper_8cpp_source_l00026}{26}} of file \mbox{\hyperlink{fileHelper_8cpp_source}{file\+Helper.\+cpp}}.
+
+Here is the call graph for this function\+:
+% FIG 2
+Here is the caller graph for this function\+:
+% FIG 3
+\mbox{\Hypertarget{classFileHelper_aebf08c5f48f442cf9743809c7f25c49f}\label{classFileHelper_aebf08c5f48f442cf9743809c7f25c49f}} 
+\index{FileHelper@{FileHelper}!getSubfolder@{getSubfolder}}
+\index{getSubfolder@{getSubfolder}!FileHelper@{FileHelper}}
+\doxysubsubsection{\texorpdfstring{getSubfolder()}{getSubfolder()}}
+{\footnotesize\ttfamily std\+::string File\+Helper\+::get\+Subfolder (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Retrieves the active subfolder path. 
+
+This function fetches the currently set subfolder path, which is used in other operations of the \mbox{\hyperlink{classFileHelper}{File\+Helper}}.
+
+\begin{DoxyReturn}{Returns}
+std\+::string Active subfolder path. 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{fileHelper_8cpp_source_l00010}{10}} of file \mbox{\hyperlink{fileHelper_8cpp_source}{file\+Helper.\+cpp}}.
+
+\mbox{\Hypertarget{classFileHelper_ac8fb7747ed6cc254aab512ca4454d13d}\label{classFileHelper_ac8fb7747ed6cc254aab512ca4454d13d}} 
+\index{FileHelper@{FileHelper}!setSubfolder@{setSubfolder}}
+\index{setSubfolder@{setSubfolder}!FileHelper@{FileHelper}}
+\doxysubsubsection{\texorpdfstring{setSubfolder()}{setSubfolder()}}
+{\footnotesize\ttfamily void File\+Helper\+::set\+Subfolder (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{subfolder }\end{DoxyParamCaption})}
+
+
+
+Updates the default subfolder. 
+
+This function updates the internal subfolder path, which affects subsequent file and directory operations using this helper.
+
+
+\begin{DoxyParams}{Parameters}
+{\em subfolder} & New subfolder path. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{fileHelper_8cpp_source_l00006}{6}} of file \mbox{\hyperlink{fileHelper_8cpp_source}{file\+Helper.\+cpp}}.
+
+Here is the caller graph for this function\+:
+% FIG 4
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{classFileHelper_afd98e8ca8128d71d1e1dea5b73849fdc}\label{classFileHelper_afd98e8ca8128d71d1e1dea5b73849fdc}} 
+\index{FileHelper@{FileHelper}!m\_subfolder@{m\_subfolder}}
+\index{m\_subfolder@{m\_subfolder}!FileHelper@{FileHelper}}
+\doxysubsubsection{\texorpdfstring{m\_subfolder}{m\_subfolder}}
+{\footnotesize\ttfamily std\+::string File\+Helper\+::m\+\_\+subfolder\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Defines the default subfolder here. 
+
+
+
+Definition at line \mbox{\hyperlink{fileHelper_8h_source_l00078}{78}} of file \mbox{\hyperlink{fileHelper_8h_source}{file\+Helper.\+h}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+include/file\+Management/\mbox{\hyperlink{fileHelper_8h}{file\+Helper.\+h}}\item 
+src/file\+Management/\mbox{\hyperlink{fileHelper_8cpp}{file\+Helper.\+cpp}}\end{DoxyCompactItemize}

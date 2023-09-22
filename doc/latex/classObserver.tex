@@ -1,0 +1,97 @@
+\hypertarget{classObserver}{}\doxysection{Observer Class Reference}
+\label{classObserver}\index{Observer@{Observer}}
+
+
+Interface for the \mbox{\hyperlink{classObserver}{Observer}} in the \mbox{\hyperlink{classObserver}{Observer}} design pattern.  
+
+
+
+
+{\ttfamily \#include $<$observer.\+h$>$}
+
+
+
+Inheritance diagram for Observer\+:
+% FIG 0
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual void \mbox{\hyperlink{classObserver_ac933f7a66c117394d87d232923523ee0}{update}} (const std\+::map$<$ std\+::string, nlohmann\+::json $>$ \&new\+Events)=0
+\begin{DoxyCompactList}\small\item\em Updates the \mbox{\hyperlink{classObserver}{Observer}} with general events. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classObserver_a1adfe80fa80a5051480be13f1a746800}{daily\+Update}} (const std\+::map$<$ std\+::string, nlohmann\+::json $>$ \&new\+Daily\+Events)=0
+\begin{DoxyCompactList}\small\item\em Provides the \mbox{\hyperlink{classObserver}{Observer}} with daily-\/specific updates. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classObserver_addf80a7da36e332655a7338601149bec}{remove\+Expired\+Events}} ()=0
+\begin{DoxyCompactList}\small\item\em Commands the \mbox{\hyperlink{classObserver}{Observer}} to address expired events. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Interface for the \mbox{\hyperlink{classObserver}{Observer}} in the \mbox{\hyperlink{classObserver}{Observer}} design pattern. 
+
+In the context of the \mbox{\hyperlink{classObserver}{Observer}} design pattern, this interface establishes the contract that all observers must fulfill. The observers are expected to receive updates about new events, daily activities, and the removal of expired events. Concrete observer classes should implement this interface to define their reactions to such notifications. 
+
+Definition at line \mbox{\hyperlink{observer_8h_source_l00028}{28}} of file \mbox{\hyperlink{observer_8h_source}{observer.\+h}}.
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classObserver_a1adfe80fa80a5051480be13f1a746800}\label{classObserver_a1adfe80fa80a5051480be13f1a746800}} 
+\index{Observer@{Observer}!dailyUpdate@{dailyUpdate}}
+\index{dailyUpdate@{dailyUpdate}!Observer@{Observer}}
+\doxysubsubsection{\texorpdfstring{dailyUpdate()}{dailyUpdate()}}
+{\footnotesize\ttfamily virtual void Observer\+::daily\+Update (\begin{DoxyParamCaption}\item[{const std\+::map$<$ std\+::string, nlohmann\+::json $>$ \&}]{new\+Daily\+Events }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Provides the \mbox{\hyperlink{classObserver}{Observer}} with daily-\/specific updates. 
+
+Observers receive daily-\/specific events via this method. Concrete observers should handle these events and adapt based on their individual business logic.
+
+
+\begin{DoxyParams}{Parameters}
+{\em new\+Daily\+Events} & A map of daily events characterized by key-\/value pairs. \\
+\hline
+\end{DoxyParams}
+
+
+Implemented in \mbox{\hyperlink{classConcreteObserver_a272dd1a5865949f826d14b9ff6807b39}{Concrete\+Observer}}.
+
+\mbox{\Hypertarget{classObserver_addf80a7da36e332655a7338601149bec}\label{classObserver_addf80a7da36e332655a7338601149bec}} 
+\index{Observer@{Observer}!removeExpiredEvents@{removeExpiredEvents}}
+\index{removeExpiredEvents@{removeExpiredEvents}!Observer@{Observer}}
+\doxysubsubsection{\texorpdfstring{removeExpiredEvents()}{removeExpiredEvents()}}
+{\footnotesize\ttfamily virtual void Observer\+::remove\+Expired\+Events (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Commands the \mbox{\hyperlink{classObserver}{Observer}} to address expired events. 
+
+Implementing classes should take the necessary actions upon receiving this instruction, such as removing or archiving the expired events. 
+
+Implemented in \mbox{\hyperlink{classConcreteObserver_ac15637491bf8949de8f87302143126de}{Concrete\+Observer}}.
+
+\mbox{\Hypertarget{classObserver_ac933f7a66c117394d87d232923523ee0}\label{classObserver_ac933f7a66c117394d87d232923523ee0}} 
+\index{Observer@{Observer}!update@{update}}
+\index{update@{update}!Observer@{Observer}}
+\doxysubsubsection{\texorpdfstring{update()}{update()}}
+{\footnotesize\ttfamily virtual void Observer\+::update (\begin{DoxyParamCaption}\item[{const std\+::map$<$ std\+::string, nlohmann\+::json $>$ \&}]{new\+Events }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Updates the \mbox{\hyperlink{classObserver}{Observer}} with general events. 
+
+This method notifies the observer about general events. Implementing classes should process and react to these events as per their specific requirements.
+
+
+\begin{DoxyParams}{Parameters}
+{\em new\+Events} & A map of the latest events represented as key-\/value pairs. \\
+\hline
+\end{DoxyParams}
+
+
+Implemented in \mbox{\hyperlink{classConcreteObserver_aaadc4aa059a1f755786336760892a170}{Concrete\+Observer}}.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+include/connect\+Api/\mbox{\hyperlink{observer_8h}{observer.\+h}}\end{DoxyCompactItemize}

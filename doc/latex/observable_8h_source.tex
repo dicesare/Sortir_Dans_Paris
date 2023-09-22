@@ -1,0 +1,37 @@
+\hypertarget{observable_8h_source}{}\doxysection{observable.\+h}
+\label{observable_8h_source}\index{include/connectApi/observable.h@{include/connectApi/observable.h}}
+\mbox{\hyperlink{observable_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{observable_8h_source_l00001}00001 }
+\DoxyCodeLine{\Hypertarget{observable_8h_source_l00013}00013 \textcolor{preprocessor}{\#ifndef OBSERVABLE\_H}}
+\DoxyCodeLine{\Hypertarget{observable_8h_source_l00014}00014 \textcolor{preprocessor}{\#define OBSERVABLE\_H}}
+\DoxyCodeLine{\Hypertarget{observable_8h_source_l00015}00015 }
+\DoxyCodeLine{\Hypertarget{observable_8h_source_l00016}00016 \textcolor{preprocessor}{\#include <iostream>}}
+\DoxyCodeLine{\Hypertarget{observable_8h_source_l00017}00017 \textcolor{preprocessor}{\#include <vector>}}
+\DoxyCodeLine{\Hypertarget{observable_8h_source_l00018}00018 \textcolor{preprocessor}{\#include <string>}}
+\DoxyCodeLine{\Hypertarget{observable_8h_source_l00019}00019 \textcolor{preprocessor}{\#include <algorithm>}}
+\DoxyCodeLine{\Hypertarget{observable_8h_source_l00020}00020 \textcolor{preprocessor}{\#include <functional>}}
+\DoxyCodeLine{\Hypertarget{observable_8h_source_l00021}00021 \textcolor{preprocessor}{\#include <map>}}
+\DoxyCodeLine{\Hypertarget{observable_8h_source_l00022}00022 \textcolor{preprocessor}{\#include <unordered\_map>}}
+\DoxyCodeLine{\Hypertarget{observable_8h_source_l00023}00023 \textcolor{preprocessor}{\#include <unordered\_set>}}
+\DoxyCodeLine{\Hypertarget{observable_8h_source_l00024}00024 \textcolor{preprocessor}{\#include <nlohmann/json.hpp>}}
+\DoxyCodeLine{\Hypertarget{observable_8h_source_l00025}00025 }
+\DoxyCodeLine{\Hypertarget{observable_8h_source_l00026}00026 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{observer_8h}{observer.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{observable_8h_source_l00027}00027 }
+\DoxyCodeLine{\Hypertarget{observable_8h_source_l00036}\mbox{\hyperlink{classObservable}{00036}} \textcolor{keyword}{class }\mbox{\hyperlink{classObservable}{Observable}} \{}
+\DoxyCodeLine{\Hypertarget{observable_8h_source_l00037}00037 \textcolor{keyword}{protected}:}
+\DoxyCodeLine{\Hypertarget{observable_8h_source_l00038}\mbox{\hyperlink{classObservable_a12e80e23caa6669d5e118a649d66ef4b}{00038}}     std::vector<Observer*> \mbox{\hyperlink{classObservable_a12e80e23caa6669d5e118a649d66ef4b}{observers}}; }
+\DoxyCodeLine{\Hypertarget{observable_8h_source_l00039}00039 }
+\DoxyCodeLine{\Hypertarget{observable_8h_source_l00040}00040 \textcolor{keyword}{public}:}
+\DoxyCodeLine{\Hypertarget{observable_8h_source_l00048}00048     \textcolor{keywordtype}{void} \mbox{\hyperlink{classObservable_a2c701f154eea3a37cc5ff283c23d6822}{addObserver}}(\mbox{\hyperlink{classObserver}{Observer}}* o);}
+\DoxyCodeLine{\Hypertarget{observable_8h_source_l00049}00049 }
+\DoxyCodeLine{\Hypertarget{observable_8h_source_l00057}00057     \textcolor{keywordtype}{void} \mbox{\hyperlink{classObservable_a2febd7dc96b219866d57964b72593f5d}{removeObserver}}(\mbox{\hyperlink{classObserver}{Observer}}* o);}
+\DoxyCodeLine{\Hypertarget{observable_8h_source_l00058}00058 }
+\DoxyCodeLine{\Hypertarget{observable_8h_source_l00066}00066     \textcolor{keywordtype}{void} \mbox{\hyperlink{classObservable_a98235ce794949ba4827df63e571fb14b}{notifyObservers}}(\textcolor{keyword}{const} std::map<std::string, nlohmann::json>\& newEvents);}
+\DoxyCodeLine{\Hypertarget{observable_8h_source_l00067}00067 }
+\DoxyCodeLine{\Hypertarget{observable_8h_source_l00075}00075     \textcolor{keywordtype}{void} \mbox{\hyperlink{classObservable_a22482fd8540852084485897519142960}{notifyDailyObservers}}(\textcolor{keyword}{const} std::map<std::string, nlohmann::json>\& newDailyEvents);}
+\DoxyCodeLine{\Hypertarget{observable_8h_source_l00076}00076 \};}
+\DoxyCodeLine{\Hypertarget{observable_8h_source_l00077}00077 }
+\DoxyCodeLine{\Hypertarget{observable_8h_source_l00078}00078 \textcolor{preprocessor}{\#endif }\textcolor{comment}{// OBSERVABLE\_H}}
+
+\end{DoxyCode}

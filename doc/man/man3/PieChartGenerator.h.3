@@ -1,0 +1,130 @@
+.TH "include/gdGeneration/PieChartGenerator.h" 3 "Fri Sep 22 2023" "Version v0.1" "API de Paris - Documentation du Gestionnaire" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+include/gdGeneration/PieChartGenerator.h \- Provides functionality to generate pie charts using the GD library\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+\fC#include <map>\fP
+.br
+\fC#include <string>\fP
+.br
+\fC#include <gd\&.h>\fP
+.br
+\fC#include <gdfonts\&.h>\fP
+.br
+\fC#include <nlohmann/json\&.hpp>\fP
+.br
+\fC#include <cmath>\fP
+.br
+\fC#include <cstdio>\fP
+.br
+\fC#include <cstring>\fP
+.br
+\fC#include <cctype>\fP
+.br
+\fC#include <vector>\fP
+.br
+\fC#include <iostream>\fP
+.br
+\fC#include '\&.\&./fileManagement/fileHelper\&.h'\fP
+.br
+\fC#include 'utils\&.h'\fP
+.br
+\fC#include 'GraphicsUtils\&.h'\fP
+.br
+
+.SS "Classes"
+
+.in +1c
+.ti -1c
+.RI "struct \fBPieChartSegment\fP"
+.br
+.RI "Structure to represent a segment in a pie chart\&. "
+.ti -1c
+.RI "class \fBPieChartGenerator\fP"
+.br
+.RI "Class responsible for generating pie charts\&. "
+.in -1c
+.SS "Macros"
+
+.in +1c
+.ti -1c
+.RI "#define \fBFONT_PATH\fP   '/usr/share/fonts/truetype/dejavu/DejaVuSans\-Bold\&.ttf'"
+.br
+.ti -1c
+.RI "#define \fBSIZE_TITLE\fP   64"
+.br
+.ti -1c
+.RI "#define \fBWIDTH\fP   4000"
+.br
+.ti -1c
+.RI "#define \fBHEIGHT\fP   3000"
+.br
+.in -1c
+.SS "Typedefs"
+
+.in +1c
+.ti -1c
+.RI "typedef struct \fBPieChartSegment\fP \fBPieChartSegment\fP"
+.br
+.RI "Structure to represent a segment in a pie chart\&. "
+.in -1c
+.SH "Detailed Description"
+.PP 
+Provides functionality to generate pie charts using the GD library\&. 
+
+
+.PP
+\fBAuthor\fP
+.RS 4
+Antony Coco (antony.coco.pro@gmail.com) 
+.RE
+.PP
+\fBVersion\fP
+.RS 4
+0\&.1 
+.RE
+.PP
+\fBDate\fP
+.RS 4
+2023-09-22 
+.RE
+.PP
+\fBCopyright\fP
+.RS 4
+Copyright (c) 2023 
+.RE
+.PP
+
+.PP
+Definition in file \fBPieChartGenerator\&.h\fP\&.
+.SH "Macro Definition Documentation"
+.PP 
+.SS "#define FONT_PATH   '/usr/share/fonts/truetype/dejavu/DejaVuSans\-Bold\&.ttf'"
+
+.PP
+Definition at line \fB14\fP of file \fBPieChartGenerator\&.h\fP\&.
+.SS "#define HEIGHT   3000"
+
+.PP
+Definition at line \fB17\fP of file \fBPieChartGenerator\&.h\fP\&.
+.SS "#define SIZE_TITLE   64"
+
+.PP
+Definition at line \fB15\fP of file \fBPieChartGenerator\&.h\fP\&.
+.SS "#define WIDTH   4000"
+
+.PP
+Definition at line \fB16\fP of file \fBPieChartGenerator\&.h\fP\&.
+.SH "Typedef Documentation"
+.PP 
+.SS "typedef struct \fBPieChartSegment\fP \fBPieChartSegment\fP"
+
+.PP
+Structure to represent a segment in a pie chart\&. This structure is used to define a segment of a pie chart, including its percentage representation, label, and color\&. 
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for API de Paris - Documentation du Gestionnaire from the source code\&.

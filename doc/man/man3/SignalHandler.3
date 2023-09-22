@@ -1,0 +1,151 @@
+.TH "SignalHandler" 3 "Fri Sep 22 2023" "Version v0.1" "API de Paris - Documentation du Gestionnaire" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+SignalHandler \- Singleton-based handler for system signals\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <signalHandler\&.h>\fP
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "void \fBsetupSignalHandlers\fP ()"
+.br
+.RI "Initialize and set up signal handlers for the program\&. "
+.ti -1c
+.RI "bool \fBisShutdownRequested\fP () const"
+.br
+.RI "Determine if a shutdown signal has been received\&. "
+.in -1c
+.SS "Static Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "static \fBSignalHandler\fP & \fBgetInstance\fP ()"
+.br
+.RI "Retrieve the singleton instance of \fBSignalHandler\fP\&. "
+.in -1c
+.SS "Private Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBSignalHandler\fP ()"
+.br
+.RI "Private constructor to ensure the singleton pattern\&. "
+.ti -1c
+.RI "\fB~SignalHandler\fP ()"
+.br
+.RI "Private destructor to prevent external deletion\&. "
+.ti -1c
+.RI "\fBSignalHandler\fP (const \fBSignalHandler\fP &)=delete"
+.br
+.ti -1c
+.RI "\fBSignalHandler\fP & \fBoperator=\fP (const \fBSignalHandler\fP &)=delete"
+.br
+.in -1c
+.SS "Static Private Member Functions"
+
+.in +1c
+.ti -1c
+.RI "static void \fBhandleSignal\fP (int signum)"
+.br
+.RI "Internal handler for system signals\&. "
+.in -1c
+.SS "Static Private Attributes"
+
+.in +1c
+.ti -1c
+.RI "static std::atomic< bool > \fBshutdownRequested\fP"
+.br
+.RI "Atomic flag to track if a shutdown signal has been received\&. "
+.in -1c
+.SH "Detailed Description"
+.PP 
+Singleton-based handler for system signals\&. 
+
+The \fBSignalHandler\fP class provides methods to set up handlers for system signals, particularly for enabling graceful shutdown mechanisms\&. Being designed as a singleton ensures that only one instance handles all signals in a consistent manner\&. 
+.PP
+Definition at line \fB28\fP of file \fBsignalHandler\&.h\fP\&.
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "SignalHandler::SignalHandler ()\fC [private]\fP"
+
+.PP
+Private constructor to ensure the singleton pattern\&. 
+.PP
+Definition at line \fB10\fP of file \fBsignalHandler\&.cpp\fP\&.
+.SS "SignalHandler::~SignalHandler ()\fC [private]\fP"
+
+.PP
+Private destructor to prevent external deletion\&. 
+.PP
+Definition at line \fB12\fP of file \fBsignalHandler\&.cpp\fP\&.
+.SS "SignalHandler::SignalHandler (const \fBSignalHandler\fP &)\fC [private]\fP, \fC [delete]\fP"
+
+.SH "Member Function Documentation"
+.PP 
+.SS "\fBSignalHandler\fP & SignalHandler::getInstance ()\fC [static]\fP"
+
+.PP
+Retrieve the singleton instance of \fBSignalHandler\fP\&. 
+.PP
+\fBReturns\fP
+.RS 4
+\fBSignalHandler\fP& Singleton instance of the \fBSignalHandler\fP\&. 
+.RE
+.PP
+
+.PP
+Definition at line \fB5\fP of file \fBsignalHandler\&.cpp\fP\&.
+.SS "void SignalHandler::handleSignal (int signum)\fC [static]\fP, \fC [private]\fP"
+
+.PP
+Internal handler for system signals\&. This function is invoked when specific signals (e\&.g\&., SIGINT) are received by the program\&. Its primary role is to set the shutdown flag, facilitating a graceful program termination\&.
+.PP
+\fBParameters\fP
+.RS 4
+\fIsignum\fP The number of the received signal\&. 
+.RE
+.PP
+
+.PP
+Definition at line \fB22\fP of file \fBsignalHandler\&.cpp\fP\&.
+.SS "bool SignalHandler::isShutdownRequested () const"
+
+.PP
+Determine if a shutdown signal has been received\&. 
+.PP
+\fBReturns\fP
+.RS 4
+true if a shutdown signal is detected\&. 
+.PP
+false otherwise\&. 
+.RE
+.PP
+
+.PP
+Definition at line \fB18\fP of file \fBsignalHandler\&.cpp\fP\&.
+.SS "\fBSignalHandler\fP & SignalHandler::operator= (const \fBSignalHandler\fP &)\fC [private]\fP, \fC [delete]\fP"
+
+.SS "void SignalHandler::setupSignalHandlers ()"
+
+.PP
+Initialize and set up signal handlers for the program\&. 
+.PP
+Definition at line \fB14\fP of file \fBsignalHandler\&.cpp\fP\&.
+.SH "Member Data Documentation"
+.PP 
+.SS "std::atomic< bool > SignalHandler::shutdownRequested\fC [static]\fP, \fC [private]\fP"
+
+.PP
+Atomic flag to track if a shutdown signal has been received\&. 
+.PP
+Definition at line \fB79\fP of file \fBsignalHandler\&.h\fP\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for API de Paris - Documentation du Gestionnaire from the source code\&.

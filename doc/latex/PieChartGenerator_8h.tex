@@ -1,0 +1,126 @@
+\hypertarget{PieChartGenerator_8h}{}\doxysection{include/gd\+Generation/\+Pie\+Chart\+Generator.h File Reference}
+\label{PieChartGenerator_8h}\index{include/gdGeneration/PieChartGenerator.h@{include/gdGeneration/PieChartGenerator.h}}
+
+
+Provides functionality to generate pie charts using the GD library.  
+
+
+{\ttfamily \#include $<$map$>$}\newline
+{\ttfamily \#include $<$string$>$}\newline
+{\ttfamily \#include $<$gd.\+h$>$}\newline
+{\ttfamily \#include $<$gdfonts.\+h$>$}\newline
+{\ttfamily \#include $<$nlohmann/json.\+hpp$>$}\newline
+{\ttfamily \#include $<$cmath$>$}\newline
+{\ttfamily \#include $<$cstdio$>$}\newline
+{\ttfamily \#include $<$cstring$>$}\newline
+{\ttfamily \#include $<$cctype$>$}\newline
+{\ttfamily \#include $<$vector$>$}\newline
+{\ttfamily \#include $<$iostream$>$}\newline
+{\ttfamily \#include \char`\"{}../file\+Management/file\+Helper.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}utils.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Graphics\+Utils.\+h\char`\"{}}\newline
+Include dependency graph for Pie\+Chart\+Generator.\+h\+:
+% FIG 0
+This graph shows which files directly or indirectly include this file\+:
+% FIG 1
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{structPieChartSegment}{Pie\+Chart\+Segment}}
+\begin{DoxyCompactList}\small\item\em Structure to represent a segment in a pie chart. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classPieChartGenerator}{Pie\+Chart\+Generator}}
+\begin{DoxyCompactList}\small\item\em Class responsible for generating pie charts. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{PieChartGenerator_8h_af326d9b4cced6fd44a9f9567dc666014}{FONT\+\_\+\+PATH}}~\char`\"{}/usr/share/fonts/truetype/dejavu/Deja\+Vu\+Sans-\/Bold.\+ttf\char`\"{}
+\item 
+\#define \mbox{\hyperlink{PieChartGenerator_8h_a3d277f5a5dec260aa85c464f96800b9e}{SIZE\+\_\+\+TITLE}}~64
+\item 
+\#define \mbox{\hyperlink{PieChartGenerator_8h_a241aeeb764887ae5e3de58b98f04b16d}{WIDTH}}~4000
+\item 
+\#define \mbox{\hyperlink{PieChartGenerator_8h_aed89bd71aee8be823e8a20ec4e093c1e}{HEIGHT}}~3000
+\end{DoxyCompactItemize}
+\doxysubsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+typedef struct \mbox{\hyperlink{structPieChartSegment}{Pie\+Chart\+Segment}} \mbox{\hyperlink{PieChartGenerator_8h_afeb3dab77a1ef161adb7da9667c16637}{Pie\+Chart\+Segment}}
+\begin{DoxyCompactList}\small\item\em Structure to represent a segment in a pie chart. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Provides functionality to generate pie charts using the GD library. 
+
+\begin{DoxyAuthor}{Author}
+Antony Coco (\href{mailto:antony.coco.pro@gmail.com}{\texttt{ antony.\+coco.\+pro@gmail.\+com}}) 
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Version}
+0.\+1 
+\end{DoxyVersion}
+\begin{DoxyDate}{Date}
+2023-\/09-\/22 
+\end{DoxyDate}
+\begin{DoxyCopyright}{Copyright}
+Copyright (c) 2023 
+\end{DoxyCopyright}
+
+
+Definition in file \mbox{\hyperlink{PieChartGenerator_8h_source}{Pie\+Chart\+Generator.\+h}}.
+
+
+
+\doxysubsection{Macro Definition Documentation}
+\mbox{\Hypertarget{PieChartGenerator_8h_af326d9b4cced6fd44a9f9567dc666014}\label{PieChartGenerator_8h_af326d9b4cced6fd44a9f9567dc666014}} 
+\index{PieChartGenerator.h@{PieChartGenerator.h}!FONT\_PATH@{FONT\_PATH}}
+\index{FONT\_PATH@{FONT\_PATH}!PieChartGenerator.h@{PieChartGenerator.h}}
+\doxysubsubsection{\texorpdfstring{FONT\_PATH}{FONT\_PATH}}
+{\footnotesize\ttfamily \#define FONT\+\_\+\+PATH~\char`\"{}/usr/share/fonts/truetype/dejavu/Deja\+Vu\+Sans-\/Bold.\+ttf\char`\"{}}
+
+
+
+Definition at line \mbox{\hyperlink{PieChartGenerator_8h_source_l00014}{14}} of file \mbox{\hyperlink{PieChartGenerator_8h_source}{Pie\+Chart\+Generator.\+h}}.
+
+\mbox{\Hypertarget{PieChartGenerator_8h_aed89bd71aee8be823e8a20ec4e093c1e}\label{PieChartGenerator_8h_aed89bd71aee8be823e8a20ec4e093c1e}} 
+\index{PieChartGenerator.h@{PieChartGenerator.h}!HEIGHT@{HEIGHT}}
+\index{HEIGHT@{HEIGHT}!PieChartGenerator.h@{PieChartGenerator.h}}
+\doxysubsubsection{\texorpdfstring{HEIGHT}{HEIGHT}}
+{\footnotesize\ttfamily \#define HEIGHT~3000}
+
+
+
+Definition at line \mbox{\hyperlink{PieChartGenerator_8h_source_l00017}{17}} of file \mbox{\hyperlink{PieChartGenerator_8h_source}{Pie\+Chart\+Generator.\+h}}.
+
+\mbox{\Hypertarget{PieChartGenerator_8h_a3d277f5a5dec260aa85c464f96800b9e}\label{PieChartGenerator_8h_a3d277f5a5dec260aa85c464f96800b9e}} 
+\index{PieChartGenerator.h@{PieChartGenerator.h}!SIZE\_TITLE@{SIZE\_TITLE}}
+\index{SIZE\_TITLE@{SIZE\_TITLE}!PieChartGenerator.h@{PieChartGenerator.h}}
+\doxysubsubsection{\texorpdfstring{SIZE\_TITLE}{SIZE\_TITLE}}
+{\footnotesize\ttfamily \#define SIZE\+\_\+\+TITLE~64}
+
+
+
+Definition at line \mbox{\hyperlink{PieChartGenerator_8h_source_l00015}{15}} of file \mbox{\hyperlink{PieChartGenerator_8h_source}{Pie\+Chart\+Generator.\+h}}.
+
+\mbox{\Hypertarget{PieChartGenerator_8h_a241aeeb764887ae5e3de58b98f04b16d}\label{PieChartGenerator_8h_a241aeeb764887ae5e3de58b98f04b16d}} 
+\index{PieChartGenerator.h@{PieChartGenerator.h}!WIDTH@{WIDTH}}
+\index{WIDTH@{WIDTH}!PieChartGenerator.h@{PieChartGenerator.h}}
+\doxysubsubsection{\texorpdfstring{WIDTH}{WIDTH}}
+{\footnotesize\ttfamily \#define WIDTH~4000}
+
+
+
+Definition at line \mbox{\hyperlink{PieChartGenerator_8h_source_l00016}{16}} of file \mbox{\hyperlink{PieChartGenerator_8h_source}{Pie\+Chart\+Generator.\+h}}.
+
+
+
+\doxysubsection{Typedef Documentation}
+\mbox{\Hypertarget{PieChartGenerator_8h_afeb3dab77a1ef161adb7da9667c16637}\label{PieChartGenerator_8h_afeb3dab77a1ef161adb7da9667c16637}} 
+\index{PieChartGenerator.h@{PieChartGenerator.h}!PieChartSegment@{PieChartSegment}}
+\index{PieChartSegment@{PieChartSegment}!PieChartGenerator.h@{PieChartGenerator.h}}
+\doxysubsubsection{\texorpdfstring{PieChartSegment}{PieChartSegment}}
+{\footnotesize\ttfamily typedef struct \mbox{\hyperlink{structPieChartSegment}{Pie\+Chart\+Segment}} \mbox{\hyperlink{structPieChartSegment}{Pie\+Chart\+Segment}}}
+
+
+
+Structure to represent a segment in a pie chart. 
+
+This structure is used to define a segment of a pie chart, including its percentage representation, label, and color. 

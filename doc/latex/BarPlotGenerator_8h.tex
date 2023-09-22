@@ -1,0 +1,106 @@
+\hypertarget{BarPlotGenerator_8h}{}\doxysection{include/gd\+Generation/\+Bar\+Plot\+Generator.h File Reference}
+\label{BarPlotGenerator_8h}\index{include/gdGeneration/BarPlotGenerator.h@{include/gdGeneration/BarPlotGenerator.h}}
+
+
+Header for the \mbox{\hyperlink{classBarPlotGenerator}{Bar\+Plot\+Generator}} class that manages bar plot creation.  
+
+
+{\ttfamily \#include $<$map$>$}\newline
+{\ttfamily \#include $<$string$>$}\newline
+{\ttfamily \#include $<$gd.\+h$>$}\newline
+{\ttfamily \#include $<$gdfonts.\+h$>$}\newline
+{\ttfamily \#include $<$nlohmann/json.\+hpp$>$}\newline
+{\ttfamily \#include $<$cmath$>$}\newline
+{\ttfamily \#include $<$cstdio$>$}\newline
+{\ttfamily \#include $<$cstring$>$}\newline
+{\ttfamily \#include $<$cctype$>$}\newline
+{\ttfamily \#include $<$vector$>$}\newline
+{\ttfamily \#include $<$iostream$>$}\newline
+{\ttfamily \#include $<$random$>$}\newline
+{\ttfamily \#include \char`\"{}../file\+Management/file\+Helper.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}utils.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Graphics\+Utils.\+h\char`\"{}}\newline
+Include dependency graph for Bar\+Plot\+Generator.\+h\+:
+% FIG 0
+This graph shows which files directly or indirectly include this file\+:
+% FIG 1
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{classBarPlotGenerator}{Bar\+Plot\+Generator}}
+\begin{DoxyCompactList}\small\item\em Responsible for generating bar plots based on given data. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{BarPlotGenerator_8h_af326d9b4cced6fd44a9f9567dc666014}{FONT\+\_\+\+PATH}}~\char`\"{}/usr/share/fonts/truetype/dejavu/Deja\+Vu\+Sans-\/Bold.\+ttf\char`\"{}
+\item 
+\#define \mbox{\hyperlink{BarPlotGenerator_8h_a3d277f5a5dec260aa85c464f96800b9e}{SIZE\+\_\+\+TITLE}}~64
+\item 
+\#define \mbox{\hyperlink{BarPlotGenerator_8h_a241aeeb764887ae5e3de58b98f04b16d}{WIDTH}}~4000
+\item 
+\#define \mbox{\hyperlink{BarPlotGenerator_8h_aed89bd71aee8be823e8a20ec4e093c1e}{HEIGHT}}~3000
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Header for the \mbox{\hyperlink{classBarPlotGenerator}{Bar\+Plot\+Generator}} class that manages bar plot creation. 
+
+\begin{DoxyAuthor}{Author}
+Antony Coco (\href{mailto:antony.coco.pro@gmail.com}{\texttt{ antony.\+coco.\+pro@gmail.\+com}}) 
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Version}
+0.\+1 
+\end{DoxyVersion}
+\begin{DoxyDate}{Date}
+2023-\/09-\/22 
+\end{DoxyDate}
+\begin{DoxyCopyright}{Copyright}
+Copyright (c) 2023 
+\end{DoxyCopyright}
+
+
+Definition in file \mbox{\hyperlink{BarPlotGenerator_8h_source}{Bar\+Plot\+Generator.\+h}}.
+
+
+
+\doxysubsection{Macro Definition Documentation}
+\mbox{\Hypertarget{BarPlotGenerator_8h_af326d9b4cced6fd44a9f9567dc666014}\label{BarPlotGenerator_8h_af326d9b4cced6fd44a9f9567dc666014}} 
+\index{BarPlotGenerator.h@{BarPlotGenerator.h}!FONT\_PATH@{FONT\_PATH}}
+\index{FONT\_PATH@{FONT\_PATH}!BarPlotGenerator.h@{BarPlotGenerator.h}}
+\doxysubsubsection{\texorpdfstring{FONT\_PATH}{FONT\_PATH}}
+{\footnotesize\ttfamily \#define FONT\+\_\+\+PATH~\char`\"{}/usr/share/fonts/truetype/dejavu/Deja\+Vu\+Sans-\/Bold.\+ttf\char`\"{}}
+
+
+
+Definition at line \mbox{\hyperlink{BarPlotGenerator_8h_source_l00013}{13}} of file \mbox{\hyperlink{BarPlotGenerator_8h_source}{Bar\+Plot\+Generator.\+h}}.
+
+\mbox{\Hypertarget{BarPlotGenerator_8h_aed89bd71aee8be823e8a20ec4e093c1e}\label{BarPlotGenerator_8h_aed89bd71aee8be823e8a20ec4e093c1e}} 
+\index{BarPlotGenerator.h@{BarPlotGenerator.h}!HEIGHT@{HEIGHT}}
+\index{HEIGHT@{HEIGHT}!BarPlotGenerator.h@{BarPlotGenerator.h}}
+\doxysubsubsection{\texorpdfstring{HEIGHT}{HEIGHT}}
+{\footnotesize\ttfamily \#define HEIGHT~3000}
+
+
+
+Definition at line \mbox{\hyperlink{BarPlotGenerator_8h_source_l00016}{16}} of file \mbox{\hyperlink{BarPlotGenerator_8h_source}{Bar\+Plot\+Generator.\+h}}.
+
+\mbox{\Hypertarget{BarPlotGenerator_8h_a3d277f5a5dec260aa85c464f96800b9e}\label{BarPlotGenerator_8h_a3d277f5a5dec260aa85c464f96800b9e}} 
+\index{BarPlotGenerator.h@{BarPlotGenerator.h}!SIZE\_TITLE@{SIZE\_TITLE}}
+\index{SIZE\_TITLE@{SIZE\_TITLE}!BarPlotGenerator.h@{BarPlotGenerator.h}}
+\doxysubsubsection{\texorpdfstring{SIZE\_TITLE}{SIZE\_TITLE}}
+{\footnotesize\ttfamily \#define SIZE\+\_\+\+TITLE~64}
+
+
+
+Definition at line \mbox{\hyperlink{BarPlotGenerator_8h_source_l00014}{14}} of file \mbox{\hyperlink{BarPlotGenerator_8h_source}{Bar\+Plot\+Generator.\+h}}.
+
+\mbox{\Hypertarget{BarPlotGenerator_8h_a241aeeb764887ae5e3de58b98f04b16d}\label{BarPlotGenerator_8h_a241aeeb764887ae5e3de58b98f04b16d}} 
+\index{BarPlotGenerator.h@{BarPlotGenerator.h}!WIDTH@{WIDTH}}
+\index{WIDTH@{WIDTH}!BarPlotGenerator.h@{BarPlotGenerator.h}}
+\doxysubsubsection{\texorpdfstring{WIDTH}{WIDTH}}
+{\footnotesize\ttfamily \#define WIDTH~4000}
+
+
+
+Definition at line \mbox{\hyperlink{BarPlotGenerator_8h_source_l00015}{15}} of file \mbox{\hyperlink{BarPlotGenerator_8h_source}{Bar\+Plot\+Generator.\+h}}.
+

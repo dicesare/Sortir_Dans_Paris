@@ -1,0 +1,149 @@
+.TH "ConcreteObserver" 3 "Fri Sep 22 2023" "Version v0.1" "API de Paris - Documentation du Gestionnaire" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+ConcreteObserver \- Represents a specific observer that reacts to changes in the observable\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <concreteObserver\&.h>\fP
+.PP
+Inherits \fBObserver\fP\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBConcreteObserver\fP ()"
+.br
+.RI "Default constructor for the \fBConcreteObserver\fP\&. "
+.ti -1c
+.RI "void \fBupdate\fP (const std::map< std::string, nlohmann::json > &newEvents) override"
+.br
+.RI "Overrides the \fBObserver\fP interface's update method\&. "
+.ti -1c
+.RI "void \fBdailyUpdate\fP (const std::map< std::string, nlohmann::json > &newDailyEvents) override"
+.br
+.RI "Overrides the \fBObserver\fP interface's dailyUpdate method\&. "
+.ti -1c
+.RI "void \fBremoveExpiredEvents\fP () override"
+.br
+.RI "Removes expired events from the observer's state\&. "
+.in -1c
+.SS "Private Member Functions"
+
+.in +1c
+.ti -1c
+.RI "void \fBgenerateBarPlotFromData\fP (const std::map< std::string, nlohmann::json > &newTagsJson)"
+.br
+.RI "Generates a bar plot from the provided tag data\&. "
+.in -1c
+.SS "Private Attributes"
+
+.in +1c
+.ti -1c
+.RI "std::map< std::string, nlohmann::json > \fBcurrentAndUpcomingEvents\fP"
+.br
+.RI "Holds the current and upcoming events\&. "
+.ti -1c
+.RI "\fBDataStorage\fP \fBdataStorage\fP"
+.br
+.RI "Data storage mechanism for the observer\&. "
+.ti -1c
+.RI "\fBBarPlotGenerator\fP \fBbarPlotGenerator\fP"
+.br
+.RI "Tool for generating bar plots from data\&. "
+.in -1c
+.SH "Detailed Description"
+.PP 
+Represents a specific observer that reacts to changes in the observable\&. 
+
+The \fBConcreteObserver\fP class provides specific actions to perform in response to the changes in the observable subject\&. It holds its internal state, which is updated upon receiving notifications from the observable subject\&. This class also has the capability to generate a bar plot from the data it receives\&. 
+.PP
+Definition at line \fB31\fP of file \fBconcreteObserver\&.h\fP\&.
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "ConcreteObserver::ConcreteObserver ()"
+
+.PP
+Default constructor for the \fBConcreteObserver\fP\&. 
+.PP
+Definition at line \fB3\fP of file \fBconcreteObserver\&.cpp\fP\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "void ConcreteObserver::dailyUpdate (const std::map< std::string, nlohmann::json > & newDailyEvents)\fC [override]\fP, \fC [virtual]\fP"
+
+.PP
+Overrides the \fBObserver\fP interface's dailyUpdate method\&. Provides daily specific updates to the observer, updating its state and possibly triggering other actions\&.
+.PP
+\fBParameters\fP
+.RS 4
+\fInewDailyEvents\fP Data about the new daily events, represented as a map\&. 
+.RE
+.PP
+
+.PP
+Implements \fBObserver\fP\&.
+.PP
+Definition at line \fB13\fP of file \fBconcreteObserver\&.cpp\fP\&.
+.SS "void ConcreteObserver::generateBarPlotFromData (const std::map< std::string, nlohmann::json > & newTagsJson)\fC [private]\fP"
+
+.PP
+Generates a bar plot from the provided tag data\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fInewTagsJson\fP Data represented in JSON format, used to generate the bar plot\&. 
+.RE
+.PP
+
+.PP
+Definition at line \fB39\fP of file \fBconcreteObserver\&.cpp\fP\&.
+.SS "void ConcreteObserver::removeExpiredEvents ()\fC [override]\fP, \fC [virtual]\fP"
+
+.PP
+Removes expired events from the observer's state\&. This method is responsible for cleaning up and ensuring that the observer's state remains up-to-date by removing events that are no longer relevant\&. 
+.PP
+Implements \fBObserver\fP\&.
+.PP
+Definition at line \fB20\fP of file \fBconcreteObserver\&.cpp\fP\&.
+.SS "void ConcreteObserver::update (const std::map< std::string, nlohmann::json > & newEvents)\fC [override]\fP, \fC [virtual]\fP"
+
+.PP
+Overrides the \fBObserver\fP interface's update method\&. being notified of new events, this method updates the observer's internal state and may trigger other relevant methods, such as generating a bar plot\&.
+.PP
+\fBParameters\fP
+.RS 4
+\fInewEvents\fP Data about the new events, represented as a map\&. 
+.RE
+.PP
+
+.PP
+Implements \fBObserver\fP\&.
+.PP
+Definition at line \fB5\fP of file \fBconcreteObserver\&.cpp\fP\&.
+.SH "Member Data Documentation"
+.PP 
+.SS "\fBBarPlotGenerator\fP ConcreteObserver::barPlotGenerator\fC [private]\fP"
+
+.PP
+Tool for generating bar plots from data\&. 
+.PP
+Definition at line \fB35\fP of file \fBconcreteObserver\&.h\fP\&.
+.SS "std::map<std::string, nlohmann::json> ConcreteObserver::currentAndUpcomingEvents\fC [private]\fP"
+
+.PP
+Holds the current and upcoming events\&. 
+.PP
+Definition at line \fB33\fP of file \fBconcreteObserver\&.h\fP\&.
+.SS "\fBDataStorage\fP ConcreteObserver::dataStorage\fC [private]\fP"
+
+.PP
+Data storage mechanism for the observer\&. 
+.PP
+Definition at line \fB34\fP of file \fBconcreteObserver\&.h\fP\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for API de Paris - Documentation du Gestionnaire from the source code\&.

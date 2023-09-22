@@ -1,0 +1,235 @@
+\hypertarget{classPeriodicFetcher}{}\doxysection{Periodic\+Fetcher Class Reference}
+\label{classPeriodicFetcher}\index{PeriodicFetcher@{PeriodicFetcher}}
+
+
+Handles periodic data fetching, processing, and notifying Observables.  
+
+
+
+
+{\ttfamily \#include $<$periodic\+Fetcher.\+h$>$}
+
+
+
+Collaboration diagram for Periodic\+Fetcher\+:
+% FIG 0
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classPeriodicFetcher_a97424bbb533281b98e837ea0a9a0fdc7}{Periodic\+Fetcher}} (\mbox{\hyperlink{classObservable}{Observable}} \&\mbox{\hyperlink{classPeriodicFetcher_af49d8bd5f679e0c054fa64857d577298}{observable}}, int interval, \mbox{\hyperlink{namespaceFetchIntervalTimeUnit_a258941b40a5a04eaa12b02e927572d24}{fitu}} unit)
+\begin{DoxyCompactList}\small\item\em Construct a new Periodic Fetcher object. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classPeriodicFetcher_a84f9a218ccb184feb1a8027b2ac9ac44}{start}} ()
+\begin{DoxyCompactList}\small\item\em Begin the periodic fetching and processing of data. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{classPeriodicFetcher_ac5f69e42cbe1e901419efca568485369}{log}} (const std\+::string \&message)
+\begin{DoxyCompactList}\small\item\em Log messages for debugging and monitoring purposes. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{classPeriodicFetcher_ab107531c3a83011a369e5068532814d9}{fetch\+Interval}}
+\begin{DoxyCompactList}\small\item\em Time duration specifying how often data is fetched. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{namespaceFetchIntervalTimeUnit_a258941b40a5a04eaa12b02e927572d24}{fitu}} \mbox{\hyperlink{classPeriodicFetcher_afd38cbbebb3539033f01465f4c1d37cb}{time\+Unit}}
+\begin{DoxyCompactList}\small\item\em Enumerated type representing the unit of fetch interval (e.\+g., SEC, MIN, HR). \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classPieChartGenerator}{Pie\+Chart\+Generator}} \mbox{\hyperlink{classPeriodicFetcher_a9c64edbc5cfec664fe342cff679e0c25}{pie\+Chart\+Gen}}
+\begin{DoxyCompactList}\small\item\em Object used for generating pie charts from the fetched data. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classObservable}{Observable}} \& \mbox{\hyperlink{classPeriodicFetcher_af49d8bd5f679e0c054fa64857d577298}{observable}}
+\begin{DoxyCompactList}\small\item\em Reference to \mbox{\hyperlink{classObservable}{Observable}} object to which updates are sent. \end{DoxyCompactList}\item 
+std\+::atomic$<$ bool $>$ \mbox{\hyperlink{classPeriodicFetcher_acd2bc4762e1b18c1d6b080ac19e756dc}{stop\+Requested}}
+\begin{DoxyCompactList}\small\item\em Atomic flag indicating if the fetching process should be stopped. \end{DoxyCompactList}\item 
+std\+::mutex \mbox{\hyperlink{classPeriodicFetcher_ac9187e24e8d35ff8102e89a69ad99ba0}{mtx}}
+\begin{DoxyCompactList}\small\item\em Mutex ensuring thread-\/safety during data fetch and processing. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Static Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+static \mbox{\hyperlink{classPeriodicFetcher}{Periodic\+Fetcher}} $\ast$ \mbox{\hyperlink{classPeriodicFetcher_add7804e2a8043acb7f5d18de299b45c9}{instance}} = nullptr
+\begin{DoxyCompactList}\small\item\em Singleton instance of the \mbox{\hyperlink{classPeriodicFetcher}{Periodic\+Fetcher}} class. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Handles periodic data fetching, processing, and notifying Observables. 
+
+The \mbox{\hyperlink{classPeriodicFetcher}{Periodic\+Fetcher}} class encapsulates functionality related to periodically fetching data from an external source, processing that data, and subsequently updating associated Observables. Additionally, it generates pie charts using the \mbox{\hyperlink{classPieChartGenerator}{Pie\+Chart\+Generator}} class for visualization of the data. 
+
+Definition at line \mbox{\hyperlink{periodicFetcher_8h_source_l00046}{46}} of file \mbox{\hyperlink{periodicFetcher_8h_source}{periodic\+Fetcher.\+h}}.
+
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classPeriodicFetcher_a97424bbb533281b98e837ea0a9a0fdc7}\label{classPeriodicFetcher_a97424bbb533281b98e837ea0a9a0fdc7}} 
+\index{PeriodicFetcher@{PeriodicFetcher}!PeriodicFetcher@{PeriodicFetcher}}
+\index{PeriodicFetcher@{PeriodicFetcher}!PeriodicFetcher@{PeriodicFetcher}}
+\doxysubsubsection{\texorpdfstring{PeriodicFetcher()}{PeriodicFetcher()}}
+{\footnotesize\ttfamily Periodic\+Fetcher\+::\+Periodic\+Fetcher (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classObservable}{Observable}} \&}]{observable,  }\item[{int}]{interval,  }\item[{\mbox{\hyperlink{namespaceFetchIntervalTimeUnit_a258941b40a5a04eaa12b02e927572d24}{fitu}}}]{unit }\end{DoxyParamCaption})}
+
+
+
+Construct a new Periodic Fetcher object. 
+
+Initializes the fetcher with specified parameters and sets up required configurations.
+
+
+\begin{DoxyParams}{Parameters}
+{\em observable} & Reference to the \mbox{\hyperlink{classObservable}{Observable}} object that will be updated with fetched data. \\
+\hline
+{\em interval} & Time interval for periodic data fetching. \\
+\hline
+{\em unit} & The unit of the fetch interval (e.\+g., seconds, minutes, hours). \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{periodicFetcher_8cpp_source_l00005}{5}} of file \mbox{\hyperlink{periodicFetcher_8cpp_source}{periodic\+Fetcher.\+cpp}}.
+
+Here is the call graph for this function\+:
+% FIG 1
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classPeriodicFetcher_ac5f69e42cbe1e901419efca568485369}\label{classPeriodicFetcher_ac5f69e42cbe1e901419efca568485369}} 
+\index{PeriodicFetcher@{PeriodicFetcher}!log@{log}}
+\index{log@{log}!PeriodicFetcher@{PeriodicFetcher}}
+\doxysubsubsection{\texorpdfstring{log()}{log()}}
+{\footnotesize\ttfamily void Periodic\+Fetcher\+::log (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{message }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Log messages for debugging and monitoring purposes. 
+
+This function outputs messages to the console, which can be useful for debugging, error-\/handling, or monitoring the operation of the \mbox{\hyperlink{classPeriodicFetcher}{Periodic\+Fetcher}}.
+
+
+\begin{DoxyParams}{Parameters}
+{\em message} & String containing the message to be logged. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{periodicFetcher_8cpp_source_l00042}{42}} of file \mbox{\hyperlink{periodicFetcher_8cpp_source}{periodic\+Fetcher.\+cpp}}.
+
+Here is the caller graph for this function\+:
+% FIG 2
+\mbox{\Hypertarget{classPeriodicFetcher_a84f9a218ccb184feb1a8027b2ac9ac44}\label{classPeriodicFetcher_a84f9a218ccb184feb1a8027b2ac9ac44}} 
+\index{PeriodicFetcher@{PeriodicFetcher}!start@{start}}
+\index{start@{start}!PeriodicFetcher@{PeriodicFetcher}}
+\doxysubsubsection{\texorpdfstring{start()}{start()}}
+{\footnotesize\ttfamily void Periodic\+Fetcher\+::start (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Begin the periodic fetching and processing of data. 
+
+This method initiates the continuous loop that fetches, processes data and updates the Observables. The loop continues until a stop signal is received. 
+
+Definition at line \mbox{\hyperlink{periodicFetcher_8cpp_source_l00010}{10}} of file \mbox{\hyperlink{periodicFetcher_8cpp_source}{periodic\+Fetcher.\+cpp}}.
+
+Here is the call graph for this function\+:
+% FIG 3
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{classPeriodicFetcher_ab107531c3a83011a369e5068532814d9}\label{classPeriodicFetcher_ab107531c3a83011a369e5068532814d9}} 
+\index{PeriodicFetcher@{PeriodicFetcher}!fetchInterval@{fetchInterval}}
+\index{fetchInterval@{fetchInterval}!PeriodicFetcher@{PeriodicFetcher}}
+\doxysubsubsection{\texorpdfstring{fetchInterval}{fetchInterval}}
+{\footnotesize\ttfamily int Periodic\+Fetcher\+::fetch\+Interval\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Time duration specifying how often data is fetched. 
+
+
+
+Definition at line \mbox{\hyperlink{periodicFetcher_8h_source_l00067}{67}} of file \mbox{\hyperlink{periodicFetcher_8h_source}{periodic\+Fetcher.\+h}}.
+
+\mbox{\Hypertarget{classPeriodicFetcher_add7804e2a8043acb7f5d18de299b45c9}\label{classPeriodicFetcher_add7804e2a8043acb7f5d18de299b45c9}} 
+\index{PeriodicFetcher@{PeriodicFetcher}!instance@{instance}}
+\index{instance@{instance}!PeriodicFetcher@{PeriodicFetcher}}
+\doxysubsubsection{\texorpdfstring{instance}{instance}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classPeriodicFetcher}{Periodic\+Fetcher}} $\ast$ Periodic\+Fetcher\+::instance = nullptr\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}
+
+
+
+Singleton instance of the \mbox{\hyperlink{classPeriodicFetcher}{Periodic\+Fetcher}} class. 
+
+
+
+Definition at line \mbox{\hyperlink{periodicFetcher_8h_source_l00073}{73}} of file \mbox{\hyperlink{periodicFetcher_8h_source}{periodic\+Fetcher.\+h}}.
+
+\mbox{\Hypertarget{classPeriodicFetcher_ac9187e24e8d35ff8102e89a69ad99ba0}\label{classPeriodicFetcher_ac9187e24e8d35ff8102e89a69ad99ba0}} 
+\index{PeriodicFetcher@{PeriodicFetcher}!mtx@{mtx}}
+\index{mtx@{mtx}!PeriodicFetcher@{PeriodicFetcher}}
+\doxysubsubsection{\texorpdfstring{mtx}{mtx}}
+{\footnotesize\ttfamily std\+::mutex Periodic\+Fetcher\+::mtx\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Mutex ensuring thread-\/safety during data fetch and processing. 
+
+
+
+Definition at line \mbox{\hyperlink{periodicFetcher_8h_source_l00072}{72}} of file \mbox{\hyperlink{periodicFetcher_8h_source}{periodic\+Fetcher.\+h}}.
+
+\mbox{\Hypertarget{classPeriodicFetcher_af49d8bd5f679e0c054fa64857d577298}\label{classPeriodicFetcher_af49d8bd5f679e0c054fa64857d577298}} 
+\index{PeriodicFetcher@{PeriodicFetcher}!observable@{observable}}
+\index{observable@{observable}!PeriodicFetcher@{PeriodicFetcher}}
+\doxysubsubsection{\texorpdfstring{observable}{observable}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classObservable}{Observable}}\& Periodic\+Fetcher\+::observable\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Reference to \mbox{\hyperlink{classObservable}{Observable}} object to which updates are sent. 
+
+
+
+Definition at line \mbox{\hyperlink{periodicFetcher_8h_source_l00070}{70}} of file \mbox{\hyperlink{periodicFetcher_8h_source}{periodic\+Fetcher.\+h}}.
+
+\mbox{\Hypertarget{classPeriodicFetcher_a9c64edbc5cfec664fe342cff679e0c25}\label{classPeriodicFetcher_a9c64edbc5cfec664fe342cff679e0c25}} 
+\index{PeriodicFetcher@{PeriodicFetcher}!pieChartGen@{pieChartGen}}
+\index{pieChartGen@{pieChartGen}!PeriodicFetcher@{PeriodicFetcher}}
+\doxysubsubsection{\texorpdfstring{pieChartGen}{pieChartGen}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classPieChartGenerator}{Pie\+Chart\+Generator}} Periodic\+Fetcher\+::pie\+Chart\+Gen\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Object used for generating pie charts from the fetched data. 
+
+
+
+Definition at line \mbox{\hyperlink{periodicFetcher_8h_source_l00069}{69}} of file \mbox{\hyperlink{periodicFetcher_8h_source}{periodic\+Fetcher.\+h}}.
+
+\mbox{\Hypertarget{classPeriodicFetcher_acd2bc4762e1b18c1d6b080ac19e756dc}\label{classPeriodicFetcher_acd2bc4762e1b18c1d6b080ac19e756dc}} 
+\index{PeriodicFetcher@{PeriodicFetcher}!stopRequested@{stopRequested}}
+\index{stopRequested@{stopRequested}!PeriodicFetcher@{PeriodicFetcher}}
+\doxysubsubsection{\texorpdfstring{stopRequested}{stopRequested}}
+{\footnotesize\ttfamily std\+::atomic$<$bool$>$ Periodic\+Fetcher\+::stop\+Requested\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Atomic flag indicating if the fetching process should be stopped. 
+
+
+
+Definition at line \mbox{\hyperlink{periodicFetcher_8h_source_l00071}{71}} of file \mbox{\hyperlink{periodicFetcher_8h_source}{periodic\+Fetcher.\+h}}.
+
+\mbox{\Hypertarget{classPeriodicFetcher_afd38cbbebb3539033f01465f4c1d37cb}\label{classPeriodicFetcher_afd38cbbebb3539033f01465f4c1d37cb}} 
+\index{PeriodicFetcher@{PeriodicFetcher}!timeUnit@{timeUnit}}
+\index{timeUnit@{timeUnit}!PeriodicFetcher@{PeriodicFetcher}}
+\doxysubsubsection{\texorpdfstring{timeUnit}{timeUnit}}
+{\footnotesize\ttfamily \mbox{\hyperlink{namespaceFetchIntervalTimeUnit_a258941b40a5a04eaa12b02e927572d24}{fitu}} Periodic\+Fetcher\+::time\+Unit\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Enumerated type representing the unit of fetch interval (e.\+g., SEC, MIN, HR). 
+
+
+
+Definition at line \mbox{\hyperlink{periodicFetcher_8h_source_l00068}{68}} of file \mbox{\hyperlink{periodicFetcher_8h_source}{periodic\+Fetcher.\+h}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+include/service/\mbox{\hyperlink{periodicFetcher_8h}{periodic\+Fetcher.\+h}}\item 
+src/service/\mbox{\hyperlink{periodicFetcher_8cpp}{periodic\+Fetcher.\+cpp}}\end{DoxyCompactItemize}

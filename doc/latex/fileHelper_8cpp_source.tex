@@ -1,0 +1,42 @@
+\hypertarget{fileHelper_8cpp_source}{}\doxysection{file\+Helper.\+cpp}
+\label{fileHelper_8cpp_source}\index{src/fileManagement/fileHelper.cpp@{src/fileManagement/fileHelper.cpp}}
+\mbox{\hyperlink{fileHelper_8cpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{fileHelper_8cpp_source_l00001}00001 \textcolor{preprocessor}{\#include "{}../../include/fileManagement/fileHelper.h"{}}}
+\DoxyCodeLine{\Hypertarget{fileHelper_8cpp_source_l00002}00002 }
+\DoxyCodeLine{\Hypertarget{fileHelper_8cpp_source_l00003}00003 }
+\DoxyCodeLine{\Hypertarget{fileHelper_8cpp_source_l00004}\mbox{\hyperlink{classFileHelper_aeb70acd6faa4d5ca838e6af25acf1841}{00004}} \mbox{\hyperlink{classFileHelper_aeb70acd6faa4d5ca838e6af25acf1841}{FileHelper::FileHelper}}() : m\_subfolder(\textcolor{stringliteral}{"{}resources"{}}) \{\}}
+\DoxyCodeLine{\Hypertarget{fileHelper_8cpp_source_l00005}00005 }
+\DoxyCodeLine{\Hypertarget{fileHelper_8cpp_source_l00006}\mbox{\hyperlink{classFileHelper_ac8fb7747ed6cc254aab512ca4454d13d}{00006}} \textcolor{keywordtype}{void} \mbox{\hyperlink{classFileHelper_ac8fb7747ed6cc254aab512ca4454d13d}{FileHelper::setSubfolder}}(\textcolor{keyword}{const} std::string\& subfolder) \{}
+\DoxyCodeLine{\Hypertarget{fileHelper_8cpp_source_l00007}00007     \mbox{\hyperlink{classFileHelper_afd98e8ca8128d71d1e1dea5b73849fdc}{m\_subfolder}} = subfolder;}
+\DoxyCodeLine{\Hypertarget{fileHelper_8cpp_source_l00008}00008 \}}
+\DoxyCodeLine{\Hypertarget{fileHelper_8cpp_source_l00009}00009 }
+\DoxyCodeLine{\Hypertarget{fileHelper_8cpp_source_l00010}\mbox{\hyperlink{classFileHelper_aebf08c5f48f442cf9743809c7f25c49f}{00010}} std::string \mbox{\hyperlink{classFileHelper_aebf08c5f48f442cf9743809c7f25c49f}{FileHelper::getSubfolder}}()\textcolor{keyword}{ const }\{}
+\DoxyCodeLine{\Hypertarget{fileHelper_8cpp_source_l00011}00011     \textcolor{keywordflow}{return} \mbox{\hyperlink{classFileHelper_afd98e8ca8128d71d1e1dea5b73849fdc}{m\_subfolder}};}
+\DoxyCodeLine{\Hypertarget{fileHelper_8cpp_source_l00012}00012 \}}
+\DoxyCodeLine{\Hypertarget{fileHelper_8cpp_source_l00013}00013 }
+\DoxyCodeLine{\Hypertarget{fileHelper_8cpp_source_l00014}\mbox{\hyperlink{classFileHelper_a34793345599cf91e9c91e92fa6095d9e}{00014}} \textcolor{keywordtype}{void} \mbox{\hyperlink{classFileHelper_a34793345599cf91e9c91e92fa6095d9e}{FileHelper::ensureDirectoryExists}}(\textcolor{keyword}{const} std::string\& path)}
+\DoxyCodeLine{\Hypertarget{fileHelper_8cpp_source_l00015}00015 \{}
+\DoxyCodeLine{\Hypertarget{fileHelper_8cpp_source_l00016}00016     \textcolor{keywordflow}{if} (!std::filesystem::exists(path)) \{}
+\DoxyCodeLine{\Hypertarget{fileHelper_8cpp_source_l00017}00017         std::filesystem::create\_directories(path);}
+\DoxyCodeLine{\Hypertarget{fileHelper_8cpp_source_l00018}00018     \}}
+\DoxyCodeLine{\Hypertarget{fileHelper_8cpp_source_l00019}00019 \}}
+\DoxyCodeLine{\Hypertarget{fileHelper_8cpp_source_l00020}00020 }
+\DoxyCodeLine{\Hypertarget{fileHelper_8cpp_source_l00021}\mbox{\hyperlink{classFileHelper_ad75188b2ae6098e5dae2f23cb5576341}{00021}} \textcolor{keywordtype}{bool} \mbox{\hyperlink{classFileHelper_ad75188b2ae6098e5dae2f23cb5576341}{FileHelper::fileExists}}(\textcolor{keyword}{const} std::string\& filePath)}
+\DoxyCodeLine{\Hypertarget{fileHelper_8cpp_source_l00022}00022 \{}
+\DoxyCodeLine{\Hypertarget{fileHelper_8cpp_source_l00023}00023     \textcolor{keywordflow}{return} std::filesystem::exists(filePath);}
+\DoxyCodeLine{\Hypertarget{fileHelper_8cpp_source_l00024}00024 \}}
+\DoxyCodeLine{\Hypertarget{fileHelper_8cpp_source_l00025}00025 }
+\DoxyCodeLine{\Hypertarget{fileHelper_8cpp_source_l00026}\mbox{\hyperlink{classFileHelper_a8a218e5dfb2e5ec90c4180671f868af1}{00026}} std::string \mbox{\hyperlink{classFileHelper_a8a218e5dfb2e5ec90c4180671f868af1}{FileHelper::getFilePath}}(\textcolor{keyword}{const} std::string\& filename) \{}
+\DoxyCodeLine{\Hypertarget{fileHelper_8cpp_source_l00027}00027     \textcolor{keyword}{const} \textcolor{keywordtype}{char}* homeDir = getenv(\textcolor{stringliteral}{"{}HOME"{}});}
+\DoxyCodeLine{\Hypertarget{fileHelper_8cpp_source_l00028}00028     \textcolor{keywordflow}{if} (homeDir) \{}
+\DoxyCodeLine{\Hypertarget{fileHelper_8cpp_source_l00029}00029         std::string path = std::string(homeDir) + \textcolor{stringliteral}{"{}/"{}} + \mbox{\hyperlink{classFileHelper_afd98e8ca8128d71d1e1dea5b73849fdc}{m\_subfolder}} + \textcolor{stringliteral}{"{}/"{}};}
+\DoxyCodeLine{\Hypertarget{fileHelper_8cpp_source_l00030}00030         \mbox{\hyperlink{classFileHelper_a34793345599cf91e9c91e92fa6095d9e}{ensureDirectoryExists}}(path);}
+\DoxyCodeLine{\Hypertarget{fileHelper_8cpp_source_l00031}00031         \textcolor{keywordflow}{return} path + filename;}
+\DoxyCodeLine{\Hypertarget{fileHelper_8cpp_source_l00032}00032     \} \textcolor{keywordflow}{else} \{}
+\DoxyCodeLine{\Hypertarget{fileHelper_8cpp_source_l00033}00033         std::cerr << \textcolor{stringliteral}{"{}Impossible de récupérer le répertoire personnel de l'utilisateur."{}} << std::endl;}
+\DoxyCodeLine{\Hypertarget{fileHelper_8cpp_source_l00034}00034         \textcolor{keywordflow}{return} \textcolor{stringliteral}{"{}"{}};}
+\DoxyCodeLine{\Hypertarget{fileHelper_8cpp_source_l00035}00035     \}}
+\DoxyCodeLine{\Hypertarget{fileHelper_8cpp_source_l00036}00036 \}}
+
+\end{DoxyCode}

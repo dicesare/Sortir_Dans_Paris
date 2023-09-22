@@ -1,0 +1,10 @@
+digraph "Observable::notifyObservers"
+{
+ // LATEX_PDF_SIZE
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  rankdir="RL";
+  Node1 [label="Observable::notifyObservers",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip="Sends updates to all registered observers."];
+  Node1 -> Node2 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+  Node2 [label="APIHandler::fetchData",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classAPIHandler.html#a1f4ab7c08b86cfa50d2840a7c2c49a8f",tooltip="Fetches data from the API and notifies its observers."];
+}

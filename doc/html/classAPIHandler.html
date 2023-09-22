@@ -161,6 +161,8 @@ Additional Inherited Members</h2></td></tr>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p >The <a class="el" href="classAPIHandler.html" title="The APIHandler class is responsible for fetching data from a given API.">APIHandler</a> class is responsible for fetching data from a given API. </p>
 <p >The class provides methods to make requests to an external API and process the returned data. Once the data is fetched, it acts as an <a class="el" href="classObservable.html" title="Represents the subject (or observable) in the Observer design pattern.">Observable</a>, notifying its observers of the new data. This class abstracts the details of making API requests and provides a clean interface to obtain data for the application. </p>
+
+<p class="definition">Definition at line <a class="el" href="apiHandler_8h_source.html#l00038">38</a> of file <a class="el" href="apiHandler_8h_source.html">apiHandler.h</a>.</p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="ac33916a544c830ab1248410cb855bf59" name="ac33916a544c830ab1248410cb855bf59"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ac33916a544c830ab1248410cb855bf59">&#9670;&nbsp;</a></span>APIHandler()</h2>
@@ -178,6 +180,8 @@ Additional Inherited Members</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Default constructor for <a class="el" href="classAPIHandler.html" title="The APIHandler class is responsible for fetching data from a given API.">APIHandler</a>. </p>
+
+<p class="definition">Definition at line <a class="el" href="apiHandler_8cpp_source.html#l00010">10</a> of file <a class="el" href="apiHandler_8cpp_source.html">apiHandler.cpp</a>.</p>
 
 </div>
 </div>
@@ -197,6 +201,8 @@ Additional Inherited Members</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Destructor for <a class="el" href="classAPIHandler.html" title="The APIHandler class is responsible for fetching data from a given API.">APIHandler</a>. </p>
+
+<p class="definition">Definition at line <a class="el" href="apiHandler_8cpp_source.html#l00014">14</a> of file <a class="el" href="apiHandler_8cpp_source.html">apiHandler.cpp</a>.</p>
 
 </div>
 </div>
@@ -218,6 +224,8 @@ Additional Inherited Members</h2></td></tr>
 
 <p>Fetches data from the API and notifies its observers. </p>
 <p >This method communicates with the base URL of the API, retrieves data, and then notifies all registered observers with this new data. </p>
+
+<p class="definition">Definition at line <a class="el" href="apiHandler_8cpp_source.html#l00018">18</a> of file <a class="el" href="apiHandler_8cpp_source.html">apiHandler.cpp</a>.</p>
 <div id="dynsection-2" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-2-trigger" src="closed.png" alt="+"/> Here is the call graph for this function:</div>
 <div id="dynsection-2-summary" class="dynsummary" style="display:block;">
@@ -245,6 +253,8 @@ Additional Inherited Members</h2></td></tr>
 
 <p>Fetches today's events from the API. </p>
 <dl class="section return"><dt>Returns</dt><dd>std::map&lt;std::string, nlohmann::json&gt; A map containing data about today's events. </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="apiHandler_8cpp_source.html#l00038">38</a> of file <a class="el" href="apiHandler_8cpp_source.html">apiHandler.cpp</a>.</p>
 <div id="dynsection-3" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-3-trigger" src="closed.png" alt="+"/> Here is the call graph for this function:</div>
 <div id="dynsection-3-summary" class="dynsummary" style="display:block;">
@@ -294,6 +304,8 @@ Additional Inherited Members</h2></td></tr>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>std::map&lt;std::string, nlohmann::json&gt; A map containing the fetched data. </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="apiHandler_8cpp_source.html#l00068">68</a> of file <a class="el" href="apiHandler_8cpp_source.html">apiHandler.cpp</a>.</p>
 <div id="dynsection-5" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-5-trigger" src="closed.png" alt="+"/> Here is the caller graph for this function:</div>
 <div id="dynsection-5-summary" class="dynsummary" style="display:block;">
@@ -327,11 +339,13 @@ Additional Inherited Members</h2></td></tr>
 
 <p>The base URL for the API. </p>
 
+<p class="definition">Definition at line <a class="el" href="apiHandler_8h_source.html#l00073">73</a> of file <a class="el" href="apiHandler_8h_source.html">apiHandler.h</a>.</p>
+
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following files:<ul>
 <li>include/connectApi/<a class="el" href="apiHandler_8h_source.html">apiHandler.h</a></li>
-<li>src/connectApi/<a class="el" href="apiHandler_8cpp.html">apiHandler.cpp</a></li>
+<li>src/connectApi/<a class="el" href="apiHandler_8cpp_source.html">apiHandler.cpp</a></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->
@@ -339,7 +353,7 @@ Additional Inherited Members</h2></td></tr>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="classAPIHandler.html">APIHandler</a></li>
-    <li class="footer">Generated on Fri Sep 22 2023 17:03:35 for API de Paris - Documentation du Gestionnaire by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.4 </li>
+    <li class="footer">Generated on Fri Sep 22 2023 17:57:21 for API de Paris - Documentation du Gestionnaire by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.4 </li>
   </ul>
 </div>
 </body>

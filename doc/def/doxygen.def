@@ -1,0 +1,3956 @@
+AutoGen Definitions dummy;
+class = {
+  cp-id     = 'classAPIHandler';
+  cp-name   = 'APIHandler';
+  cp-ref     = {
+    ref-type = base;
+    ref-id   = 'classObservable';
+    ref-prot = public;
+    ref-virt = non-virtual;
+  };
+  cp-section = {
+    sec-kind = 'public-func';
+    sec-member = {
+      sec-mem-kind = 'function';
+      sec-mem-id   = 'classAPIHandler_1ac33916a544c830ab1248410cb855bf59';
+      sec-mem-virt = normal;
+      sec-mem-prot = public;
+      sec-mem-type = <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+      sec-mem-name = 'APIHandler';
+      sec-mem-desc-file = '/home/antony_c/autre/buildroot-2023.08/linux_emb/sortirDansParis/include/connectApi/apiHandler.h';
+      sec-mem-desc-line = '43';
+      sec-mem-briefdesc =    <<_EnD_oF_dEf_TeXt_
+Default constructor for APIHandler.
+_EnD_oF_dEf_TeXt_;
+      sec-mem-documentation = <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+    }; /* sec-member */
+    sec-member = {
+      sec-mem-kind = 'function';
+      sec-mem-id   = 'classAPIHandler_1ab91de6f9d05aa213b671f54f2a0315eb';
+      sec-mem-virt = normal;
+      sec-mem-prot = public;
+      sec-mem-type = <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+      sec-mem-name = '~APIHandler';
+      sec-mem-desc-file = '/home/antony_c/autre/buildroot-2023.08/linux_emb/sortirDansParis/include/connectApi/apiHandler.h';
+      sec-mem-desc-line = '47';
+      sec-mem-briefdesc =    <<_EnD_oF_dEf_TeXt_
+Destructor for APIHandler.
+_EnD_oF_dEf_TeXt_;
+      sec-mem-documentation = <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+    }; /* sec-member */
+    sec-member = {
+      sec-mem-kind = 'function';
+      sec-mem-id   = 'classAPIHandler_1a1f4ab7c08b86cfa50d2840a7c2c49a8f';
+      sec-mem-virt = normal;
+      sec-mem-prot = public;
+      sec-mem-type = <<_EnD_oF_dEf_TeXt_
+void
+_EnD_oF_dEf_TeXt_;
+      sec-mem-name = 'fetchData';
+      sec-mem-desc-file = '/home/antony_c/autre/buildroot-2023.08/linux_emb/sortirDansParis/include/connectApi/apiHandler.h';
+      sec-mem-desc-line = '55';
+      sec-mem-briefdesc =    <<_EnD_oF_dEf_TeXt_
+Fetches data from the API and notifies its observers.
+_EnD_oF_dEf_TeXt_;
+      sec-mem-documentation = <<_EnD_oF_dEf_TeXt_
+ This method communicates with the base URL of the API, retrieves data,
+and then notifies all registered observers with this new data.
+_EnD_oF_dEf_TeXt_;
+      sec-mem-referenceto = {
+        sec-mem-ref-id = 'apiHandler_8h_1adbf28a22bb5e388af13e7c190a6cefc1';
+        sec-mem-ref-line = '73';
+        sec-mem-ref-name = 'baseUrl';
+    };
+      sec-mem-referenceto = {
+        sec-mem-ref-id = 'apiHandler_8cpp_1a4bfdc7673d871bce4390ced1fe56dcaa';
+        sec-mem-ref-line = '68';
+        sec-mem-ref-name = 'makeRequest';
+    };
+      sec-mem-referenceto = {
+        sec-mem-ref-id = 'observable_8cpp_1a98235ce794949ba4827df63e571fb14b';
+        sec-mem-ref-line = '13';
+        sec-mem-ref-name = 'Observable::notifyObservers';
+    };
+    }; /* sec-member */
+    sec-member = {
+      sec-mem-kind = 'function';
+      sec-mem-id   = 'classAPIHandler_1a9689d8f7c4ec016cca6ef5fa047b3b05';
+      sec-mem-virt = normal;
+      sec-mem-prot = public;
+      sec-mem-type = <<_EnD_oF_dEf_TeXt_
+std::map< std::string, nlohmann::json >
+_EnD_oF_dEf_TeXt_;
+      sec-mem-name = 'fetchTodaysEvents';
+      sec-mem-desc-file = '/home/antony_c/autre/buildroot-2023.08/linux_emb/sortirDansParis/include/connectApi/apiHandler.h';
+      sec-mem-desc-line = '62';
+      sec-mem-briefdesc =    <<_EnD_oF_dEf_TeXt_
+Fetches today's events from the API.
+_EnD_oF_dEf_TeXt_;
+      sec-mem-documentation = <<_EnD_oF_dEf_TeXt_
+@return std::map<std::string, nlohmann::json> A map containing data about today's events.
+_EnD_oF_dEf_TeXt_;
+      sec-mem-referenceto = {
+        sec-mem-ref-id = 'apiHandler_8h_1adbf28a22bb5e388af13e7c190a6cefc1';
+        sec-mem-ref-line = '73';
+        sec-mem-ref-name = 'baseUrl';
+    };
+      sec-mem-referenceto = {
+        sec-mem-ref-id = 'apiHandler_8cpp_1a4bfdc7673d871bce4390ced1fe56dcaa';
+        sec-mem-ref-line = '68';
+        sec-mem-ref-name = 'makeRequest';
+    };
+      sec-mem-referenceto = {
+        sec-mem-ref-id = 'observable_8h_1a12e80e23caa6669d5e118a649d66ef4b';
+        sec-mem-ref-line = '38';
+        sec-mem-ref-name = 'Observable::observers';
+    };
+      sec-mem-referencedby = {
+        sec-mem-ref-id = 'periodicFetcher_8cpp_1a84f9a218ccb184feb1a8027b2ac9ac44';
+        sec-mem-ref-line = '10';
+        sec-mem-ref-name = 'PeriodicFetcher::start';
+    };
+    }; /* sec-member */
+  }; /* cp-section */
+  cp-section = {
+    sec-kind = 'private-func';
+    sec-member = {
+      sec-mem-kind = 'function';
+      sec-mem-id   = 'classAPIHandler_1a4bfdc7673d871bce4390ced1fe56dcaa';
+      sec-mem-virt = normal;
+      sec-mem-prot = private;
+      sec-mem-type = <<_EnD_oF_dEf_TeXt_
+std::map< std::string, nlohmann::json >
+_EnD_oF_dEf_TeXt_;
+      sec-mem-name = 'makeRequest';
+      sec-mem-param = {
+        sec-mem-param-type = <<_EnD_oF_dEf_TeXt_
+const std::string &
+_EnD_oF_dEf_TeXt_;
+        sec-mem-param-declname = 'url';
+      }; /*        sec-mem-param--param */
+      sec-mem-desc-file = '/home/antony_c/autre/buildroot-2023.08/linux_emb/sortirDansParis/include/connectApi/apiHandler.h';
+      sec-mem-desc-line = '71';
+      sec-mem-briefdesc =    <<_EnD_oF_dEf_TeXt_
+Makes a request to the provided URL and returns the fetched data.
+_EnD_oF_dEf_TeXt_;
+      sec-mem-documentation = <<_EnD_oF_dEf_TeXt_
+@param url The specific URL endpoint to fetch data from.
+@return std::map<std::string, nlohmann::json> A map containing the fetched data.
+_EnD_oF_dEf_TeXt_;
+      sec-mem-referencedby = {
+        sec-mem-ref-id = 'apiHandler_8cpp_1a1f4ab7c08b86cfa50d2840a7c2c49a8f';
+        sec-mem-ref-line = '18';
+        sec-mem-ref-name = 'fetchData';
+    };
+      sec-mem-referencedby = {
+        sec-mem-ref-id = 'apiHandler_8cpp_1a9689d8f7c4ec016cca6ef5fa047b3b05';
+        sec-mem-ref-line = '38';
+        sec-mem-ref-name = 'fetchTodaysEvents';
+    };
+    }; /* sec-member */
+  }; /* cp-section */
+  cp-section = {
+    sec-kind = 'private-attrib';
+    sec-member = {
+      sec-mem-kind = 'variable';
+      sec-mem-id   = 'classAPIHandler_1adbf28a22bb5e388af13e7c190a6cefc1';
+      sec-mem-virt = normal;
+      sec-mem-prot = private;
+      sec-mem-type = <<_EnD_oF_dEf_TeXt_
+const std::string
+_EnD_oF_dEf_TeXt_;
+      sec-mem-name = 'baseUrl';
+      sec-mem-initializer = <<_EnD_oF_dEf_TeXt_
+= "https://opendata.paris.fr/api/explore/v2.1/catalog/datasets/que-faire-a-paris-/records?"
+_EnD_oF_dEf_TeXt_;
+      sec-mem-desc-file = '/home/antony_c/autre/buildroot-2023.08/linux_emb/sortirDansParis/include/connectApi/apiHandler.h';
+      sec-mem-desc-line = '73';
+      sec-mem-briefdesc =    <<_EnD_oF_dEf_TeXt_
+The base URL for the API.
+_EnD_oF_dEf_TeXt_;
+      sec-mem-documentation = <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+      sec-mem-referencedby = {
+        sec-mem-ref-id = 'apiHandler_8cpp_1a1f4ab7c08b86cfa50d2840a7c2c49a8f';
+        sec-mem-ref-line = '18';
+        sec-mem-ref-name = 'fetchData';
+    };
+      sec-mem-referencedby = {
+        sec-mem-ref-id = 'apiHandler_8cpp_1a9689d8f7c4ec016cca6ef5fa047b3b05';
+        sec-mem-ref-line = '38';
+        sec-mem-ref-name = 'fetchTodaysEvents';
+    };
+    }; /* sec-member */
+  }; /* cp-section */
+  cp-filename  = '/home/antony_c/autre/buildroot-2023.08/linux_emb/sortirDansParis/include/connectApi/apiHandler.h';
+  cp-fileline  = '38';
+  cp-briefdesc = <<_EnD_oF_dEf_TeXt_
+The APIHandler class is responsible for fetching data from a given API.
+_EnD_oF_dEf_TeXt_;
+  cp-documentation = <<_EnD_oF_dEf_TeXt_
+ The class provides methods to make requests to an external API and process the returned
+data. Once the data is fetched, it acts as an Observable, notifying its observers
+of the new data. This class abstracts the details of making API requests and provides
+a clean interface to obtain data for the application.
+_EnD_oF_dEf_TeXt_;
+  cp-inheritancegraph = <<_EnD_oF_dEf_TeXt_
+      node = {
+        node-id    = 1;
+        node-label = 'APIHandler';
+        node-link = {
+          node-link-id = 'classAPIHandler';
+        };
+        node-child = {
+          child-id = '2';
+          relation = public-inheritance;
+        }; /* node-child */
+      }; /* node */
+      node = {
+        node-id    = 2;
+        node-label = 'Observable';
+        node-link = {
+          node-link-id = 'classObservable';
+        };
+      }; /* node */
+
+_EnD_oF_dEf_TeXt_;
+  cp-collaborationgraph = <<_EnD_oF_dEf_TeXt_
+      node = {
+        node-id    = 1;
+        node-label = 'APIHandler';
+        node-link = {
+          node-link-id = 'classAPIHandler';
+        };
+        node-child = {
+          child-id = '2';
+          relation = public-inheritance;
+        }; /* node-child */
+      }; /* node */
+      node = {
+        node-id    = 2;
+        node-label = 'Observable';
+        node-link = {
+          node-link-id = 'classObservable';
+        };
+      }; /* node */
+
+_EnD_oF_dEf_TeXt_;
+}; /* class */
+class = {
+  cp-id     = 'classBarPlotGenerator';
+  cp-name   = 'BarPlotGenerator';
+  cp-section = {
+    sec-kind = 'public-func';
+    sec-member = {
+      sec-mem-kind = 'function';
+      sec-mem-id   = 'classBarPlotGenerator_1a4c6fca86e7273d8f3778d1bd62eb9d19';
+      sec-mem-virt = normal;
+      sec-mem-prot = public;
+      sec-mem-type = <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+      sec-mem-name = 'BarPlotGenerator';
+      sec-mem-desc-file = '/home/antony_c/autre/buildroot-2023.08/linux_emb/sortirDansParis/include/gdGeneration/BarPlotGenerator.h';
+      sec-mem-desc-line = '45';
+      sec-mem-briefdesc =    <<_EnD_oF_dEf_TeXt_
+Constructor of the class.
+_EnD_oF_dEf_TeXt_;
+      sec-mem-documentation = <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+    }; /* sec-member */
+    sec-member = {
+      sec-mem-kind = 'function';
+      sec-mem-id   = 'classBarPlotGenerator_1a46a4b4343db5a98f487c522f173950bc';
+      sec-mem-virt = normal;
+      sec-mem-prot = public;
+      sec-mem-type = <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+      sec-mem-name = '~BarPlotGenerator';
+      sec-mem-desc-file = '/home/antony_c/autre/buildroot-2023.08/linux_emb/sortirDansParis/include/gdGeneration/BarPlotGenerator.h';
+      sec-mem-desc-line = '46';
+      sec-mem-briefdesc =    <<_EnD_oF_dEf_TeXt_
+Destructor of the class.
+_EnD_oF_dEf_TeXt_;
+      sec-mem-documentation = <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+    }; /* sec-member */
+    sec-member = {
+      sec-mem-kind = 'function';
+      sec-mem-id   = 'classBarPlotGenerator_1a5d0ca705fe16f9ff03ca9c38bbd5ffb9';
+      sec-mem-virt = normal;
+      sec-mem-prot = public;
+      sec-mem-type = <<_EnD_oF_dEf_TeXt_
+Color
+_EnD_oF_dEf_TeXt_;
+      sec-mem-name = 'generate_random_color';
+      sec-mem-desc-file = '/home/antony_c/autre/buildroot-2023.08/linux_emb/sortirDansParis/include/gdGeneration/BarPlotGenerator.h';
+      sec-mem-desc-line = '53';
+      sec-mem-briefdesc =    <<_EnD_oF_dEf_TeXt_
+Generates a random RGB color.
+_EnD_oF_dEf_TeXt_;
+      sec-mem-documentation = <<_EnD_oF_dEf_TeXt_
+@return Color Randomly generated RGB color.
+_EnD_oF_dEf_TeXt_;
+      sec-mem-referenceto = {
+        sec-mem-ref-id = 'GraphicsUtils_8h_1ae11f00d34bf3ecd8c8278f68876b82bf';
+        sec-mem-ref-line = '27';
+        sec-mem-ref-name = 'Color::b';
+    };
+      sec-mem-referenceto = {
+        sec-mem-ref-id = 'GraphicsUtils_8h_1ab5656e995bddd43d286c7ff5629a31dd';
+        sec-mem-ref-line = '26';
+        sec-mem-ref-name = 'Color::g';
+    };
+      sec-mem-referenceto = {
+        sec-mem-ref-id = 'GraphicsUtils_8h_1a4954bdc9772da2a610401b8a438125cb';
+        sec-mem-ref-line = '25';
+        sec-mem-ref-name = 'Color::r';
+    };
+      sec-mem-referencedby = {
+        sec-mem-ref-id = 'BarPlotGenerator_8cpp_1a8607516727d0c8f609e3f2017bf11c5e';
+        sec-mem-ref-line = '45';
+        sec-mem-ref-name = 'generateBarPlot';
+    };
+    }; /* sec-member */
+    sec-member = {
+      sec-mem-kind = 'function';
+      sec-mem-id   = 'classBarPlotGenerator_1a6e101c7e9279aaabde95d62076331f75';
+      sec-mem-virt = normal;
+      sec-mem-prot = public;
+      sec-mem-type = <<_EnD_oF_dEf_TeXt_
+void
+_EnD_oF_dEf_TeXt_;
+      sec-mem-name = 'loadDataFromJson';
+      sec-mem-param = {
+        sec-mem-param-type = <<_EnD_oF_dEf_TeXt_
+const std::map< std::string, nlohmann::json > &
+_EnD_oF_dEf_TeXt_;
+        sec-mem-param-declname = 'jsonData';
+      }; /*        sec-mem-param--param */
+      sec-mem-desc-file = '/home/antony_c/autre/buildroot-2023.08/linux_emb/sortirDansParis/include/gdGeneration/BarPlotGenerator.h';
+      sec-mem-desc-line = '60';
+      sec-mem-briefdesc =    <<_EnD_oF_dEf_TeXt_
+Loads data from a given JSON map.
+_EnD_oF_dEf_TeXt_;
+      sec-mem-documentation = <<_EnD_oF_dEf_TeXt_
+@param jsonData JSON data in a map format.
+_EnD_oF_dEf_TeXt_;
+      sec-mem-referenceto = {
+        sec-mem-ref-id = 'BarPlotGenerator_8cpp_1ac9ff708e4d8b332109d37e0f1a619e31';
+        sec-mem-ref-line = '38';
+        sec-mem-ref-name = 'isValidTag';
+    };
+      sec-mem-referenceto = {
+        sec-mem-ref-id = 'BarPlotGenerator_8h_1a4f8a589ae04a15c218cf705e2fce1e2e';
+        sec-mem-ref-line = '79';
+        sec-mem-ref-name = 'tagFrequency';
+    };
+      sec-mem-referencedby = {
+        sec-mem-ref-id = 'concreteObserver_8cpp_1ab1b07477988958e5c596e3484380d8a2';
+        sec-mem-ref-line = '39';
+        sec-mem-ref-name = 'ConcreteObserver::generateBarPlotFromData';
+    };
+    }; /* sec-member */
+    sec-member = {
+      sec-mem-kind = 'function';
+      sec-mem-id   = 'classBarPlotGenerator_1a8607516727d0c8f609e3f2017bf11c5e';
+      sec-mem-virt = normal;
+      sec-mem-prot = public;
+      sec-mem-type = <<_EnD_oF_dEf_TeXt_
+void
+_EnD_oF_dEf_TeXt_;
+      sec-mem-name = 'generateBarPlot';
+      sec-mem-param = {
+        sec-mem-param-type = <<_EnD_oF_dEf_TeXt_
+const std::string &
+_EnD_oF_dEf_TeXt_;
+        sec-mem-param-declname = 'outputFilename';
+      }; /*        sec-mem-param--param */
+      sec-mem-desc-file = '/home/antony_c/autre/buildroot-2023.08/linux_emb/sortirDansParis/include/gdGeneration/BarPlotGenerator.h';
+      sec-mem-desc-line = '67';
+      sec-mem-briefdesc =    <<_EnD_oF_dEf_TeXt_
+Generates a bar plot image and saves it.
+_EnD_oF_dEf_TeXt_;
+      sec-mem-documentation = <<_EnD_oF_dEf_TeXt_
+@param outputFilename The name of the output image file.
+_EnD_oF_dEf_TeXt_;
+      sec-mem-referenceto = {
+        sec-mem-ref-id = 'GraphicsUtils_8h_1ae11f00d34bf3ecd8c8278f68876b82bf';
+        sec-mem-ref-line = '27';
+        sec-mem-ref-name = 'Color::b';
+    };
+      sec-mem-referenceto = {
+        sec-mem-ref-id = 'BarPlotGenerator_8h_1af5bdf6320e6399160ccadfd40ff546f1';
+        sec-mem-ref-line = '78';
+        sec-mem-ref-name = 'fileHelper';
+    };
+      sec-mem-referenceto = {
+        sec-mem-ref-id = 'BarPlotGenerator_8h_1af326d9b4cced6fd44a9f9567dc666014';
+        sec-mem-ref-line = '13';
+        sec-mem-ref-name = 'FONT_PATH';
+    };
+      sec-mem-referenceto = {
+        sec-mem-ref-id = 'BarPlotGenerator_8cpp_1a0b6c4355989e09b9309c7f9585947cdf';
+        sec-mem-ref-line = '133';
+        sec-mem-ref-name = 'formatTitle';
+    };
+      sec-mem-referenceto = {
+        sec-mem-ref-id = 'GraphicsUtils_8h_1ab5656e995bddd43d286c7ff5629a31dd';
+        sec-mem-ref-line = '26';
+        sec-mem-ref-name = 'Color::g';
+    };
+      sec-mem-referenceto = {
+        sec-mem-ref-id = 'BarPlotGenerator_8cpp_1a5d0ca705fe16f9ff03ca9c38bbd5ffb9';
+        sec-mem-ref-line = '8';
+        sec-mem-ref-name = 'generate_random_color';
+    };
+      sec-mem-referenceto = {
+        sec-mem-ref-id = 'fileHelper_8cpp_1a8a218e5dfb2e5ec90c4180671f868af1';
+        sec-mem-ref-line = '26';
+        sec-mem-ref-name = 'FileHelper::getFilePath';
+    };
+      sec-mem-referenceto = {
+        sec-mem-ref-id = 'BarPlotGenerator_8h_1aed89bd71aee8be823e8a20ec4e093c1e';
+        sec-mem-ref-line = '16';
+        sec-mem-ref-name = 'HEIGHT';
+    };
+      sec-mem-referenceto = {
+        sec-mem-ref-id = 'GraphicsUtils_8h_1a4954bdc9772da2a610401b8a438125cb';
+        sec-mem-ref-line = '25';
+        sec-mem-ref-name = 'Color::r';
+    };
+      sec-mem-referenceto = {
+        sec-mem-ref-id = 'BarPlotGenerator_8cpp_1ab01e022ff2ff243415f4b3bed87acd69';
+        sec-mem-ref-line = '122';
+        sec-mem-ref-name = 'saveImage';
+    };
+      sec-mem-referenceto = {
+        sec-mem-ref-id = 'fileHelper_8cpp_1ac8fb7747ed6cc254aab512ca4454d13d';
+        sec-mem-ref-line = '6';
+        sec-mem-ref-name = 'FileHelper::setSubfolder';
+    };
+      sec-mem-referenceto = {
+        sec-mem-ref-id = 'BarPlotGenerator_8h_1a4f8a589ae04a15c218cf705e2fce1e2e';
+        sec-mem-ref-line = '79';
+        sec-mem-ref-name = 'tagFrequency';
+    };
+      sec-mem-referenceto = {
+        sec-mem-ref-id = 'BarPlotGenerator_8h_1a241aeeb764887ae5e3de58b98f04b16d';
+        sec-mem-ref-line = '15';
+        sec-mem-ref-name = 'WIDTH';
+    };
+      sec-mem-referencedby = {
+        sec-mem-ref-id = 'concreteObserver_8cpp_1ab1b07477988958e5c596e3484380d8a2';
+        sec-mem-ref-line = '39';
+        sec-mem-ref-name = 'ConcreteObserver::generateBarPlotFromData';
+    };
+    }; /* sec-member */
+    sec-member = {
+      sec-mem-kind = 'function';
+      sec-mem-id   = 'classBarPlotGenerator_1ab01e022ff2ff243415f4b3bed87acd69';
+      sec-mem-virt = normal;
+      sec-mem-prot = public;
+      sec-mem-type = <<_EnD_oF_dEf_TeXt_
+void
+_EnD_oF_dEf_TeXt_;
+      sec-mem-name = 'saveImage';
+      sec-mem-param = {
+        sec-mem-param-type = <<_EnD_oF_dEf_TeXt_
+gdImagePtr
+_EnD_oF_dEf_TeXt_;
+        sec-mem-param-declname = 'img';
+      }; /*        sec-mem-param--param */
+      sec-mem-param = {
+        sec-mem-param-type = <<_EnD_oF_dEf_TeXt_
+const std::string &
+_EnD_oF_dEf_TeXt_;
+        sec-mem-param-declname = 'filename';
+      }; /*        sec-mem-param--param */
+      sec-mem-desc-file = '/home/antony_c/autre/buildroot-2023.08/linux_emb/sortirDansParis/include/gdGeneration/BarPlotGenerator.h';
+      sec-mem-desc-line = '75';
+      sec-mem-briefdesc =    <<_EnD_oF_dEf_TeXt_
+Saves a given GD image to a specified file.
+_EnD_oF_dEf_TeXt_;
+      sec-mem-documentation = <<_EnD_oF_dEf_TeXt_
+@param img GD image pointer.
+@param filename Name of the file to save the image to.
+_EnD_oF_dEf_TeXt_;
+      sec-mem-referencedby = {
+        sec-mem-ref-id = 'BarPlotGenerator_8cpp_1a8607516727d0c8f609e3f2017bf11c5e';
+        sec-mem-ref-line = '45';
+        sec-mem-ref-name = 'generateBarPlot';
+    };
+    }; /* sec-member */
+  }; /* cp-section */
+  cp-section = {
+    sec-kind = 'private-func';
+    sec-member = {
+      sec-mem-kind = 'function';
+      sec-mem-id   = 'classBarPlotGenerator_1a0b6c4355989e09b9309c7f9585947cdf';
+      sec-mem-virt = normal;
+      sec-mem-prot = private;
+      sec-mem-type = <<_EnD_oF_dEf_TeXt_
+std::string
+_EnD_oF_dEf_TeXt_;
+      sec-mem-name = 'formatTitle';
+      sec-mem-param = {
+        sec-mem-param-type = <<_EnD_oF_dEf_TeXt_
+const std::string &
+_EnD_oF_dEf_TeXt_;
+        sec-mem-param-declname = 'filename';
+      }; /*        sec-mem-param--param */
+      sec-mem-desc-file = '/home/antony_c/autre/buildroot-2023.08/linux_emb/sortirDansParis/include/gdGeneration/BarPlotGenerator.h';
+      sec-mem-desc-line = '87';
+      sec-mem-briefdesc =    <<_EnD_oF_dEf_TeXt_
+Formats the title of the image.
+_EnD_oF_dEf_TeXt_;
+      sec-mem-documentation = <<_EnD_oF_dEf_TeXt_
+@param filename The original filename to be formatted.
+@return std::string Formatted title.
+_EnD_oF_dEf_TeXt_;
+      sec-mem-referencedby = {
+        sec-mem-ref-id = 'BarPlotGenerator_8cpp_1a8607516727d0c8f609e3f2017bf11c5e';
+        sec-mem-ref-line = '45';
+        sec-mem-ref-name = 'generateBarPlot';
+    };
+    }; /* sec-member */
+    sec-member = {
+      sec-mem-kind = 'function';
+      sec-mem-id   = 'classBarPlotGenerator_1ac9ff708e4d8b332109d37e0f1a619e31';
+      sec-mem-virt = normal;
+      sec-mem-prot = private;
+      sec-mem-type = <<_EnD_oF_dEf_TeXt_
+bool
+_EnD_oF_dEf_TeXt_;
+      sec-mem-name = 'isValidTag';
+      sec-mem-param = {
+        sec-mem-param-type = <<_EnD_oF_dEf_TeXt_
+const std::string &
+_EnD_oF_dEf_TeXt_;
+        sec-mem-param-declname = 'tag';
+      }; /*        sec-mem-param--param */
+      sec-mem-desc-file = '/home/antony_c/autre/buildroot-2023.08/linux_emb/sortirDansParis/include/gdGeneration/BarPlotGenerator.h';
+      sec-mem-desc-line = '96';
+      sec-mem-briefdesc =    <<_EnD_oF_dEf_TeXt_
+Validates a given tag.
+_EnD_oF_dEf_TeXt_;
+      sec-mem-documentation = <<_EnD_oF_dEf_TeXt_
+@param tag The tag to be validated.
+@return true If the tag is valid.
+@return false If the tag is invalid.
+_EnD_oF_dEf_TeXt_;
+      sec-mem-referencedby = {
+        sec-mem-ref-id = 'BarPlotGenerator_8cpp_1a6e101c7e9279aaabde95d62076331f75';
+        sec-mem-ref-line = '23';
+        sec-mem-ref-name = 'loadDataFromJson';
+    };
+    }; /* sec-member */
+  }; /* cp-section */
+  cp-section = {
+    sec-kind = 'private-attrib';
+    sec-member = {
+      sec-mem-kind = 'variable';
+      sec-mem-id   = 'classBarPlotGenerator_1af5bdf6320e6399160ccadfd40ff546f1';
+      sec-mem-virt = normal;
+      sec-mem-prot = private;
+      sec-mem-type = <<_EnD_oF_dEf_TeXt_
+FileHelper
+_EnD_oF_dEf_TeXt_;
+      sec-mem-name = 'fileHelper';
+      sec-mem-desc-file = '/home/antony_c/autre/buildroot-2023.08/linux_emb/sortirDansParis/include/gdGeneration/BarPlotGenerator.h';
+      sec-mem-desc-line = '78';
+      sec-mem-briefdesc =    <<_EnD_oF_dEf_TeXt_
+Helper for file management operations.
+_EnD_oF_dEf_TeXt_;
+      sec-mem-documentation = <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+      sec-mem-referencedby = {
+        sec-mem-ref-id = 'BarPlotGenerator_8cpp_1a8607516727d0c8f609e3f2017bf11c5e';
+        sec-mem-ref-line = '45';
+        sec-mem-ref-name = 'generateBarPlot';
+    };
+    }; /* sec-member */
+    sec-member = {
+      sec-mem-kind = 'variable';
+      sec-mem-id   = 'classBarPlotGenerator_1a4f8a589ae04a15c218cf705e2fce1e2e';
+      sec-mem-virt = normal;
+      sec-mem-prot = private;
+      sec-mem-type = <<_EnD_oF_dEf_TeXt_
+std::map< std::string, int >
+_EnD_oF_dEf_TeXt_;
+      sec-mem-name = 'tagFrequency';
+      sec-mem-desc-file = '/home/antony_c/autre/buildroot-2023.08/linux_emb/sortirDansParis/include/gdGeneration/BarPlotGenerator.h';
+      sec-mem-desc-line = '79';
+      sec-mem-briefdesc =    <<_EnD_oF_dEf_TeXt_
+Map containing the frequency of each tag.
+_EnD_oF_dEf_TeXt_;
+      sec-mem-documentation = <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+      sec-mem-referencedby = {
+        sec-mem-ref-id = 'BarPlotGenerator_8cpp_1a8607516727d0c8f609e3f2017bf11c5e';
+        sec-mem-ref-line = '45';
+        sec-mem-ref-name = 'generateBarPlot';
+    };
+      sec-mem-referencedby = {
+        sec-mem-ref-id = 'BarPlotGenerator_8cpp_1a6e101c7e9279aaabde95d62076331f75';
+        sec-mem-ref-line = '23';
+        sec-mem-ref-name = 'loadDataFromJson';
+    };
+    }; /* sec-member */
+  }; /* cp-section */
+  cp-filename  = '/home/antony_c/autre/buildroot-2023.08/linux_emb/sortirDansParis/include/gdGeneration/BarPlotGenerator.h';
+  cp-fileline  = '43';
+  cp-briefdesc = <<_EnD_oF_dEf_TeXt_
+Responsible for generating bar plots based on given data.
+_EnD_oF_dEf_TeXt_;
+  cp-documentation = <<_EnD_oF_dEf_TeXt_
+This class provides functionalities to generate bar plots using the GD library. 
+It also manages the data preparation, loading, and saving of the generated images.
+_EnD_oF_dEf_TeXt_;
+  cp-collaborationgraph = <<_EnD_oF_dEf_TeXt_
+      node = {
+        node-id    = 1;
+        node-label = 'BarPlotGenerator';
+        node-link = {
+          node-link-id = 'classBarPlotGenerator';
+        };
+        node-child = {
+          child-id = '2';
+          relation = usage;
+          edgelabel = <<_EnD_oF_dEf_TeXt_
+fileHelper
+_EnD_oF_dEf_TeXt_;
+        }; /* node-child */
+      }; /* node */
+      node = {
+        node-id    = 2;
+        node-label = 'FileHelper';
+        node-link = {
+          node-link-id = 'classFileHelper';
+        };
+      }; /* node */
+
+_EnD_oF_dEf_TeXt_;
+}; /* class */
+struct = {
+  cp-id     = 'structColor';
+  cp-name   = 'Color';
+  cp-section = {
+    sec-kind = 'public-attrib';
+    sec-member = {
+      sec-mem-kind = 'variable';
+      sec-mem-id   = 'structColor_1a4954bdc9772da2a610401b8a438125cb';
+      sec-mem-virt = normal;
+      sec-mem-prot = public;
+      sec-mem-type = <<_EnD_oF_dEf_TeXt_
+int
+_EnD_oF_dEf_TeXt_;
+      sec-mem-name = 'r';
+      sec-mem-desc-file = '/home/antony_c/autre/buildroot-2023.08/linux_emb/sortirDansParis/include/gdGeneration/GraphicsUtils.h';
+      sec-mem-desc-line = '25';
+      sec-mem-briefdesc =    <<_EnD_oF_dEf_TeXt_
+Red component of the color, in the range 0-255.
+_EnD_oF_dEf_TeXt_;
+      sec-mem-documentation = <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+      sec-mem-referencedby = {
+        sec-mem-ref-id = 'BarPlotGenerator_8cpp_1a5d0ca705fe16f9ff03ca9c38bbd5ffb9';
+        sec-mem-ref-line = '8';
+        sec-mem-ref-name = 'BarPlotGenerator::generate_random_color';
+    };
+      sec-mem-referencedby = {
+        sec-mem-ref-id = 'PieChartGenerator_8cpp_1a11d2d5f8dfc51fcebd7ea1dfce678629';
+        sec-mem-ref-line = '8';
+        sec-mem-ref-name = 'PieChartGenerator::generate_random_color';
+    };
+      sec-mem-referencedby = {
+        sec-mem-ref-id = 'BarPlotGenerator_8cpp_1a8607516727d0c8f609e3f2017bf11c5e';
+        sec-mem-ref-line = '45';
+        sec-mem-ref-name = 'BarPlotGenerator::generateBarPlot';
+    };
+    }; /* sec-member */
+    sec-member = {
+      sec-mem-kind = 'variable';
+      sec-mem-id   = 'structColor_1ab5656e995bddd43d286c7ff5629a31dd';
+      sec-mem-virt = normal;
+      sec-mem-prot = public;
+      sec-mem-type = <<_EnD_oF_dEf_TeXt_
+int
+_EnD_oF_dEf_TeXt_;
+      sec-mem-name = 'g';
+      sec-mem-desc-file = '/home/antony_c/autre/buildroot-2023.08/linux_emb/sortirDansParis/include/gdGeneration/GraphicsUtils.h';
+      sec-mem-desc-line = '26';
+      sec-mem-briefdesc =    <<_EnD_oF_dEf_TeXt_
+Green component of the color, in the range 0-255.
+_EnD_oF_dEf_TeXt_;
+      sec-mem-documentation = <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+      sec-mem-referencedby = {
+        sec-mem-ref-id = 'BarPlotGenerator_8cpp_1a5d0ca705fe16f9ff03ca9c38bbd5ffb9';
+        sec-mem-ref-line = '8';
+        sec-mem-ref-name = 'BarPlotGenerator::generate_random_color';
+    };
+      sec-mem-referencedby = {
+        sec-mem-ref-id = 'PieChartGenerator_8cpp_1a11d2d5f8dfc51fcebd7ea1dfce678629';
+        sec-mem-ref-line = '8';
+        sec-mem-ref-name = 'PieChartGenerator::generate_random_color';
+    };
+      sec-mem-referencedby = {
+        sec-mem-ref-id = 'BarPlotGenerator_8cpp_1a8607516727d0c8f609e3f2017bf11c5e';
+        sec-mem-ref-line = '45';
+        sec-mem-ref-name = 'BarPlotGenerator::generateBarPlot';
+    };
+    }; /* sec-member */
+    sec-member = {
+      sec-mem-kind = 'variable';
+      sec-mem-id   = 'structColor_1ae11f00d34bf3ecd8c8278f68876b82bf';
+      sec-mem-virt = normal;
+      sec-mem-prot = public;
+      sec-mem-type = <<_EnD_oF_dEf_TeXt_
+int
+_EnD_oF_dEf_TeXt_;
+      sec-mem-name = 'b';
+      sec-mem-desc-file = '/home/antony_c/autre/buildroot-2023.08/linux_emb/sortirDansParis/include/gdGeneration/GraphicsUtils.h';
+      sec-mem-desc-line = '27';
+      sec-mem-briefdesc =    <<_EnD_oF_dEf_TeXt_
+Blue component of the color, in the range 0-255.
+_EnD_oF_dEf_TeXt_;
+      sec-mem-documentation = <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+      sec-mem-referencedby = {
+        sec-mem-ref-id = 'BarPlotGenerator_8cpp_1a5d0ca705fe16f9ff03ca9c38bbd5ffb9';
+        sec-mem-ref-line = '8';
+        sec-mem-ref-name = 'BarPlotGenerator::generate_random_color';
+    };
+      sec-mem-referencedby = {
+        sec-mem-ref-id = 'PieChartGenerator_8cpp_1a11d2d5f8dfc51fcebd7ea1dfce678629';
+        sec-mem-ref-line = '8';
+        sec-mem-ref-name = 'PieChartGenerator::generate_random_color';
+    };
+      sec-mem-referencedby = {
+        sec-mem-ref-id = 'BarPlotGenerator_8cpp_1a8607516727d0c8f609e3f2017bf11c5e';
+        sec-mem-ref-line = '45';
+        sec-mem-ref-name = 'BarPlotGenerator::generateBarPlot';
+    };
+    }; /* sec-member */
+  }; /* cp-section */
+  cp-filename  = '/home/antony_c/autre/buildroot-2023.08/linux_emb/sortirDansParis/include/gdGeneration/GraphicsUtils.h';
+  cp-fileline  = '23';
+  cp-briefdesc = <<_EnD_oF_dEf_TeXt_
+Structure to represent a color in the RGB color space.
+_EnD_oF_dEf_TeXt_;
+  cp-documentation = <<_EnD_oF_dEf_TeXt_
+This structure is used to define a color using its red (r), green (g), and blue (b) components.
+It can be used to represent a specific color for various graphical elements.
+_EnD_oF_dEf_TeXt_;
+}; /* struct */
+class = {
+  cp-id     = 'classConcreteObserver';
+  cp-name   = 'ConcreteObserver';
+  cp-ref     = {
+    ref-type = base;
+    ref-id   = 'classObserver';
+    ref-prot = public;
+    ref-virt = non-virtual;
+  };
+  cp-section = {
+    sec-kind = 'public-func';
+    sec-member = {
+      sec-mem-kind = 'function';
+      sec-mem-id   = 'classConcreteObserver_1ad71cc1d2f42011af25bcf3d425436bab';
+      sec-mem-virt = normal;
+      sec-mem-prot = public;
+      sec-mem-type = <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+      sec-mem-name = 'ConcreteObserver';
+      sec-mem-desc-file = '/home/antony_c/autre/buildroot-2023.08/linux_emb/sortirDansParis/include/connectApi/concreteObserver.h';
+      sec-mem-desc-line = '48';
+      sec-mem-briefdesc =    <<_EnD_oF_dEf_TeXt_
+Default constructor for the ConcreteObserver.
+_EnD_oF_dEf_TeXt_;
+      sec-mem-documentation = <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+    }; /* sec-member */
+    sec-member = {
+      sec-mem-kind = 'function';
+      sec-mem-id   = 'classConcreteObserver_1aaadc4aa059a1f755786336760892a170';
+      sec-mem-virt = virtual;
+      sec-mem-prot = public;
+      sec-mem-type = <<_EnD_oF_dEf_TeXt_
+void
+_EnD_oF_dEf_TeXt_;
+      sec-mem-name = 'update';
+      sec-mem-param = {
+        sec-mem-param-type = <<_EnD_oF_dEf_TeXt_
+const std::map< std::string, nlohmann::json > &
+_EnD_oF_dEf_TeXt_;
+        sec-mem-param-declname = 'newEvents';
+      }; /*        sec-mem-param--param */
+      sec-mem-desc-file = '/home/antony_c/autre/buildroot-2023.08/linux_emb/sortirDansParis/include/connectApi/concreteObserver.h';
+      sec-mem-desc-line = '58';
+      sec-mem-briefdesc =    <<_EnD_oF_dEf_TeXt_
+Overrides the Observer interface's update method.
+_EnD_oF_dEf_TeXt_;
+      sec-mem-documentation = <<_EnD_oF_dEf_TeXt_
+ being notified of new events, this method updates the observer's internal state and may
+trigger other relevant methods, such as generating a bar plot.
+
+@param newEvents Data about the new events, represented as a map.
+_EnD_oF_dEf_TeXt_;
+      sec-mem-referenceto = {
+        sec-mem-ref-id = 'concreteObserver_8h_1a2e7642148516c9209326e1518bc5f02b';
+        sec-mem-ref-line = '33';
+        sec-mem-ref-name = 'currentAndUpcomingEvents';
+    };
+      sec-mem-referenceto = {
+        sec-mem-ref-id = 'concreteObserver_8h_1a5a3cde88dbd31c116a2426bba75b5baf';
+        sec-mem-ref-line = '34';
+        sec-mem-ref-name = 'dataStorage';
+    };
+      sec-mem-referenceto = {
+        sec-mem-ref-id = 'concreteObserver_8cpp_1ab1b07477988958e5c596e3484380d8a2';
+        sec-mem-ref-line = '39';
+        sec-mem-ref-name = 'generateBarPlotFromData';
+    };
+      sec-mem-referenceto = {
+        sec-mem-ref-id = 'dataStorage_8cpp_1a3574d849493097410d0879263706ee69';
+        sec-mem-ref-line = '15';
+        sec-mem-ref-name = 'DataStorage::saveToFile';
+    };
+    }; /* sec-member */
+    sec-member = {
+      sec-mem-kind = 'function';
+      sec-mem-id   = 'classConcreteObserver_1a272dd1a5865949f826d14b9ff6807b39';
+      sec-mem-virt = virtual;
+      sec-mem-prot = public;
+      sec-mem-type = <<_EnD_oF_dEf_TeXt_
+void
+_EnD_oF_dEf_TeXt_;
+      sec-mem-name = 'dailyUpdate';
+      sec-mem-param = {
+        sec-mem-param-type = <<_EnD_oF_dEf_TeXt_
+const std::map< std::string, nlohmann::json > &
+_EnD_oF_dEf_TeXt_;
+        sec-mem-param-declname = 'newDailyEvents';
+      }; /*        sec-mem-param--param */
+      sec-mem-desc-file = '/home/antony_c/autre/buildroot-2023.08/linux_emb/sortirDansParis/include/connectApi/concreteObserver.h';
+      sec-mem-desc-line = '68';
+      sec-mem-briefdesc =    <<_EnD_oF_dEf_TeXt_
+Overrides the Observer interface's dailyUpdate method.
+_EnD_oF_dEf_TeXt_;
+      sec-mem-documentation = <<_EnD_oF_dEf_TeXt_
+ Provides daily specific updates to the observer, updating its state and possibly triggering
+other actions.
+
+@param newDailyEvents Data about the new daily events, represented as a map.
+_EnD_oF_dEf_TeXt_;
+      sec-mem-referenceto = {
+        sec-mem-ref-id = 'concreteObserver_8h_1a2e7642148516c9209326e1518bc5f02b';
+        sec-mem-ref-line = '33';
+        sec-mem-ref-name = 'currentAndUpcomingEvents';
+    };
+      sec-mem-referenceto = {
+        sec-mem-ref-id = 'concreteObserver_8h_1a5a3cde88dbd31c116a2426bba75b5baf';
+        sec-mem-ref-line = '34';
+        sec-mem-ref-name = 'dataStorage';
+    };
+      sec-mem-referenceto = {
+        sec-mem-ref-id = 'dataStorage_8cpp_1a3574d849493097410d0879263706ee69';
+        sec-mem-ref-line = '15';
+        sec-mem-ref-name = 'DataStorage::saveToFile';
+    };
+    }; /* sec-member */
+    sec-member = {
+      sec-mem-kind = 'function';
+      sec-mem-id   = 'classConcreteObserver_1ac15637491bf8949de8f87302143126de';
+      sec-mem-virt = virtual;
+      sec-mem-prot = public;
+      sec-mem-type = <<_EnD_oF_dEf_TeXt_
+void
+_EnD_oF_dEf_TeXt_;
+      sec-mem-name = 'removeExpiredEvents';
+      sec-mem-desc-file = '/home/antony_c/autre/buildroot-2023.08/linux_emb/sortirDansParis/include/connectApi/concreteObserver.h';
+      sec-mem-desc-line = '76';
+      sec-mem-briefdesc =    <<_EnD_oF_dEf_TeXt_
+Removes expired events from the observer's state.
+_EnD_oF_dEf_TeXt_;
+      sec-mem-documentation = <<_EnD_oF_dEf_TeXt_
+ This method is responsible for cleaning up and ensuring that the observer's state remains
+up-to-date by removing events that are no longer relevant.
+_EnD_oF_dEf_TeXt_;
+      sec-mem-referenceto = {
+        sec-mem-ref-id = 'concreteObserver_8h_1a5a3cde88dbd31c116a2426bba75b5baf';
+        sec-mem-ref-line = '34';
+        sec-mem-ref-name = 'dataStorage';
+    };
+      sec-mem-referenceto = {
+        sec-mem-ref-id = 'dataStorage_8cpp_1a898ad89ba95776da063f62c95677f78c';
+        sec-mem-ref-line = '46';
+        sec-mem-ref-name = 'DataStorage::readFromFile';
+    };
+      sec-mem-referenceto = {
+        sec-mem-ref-id = 'dataStorage_8cpp_1a3574d849493097410d0879263706ee69';
+        sec-mem-ref-line = '15';
+        sec-mem-ref-name = 'DataStorage::saveToFile';
+    };
+    }; /* sec-member */
+  }; /* cp-section */
+  cp-section = {
+    sec-kind = 'private-func';
+    sec-member = {
+      sec-mem-kind = 'function';
+      sec-mem-id   = 'classConcreteObserver_1ab1b07477988958e5c596e3484380d8a2';
+      sec-mem-virt = normal;
+      sec-mem-prot = private;
+      sec-mem-type = <<_EnD_oF_dEf_TeXt_
+void
+_EnD_oF_dEf_TeXt_;
+      sec-mem-name = 'generateBarPlotFromData';
+      sec-mem-param = {
+        sec-mem-param-type = <<_EnD_oF_dEf_TeXt_
+const std::map< std::string, nlohmann::json > &
+_EnD_oF_dEf_TeXt_;
+        sec-mem-param-declname = 'newTagsJson';
+      }; /*        sec-mem-param--param */
+      sec-mem-desc-file = '/home/antony_c/autre/buildroot-2023.08/linux_emb/sortirDansParis/include/connectApi/concreteObserver.h';
+      sec-mem-desc-line = '42';
+      sec-mem-briefdesc =    <<_EnD_oF_dEf_TeXt_
+Generates a bar plot from the provided tag data.
+_EnD_oF_dEf_TeXt_;
+      sec-mem-documentation = <<_EnD_oF_dEf_TeXt_
+@param newTagsJson Data represented in JSON format, used to generate the bar plot.
+_EnD_oF_dEf_TeXt_;
+      sec-mem-referenceto = {
+        sec-mem-ref-id = 'concreteObserver_8h_1a1fe19d874fe5e1532a0b95812e533a86';
+        sec-mem-ref-line = '35';
+        sec-mem-ref-name = 'barPlotGenerator';
+    };
+      sec-mem-referenceto = {
+        sec-mem-ref-id = 'BarPlotGenerator_8cpp_1a8607516727d0c8f609e3f2017bf11c5e';
+        sec-mem-ref-line = '45';
+        sec-mem-ref-name = 'BarPlotGenerator::generateBarPlot';
+    };
+      sec-mem-referenceto = {
+        sec-mem-ref-id = 'BarPlotGenerator_8cpp_1a6e101c7e9279aaabde95d62076331f75';
+        sec-mem-ref-line = '23';
+        sec-mem-ref-name = 'BarPlotGenerator::loadDataFromJson';
+    };
+      sec-mem-referencedby = {
+        sec-mem-ref-id = 'concreteObserver_8cpp_1aaadc4aa059a1f755786336760892a170';
+        sec-mem-ref-line = '5';
+        sec-mem-ref-name = 'update';
+    };
+    }; /* sec-member */
+  }; /* cp-section */
+  cp-section = {
+    sec-kind = 'private-attrib';
+    sec-member = {
+      sec-mem-kind = 'variable';
+      sec-mem-id   = 'classConcreteObserver_1a2e7642148516c9209326e1518bc5f02b';
+      sec-mem-virt = normal;
+      sec-mem-prot = private;
+      sec-mem-type = <<_EnD_oF_dEf_TeXt_
+std::map< std::string, nlohmann::json >
+_EnD_oF_dEf_TeXt_;
+      sec-mem-name = 'currentAndUpcomingEvents';
+      sec-mem-desc-file = '/home/antony_c/autre/buildroot-2023.08/linux_emb/sortirDansParis/include/connectApi/concreteObserver.h';
+      sec-mem-desc-line = '33';
+      sec-mem-briefdesc =    <<_EnD_oF_dEf_TeXt_
+Holds the current and upcoming events.
+_EnD_oF_dEf_TeXt_;
+      sec-mem-documentation = <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+      sec-mem-referencedby = {
+        sec-mem-ref-id = 'concreteObserver_8cpp_1a272dd1a5865949f826d14b9ff6807b39';
+        sec-mem-ref-line = '13';
+        sec-mem-ref-name = 'dailyUpdate';
+    };
+      sec-mem-referencedby = {
+        sec-mem-ref-id = 'concreteObserver_8cpp_1aaadc4aa059a1f755786336760892a170';
+        sec-mem-ref-line = '5';
+        sec-mem-ref-name = 'update';
+    };
+    }; /* sec-member */
+    sec-member = {
+      sec-mem-kind = 'variable';
+      sec-mem-id   = 'classConcreteObserver_1a5a3cde88dbd31c116a2426bba75b5baf';
+      sec-mem-virt = normal;
+      sec-mem-prot = private;
+      sec-mem-type = <<_EnD_oF_dEf_TeXt_
+DataStorage
+_EnD_oF_dEf_TeXt_;
+      sec-mem-name = 'dataStorage';
+      sec-mem-desc-file = '/home/antony_c/autre/buildroot-2023.08/linux_emb/sortirDansParis/include/connectApi/concreteObserver.h';
+      sec-mem-desc-line = '34';
+      sec-mem-briefdesc =    <<_EnD_oF_dEf_TeXt_
+Data storage mechanism for the observer.
+_EnD_oF_dEf_TeXt_;
+      sec-mem-documentation = <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+      sec-mem-referencedby = {
+        sec-mem-ref-id = 'concreteObserver_8cpp_1a272dd1a5865949f826d14b9ff6807b39';
+        sec-mem-ref-line = '13';
+        sec-mem-ref-name = 'dailyUpdate';
+    };
+      sec-mem-referencedby = {
+        sec-mem-ref-id = 'concreteObserver_8cpp_1ac15637491bf8949de8f87302143126de';
+        sec-mem-ref-line = '20';
+        sec-mem-ref-name = 'removeExpiredEvents';
+    };
+      sec-mem-referencedby = {
+        sec-mem-ref-id = 'concreteObserver_8cpp_1aaadc4aa059a1f755786336760892a170';
+        sec-mem-ref-line = '5';
+        sec-mem-ref-name = 'update';
+    };
+    }; /* sec-member */
+    sec-member = {
+      sec-mem-kind = 'variable';
+      sec-mem-id   = 'classConcreteObserver_1a1fe19d874fe5e1532a0b95812e533a86';
+      sec-mem-virt = normal;
+      sec-mem-prot = private;
+      sec-mem-type = <<_EnD_oF_dEf_TeXt_
+BarPlotGenerator
+_EnD_oF_dEf_TeXt_;
+      sec-mem-name = 'barPlotGenerator';
+      sec-mem-desc-file = '/home/antony_c/autre/buildroot-2023.08/linux_emb/sortirDansParis/include/connectApi/concreteObserver.h';
+      sec-mem-desc-line = '35';
+      sec-mem-briefdesc =    <<_EnD_oF_dEf_TeXt_
+Tool for generating bar plots from data.
+_EnD_oF_dEf_TeXt_;
+      sec-mem-documentation = <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+      sec-mem-referencedby = {
+        sec-mem-ref-id = 'concreteObserver_8cpp_1ab1b07477988958e5c596e3484380d8a2';
+        sec-mem-ref-line = '39';
+        sec-mem-ref-name = 'generateBarPlotFromData';
+    };
+    }; /* sec-member */
+  }; /* cp-section */
+  cp-filename  = '/home/antony_c/autre/buildroot-2023.08/linux_emb/sortirDansParis/include/connectApi/concreteObserver.h';
+  cp-fileline  = '31';
+  cp-briefdesc = <<_EnD_oF_dEf_TeXt_
+Represents a specific observer that reacts to changes in the observable.
+_EnD_oF_dEf_TeXt_;
+  cp-documentation = <<_EnD_oF_dEf_TeXt_
+ The ConcreteObserver class provides specific actions to perform in response to
+the changes in the observable subject. It holds its internal state, which is updated
+upon receiving notifications from the observable subject. This class also has the capability
+to generate a bar plot from the data it receives.
+_EnD_oF_dEf_TeXt_;
+  cp-inheritancegraph = <<_EnD_oF_dEf_TeXt_
+      node = {
+        node-id    = 1;
+        node-label = 'ConcreteObserver';
+        node-link = {
+          node-link-id = 'classConcreteObserver';
+        };
+        node-child = {
+          child-id = '2';
+          relation = public-inheritance;
+        }; /* node-child */
+      }; /* node */
+      node = {
+        node-id    = 2;
+        node-label = 'Observer';
+        node-link = {
+          node-link-id = 'classObserver';
+        };
+      }; /* node */
+
+_EnD_oF_dEf_TeXt_;
+  cp-collaborationgraph = <<_EnD_oF_dEf_TeXt_
+      node = {
+        node-id    = 5;
+        node-label = 'BarPlotGenerator';
+        node-link = {
+          node-link-id = 'classBarPlotGenerator';
+        };
+        node-child = {
+          child-id = '4';
+          relation = usage;
+          edgelabel = <<_EnD_oF_dEf_TeXt_
+fileHelper
+_EnD_oF_dEf_TeXt_;
+        }; /* node-child */
+      }; /* node */
+      node = {
+        node-id    = 1;
+        node-label = 'ConcreteObserver';
+        node-link = {
+          node-link-id = 'classConcreteObserver';
+        };
+        node-child = {
+          child-id = '2';
+          relation = public-inheritance;
+        }; /* node-child */
+        node-child = {
+          child-id = '3';
+          relation = usage;
+          edgelabel = <<_EnD_oF_dEf_TeXt_
+dataStorage
+_EnD_oF_dEf_TeXt_;
+        }; /* node-child */
+        node-child = {
+          child-id = '5';
+          relation = usage;
+          edgelabel = <<_EnD_oF_dEf_TeXt_
+barPlotGenerator
+_EnD_oF_dEf_TeXt_;
+        }; /* node-child */
+      }; /* node */
+      node = {
+        node-id    = 3;
+        node-label = 'DataStorage';
+        node-link = {
+          node-link-id = 'classDataStorage';
+        };
+        node-child = {
+          child-id = '4';
+          relation = usage;
+          edgelabel = <<_EnD_oF_dEf_TeXt_
+fileHelper
+_EnD_oF_dEf_TeXt_;
+        }; /* node-child */
+      }; /* node */
+      node = {
+        node-id    = 4;
+        node-label = 'FileHelper';
+        node-link = {
+          node-link-id = 'classFileHelper';
+        };
+      }; /* node */
+      node = {
+        node-id    = 2;
+        node-label = 'Observer';
+        node-link = {
+          node-link-id = 'classObserver';
+        };
+      }; /* node */
+
+_EnD_oF_dEf_TeXt_;
+}; /* class */
+class = {
+  cp-id     = 'classDataStorage';
+  cp-name   = 'DataStorage';
+  cp-section = {
+    sec-kind = 'public-func';
+    sec-member = {
+      sec-mem-kind = 'function';
+      sec-mem-id   = 'classDataStorage_1a22825d40495dae6a5df46d629fb26a3f';
+      sec-mem-virt = normal;
+      sec-mem-prot = public;
+      sec-mem-type = <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+      sec-mem-name = 'DataStorage';
+      sec-mem-desc-file = '/home/antony_c/autre/buildroot-2023.08/linux_emb/sortirDansParis/include/storage/dataStorage.h';
+      sec-mem-desc-line = '35';
+      sec-mem-briefdesc =    <<_EnD_oF_dEf_TeXt_
+Default constructor for DataStorage.
+_EnD_oF_dEf_TeXt_;
+      sec-mem-documentation = <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+    }; /* sec-member */
+    sec-member = {
+      sec-mem-kind = 'function';
+      sec-mem-id   = 'classDataStorage_1a3574d849493097410d0879263706ee69';
+      sec-mem-virt = normal;
+      sec-mem-prot = public;
+      sec-mem-type = <<_EnD_oF_dEf_TeXt_
+void
+_EnD_oF_dEf_TeXt_;
+      sec-mem-name = 'saveToFile';
+      sec-mem-param = {
+        sec-mem-param-type = <<_EnD_oF_dEf_TeXt_
+const std::map< std::string, nlohmann::json > &
+_EnD_oF_dEf_TeXt_;
+        sec-mem-param-declname = 'data';
+      }; /*        sec-mem-param--param */
+      sec-mem-param = {
+        sec-mem-param-type = <<_EnD_oF_dEf_TeXt_
+const std::string &
+_EnD_oF_dEf_TeXt_;
+        sec-mem-param-declname = 'filename';
+      }; /*        sec-mem-param--param */
+      sec-mem-desc-file = '/home/antony_c/autre/buildroot-2023.08/linux_emb/sortirDansParis/include/storage/dataStorage.h';
+      sec-mem-desc-line = '44';
+      sec-mem-briefdesc =    <<_EnD_oF_dEf_TeXt_
+Saves the provided data to the given file.
+_EnD_oF_dEf_TeXt_;
+      sec-mem-documentation = <<_EnD_oF_dEf_TeXt_
+ Reads existing data from the file (if it exists), merges with the new data, and saves 
+         the combined data back to the file.
+@param data The data to be saved.
+@param filename The name of the file to which the data will be saved.
+_EnD_oF_dEf_TeXt_;
+      sec-mem-referenceto = {
+        sec-mem-ref-id = 'fileHelper_8cpp_1ad75188b2ae6098e5dae2f23cb5576341';
+        sec-mem-ref-line = '21';
+        sec-mem-ref-name = 'FileHelper::fileExists';
+    };
+      sec-mem-referenceto = {
+        sec-mem-ref-id = 'dataStorage_8h_1a1b36b28a8ce65819497dfdb1e03e66d1';
+        sec-mem-ref-line = '56';
+        sec-mem-ref-name = 'fileHelper';
+    };
+      sec-mem-referenceto = {
+        sec-mem-ref-id = 'dataStorage_8cpp_1a4f7c8d0fc570f9ca75609f004974fa0b';
+        sec-mem-ref-line = '7';
+        sec-mem-ref-name = 'getValidFilePath';
+    };
+      sec-mem-referencedby = {
+        sec-mem-ref-id = 'concreteObserver_8cpp_1a272dd1a5865949f826d14b9ff6807b39';
+        sec-mem-ref-line = '13';
+        sec-mem-ref-name = 'ConcreteObserver::dailyUpdate';
+    };
+      sec-mem-referencedby = {
+        sec-mem-ref-id = 'concreteObserver_8cpp_1ac15637491bf8949de8f87302143126de';
+        sec-mem-ref-line = '20';
+        sec-mem-ref-name = 'ConcreteObserver::removeExpiredEvents';
+    };
+      sec-mem-referencedby = {
+        sec-mem-ref-id = 'concreteObserver_8cpp_1aaadc4aa059a1f755786336760892a170';
+        sec-mem-ref-line = '5';
+        sec-mem-ref-name = 'ConcreteObserver::update';
+    };
+    }; /* sec-member */
+    sec-member = {
+      sec-mem-kind = 'function';
+      sec-mem-id   = 'classDataStorage_1a898ad89ba95776da063f62c95677f78c';
+      sec-mem-virt = normal;
+      sec-mem-prot = public;
+      sec-mem-type = <<_EnD_oF_dEf_TeXt_
+std::map< std::string, nlohmann::json >
+_EnD_oF_dEf_TeXt_;
+      sec-mem-name = 'readFromFile';
+      sec-mem-param = {
+        sec-mem-param-type = <<_EnD_oF_dEf_TeXt_
+const std::string &
+_EnD_oF_dEf_TeXt_;
+        sec-mem-param-declname = 'filename';
+      }; /*        sec-mem-param--param */
+      sec-mem-desc-file = '/home/antony_c/autre/buildroot-2023.08/linux_emb/sortirDansParis/include/storage/dataStorage.h';
+      sec-mem-desc-line = '53';
+      sec-mem-briefdesc =    <<_EnD_oF_dEf_TeXt_
+Reads data from the given file.
+_EnD_oF_dEf_TeXt_;
+      sec-mem-documentation = <<_EnD_oF_dEf_TeXt_
+ Accesses the given file and extracts the stored JSON data. The data is then 
+         returned in the form of a map.
+@param filename The name of the file from which to read the data.
+@return std::map<std::string, nlohmann::json> A map of data items.
+_EnD_oF_dEf_TeXt_;
+      sec-mem-referenceto = {
+        sec-mem-ref-id = 'fileHelper_8cpp_1ad75188b2ae6098e5dae2f23cb5576341';
+        sec-mem-ref-line = '21';
+        sec-mem-ref-name = 'FileHelper::fileExists';
+    };
+      sec-mem-referenceto = {
+        sec-mem-ref-id = 'dataStorage_8h_1a1b36b28a8ce65819497dfdb1e03e66d1';
+        sec-mem-ref-line = '56';
+        sec-mem-ref-name = 'fileHelper';
+    };
+      sec-mem-referenceto = {
+        sec-mem-ref-id = 'dataStorage_8cpp_1a4f7c8d0fc570f9ca75609f004974fa0b';
+        sec-mem-ref-line = '7';
+        sec-mem-ref-name = 'getValidFilePath';
+    };
+      sec-mem-referencedby = {
+        sec-mem-ref-id = 'concreteObserver_8cpp_1ac15637491bf8949de8f87302143126de';
+        sec-mem-ref-line = '20';
+        sec-mem-ref-name = 'ConcreteObserver::removeExpiredEvents';
+    };
+    }; /* sec-member */
+  }; /* cp-section */
+  cp-section = {
+    sec-kind = 'private-func';
+    sec-member = {
+      sec-mem-kind = 'function';
+      sec-mem-id   = 'classDataStorage_1a4f7c8d0fc570f9ca75609f004974fa0b';
+      sec-mem-virt = normal;
+      sec-mem-prot = private;
+      sec-mem-type = <<_EnD_oF_dEf_TeXt_
+std::string
+_EnD_oF_dEf_TeXt_;
+      sec-mem-name = 'getValidFilePath';
+      sec-mem-param = {
+        sec-mem-param-type = <<_EnD_oF_dEf_TeXt_
+const std::string &
+_EnD_oF_dEf_TeXt_;
+        sec-mem-param-declname = 'filename';
+      }; /*        sec-mem-param--param */
+      sec-mem-desc-file = '/home/antony_c/autre/buildroot-2023.08/linux_emb/sortirDansParis/include/storage/dataStorage.h';
+      sec-mem-desc-line = '66';
+      sec-mem-briefdesc =    <<_EnD_oF_dEf_TeXt_
+Helper function to validate and get the file path.
+_EnD_oF_dEf_TeXt_;
+      sec-mem-documentation = <<_EnD_oF_dEf_TeXt_
+ Uses the FileHelper object to retrieve the file path and checks its validity.
+         If it's invalid, throws an exception.
+@param filename The name of the file for which to get the path.
+@return std::string The valid file path for the given filename.
+@throws std::runtime_error if unable to retrieve the user's home directory.
+_EnD_oF_dEf_TeXt_;
+      sec-mem-referenceto = {
+        sec-mem-ref-id = 'dataStorage_8h_1a1b36b28a8ce65819497dfdb1e03e66d1';
+        sec-mem-ref-line = '56';
+        sec-mem-ref-name = 'fileHelper';
+    };
+      sec-mem-referenceto = {
+        sec-mem-ref-id = 'fileHelper_8cpp_1a8a218e5dfb2e5ec90c4180671f868af1';
+        sec-mem-ref-line = '26';
+        sec-mem-ref-name = 'FileHelper::getFilePath';
+    };
+      sec-mem-referencedby = {
+        sec-mem-ref-id = 'dataStorage_8cpp_1a898ad89ba95776da063f62c95677f78c';
+        sec-mem-ref-line = '46';
+        sec-mem-ref-name = 'readFromFile';
+    };
+      sec-mem-referencedby = {
+        sec-mem-ref-id = 'dataStorage_8cpp_1a3574d849493097410d0879263706ee69';
+        sec-mem-ref-line = '15';
+        sec-mem-ref-name = 'saveToFile';
+    };
+    }; /* sec-member */
+  }; /* cp-section */
+  cp-section = {
+    sec-kind = 'private-attrib';
+    sec-member = {
+      sec-mem-kind = 'variable';
+      sec-mem-id   = 'classDataStorage_1a1b36b28a8ce65819497dfdb1e03e66d1';
+      sec-mem-virt = normal;
+      sec-mem-prot = private;
+      sec-mem-type = <<_EnD_oF_dEf_TeXt_
+FileHelper
+_EnD_oF_dEf_TeXt_;
+      sec-mem-name = 'fileHelper';
+      sec-mem-desc-file = '/home/antony_c/autre/buildroot-2023.08/linux_emb/sortirDansParis/include/storage/dataStorage.h';
+      sec-mem-desc-line = '56';
+      sec-mem-briefdesc =    <<_EnD_oF_dEf_TeXt_
+Helper object for file-related operations.
+_EnD_oF_dEf_TeXt_;
+      sec-mem-documentation = <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+      sec-mem-referencedby = {
+        sec-mem-ref-id = 'dataStorage_8cpp_1a4f7c8d0fc570f9ca75609f004974fa0b';
+        sec-mem-ref-line = '7';
+        sec-mem-ref-name = 'getValidFilePath';
+    };
+      sec-mem-referencedby = {
+        sec-mem-ref-id = 'dataStorage_8cpp_1a898ad89ba95776da063f62c95677f78c';
+        sec-mem-ref-line = '46';
+        sec-mem-ref-name = 'readFromFile';
+    };
+      sec-mem-referencedby = {
+        sec-mem-ref-id = 'dataStorage_8cpp_1a3574d849493097410d0879263706ee69';
+        sec-mem-ref-line = '15';
+        sec-mem-ref-name = 'saveToFile';
+    };
+    }; /* sec-member */
+  }; /* cp-section */
+  cp-filename  = '/home/antony_c/autre/buildroot-2023.08/linux_emb/sortirDansParis/include/storage/dataStorage.h';
+  cp-fileline  = '29';
+  cp-briefdesc = <<_EnD_oF_dEf_TeXt_
+Responsible for persisting data in JSON format.
+_EnD_oF_dEf_TeXt_;
+  cp-documentation = <<_EnD_oF_dEf_TeXt_
+ The class allows saving of data items to files and reading them back. Data items are
+         represented as JSON objects and are mapped to string keys for easy access and manipulation.
+_EnD_oF_dEf_TeXt_;
+  cp-collaborationgraph = <<_EnD_oF_dEf_TeXt_
+      node = {
+        node-id    = 1;
+        node-label = 'DataStorage';
+        node-link = {
+          node-link-id = 'classDataStorage';
+        };
+        node-child = {
+          child-id = '2';
+          relation = usage;
+          edgelabel = <<_EnD_oF_dEf_TeXt_
+fileHelper
+_EnD_oF_dEf_TeXt_;
+        }; /* node-child */
+      }; /* node */
+      node = {
+        node-id    = 2;
+        node-label = 'FileHelper';
+        node-link = {
+          node-link-id = 'classFileHelper';
+        };
+      }; /* node */
+
+_EnD_oF_dEf_TeXt_;
+}; /* class */
+class = {
+  cp-id     = 'classFileHelper';
+  cp-name   = 'FileHelper';
+  cp-section = {
+    sec-kind = 'public-func';
+    sec-member = {
+      sec-mem-kind = 'function';
+      sec-mem-id   = 'classFileHelper_1aeb70acd6faa4d5ca838e6af25acf1841';
+      sec-mem-virt = normal;
+      sec-mem-prot = public;
+      sec-mem-type = <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+      sec-mem-name = 'FileHelper';
+      sec-mem-desc-file = '/home/antony_c/autre/buildroot-2023.08/linux_emb/sortirDansParis/include/fileManagement/fileHelper.h';
+      sec-mem-desc-line = '27';
+      sec-mem-briefdesc =    <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+      sec-mem-documentation = <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+    }; /* sec-member */
+    sec-member = {
+      sec-mem-kind = 'function';
+      sec-mem-id   = 'classFileHelper_1ac8fb7747ed6cc254aab512ca4454d13d';
+      sec-mem-virt = normal;
+      sec-mem-prot = public;
+      sec-mem-type = <<_EnD_oF_dEf_TeXt_
+void
+_EnD_oF_dEf_TeXt_;
+      sec-mem-name = 'setSubfolder';
+      sec-mem-param = {
+        sec-mem-param-type = <<_EnD_oF_dEf_TeXt_
+const std::string &
+_EnD_oF_dEf_TeXt_;
+        sec-mem-param-declname = 'subfolder';
+      }; /*        sec-mem-param--param */
+      sec-mem-desc-file = '/home/antony_c/autre/buildroot-2023.08/linux_emb/sortirDansParis/include/fileManagement/fileHelper.h';
+      sec-mem-desc-line = '36';
+      sec-mem-briefdesc =    <<_EnD_oF_dEf_TeXt_
+Updates the default subfolder.
+_EnD_oF_dEf_TeXt_;
+      sec-mem-documentation = <<_EnD_oF_dEf_TeXt_
+ This function updates the internal subfolder path, which affects subsequent 
+file and directory operations using this helper.
+
+@param subfolder New subfolder path.
+_EnD_oF_dEf_TeXt_;
+      sec-mem-referenceto = {
+        sec-mem-ref-id = 'fileHelper_8h_1afd98e8ca8128d71d1e1dea5b73849fdc';
+        sec-mem-ref-line = '78';
+        sec-mem-ref-name = 'm_subfolder';
+    };
+      sec-mem-referencedby = {
+        sec-mem-ref-id = 'BarPlotGenerator_8cpp_1a8607516727d0c8f609e3f2017bf11c5e';
+        sec-mem-ref-line = '45';
+        sec-mem-ref-name = 'BarPlotGenerator::generateBarPlot';
+    };
+      sec-mem-referencedby = {
+        sec-mem-ref-id = 'PieChartGenerator_8cpp_1a2f367ee64a37d9b971b24090f9842251';
+        sec-mem-ref-line = '22';
+        sec-mem-ref-name = 'PieChartGenerator::generatePieChart';
+    };
+    }; /* sec-member */
+    sec-member = {
+      sec-mem-kind = 'function';
+      sec-mem-id   = 'classFileHelper_1aebf08c5f48f442cf9743809c7f25c49f';
+      sec-mem-virt = normal;
+      sec-mem-prot = public;
+      sec-mem-type = <<_EnD_oF_dEf_TeXt_
+std::string
+_EnD_oF_dEf_TeXt_;
+      sec-mem-name = 'getSubfolder';
+      sec-mem-desc-file = '/home/antony_c/autre/buildroot-2023.08/linux_emb/sortirDansParis/include/fileManagement/fileHelper.h';
+      sec-mem-desc-line = '45';
+      sec-mem-briefdesc =    <<_EnD_oF_dEf_TeXt_
+Retrieves the active subfolder path.
+_EnD_oF_dEf_TeXt_;
+      sec-mem-documentation = <<_EnD_oF_dEf_TeXt_
+ This function fetches the currently set subfolder path, which is used 
+in other operations of the FileHelper.
+
+@return std::string Active subfolder path.
+_EnD_oF_dEf_TeXt_;
+      sec-mem-referenceto = {
+        sec-mem-ref-id = 'fileHelper_8h_1afd98e8ca8128d71d1e1dea5b73849fdc';
+        sec-mem-ref-line = '78';
+        sec-mem-ref-name = 'm_subfolder';
+    };
+    }; /* sec-member */
+    sec-member = {
+      sec-mem-kind = 'function';
+      sec-mem-id   = 'classFileHelper_1a34793345599cf91e9c91e92fa6095d9e';
+      sec-mem-virt = normal;
+      sec-mem-prot = public;
+      sec-mem-type = <<_EnD_oF_dEf_TeXt_
+void
+_EnD_oF_dEf_TeXt_;
+      sec-mem-name = 'ensureDirectoryExists';
+      sec-mem-param = {
+        sec-mem-param-type = <<_EnD_oF_dEf_TeXt_
+const std::string &
+_EnD_oF_dEf_TeXt_;
+        sec-mem-param-declname = 'path';
+      }; /*        sec-mem-param--param */
+      sec-mem-desc-file = '/home/antony_c/autre/buildroot-2023.08/linux_emb/sortirDansParis/include/fileManagement/fileHelper.h';
+      sec-mem-desc-line = '54';
+      sec-mem-briefdesc =    <<_EnD_oF_dEf_TeXt_
+Makes sure the provided directory exists.
+_EnD_oF_dEf_TeXt_;
+      sec-mem-documentation = <<_EnD_oF_dEf_TeXt_
+ This function checks for the existence of a directory at the given path. 
+If the directory does not exist, it attempts to create it.
+
+@param path Path to the directory to ensure.
+_EnD_oF_dEf_TeXt_;
+      sec-mem-referencedby = {
+        sec-mem-ref-id = 'fileHelper_8cpp_1a8a218e5dfb2e5ec90c4180671f868af1';
+        sec-mem-ref-line = '26';
+        sec-mem-ref-name = 'getFilePath';
+    };
+    }; /* sec-member */
+    sec-member = {
+      sec-mem-kind = 'function';
+      sec-mem-id   = 'classFileHelper_1ad75188b2ae6098e5dae2f23cb5576341';
+      sec-mem-virt = normal;
+      sec-mem-prot = public;
+      sec-mem-type = <<_EnD_oF_dEf_TeXt_
+bool
+_EnD_oF_dEf_TeXt_;
+      sec-mem-name = 'fileExists';
+      sec-mem-param = {
+        sec-mem-param-type = <<_EnD_oF_dEf_TeXt_
+const std::string &
+_EnD_oF_dEf_TeXt_;
+        sec-mem-param-declname = 'filePath';
+      }; /*        sec-mem-param--param */
+      sec-mem-desc-file = '/home/antony_c/autre/buildroot-2023.08/linux_emb/sortirDansParis/include/fileManagement/fileHelper.h';
+      sec-mem-desc-line = '64';
+      sec-mem-briefdesc =    <<_EnD_oF_dEf_TeXt_
+Verifies if a file exists at the provided path.
+_EnD_oF_dEf_TeXt_;
+      sec-mem-documentation = <<_EnD_oF_dEf_TeXt_
+ This function checks the existence of a file at the specified path 
+and returns a boolean value indicating its presence.
+
+@param filePath Path to the file to check.
+@return bool <tt>true</tt> if file exists, otherwise <tt>false</tt>.
+_EnD_oF_dEf_TeXt_;
+      sec-mem-referencedby = {
+        sec-mem-ref-id = 'dataStorage_8cpp_1a898ad89ba95776da063f62c95677f78c';
+        sec-mem-ref-line = '46';
+        sec-mem-ref-name = 'DataStorage::readFromFile';
+    };
+      sec-mem-referencedby = {
+        sec-mem-ref-id = 'dataStorage_8cpp_1a3574d849493097410d0879263706ee69';
+        sec-mem-ref-line = '15';
+        sec-mem-ref-name = 'DataStorage::saveToFile';
+    };
+    }; /* sec-member */
+    sec-member = {
+      sec-mem-kind = 'function';
+      sec-mem-id   = 'classFileHelper_1a8a218e5dfb2e5ec90c4180671f868af1';
+      sec-mem-virt = normal;
+      sec-mem-prot = public;
+      sec-mem-type = <<_EnD_oF_dEf_TeXt_
+std::string
+_EnD_oF_dEf_TeXt_;
+      sec-mem-name = 'getFilePath';
+      sec-mem-param = {
+        sec-mem-param-type = <<_EnD_oF_dEf_TeXt_
+const std::string &
+_EnD_oF_dEf_TeXt_;
+        sec-mem-param-declname = 'filename';
+      }; /*        sec-mem-param--param */
+      sec-mem-desc-file = '/home/antony_c/autre/buildroot-2023.08/linux_emb/sortirDansParis/include/fileManagement/fileHelper.h';
+      sec-mem-desc-line = '75';
+      sec-mem-briefdesc =    <<_EnD_oF_dEf_TeXt_
+Constructs the full path for a file using the current subfolder.
+_EnD_oF_dEf_TeXt_;
+      sec-mem-documentation = <<_EnD_oF_dEf_TeXt_
+ This function constructs a complete file path by appending the filename to 
+the currently set subfolder. Additionally, it ensures the existence of the directory 
+before returning the path.
+
+@param filename The file name to use for path construction.
+@return std::string Constructed file path.
+_EnD_oF_dEf_TeXt_;
+      sec-mem-referenceto = {
+        sec-mem-ref-id = 'fileHelper_8cpp_1a34793345599cf91e9c91e92fa6095d9e';
+        sec-mem-ref-line = '14';
+        sec-mem-ref-name = 'ensureDirectoryExists';
+    };
+      sec-mem-referenceto = {
+        sec-mem-ref-id = 'fileHelper_8h_1afd98e8ca8128d71d1e1dea5b73849fdc';
+        sec-mem-ref-line = '78';
+        sec-mem-ref-name = 'm_subfolder';
+    };
+      sec-mem-referencedby = {
+        sec-mem-ref-id = 'BarPlotGenerator_8cpp_1a8607516727d0c8f609e3f2017bf11c5e';
+        sec-mem-ref-line = '45';
+        sec-mem-ref-name = 'BarPlotGenerator::generateBarPlot';
+    };
+      sec-mem-referencedby = {
+        sec-mem-ref-id = 'PieChartGenerator_8cpp_1a2f367ee64a37d9b971b24090f9842251';
+        sec-mem-ref-line = '22';
+        sec-mem-ref-name = 'PieChartGenerator::generatePieChart';
+    };
+      sec-mem-referencedby = {
+        sec-mem-ref-id = 'dataStorage_8cpp_1a4f7c8d0fc570f9ca75609f004974fa0b';
+        sec-mem-ref-line = '7';
+        sec-mem-ref-name = 'DataStorage::getValidFilePath';
+    };
+    }; /* sec-member */
+  }; /* cp-section */
+  cp-section = {
+    sec-kind = 'private-attrib';
+    sec-member = {
+      sec-mem-kind = 'variable';
+      sec-mem-id   = 'classFileHelper_1afd98e8ca8128d71d1e1dea5b73849fdc';
+      sec-mem-virt = normal;
+      sec-mem-prot = private;
+      sec-mem-type = <<_EnD_oF_dEf_TeXt_
+std::string
+_EnD_oF_dEf_TeXt_;
+      sec-mem-name = 'm_subfolder';
+      sec-mem-desc-file = '/home/antony_c/autre/buildroot-2023.08/linux_emb/sortirDansParis/include/fileManagement/fileHelper.h';
+      sec-mem-desc-line = '78';
+      sec-mem-briefdesc =    <<_EnD_oF_dEf_TeXt_
+Defines the default subfolder here.
+_EnD_oF_dEf_TeXt_;
+      sec-mem-documentation = <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+      sec-mem-referencedby = {
+        sec-mem-ref-id = 'fileHelper_8cpp_1a8a218e5dfb2e5ec90c4180671f868af1';
+        sec-mem-ref-line = '26';
+        sec-mem-ref-name = 'getFilePath';
+    };
+      sec-mem-referencedby = {
+        sec-mem-ref-id = 'fileHelper_8cpp_1aebf08c5f48f442cf9743809c7f25c49f';
+        sec-mem-ref-line = '10';
+        sec-mem-ref-name = 'getSubfolder';
+    };
+      sec-mem-referencedby = {
+        sec-mem-ref-id = 'fileHelper_8cpp_1ac8fb7747ed6cc254aab512ca4454d13d';
+        sec-mem-ref-line = '6';
+        sec-mem-ref-name = 'setSubfolder';
+    };
+    }; /* sec-member */
+  }; /* cp-section */
+  cp-filename  = '/home/antony_c/autre/buildroot-2023.08/linux_emb/sortirDansParis/include/fileManagement/fileHelper.h';
+  cp-fileline  = '25';
+  cp-briefdesc = <<_EnD_oF_dEf_TeXt_
+Utility class for file and directory management.
+_EnD_oF_dEf_TeXt_;
+  cp-documentation = <<_EnD_oF_dEf_TeXt_
+ This class streamlines common file and directory operations, making it easier 
+to perform checks, retrieve paths, and ensure directories exist.
+_EnD_oF_dEf_TeXt_;
+}; /* class */
+class = {
+  cp-id     = 'classObservable';
+  cp-name   = 'Observable';
+  cp-ref     = {
+    ref-type = derived;
+    ref-id   = 'classAPIHandler';
+    ref-prot = public;
+    ref-virt = non-virtual;
+  };
+  cp-section = {
+    sec-kind = 'public-func';
+    sec-member = {
+      sec-mem-kind = 'function';
+      sec-mem-id   = 'classObservable_1a2c701f154eea3a37cc5ff283c23d6822';
+      sec-mem-virt = normal;
+      sec-mem-prot = public;
+      sec-mem-type = <<_EnD_oF_dEf_TeXt_
+void
+_EnD_oF_dEf_TeXt_;
+      sec-mem-name = 'addObserver';
+      sec-mem-param = {
+        sec-mem-param-type = <<_EnD_oF_dEf_TeXt_
+Observer *
+_EnD_oF_dEf_TeXt_;
+        sec-mem-param-declname = 'o';
+      }; /*        sec-mem-param--param */
+      sec-mem-desc-file = '/home/antony_c/autre/buildroot-2023.08/linux_emb/sortirDansParis/include/connectApi/observable.h';
+      sec-mem-desc-line = '48';
+      sec-mem-briefdesc =    <<_EnD_oF_dEf_TeXt_
+Registers an observer to the observable.
+_EnD_oF_dEf_TeXt_;
+      sec-mem-documentation = <<_EnD_oF_dEf_TeXt_
+ This method allows an observer to express its interest in receiving 
+updates from this observable by adding it to the list of subscribers.
+
+@param o A pointer to the observer that wishes to subscribe.
+_EnD_oF_dEf_TeXt_;
+      sec-mem-referenceto = {
+        sec-mem-ref-id = 'observable_8h_1a12e80e23caa6669d5e118a649d66ef4b';
+        sec-mem-ref-line = '38';
+        sec-mem-ref-name = 'observers';
+    };
+    }; /* sec-member */
+    sec-member = {
+      sec-mem-kind = 'function';
+      sec-mem-id   = 'classObservable_1a2febd7dc96b219866d57964b72593f5d';
+      sec-mem-virt = normal;
+      sec-mem-prot = public;
+      sec-mem-type = <<_EnD_oF_dEf_TeXt_
+void
+_EnD_oF_dEf_TeXt_;
+      sec-mem-name = 'removeObserver';
+      sec-mem-param = {
+        sec-mem-param-type = <<_EnD_oF_dEf_TeXt_
+Observer *
+_EnD_oF_dEf_TeXt_;
+        sec-mem-param-declname = 'o';
+      }; /*        sec-mem-param--param */
+      sec-mem-desc-file = '/home/antony_c/autre/buildroot-2023.08/linux_emb/sortirDansParis/include/connectApi/observable.h';
+      sec-mem-desc-line = '57';
+      sec-mem-briefdesc =    <<_EnD_oF_dEf_TeXt_
+Unregisters an observer from the observable.
+_EnD_oF_dEf_TeXt_;
+      sec-mem-documentation = <<_EnD_oF_dEf_TeXt_
+ Removes an observer from the list of subscribers, ensuring that 
+it will no longer receive notifications from this observable.
+
+@param o A pointer to the observer to be unsubscribed.
+_EnD_oF_dEf_TeXt_;
+      sec-mem-referenceto = {
+        sec-mem-ref-id = 'observable_8h_1a12e80e23caa6669d5e118a649d66ef4b';
+        sec-mem-ref-line = '38';
+        sec-mem-ref-name = 'observers';
+    };
+    }; /* sec-member */
+    sec-member = {
+      sec-mem-kind = 'function';
+      sec-mem-id   = 'classObservable_1a98235ce794949ba4827df63e571fb14b';
+      sec-mem-virt = normal;
+      sec-mem-prot = public;
+      sec-mem-type = <<_EnD_oF_dEf_TeXt_
+void
+_EnD_oF_dEf_TeXt_;
+      sec-mem-name = 'notifyObservers';
+      sec-mem-param = {
+        sec-mem-param-type = <<_EnD_oF_dEf_TeXt_
+const std::map< std::string, nlohmann::json > &
+_EnD_oF_dEf_TeXt_;
+        sec-mem-param-declname = 'newEvents';
+      }; /*        sec-mem-param--param */
+      sec-mem-desc-file = '/home/antony_c/autre/buildroot-2023.08/linux_emb/sortirDansParis/include/connectApi/observable.h';
+      sec-mem-desc-line = '66';
+      sec-mem-briefdesc =    <<_EnD_oF_dEf_TeXt_
+Sends updates to all registered observers.
+_EnD_oF_dEf_TeXt_;
+      sec-mem-documentation = <<_EnD_oF_dEf_TeXt_
+ Iterates over the list of subscribed observers and invokes 
+their update method, thereby informing them about the latest events.
+
+@param newEvents A collection of new events to be disseminated to the observers.
+_EnD_oF_dEf_TeXt_;
+      sec-mem-referenceto = {
+        sec-mem-ref-id = 'observable_8h_1a12e80e23caa6669d5e118a649d66ef4b';
+        sec-mem-ref-line = '38';
+        sec-mem-ref-name = 'observers';
+    };
+      sec-mem-referencedby = {
+        sec-mem-ref-id = 'apiHandler_8cpp_1a1f4ab7c08b86cfa50d2840a7c2c49a8f';
+        sec-mem-ref-line = '18';
+        sec-mem-ref-name = 'APIHandler::fetchData';
+    };
+    }; /* sec-member */
+    sec-member = {
+      sec-mem-kind = 'function';
+      sec-mem-id   = 'classObservable_1a22482fd8540852084485897519142960';
+      sec-mem-virt = normal;
+      sec-mem-prot = public;
+      sec-mem-type = <<_EnD_oF_dEf_TeXt_
+void
+_EnD_oF_dEf_TeXt_;
+      sec-mem-name = 'notifyDailyObservers';
+      sec-mem-param = {
+        sec-mem-param-type = <<_EnD_oF_dEf_TeXt_
+const std::map< std::string, nlohmann::json > &
+_EnD_oF_dEf_TeXt_;
+        sec-mem-param-declname = 'newDailyEvents';
+      }; /*        sec-mem-param--param */
+      sec-mem-desc-file = '/home/antony_c/autre/buildroot-2023.08/linux_emb/sortirDansParis/include/connectApi/observable.h';
+      sec-mem-desc-line = '75';
+      sec-mem-briefdesc =    <<_EnD_oF_dEf_TeXt_
+Sends daily-specific updates to all observers.
+_EnD_oF_dEf_TeXt_;
+      sec-mem-documentation = <<_EnD_oF_dEf_TeXt_
+ Iterates over the list of observers and notifies them about 
+daily-specific events using their <tt>dailyUpdate</tt> method.
+
+@param newDailyEvents A collection of events specific to the day.
+_EnD_oF_dEf_TeXt_;
+      sec-mem-referenceto = {
+        sec-mem-ref-id = 'observable_8h_1a12e80e23caa6669d5e118a649d66ef4b';
+        sec-mem-ref-line = '38';
+        sec-mem-ref-name = 'observers';
+    };
+      sec-mem-referencedby = {
+        sec-mem-ref-id = 'periodicFetcher_8cpp_1a84f9a218ccb184feb1a8027b2ac9ac44';
+        sec-mem-ref-line = '10';
+        sec-mem-ref-name = 'PeriodicFetcher::start';
+    };
+    }; /* sec-member */
+  }; /* cp-section */
+  cp-section = {
+    sec-kind = 'protected-attrib';
+    sec-member = {
+      sec-mem-kind = 'variable';
+      sec-mem-id   = 'classObservable_1a12e80e23caa6669d5e118a649d66ef4b';
+      sec-mem-virt = normal;
+      sec-mem-prot = protected;
+      sec-mem-type = <<_EnD_oF_dEf_TeXt_
+std::vector< Observer * >
+_EnD_oF_dEf_TeXt_;
+      sec-mem-name = 'observers';
+      sec-mem-desc-file = '/home/antony_c/autre/buildroot-2023.08/linux_emb/sortirDansParis/include/connectApi/observable.h';
+      sec-mem-desc-line = '38';
+      sec-mem-briefdesc =    <<_EnD_oF_dEf_TeXt_
+A collection of subscribers (observers) that listen to this observable.
+_EnD_oF_dEf_TeXt_;
+      sec-mem-documentation = <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+      sec-mem-referencedby = {
+        sec-mem-ref-id = 'observable_8cpp_1a2c701f154eea3a37cc5ff283c23d6822';
+        sec-mem-ref-line = '3';
+        sec-mem-ref-name = 'addObserver';
+    };
+      sec-mem-referencedby = {
+        sec-mem-ref-id = 'apiHandler_8cpp_1a9689d8f7c4ec016cca6ef5fa047b3b05';
+        sec-mem-ref-line = '38';
+        sec-mem-ref-name = 'APIHandler::fetchTodaysEvents';
+    };
+      sec-mem-referencedby = {
+        sec-mem-ref-id = 'observable_8cpp_1a22482fd8540852084485897519142960';
+        sec-mem-ref-line = '21';
+        sec-mem-ref-name = 'notifyDailyObservers';
+    };
+      sec-mem-referencedby = {
+        sec-mem-ref-id = 'observable_8cpp_1a98235ce794949ba4827df63e571fb14b';
+        sec-mem-ref-line = '13';
+        sec-mem-ref-name = 'notifyObservers';
+    };
+      sec-mem-referencedby = {
+        sec-mem-ref-id = 'observable_8cpp_1a2febd7dc96b219866d57964b72593f5d';
+        sec-mem-ref-line = '8';
+        sec-mem-ref-name = 'removeObserver';
+    };
+    }; /* sec-member */
+  }; /* cp-section */
+  cp-filename  = '/home/antony_c/autre/buildroot-2023.08/linux_emb/sortirDansParis/include/connectApi/observable.h';
+  cp-fileline  = '36';
+  cp-briefdesc = <<_EnD_oF_dEf_TeXt_
+Represents the subject (or observable) in the Observer design pattern.
+_EnD_oF_dEf_TeXt_;
+  cp-documentation = <<_EnD_oF_dEf_TeXt_
+ The Observable class maintains a list of its subscribers and provides 
+mechanisms to notify them upon state changes or specific events. This forms a 
+central component in the Observer pattern, allowing for a decoupled interaction 
+between various components of a system.
+_EnD_oF_dEf_TeXt_;
+  cp-inheritancegraph = <<_EnD_oF_dEf_TeXt_
+      node = {
+        node-id    = 2;
+        node-label = 'APIHandler';
+        node-link = {
+          node-link-id = 'classAPIHandler';
+        };
+        node-child = {
+          child-id = '1';
+          relation = public-inheritance;
+        }; /* node-child */
+      }; /* node */
+      node = {
+        node-id    = 1;
+        node-label = 'Observable';
+        node-link = {
+          node-link-id = 'classObservable';
+        };
+      }; /* node */
+
+_EnD_oF_dEf_TeXt_;
+}; /* class */
+class = {
+  cp-id     = 'classObserver';
+  cp-name   = 'Observer';
+  cp-ref     = {
+    ref-type = derived;
+    ref-id   = 'classConcreteObserver';
+    ref-prot = public;
+    ref-virt = non-virtual;
+  };
+  cp-section = {
+    sec-kind = 'public-func';
+    sec-member = {
+      sec-mem-kind = 'function';
+      sec-mem-id   = 'classObserver_1ac933f7a66c117394d87d232923523ee0';
+      sec-mem-virt = pure-virtual;
+      sec-mem-prot = public;
+      sec-mem-type = <<_EnD_oF_dEf_TeXt_
+virtual void
+_EnD_oF_dEf_TeXt_;
+      sec-mem-name = 'update';
+      sec-mem-param = {
+        sec-mem-param-type = <<_EnD_oF_dEf_TeXt_
+const std::map< std::string, nlohmann::json > &
+_EnD_oF_dEf_TeXt_;
+        sec-mem-param-declname = 'newEvents';
+      }; /*        sec-mem-param--param */
+      sec-mem-desc-file = '/home/antony_c/autre/buildroot-2023.08/linux_emb/sortirDansParis/include/connectApi/observer.h';
+      sec-mem-desc-line = '37';
+      sec-mem-briefdesc =    <<_EnD_oF_dEf_TeXt_
+Updates the Observer with general events.
+_EnD_oF_dEf_TeXt_;
+      sec-mem-documentation = <<_EnD_oF_dEf_TeXt_
+ This method notifies the observer about general events. Implementing classes 
+should process and react to these events as per their specific requirements.
+
+@param newEvents A map of the latest events represented as key-value pairs.
+_EnD_oF_dEf_TeXt_;
+    }; /* sec-member */
+    sec-member = {
+      sec-mem-kind = 'function';
+      sec-mem-id   = 'classObserver_1a1adfe80fa80a5051480be13f1a746800';
+      sec-mem-virt = pure-virtual;
+      sec-mem-prot = public;
+      sec-mem-type = <<_EnD_oF_dEf_TeXt_
+virtual void
+_EnD_oF_dEf_TeXt_;
+      sec-mem-name = 'dailyUpdate';
+      sec-mem-param = {
+        sec-mem-param-type = <<_EnD_oF_dEf_TeXt_
+const std::map< std::string, nlohmann::json > &
+_EnD_oF_dEf_TeXt_;
+        sec-mem-param-declname = 'newDailyEvents';
+      }; /*        sec-mem-param--param */
+      sec-mem-desc-file = '/home/antony_c/autre/buildroot-2023.08/linux_emb/sortirDansParis/include/connectApi/observer.h';
+      sec-mem-desc-line = '46';
+      sec-mem-briefdesc =    <<_EnD_oF_dEf_TeXt_
+Provides the Observer with daily-specific updates.
+_EnD_oF_dEf_TeXt_;
+      sec-mem-documentation = <<_EnD_oF_dEf_TeXt_
+ Observers receive daily-specific events via this method. Concrete observers 
+should handle these events and adapt based on their individual business logic.
+
+@param newDailyEvents A map of daily events characterized by key-value pairs.
+_EnD_oF_dEf_TeXt_;
+    }; /* sec-member */
+    sec-member = {
+      sec-mem-kind = 'function';
+      sec-mem-id   = 'classObserver_1addf80a7da36e332655a7338601149bec';
+      sec-mem-virt = pure-virtual;
+      sec-mem-prot = public;
+      sec-mem-type = <<_EnD_oF_dEf_TeXt_
+virtual void
+_EnD_oF_dEf_TeXt_;
+      sec-mem-name = 'removeExpiredEvents';
+      sec-mem-desc-file = '/home/antony_c/autre/buildroot-2023.08/linux_emb/sortirDansParis/include/connectApi/observer.h';
+      sec-mem-desc-line = '53';
+      sec-mem-briefdesc =    <<_EnD_oF_dEf_TeXt_
+Commands the Observer to address expired events.
+_EnD_oF_dEf_TeXt_;
+      sec-mem-documentation = <<_EnD_oF_dEf_TeXt_
+ Implementing classes should take the necessary actions upon receiving 
+this instruction, such as removing or archiving the expired events.
+_EnD_oF_dEf_TeXt_;
+    }; /* sec-member */
+  }; /* cp-section */
+  cp-filename  = '/home/antony_c/autre/buildroot-2023.08/linux_emb/sortirDansParis/include/connectApi/observer.h';
+  cp-fileline  = '28';
+  cp-briefdesc = <<_EnD_oF_dEf_TeXt_
+Interface for the Observer in the Observer design pattern.
+_EnD_oF_dEf_TeXt_;
+  cp-documentation = <<_EnD_oF_dEf_TeXt_
+ In the context of the Observer design pattern, this interface establishes the 
+contract that all observers must fulfill. The observers are expected to receive updates 
+about new events, daily activities, and the removal of expired events. Concrete observer 
+classes should implement this interface to define their reactions to such notifications.
+_EnD_oF_dEf_TeXt_;
+  cp-inheritancegraph = <<_EnD_oF_dEf_TeXt_
+      node = {
+        node-id    = 2;
+        node-label = 'ConcreteObserver';
+        node-link = {
+          node-link-id = 'classConcreteObserver';
+        };
+        node-child = {
+          child-id = '1';
+          relation = public-inheritance;
+        }; /* node-child */
+      }; /* node */
+      node = {
+        node-id    = 1;
+        node-label = 'Observer';
+        node-link = {
+          node-link-id = 'classObserver';
+        };
+      }; /* node */
+
+_EnD_oF_dEf_TeXt_;
+}; /* class */
+class = {
+  cp-id     = 'classPeriodicFetcher';
+  cp-name   = 'PeriodicFetcher';
+  cp-section = {
+    sec-kind = 'public-func';
+    sec-member = {
+      sec-mem-kind = 'function';
+      sec-mem-id   = 'classPeriodicFetcher_1a97424bbb533281b98e837ea0a9a0fdc7';
+      sec-mem-virt = normal;
+      sec-mem-prot = public;
+      sec-mem-type = <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+      sec-mem-name = 'PeriodicFetcher';
+      sec-mem-param = {
+        sec-mem-param-type = <<_EnD_oF_dEf_TeXt_
+Observable &
+_EnD_oF_dEf_TeXt_;
+        sec-mem-param-declname = 'observable';
+      }; /*        sec-mem-param--param */
+      sec-mem-param = {
+        sec-mem-param-type = <<_EnD_oF_dEf_TeXt_
+int
+_EnD_oF_dEf_TeXt_;
+        sec-mem-param-declname = 'interval';
+      }; /*        sec-mem-param--param */
+      sec-mem-param = {
+        sec-mem-param-type = <<_EnD_oF_dEf_TeXt_
+fitu
+_EnD_oF_dEf_TeXt_;
+        sec-mem-param-declname = 'unit';
+      }; /*        sec-mem-param--param */
+      sec-mem-desc-file = '/home/antony_c/autre/buildroot-2023.08/linux_emb/sortirDansParis/include/service/periodicFetcher.h';
+      sec-mem-desc-line = '57';
+      sec-mem-briefdesc =    <<_EnD_oF_dEf_TeXt_
+Construct a new Periodic Fetcher object.
+_EnD_oF_dEf_TeXt_;
+      sec-mem-documentation = <<_EnD_oF_dEf_TeXt_
+ Initializes the fetcher with specified parameters and sets up required configurations.
+
+@param observable Reference to the Observable object that will be updated with fetched data.
+@param interval Time interval for periodic data fetching.
+@param unit The unit of the fetch interval (e.g., seconds, minutes, hours).
+_EnD_oF_dEf_TeXt_;
+      sec-mem-referenceto = {
+        sec-mem-ref-id = 'signalHandler_8cpp_1a15631110fc9c8fee4c1b2bf3bced2de3';
+        sec-mem-ref-line = '5';
+        sec-mem-ref-name = 'SignalHandler::getInstance';
+    };
+      sec-mem-referenceto = {
+        sec-mem-ref-id = 'signalHandler_8cpp_1a90eff6c9610cdcd77a1706491f2ce28a';
+        sec-mem-ref-line = '14';
+        sec-mem-ref-name = 'SignalHandler::setupSignalHandlers';
+    };
+    }; /* sec-member */
+    sec-member = {
+      sec-mem-kind = 'function';
+      sec-mem-id   = 'classPeriodicFetcher_1a84f9a218ccb184feb1a8027b2ac9ac44';
+      sec-mem-virt = normal;
+      sec-mem-prot = public;
+      sec-mem-type = <<_EnD_oF_dEf_TeXt_
+void
+_EnD_oF_dEf_TeXt_;
+      sec-mem-name = 'start';
+      sec-mem-desc-file = '/home/antony_c/autre/buildroot-2023.08/linux_emb/sortirDansParis/include/service/periodicFetcher.h';
+      sec-mem-desc-line = '64';
+      sec-mem-briefdesc =    <<_EnD_oF_dEf_TeXt_
+Begin the periodic fetching and processing of data.
+_EnD_oF_dEf_TeXt_;
+      sec-mem-documentation = <<_EnD_oF_dEf_TeXt_
+ This method initiates the continuous loop that fetches, processes data and updates the Observables.
+         The loop continues until a stop signal is received.
+_EnD_oF_dEf_TeXt_;
+      sec-mem-referenceto = {
+        sec-mem-ref-id = 'periodicFetcher_8h_1ab107531c3a83011a369e5068532814d9';
+        sec-mem-ref-line = '67';
+        sec-mem-ref-name = 'fetchInterval';
+    };
+      sec-mem-referenceto = {
+        sec-mem-ref-id = 'apiHandler_8cpp_1a9689d8f7c4ec016cca6ef5fa047b3b05';
+        sec-mem-ref-line = '38';
+        sec-mem-ref-name = 'APIHandler::fetchTodaysEvents';
+    };
+      sec-mem-referenceto = {
+        sec-mem-ref-id = 'PieChartGenerator_8cpp_1a2f367ee64a37d9b971b24090f9842251';
+        sec-mem-ref-line = '22';
+        sec-mem-ref-name = 'PieChartGenerator::generatePieChart';
+    };
+      sec-mem-referenceto = {
+        sec-mem-ref-id = 'signalHandler_8cpp_1a15631110fc9c8fee4c1b2bf3bced2de3';
+        sec-mem-ref-line = '5';
+        sec-mem-ref-name = 'SignalHandler::getInstance';
+    };
+      sec-mem-referenceto = {
+        sec-mem-ref-id = 'fetchIntervalTimeUnit_8h_1a258941b40a5a04eaa12b02e927572d24abe4457ef53f4dfd9490f525bac5cfad8';
+        sec-mem-ref-line = '25';
+        sec-mem-ref-name = 'FetchIntervalTimeUnit::HR';
+    };
+      sec-mem-referenceto = {
+        sec-mem-ref-id = 'periodicFetcher_8cpp_1ac5f69e42cbe1e901419efca568485369';
+        sec-mem-ref-line = '42';
+        sec-mem-ref-name = 'log';
+    };
+      sec-mem-referenceto = {
+        sec-mem-ref-id = 'utils_8h_1a3acffbd305ee72dcd4593c0d8af64a4f';
+        sec-mem-ref-line = '23';
+        sec-mem-ref-name = 'MIN';
+    };
+      sec-mem-referenceto = {
+        sec-mem-ref-id = 'periodicFetcher_8h_1ac9187e24e8d35ff8102e89a69ad99ba0';
+        sec-mem-ref-line = '72';
+        sec-mem-ref-name = 'mtx';
+    };
+      sec-mem-referenceto = {
+        sec-mem-ref-id = 'observable_8cpp_1a22482fd8540852084485897519142960';
+        sec-mem-ref-line = '21';
+        sec-mem-ref-name = 'Observable::notifyDailyObservers';
+    };
+      sec-mem-referenceto = {
+        sec-mem-ref-id = 'periodicFetcher_8h_1af49d8bd5f679e0c054fa64857d577298';
+        sec-mem-ref-line = '70';
+        sec-mem-ref-name = 'observable';
+    };
+      sec-mem-referenceto = {
+        sec-mem-ref-id = 'periodicFetcher_8h_1a9c64edbc5cfec664fe342cff679e0c25';
+        sec-mem-ref-line = '69';
+        sec-mem-ref-name = 'pieChartGen';
+    };
+      sec-mem-referenceto = {
+        sec-mem-ref-id = 'fetchIntervalTimeUnit_8h_1a258941b40a5a04eaa12b02e927572d24a5b9ce2722e46b2ff22b6c014aea38ca3';
+        sec-mem-ref-line = '23';
+        sec-mem-ref-name = 'FetchIntervalTimeUnit::SEC';
+    };
+      sec-mem-referenceto = {
+        sec-mem-ref-id = 'periodicFetcher_8h_1afd38cbbebb3539033f01465f4c1d37cb';
+        sec-mem-ref-line = '68';
+        sec-mem-ref-name = 'timeUnit';
+    };
+    }; /* sec-member */
+  }; /* cp-section */
+  cp-section = {
+    sec-kind = 'private-func';
+    sec-member = {
+      sec-mem-kind = 'function';
+      sec-mem-id   = 'classPeriodicFetcher_1ac5f69e42cbe1e901419efca568485369';
+      sec-mem-virt = normal;
+      sec-mem-prot = private;
+      sec-mem-type = <<_EnD_oF_dEf_TeXt_
+void
+_EnD_oF_dEf_TeXt_;
+      sec-mem-name = 'log';
+      sec-mem-param = {
+        sec-mem-param-type = <<_EnD_oF_dEf_TeXt_
+const std::string &
+_EnD_oF_dEf_TeXt_;
+        sec-mem-param-declname = 'message';
+      }; /*        sec-mem-param--param */
+      sec-mem-desc-file = '/home/antony_c/autre/buildroot-2023.08/linux_emb/sortirDansParis/include/service/periodicFetcher.h';
+      sec-mem-desc-line = '82';
+      sec-mem-briefdesc =    <<_EnD_oF_dEf_TeXt_
+Log messages for debugging and monitoring purposes.
+_EnD_oF_dEf_TeXt_;
+      sec-mem-documentation = <<_EnD_oF_dEf_TeXt_
+ This function outputs messages to the console, which can be useful for debugging,
+         error-handling, or monitoring the operation of the PeriodicFetcher.
+
+@param message String containing the message to be logged.
+_EnD_oF_dEf_TeXt_;
+      sec-mem-referencedby = {
+        sec-mem-ref-id = 'periodicFetcher_8cpp_1a84f9a218ccb184feb1a8027b2ac9ac44';
+        sec-mem-ref-line = '10';
+        sec-mem-ref-name = 'start';
+    };
+    }; /* sec-member */
+  }; /* cp-section */
+  cp-section = {
+    sec-kind = 'private-attrib';
+    sec-member = {
+      sec-mem-kind = 'variable';
+      sec-mem-id   = 'classPeriodicFetcher_1ab107531c3a83011a369e5068532814d9';
+      sec-mem-virt = normal;
+      sec-mem-prot = private;
+      sec-mem-type = <<_EnD_oF_dEf_TeXt_
+int
+_EnD_oF_dEf_TeXt_;
+      sec-mem-name = 'fetchInterval';
+      sec-mem-desc-file = '/home/antony_c/autre/buildroot-2023.08/linux_emb/sortirDansParis/include/service/periodicFetcher.h';
+      sec-mem-desc-line = '67';
+      sec-mem-briefdesc =    <<_EnD_oF_dEf_TeXt_
+Time duration specifying how often data is fetched.
+_EnD_oF_dEf_TeXt_;
+      sec-mem-documentation = <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+      sec-mem-referencedby = {
+        sec-mem-ref-id = 'periodicFetcher_8cpp_1a84f9a218ccb184feb1a8027b2ac9ac44';
+        sec-mem-ref-line = '10';
+        sec-mem-ref-name = 'start';
+    };
+    }; /* sec-member */
+    sec-member = {
+      sec-mem-kind = 'variable';
+      sec-mem-id   = 'classPeriodicFetcher_1afd38cbbebb3539033f01465f4c1d37cb';
+      sec-mem-virt = normal;
+      sec-mem-prot = private;
+      sec-mem-type = <<_EnD_oF_dEf_TeXt_
+fitu
+_EnD_oF_dEf_TeXt_;
+      sec-mem-name = 'timeUnit';
+      sec-mem-desc-file = '/home/antony_c/autre/buildroot-2023.08/linux_emb/sortirDansParis/include/service/periodicFetcher.h';
+      sec-mem-desc-line = '68';
+      sec-mem-briefdesc =    <<_EnD_oF_dEf_TeXt_
+Enumerated type representing the unit of fetch interval (e.g., SEC, MIN, HR).
+_EnD_oF_dEf_TeXt_;
+      sec-mem-documentation = <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+      sec-mem-referencedby = {
+        sec-mem-ref-id = 'periodicFetcher_8cpp_1a84f9a218ccb184feb1a8027b2ac9ac44';
+        sec-mem-ref-line = '10';
+        sec-mem-ref-name = 'start';
+    };
+    }; /* sec-member */
+    sec-member = {
+      sec-mem-kind = 'variable';
+      sec-mem-id   = 'classPeriodicFetcher_1a9c64edbc5cfec664fe342cff679e0c25';
+      sec-mem-virt = normal;
+      sec-mem-prot = private;
+      sec-mem-type = <<_EnD_oF_dEf_TeXt_
+PieChartGenerator
+_EnD_oF_dEf_TeXt_;
+      sec-mem-name = 'pieChartGen';
+      sec-mem-desc-file = '/home/antony_c/autre/buildroot-2023.08/linux_emb/sortirDansParis/include/service/periodicFetcher.h';
+      sec-mem-desc-line = '69';
+      sec-mem-briefdesc =    <<_EnD_oF_dEf_TeXt_
+Object used for generating pie charts from the fetched data.
+_EnD_oF_dEf_TeXt_;
+      sec-mem-documentation = <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+      sec-mem-referencedby = {
+        sec-mem-ref-id = 'periodicFetcher_8cpp_1a84f9a218ccb184feb1a8027b2ac9ac44';
+        sec-mem-ref-line = '10';
+        sec-mem-ref-name = 'start';
+    };
+    }; /* sec-member */
+    sec-member = {
+      sec-mem-kind = 'variable';
+      sec-mem-id   = 'classPeriodicFetcher_1af49d8bd5f679e0c054fa64857d577298';
+      sec-mem-virt = normal;
+      sec-mem-prot = private;
+      sec-mem-type = <<_EnD_oF_dEf_TeXt_
+Observable &
+_EnD_oF_dEf_TeXt_;
+      sec-mem-name = 'observable';
+      sec-mem-desc-file = '/home/antony_c/autre/buildroot-2023.08/linux_emb/sortirDansParis/include/service/periodicFetcher.h';
+      sec-mem-desc-line = '70';
+      sec-mem-briefdesc =    <<_EnD_oF_dEf_TeXt_
+Reference to Observable object to which updates are sent.
+_EnD_oF_dEf_TeXt_;
+      sec-mem-documentation = <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+      sec-mem-referencedby = {
+        sec-mem-ref-id = 'periodicFetcher_8cpp_1a84f9a218ccb184feb1a8027b2ac9ac44';
+        sec-mem-ref-line = '10';
+        sec-mem-ref-name = 'start';
+    };
+    }; /* sec-member */
+    sec-member = {
+      sec-mem-kind = 'variable';
+      sec-mem-id   = 'classPeriodicFetcher_1acd2bc4762e1b18c1d6b080ac19e756dc';
+      sec-mem-virt = normal;
+      sec-mem-prot = private;
+      sec-mem-type = <<_EnD_oF_dEf_TeXt_
+std::atomic< bool >
+_EnD_oF_dEf_TeXt_;
+      sec-mem-name = 'stopRequested';
+      sec-mem-desc-file = '/home/antony_c/autre/buildroot-2023.08/linux_emb/sortirDansParis/include/service/periodicFetcher.h';
+      sec-mem-desc-line = '71';
+      sec-mem-briefdesc =    <<_EnD_oF_dEf_TeXt_
+Atomic flag indicating if the fetching process should be stopped.
+_EnD_oF_dEf_TeXt_;
+      sec-mem-documentation = <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+    }; /* sec-member */
+    sec-member = {
+      sec-mem-kind = 'variable';
+      sec-mem-id   = 'classPeriodicFetcher_1ac9187e24e8d35ff8102e89a69ad99ba0';
+      sec-mem-virt = normal;
+      sec-mem-prot = private;
+      sec-mem-type = <<_EnD_oF_dEf_TeXt_
+std::mutex
+_EnD_oF_dEf_TeXt_;
+      sec-mem-name = 'mtx';
+      sec-mem-desc-file = '/home/antony_c/autre/buildroot-2023.08/linux_emb/sortirDansParis/include/service/periodicFetcher.h';
+      sec-mem-desc-line = '72';
+      sec-mem-briefdesc =    <<_EnD_oF_dEf_TeXt_
+Mutex ensuring thread-safety during data fetch and processing.
+_EnD_oF_dEf_TeXt_;
+      sec-mem-documentation = <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+      sec-mem-referencedby = {
+        sec-mem-ref-id = 'periodicFetcher_8cpp_1a84f9a218ccb184feb1a8027b2ac9ac44';
+        sec-mem-ref-line = '10';
+        sec-mem-ref-name = 'start';
+    };
+    }; /* sec-member */
+  }; /* cp-section */
+  cp-section = {
+    sec-kind = 'private-static-attrib';
+    sec-member = {
+      sec-mem-kind = 'variable';
+      sec-mem-id   = 'classPeriodicFetcher_1add7804e2a8043acb7f5d18de299b45c9';
+      sec-mem-virt = normal;
+      sec-mem-prot = private;
+      sec-mem-type = <<_EnD_oF_dEf_TeXt_
+static PeriodicFetcher *
+_EnD_oF_dEf_TeXt_;
+      sec-mem-name = 'instance';
+      sec-mem-initializer = <<_EnD_oF_dEf_TeXt_
+= nullptr
+_EnD_oF_dEf_TeXt_;
+      sec-mem-desc-file = '/home/antony_c/autre/buildroot-2023.08/linux_emb/sortirDansParis/include/service/periodicFetcher.h';
+      sec-mem-desc-line = '73';
+      sec-mem-briefdesc =    <<_EnD_oF_dEf_TeXt_
+Singleton instance of the PeriodicFetcher class.
+_EnD_oF_dEf_TeXt_;
+      sec-mem-documentation = <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+    }; /* sec-member */
+  }; /* cp-section */
+  cp-filename  = '/home/antony_c/autre/buildroot-2023.08/linux_emb/sortirDansParis/include/service/periodicFetcher.h';
+  cp-fileline  = '46';
+  cp-briefdesc = <<_EnD_oF_dEf_TeXt_
+Handles periodic data fetching, processing, and notifying Observables.
+_EnD_oF_dEf_TeXt_;
+  cp-documentation = <<_EnD_oF_dEf_TeXt_
+ The PeriodicFetcher class encapsulates functionality related to periodically 
+         fetching data from an external source, processing that data, and subsequently 
+         updating associated Observables. Additionally, it generates pie charts 
+         using the PieChartGenerator class for visualization of the data.
+_EnD_oF_dEf_TeXt_;
+  cp-collaborationgraph = <<_EnD_oF_dEf_TeXt_
+      node = {
+        node-id    = 3;
+        node-label = 'FileHelper';
+        node-link = {
+          node-link-id = 'classFileHelper';
+        };
+      }; /* node */
+      node = {
+        node-id    = 4;
+        node-label = 'Observable';
+        node-link = {
+          node-link-id = 'classObservable';
+        };
+      }; /* node */
+      node = {
+        node-id    = 1;
+        node-label = 'PeriodicFetcher';
+        node-link = {
+          node-link-id = 'classPeriodicFetcher';
+        };
+        node-child = {
+          child-id = '2';
+          relation = usage;
+          edgelabel = <<_EnD_oF_dEf_TeXt_
+pieChartGen
+_EnD_oF_dEf_TeXt_;
+        }; /* node-child */
+        node-child = {
+          child-id = '4';
+          relation = usage;
+          edgelabel = <<_EnD_oF_dEf_TeXt_
+observable
+_EnD_oF_dEf_TeXt_;
+        }; /* node-child */
+        node-child = {
+          child-id = '1';
+          relation = usage;
+          edgelabel = <<_EnD_oF_dEf_TeXt_
+instance
+_EnD_oF_dEf_TeXt_;
+        }; /* node-child */
+      }; /* node */
+      node = {
+        node-id    = 2;
+        node-label = 'PieChartGenerator';
+        node-link = {
+          node-link-id = 'classPieChartGenerator';
+        };
+        node-child = {
+          child-id = '3';
+          relation = usage;
+          edgelabel = <<_EnD_oF_dEf_TeXt_
+fileHelper
+_EnD_oF_dEf_TeXt_;
+        }; /* node-child */
+      }; /* node */
+
+_EnD_oF_dEf_TeXt_;
+}; /* class */
+class = {
+  cp-id     = 'classPieChartGenerator';
+  cp-name   = 'PieChartGenerator';
+  cp-section = {
+    sec-kind = 'public-func';
+    sec-member = {
+      sec-mem-kind = 'function';
+      sec-mem-id   = 'classPieChartGenerator_1a83ee6fdb562d564d764d48ee3ebe71c7';
+      sec-mem-virt = normal;
+      sec-mem-prot = public;
+      sec-mem-type = <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+      sec-mem-name = 'PieChartGenerator';
+      sec-mem-desc-file = '/home/antony_c/autre/buildroot-2023.08/linux_emb/sortirDansParis/include/gdGeneration/PieChartGenerator.h';
+      sec-mem-desc-line = '54';
+      sec-mem-briefdesc =    <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+      sec-mem-documentation = <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+    }; /* sec-member */
+    sec-member = {
+      sec-mem-kind = 'function';
+      sec-mem-id   = 'classPieChartGenerator_1a43cdb09cfde85f6d76d798cdbd0bf448';
+      sec-mem-virt = normal;
+      sec-mem-prot = public;
+      sec-mem-type = <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+      sec-mem-name = '~PieChartGenerator';
+      sec-mem-desc-file = '/home/antony_c/autre/buildroot-2023.08/linux_emb/sortirDansParis/include/gdGeneration/PieChartGenerator.h';
+      sec-mem-desc-line = '55';
+      sec-mem-briefdesc =    <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+      sec-mem-documentation = <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+    }; /* sec-member */
+    sec-member = {
+      sec-mem-kind = 'function';
+      sec-mem-id   = 'classPieChartGenerator_1a11d2d5f8dfc51fcebd7ea1dfce678629';
+      sec-mem-virt = normal;
+      sec-mem-prot = public;
+      sec-mem-type = <<_EnD_oF_dEf_TeXt_
+Color
+_EnD_oF_dEf_TeXt_;
+      sec-mem-name = 'generate_random_color';
+      sec-mem-desc-file = '/home/antony_c/autre/buildroot-2023.08/linux_emb/sortirDansParis/include/gdGeneration/PieChartGenerator.h';
+      sec-mem-desc-line = '63';
+      sec-mem-briefdesc =    <<_EnD_oF_dEf_TeXt_
+Loads data from the given file.
+_EnD_oF_dEf_TeXt_;
+      sec-mem-documentation = <<_EnD_oF_dEf_TeXt_
+@param filename The name of the file from which to load the data.
+@return std::map<std::string, nlohmann::json> A map of data items, where each key-value pair
+represents a unique data item identified by the string key and its corresponding JSON value.
+Generates a random color.
+_EnD_oF_dEf_TeXt_;
+      sec-mem-referenceto = {
+        sec-mem-ref-id = 'GraphicsUtils_8h_1ae11f00d34bf3ecd8c8278f68876b82bf';
+        sec-mem-ref-line = '27';
+        sec-mem-ref-name = 'Color::b';
+    };
+      sec-mem-referenceto = {
+        sec-mem-ref-id = 'GraphicsUtils_8h_1ab5656e995bddd43d286c7ff5629a31dd';
+        sec-mem-ref-line = '26';
+        sec-mem-ref-name = 'Color::g';
+    };
+      sec-mem-referenceto = {
+        sec-mem-ref-id = 'GraphicsUtils_8h_1a4954bdc9772da2a610401b8a438125cb';
+        sec-mem-ref-line = '25';
+        sec-mem-ref-name = 'Color::r';
+    };
+      sec-mem-referencedby = {
+        sec-mem-ref-id = 'PieChartGenerator_8cpp_1a7a57c299567e171bc40bbd817e95954e';
+        sec-mem-ref-line = '114';
+        sec-mem-ref-name = 'draw_segment_and_label';
+    };
+    }; /* sec-member */
+    sec-member = {
+      sec-mem-kind = 'function';
+      sec-mem-id   = 'classPieChartGenerator_1a2f367ee64a37d9b971b24090f9842251';
+      sec-mem-virt = normal;
+      sec-mem-prot = public;
+      sec-mem-type = <<_EnD_oF_dEf_TeXt_
+void
+_EnD_oF_dEf_TeXt_;
+      sec-mem-name = 'generatePieChart';
+      sec-mem-param = {
+        sec-mem-param-type = <<_EnD_oF_dEf_TeXt_
+const std::map< std::string, nlohmann::json > &
+_EnD_oF_dEf_TeXt_;
+        sec-mem-param-declname = 'dataForPie';
+      }; /*        sec-mem-param--param */
+      sec-mem-desc-file = '/home/antony_c/autre/buildroot-2023.08/linux_emb/sortirDansParis/include/gdGeneration/PieChartGenerator.h';
+      sec-mem-desc-line = '71';
+      sec-mem-briefdesc =    <<_EnD_oF_dEf_TeXt_
+Loads data from the given file.
+_EnD_oF_dEf_TeXt_;
+      sec-mem-documentation = <<_EnD_oF_dEf_TeXt_
+@param filename The name of the file from which to load the data.
+@return std::map<std::string, nlohmann::json> A map of data items, where each key-value pair
+represents a unique data item identified by the string key and its corresponding JSON value.
+Generates a pie chart based on the input data.
+_EnD_oF_dEf_TeXt_;
+      sec-mem-referenceto = {
+        sec-mem-ref-id = 'PieChartGenerator_8cpp_1aa95dd31c6170513a9d82004d6db6cf15';
+        sec-mem-ref-line = '85';
+        sec-mem-ref-name = 'create_pie_chart_image';
+    };
+      sec-mem-referenceto = {
+        sec-mem-ref-id = 'PieChartGenerator_8h_1a1444353e0ccde4f5efdf29735b2209be';
+        sec-mem-ref-line = '74';
+        sec-mem-ref-name = 'fileHelper';
+    };
+      sec-mem-referenceto = {
+        sec-mem-ref-id = 'fileHelper_8cpp_1a8a218e5dfb2e5ec90c4180671f868af1';
+        sec-mem-ref-line = '26';
+        sec-mem-ref-name = 'FileHelper::getFilePath';
+    };
+      sec-mem-referenceto = {
+        sec-mem-ref-id = 'PieChartGenerator_8h_1a19772bddca1bd42fea0b1ef2b2839c0c';
+        sec-mem-ref-line = '42';
+        sec-mem-ref-name = 'PieChartSegment::label';
+    };
+      sec-mem-referenceto = {
+        sec-mem-ref-id = 'PieChartGenerator_8h_1a63634575933d944376e476ae0bf7179e';
+        sec-mem-ref-line = '41';
+        sec-mem-ref-name = 'PieChartSegment::percentage';
+    };
+      sec-mem-referenceto = {
+        sec-mem-ref-id = 'PieChartGenerator_8cpp_1a2ef1ac6cd4ed58d5402b16daed87b773';
+        sec-mem-ref-line = '192';
+        sec-mem-ref-name = 'saveImage';
+    };
+      sec-mem-referenceto = {
+        sec-mem-ref-id = 'fileHelper_8cpp_1ac8fb7747ed6cc254aab512ca4454d13d';
+        sec-mem-ref-line = '6';
+        sec-mem-ref-name = 'FileHelper::setSubfolder';
+    };
+      sec-mem-referencedby = {
+        sec-mem-ref-id = 'periodicFetcher_8cpp_1a84f9a218ccb184feb1a8027b2ac9ac44';
+        sec-mem-ref-line = '10';
+        sec-mem-ref-name = 'PeriodicFetcher::start';
+    };
+    }; /* sec-member */
+  }; /* cp-section */
+  cp-section = {
+    sec-kind = 'private-func';
+    sec-member = {
+      sec-mem-kind = 'function';
+      sec-mem-id   = 'classPieChartGenerator_1aa95dd31c6170513a9d82004d6db6cf15';
+      sec-mem-virt = normal;
+      sec-mem-prot = private;
+      sec-mem-type = <<_EnD_oF_dEf_TeXt_
+gdImagePtr
+_EnD_oF_dEf_TeXt_;
+      sec-mem-name = 'create_pie_chart_image';
+      sec-mem-param = {
+        sec-mem-param-type = <<_EnD_oF_dEf_TeXt_
+PieChartSegment *
+_EnD_oF_dEf_TeXt_;
+        sec-mem-param-declname = 'segments';
+      }; /*        sec-mem-param--param */
+      sec-mem-param = {
+        sec-mem-param-type = <<_EnD_oF_dEf_TeXt_
+int
+_EnD_oF_dEf_TeXt_;
+        sec-mem-param-declname = 'segments_count';
+      }; /*        sec-mem-param--param */
+      sec-mem-param = {
+        sec-mem-param-type = <<_EnD_oF_dEf_TeXt_
+const char *
+_EnD_oF_dEf_TeXt_;
+        sec-mem-param-declname = 'title';
+      }; /*        sec-mem-param--param */
+      sec-mem-desc-file = '/home/antony_c/autre/buildroot-2023.08/linux_emb/sortirDansParis/include/gdGeneration/PieChartGenerator.h';
+      sec-mem-desc-line = '83';
+      sec-mem-briefdesc =    <<_EnD_oF_dEf_TeXt_
+Creates an image representing the pie chart.
+_EnD_oF_dEf_TeXt_;
+      sec-mem-documentation = <<_EnD_oF_dEf_TeXt_
+@param segments Array of segments to be drawn in the pie chart.
+@param segments_count The number of segments.
+@param title The title of the pie chart.
+@return gdImagePtr Pointer to the generated image.
+_EnD_oF_dEf_TeXt_;
+      sec-mem-referenceto = {
+        sec-mem-ref-id = 'PieChartGenerator_8cpp_1a7a57c299567e171bc40bbd817e95954e';
+        sec-mem-ref-line = '114';
+        sec-mem-ref-name = 'draw_segment_and_label';
+    };
+      sec-mem-referenceto = {
+        sec-mem-ref-id = 'PieChartGenerator_8cpp_1a8ef9b7f0d5bf8aecb441c1bfbaf389f9';
+        sec-mem-ref-line = '169';
+        sec-mem-ref-name = 'draw_title';
+    };
+      sec-mem-referenceto = {
+        sec-mem-ref-id = 'BarPlotGenerator_8h_1aed89bd71aee8be823e8a20ec4e093c1e';
+        sec-mem-ref-line = '16';
+        sec-mem-ref-name = 'HEIGHT';
+    };
+      sec-mem-referenceto = {
+        sec-mem-ref-id = 'utils_8h_1a3acffbd305ee72dcd4593c0d8af64a4f';
+        sec-mem-ref-line = '23';
+        sec-mem-ref-name = 'MIN';
+    };
+      sec-mem-referenceto = {
+        sec-mem-ref-id = 'BarPlotGenerator_8h_1a241aeeb764887ae5e3de58b98f04b16d';
+        sec-mem-ref-line = '15';
+        sec-mem-ref-name = 'WIDTH';
+    };
+      sec-mem-referencedby = {
+        sec-mem-ref-id = 'PieChartGenerator_8cpp_1a2f367ee64a37d9b971b24090f9842251';
+        sec-mem-ref-line = '22';
+        sec-mem-ref-name = 'generatePieChart';
+    };
+    }; /* sec-member */
+    sec-member = {
+      sec-mem-kind = 'function';
+      sec-mem-id   = 'classPieChartGenerator_1a5362987c296f3dfee24390ee2881ff2a';
+      sec-mem-virt = normal;
+      sec-mem-prot = private;
+      sec-mem-type = <<_EnD_oF_dEf_TeXt_
+void
+_EnD_oF_dEf_TeXt_;
+      sec-mem-name = 'calculate_coordinates';
+      sec-mem-param = {
+        sec-mem-param-type = <<_EnD_oF_dEf_TeXt_
+int
+_EnD_oF_dEf_TeXt_;
+        sec-mem-param-declname = 'x';
+      }; /*        sec-mem-param--param */
+      sec-mem-param = {
+        sec-mem-param-type = <<_EnD_oF_dEf_TeXt_
+int
+_EnD_oF_dEf_TeXt_;
+        sec-mem-param-declname = 'y';
+      }; /*        sec-mem-param--param */
+      sec-mem-param = {
+        sec-mem-param-type = <<_EnD_oF_dEf_TeXt_
+int
+_EnD_oF_dEf_TeXt_;
+        sec-mem-param-declname = 'radius';
+      }; /*        sec-mem-param--param */
+      sec-mem-param = {
+        sec-mem-param-type = <<_EnD_oF_dEf_TeXt_
+int
+_EnD_oF_dEf_TeXt_;
+        sec-mem-param-declname = 'angle';
+      }; /*        sec-mem-param--param */
+      sec-mem-param = {
+        sec-mem-param-type = <<_EnD_oF_dEf_TeXt_
+int *
+_EnD_oF_dEf_TeXt_;
+        sec-mem-param-declname = 'coord_x';
+      }; /*        sec-mem-param--param */
+      sec-mem-param = {
+        sec-mem-param-type = <<_EnD_oF_dEf_TeXt_
+int *
+_EnD_oF_dEf_TeXt_;
+        sec-mem-param-declname = 'coord_y';
+      }; /*        sec-mem-param--param */
+      sec-mem-desc-file = '/home/antony_c/autre/buildroot-2023.08/linux_emb/sortirDansParis/include/gdGeneration/PieChartGenerator.h';
+      sec-mem-desc-line = '94';
+      sec-mem-briefdesc =    <<_EnD_oF_dEf_TeXt_
+Calculates the coordinates for a given angle on the pie chart.
+_EnD_oF_dEf_TeXt_;
+      sec-mem-documentation = <<_EnD_oF_dEf_TeXt_
+@param x The x-coordinate of the pie chart's center.
+@param y The y-coordinate of the pie chart's center.
+@param radius The radius of the pie chart.
+@param angle The angle at which to calculate the coordinates.
+@param coord_x Pointer to store the calculated x-coordinate.
+@param coord_y Pointer to store the calculated y-coordinate.
+_EnD_oF_dEf_TeXt_;
+      sec-mem-referencedby = {
+        sec-mem-ref-id = 'PieChartGenerator_8cpp_1a7a57c299567e171bc40bbd817e95954e';
+        sec-mem-ref-line = '114';
+        sec-mem-ref-name = 'draw_segment_and_label';
+    };
+    }; /* sec-member */
+    sec-member = {
+      sec-mem-kind = 'function';
+      sec-mem-id   = 'classPieChartGenerator_1a7a57c299567e171bc40bbd817e95954e';
+      sec-mem-virt = normal;
+      sec-mem-prot = private;
+      sec-mem-type = <<_EnD_oF_dEf_TeXt_
+void
+_EnD_oF_dEf_TeXt_;
+      sec-mem-name = 'draw_segment_and_label';
+      sec-mem-param = {
+        sec-mem-param-type = <<_EnD_oF_dEf_TeXt_
+gdImagePtr
+_EnD_oF_dEf_TeXt_;
+        sec-mem-param-declname = 'img';
+      }; /*        sec-mem-param--param */
+      sec-mem-param = {
+        sec-mem-param-type = <<_EnD_oF_dEf_TeXt_
+PieChartSegment *
+_EnD_oF_dEf_TeXt_;
+        sec-mem-param-declname = 'segments';
+      }; /*        sec-mem-param--param */
+      sec-mem-param = {
+        sec-mem-param-type = <<_EnD_oF_dEf_TeXt_
+int
+_EnD_oF_dEf_TeXt_;
+        sec-mem-param-declname = 'length';
+      }; /*        sec-mem-param--param */
+      sec-mem-param = {
+        sec-mem-param-type = <<_EnD_oF_dEf_TeXt_
+int
+_EnD_oF_dEf_TeXt_;
+        sec-mem-param-declname = 'x';
+      }; /*        sec-mem-param--param */
+      sec-mem-param = {
+        sec-mem-param-type = <<_EnD_oF_dEf_TeXt_
+int
+_EnD_oF_dEf_TeXt_;
+        sec-mem-param-declname = 'y';
+      }; /*        sec-mem-param--param */
+      sec-mem-param = {
+        sec-mem-param-type = <<_EnD_oF_dEf_TeXt_
+double
+_EnD_oF_dEf_TeXt_;
+        sec-mem-param-declname = 'start_angle';
+      }; /*        sec-mem-param--param */
+      sec-mem-param = {
+        sec-mem-param-type = <<_EnD_oF_dEf_TeXt_
+int
+_EnD_oF_dEf_TeXt_;
+        sec-mem-param-declname = 'radius';
+      }; /*        sec-mem-param--param */
+      sec-mem-param = {
+        sec-mem-param-type = <<_EnD_oF_dEf_TeXt_
+int
+_EnD_oF_dEf_TeXt_;
+        sec-mem-param-declname = 'black';
+      }; /*        sec-mem-param--param */
+      sec-mem-desc-file = '/home/antony_c/autre/buildroot-2023.08/linux_emb/sortirDansParis/include/gdGeneration/PieChartGenerator.h';
+      sec-mem-desc-line = '107';
+      sec-mem-briefdesc =    <<_EnD_oF_dEf_TeXt_
+Draws a segment and its corresponding label on the pie chart image.
+_EnD_oF_dEf_TeXt_;
+      sec-mem-documentation = <<_EnD_oF_dEf_TeXt_
+@param img The image on which to draw.
+@param segments The array of segments.
+@param length The number of segments.
+@param x The x-coordinate of the pie chart's center.
+@param y The y-coordinate of the pie chart's center.
+@param start_angle The starting angle for the segment.
+@param radius The radius of the pie chart.
+@param black The color to use for drawing (usually black).
+_EnD_oF_dEf_TeXt_;
+      sec-mem-referenceto = {
+        sec-mem-ref-id = 'PieChartGenerator_8cpp_1a5362987c296f3dfee24390ee2881ff2a';
+        sec-mem-ref-line = '108';
+        sec-mem-ref-name = 'calculate_coordinates';
+    };
+      sec-mem-referenceto = {
+        sec-mem-ref-id = 'BarPlotGenerator_8h_1af326d9b4cced6fd44a9f9567dc666014';
+        sec-mem-ref-line = '13';
+        sec-mem-ref-name = 'FONT_PATH';
+    };
+      sec-mem-referenceto = {
+        sec-mem-ref-id = 'PieChartGenerator_8cpp_1a11d2d5f8dfc51fcebd7ea1dfce678629';
+        sec-mem-ref-line = '8';
+        sec-mem-ref-name = 'generate_random_color';
+    };
+      sec-mem-referenceto = {
+        sec-mem-ref-id = 'PieChartGenerator_8h_1a63634575933d944376e476ae0bf7179e';
+        sec-mem-ref-line = '41';
+        sec-mem-ref-name = 'PieChartSegment::percentage';
+    };
+      sec-mem-referencedby = {
+        sec-mem-ref-id = 'PieChartGenerator_8cpp_1aa95dd31c6170513a9d82004d6db6cf15';
+        sec-mem-ref-line = '85';
+        sec-mem-ref-name = 'create_pie_chart_image';
+    };
+    }; /* sec-member */
+    sec-member = {
+      sec-mem-kind = 'function';
+      sec-mem-id   = 'classPieChartGenerator_1a8ef9b7f0d5bf8aecb441c1bfbaf389f9';
+      sec-mem-virt = normal;
+      sec-mem-prot = private;
+      sec-mem-type = <<_EnD_oF_dEf_TeXt_
+void
+_EnD_oF_dEf_TeXt_;
+      sec-mem-name = 'draw_title';
+      sec-mem-param = {
+        sec-mem-param-type = <<_EnD_oF_dEf_TeXt_
+gdImagePtr
+_EnD_oF_dEf_TeXt_;
+        sec-mem-param-declname = 'img';
+      }; /*        sec-mem-param--param */
+      sec-mem-param = {
+        sec-mem-param-type = <<_EnD_oF_dEf_TeXt_
+const char *
+_EnD_oF_dEf_TeXt_;
+        sec-mem-param-declname = 'title';
+      }; /*        sec-mem-param--param */
+      sec-mem-param = {
+        sec-mem-param-type = <<_EnD_oF_dEf_TeXt_
+int
+_EnD_oF_dEf_TeXt_;
+        sec-mem-param-declname = 'x';
+      }; /*        sec-mem-param--param */
+      sec-mem-param = {
+        sec-mem-param-type = <<_EnD_oF_dEf_TeXt_
+int
+_EnD_oF_dEf_TeXt_;
+        sec-mem-param-declname = 'y';
+      }; /*        sec-mem-param--param */
+      sec-mem-param = {
+        sec-mem-param-type = <<_EnD_oF_dEf_TeXt_
+int
+_EnD_oF_dEf_TeXt_;
+        sec-mem-param-declname = 'color';
+      }; /*        sec-mem-param--param */
+      sec-mem-desc-file = '/home/antony_c/autre/buildroot-2023.08/linux_emb/sortirDansParis/include/gdGeneration/PieChartGenerator.h';
+      sec-mem-desc-line = '117';
+      sec-mem-briefdesc =    <<_EnD_oF_dEf_TeXt_
+Draws the title of the pie chart on the image.
+_EnD_oF_dEf_TeXt_;
+      sec-mem-documentation = <<_EnD_oF_dEf_TeXt_
+@param img The image on which to draw.
+@param title The title to draw.
+@param x The x-coordinate for the title.
+@param y The y-coordinate for the title.
+@param color The color to use for the title text.
+_EnD_oF_dEf_TeXt_;
+      sec-mem-referenceto = {
+        sec-mem-ref-id = 'BarPlotGenerator_8h_1af326d9b4cced6fd44a9f9567dc666014';
+        sec-mem-ref-line = '13';
+        sec-mem-ref-name = 'FONT_PATH';
+    };
+      sec-mem-referenceto = {
+        sec-mem-ref-id = 'BarPlotGenerator_8h_1a3d277f5a5dec260aa85c464f96800b9e';
+        sec-mem-ref-line = '14';
+        sec-mem-ref-name = 'SIZE_TITLE';
+    };
+      sec-mem-referencedby = {
+        sec-mem-ref-id = 'PieChartGenerator_8cpp_1aa95dd31c6170513a9d82004d6db6cf15';
+        sec-mem-ref-line = '85';
+        sec-mem-ref-name = 'create_pie_chart_image';
+    };
+    }; /* sec-member */
+    sec-member = {
+      sec-mem-kind = 'function';
+      sec-mem-id   = 'classPieChartGenerator_1a2ef1ac6cd4ed58d5402b16daed87b773';
+      sec-mem-virt = normal;
+      sec-mem-prot = private;
+      sec-mem-type = <<_EnD_oF_dEf_TeXt_
+void
+_EnD_oF_dEf_TeXt_;
+      sec-mem-name = 'saveImage';
+      sec-mem-param = {
+        sec-mem-param-type = <<_EnD_oF_dEf_TeXt_
+gdImagePtr
+_EnD_oF_dEf_TeXt_;
+        sec-mem-param-declname = 'img';
+      }; /*        sec-mem-param--param */
+      sec-mem-param = {
+        sec-mem-param-type = <<_EnD_oF_dEf_TeXt_
+const std::string &
+_EnD_oF_dEf_TeXt_;
+        sec-mem-param-declname = 'filename';
+      }; /*        sec-mem-param--param */
+      sec-mem-desc-file = '/home/antony_c/autre/buildroot-2023.08/linux_emb/sortirDansParis/include/gdGeneration/PieChartGenerator.h';
+      sec-mem-desc-line = '124';
+      sec-mem-briefdesc =    <<_EnD_oF_dEf_TeXt_
+Saves the pie chart image to a file.
+_EnD_oF_dEf_TeXt_;
+      sec-mem-documentation = <<_EnD_oF_dEf_TeXt_
+@param img The pie chart image.
+@param filename The name of the file where the image will be saved.
+_EnD_oF_dEf_TeXt_;
+      sec-mem-referencedby = {
+        sec-mem-ref-id = 'PieChartGenerator_8cpp_1a2f367ee64a37d9b971b24090f9842251';
+        sec-mem-ref-line = '22';
+        sec-mem-ref-name = 'generatePieChart';
+    };
+    }; /* sec-member */
+  }; /* cp-section */
+  cp-section = {
+    sec-kind = 'private-attrib';
+    sec-member = {
+      sec-mem-kind = 'variable';
+      sec-mem-id   = 'classPieChartGenerator_1a1444353e0ccde4f5efdf29735b2209be';
+      sec-mem-virt = normal;
+      sec-mem-prot = private;
+      sec-mem-type = <<_EnD_oF_dEf_TeXt_
+FileHelper
+_EnD_oF_dEf_TeXt_;
+      sec-mem-name = 'fileHelper';
+      sec-mem-desc-file = '/home/antony_c/autre/buildroot-2023.08/linux_emb/sortirDansParis/include/gdGeneration/PieChartGenerator.h';
+      sec-mem-desc-line = '74';
+      sec-mem-briefdesc =    <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+      sec-mem-documentation = <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+      sec-mem-referencedby = {
+        sec-mem-ref-id = 'PieChartGenerator_8cpp_1a2f367ee64a37d9b971b24090f9842251';
+        sec-mem-ref-line = '22';
+        sec-mem-ref-name = 'generatePieChart';
+    };
+    }; /* sec-member */
+  }; /* cp-section */
+  cp-filename  = '/home/antony_c/autre/buildroot-2023.08/linux_emb/sortirDansParis/include/gdGeneration/PieChartGenerator.h';
+  cp-fileline  = '52';
+  cp-briefdesc = <<_EnD_oF_dEf_TeXt_
+Class responsible for generating pie charts.
+_EnD_oF_dEf_TeXt_;
+  cp-documentation = <<_EnD_oF_dEf_TeXt_
+This class provides the necessary methods and tools to generate pie charts based
+on input data. The charts are generated using the GD library.
+_EnD_oF_dEf_TeXt_;
+  cp-collaborationgraph = <<_EnD_oF_dEf_TeXt_
+      node = {
+        node-id    = 2;
+        node-label = 'FileHelper';
+        node-link = {
+          node-link-id = 'classFileHelper';
+        };
+      }; /* node */
+      node = {
+        node-id    = 1;
+        node-label = 'PieChartGenerator';
+        node-link = {
+          node-link-id = 'classPieChartGenerator';
+        };
+        node-child = {
+          child-id = '2';
+          relation = usage;
+          edgelabel = <<_EnD_oF_dEf_TeXt_
+fileHelper
+_EnD_oF_dEf_TeXt_;
+        }; /* node-child */
+      }; /* node */
+
+_EnD_oF_dEf_TeXt_;
+}; /* class */
+struct = {
+  cp-id     = 'structPieChartSegment';
+  cp-name   = 'PieChartSegment';
+  cp-section = {
+    sec-kind = 'public-attrib';
+    sec-member = {
+      sec-mem-kind = 'variable';
+      sec-mem-id   = 'structPieChartSegment_1a63634575933d944376e476ae0bf7179e';
+      sec-mem-virt = normal;
+      sec-mem-prot = public;
+      sec-mem-type = <<_EnD_oF_dEf_TeXt_
+double
+_EnD_oF_dEf_TeXt_;
+      sec-mem-name = 'percentage';
+      sec-mem-desc-file = '/home/antony_c/autre/buildroot-2023.08/linux_emb/sortirDansParis/include/gdGeneration/PieChartGenerator.h';
+      sec-mem-desc-line = '41';
+      sec-mem-briefdesc =    <<_EnD_oF_dEf_TeXt_
+The percentage that this segment represents in the pie chart.
+_EnD_oF_dEf_TeXt_;
+      sec-mem-documentation = <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+      sec-mem-referencedby = {
+        sec-mem-ref-id = 'PieChartGenerator_8cpp_1a7a57c299567e171bc40bbd817e95954e';
+        sec-mem-ref-line = '114';
+        sec-mem-ref-name = 'PieChartGenerator::draw_segment_and_label';
+    };
+      sec-mem-referencedby = {
+        sec-mem-ref-id = 'PieChartGenerator_8cpp_1a2f367ee64a37d9b971b24090f9842251';
+        sec-mem-ref-line = '22';
+        sec-mem-ref-name = 'PieChartGenerator::generatePieChart';
+    };
+    }; /* sec-member */
+    sec-member = {
+      sec-mem-kind = 'variable';
+      sec-mem-id   = 'structPieChartSegment_1a19772bddca1bd42fea0b1ef2b2839c0c';
+      sec-mem-virt = normal;
+      sec-mem-prot = public;
+      sec-mem-type = <<_EnD_oF_dEf_TeXt_
+std::string
+_EnD_oF_dEf_TeXt_;
+      sec-mem-name = 'label';
+      sec-mem-desc-file = '/home/antony_c/autre/buildroot-2023.08/linux_emb/sortirDansParis/include/gdGeneration/PieChartGenerator.h';
+      sec-mem-desc-line = '42';
+      sec-mem-briefdesc =    <<_EnD_oF_dEf_TeXt_
+The label for this segment (e.g., the name of the category).
+_EnD_oF_dEf_TeXt_;
+      sec-mem-documentation = <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+      sec-mem-referencedby = {
+        sec-mem-ref-id = 'PieChartGenerator_8cpp_1a2f367ee64a37d9b971b24090f9842251';
+        sec-mem-ref-line = '22';
+        sec-mem-ref-name = 'PieChartGenerator::generatePieChart';
+    };
+    }; /* sec-member */
+    sec-member = {
+      sec-mem-kind = 'variable';
+      sec-mem-id   = 'structPieChartSegment_1ab3d1e65f2edd1e8bf214e755eefc08cd';
+      sec-mem-virt = normal;
+      sec-mem-prot = public;
+      sec-mem-type = <<_EnD_oF_dEf_TeXt_
+Color
+_EnD_oF_dEf_TeXt_;
+      sec-mem-name = 'color';
+      sec-mem-desc-file = '/home/antony_c/autre/buildroot-2023.08/linux_emb/sortirDansParis/include/gdGeneration/PieChartGenerator.h';
+      sec-mem-desc-line = '43';
+      sec-mem-briefdesc =    <<_EnD_oF_dEf_TeXt_
+The color used to draw this segment in the pie chart.
+_EnD_oF_dEf_TeXt_;
+      sec-mem-documentation = <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+    }; /* sec-member */
+  }; /* cp-section */
+  cp-filename  = '/home/antony_c/autre/buildroot-2023.08/linux_emb/sortirDansParis/include/gdGeneration/PieChartGenerator.h';
+  cp-fileline  = '40';
+  cp-briefdesc = <<_EnD_oF_dEf_TeXt_
+Structure to represent a segment in a pie chart.
+_EnD_oF_dEf_TeXt_;
+  cp-documentation = <<_EnD_oF_dEf_TeXt_
+This structure is used to define a segment of a pie chart, including
+its percentage representation, label, and color.
+_EnD_oF_dEf_TeXt_;
+  cp-collaborationgraph = <<_EnD_oF_dEf_TeXt_
+      node = {
+        node-id    = 2;
+        node-label = 'Color';
+        node-link = {
+          node-link-id = 'structColor';
+        };
+      }; /* node */
+      node = {
+        node-id    = 1;
+        node-label = 'PieChartSegment';
+        node-link = {
+          node-link-id = 'structPieChartSegment';
+        };
+        node-child = {
+          child-id = '2';
+          relation = usage;
+          edgelabel = <<_EnD_oF_dEf_TeXt_
+color
+_EnD_oF_dEf_TeXt_;
+        }; /* node-child */
+      }; /* node */
+
+_EnD_oF_dEf_TeXt_;
+}; /* struct */
+class = {
+  cp-id     = 'classSignalHandler';
+  cp-name   = 'SignalHandler';
+  cp-section = {
+    sec-kind = 'public-func';
+    sec-member = {
+      sec-mem-kind = 'function';
+      sec-mem-id   = 'classSignalHandler_1a90eff6c9610cdcd77a1706491f2ce28a';
+      sec-mem-virt = normal;
+      sec-mem-prot = public;
+      sec-mem-type = <<_EnD_oF_dEf_TeXt_
+void
+_EnD_oF_dEf_TeXt_;
+      sec-mem-name = 'setupSignalHandlers';
+      sec-mem-desc-file = '/home/antony_c/autre/buildroot-2023.08/linux_emb/sortirDansParis/include/service/signalHandler.h';
+      sec-mem-desc-line = '40';
+      sec-mem-briefdesc =    <<_EnD_oF_dEf_TeXt_
+Initialize and set up signal handlers for the program.
+_EnD_oF_dEf_TeXt_;
+      sec-mem-documentation = <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+      sec-mem-referenceto = {
+        sec-mem-ref-id = 'signalHandler_8cpp_1a0899d0c83b42582e862d2f4879e6a2e7';
+        sec-mem-ref-line = '22';
+        sec-mem-ref-name = 'handleSignal';
+    };
+      sec-mem-referencedby = {
+        sec-mem-ref-id = 'periodicFetcher_8cpp_1a97424bbb533281b98e837ea0a9a0fdc7';
+        sec-mem-ref-line = '5';
+        sec-mem-ref-name = 'PeriodicFetcher::PeriodicFetcher';
+    };
+    }; /* sec-member */
+    sec-member = {
+      sec-mem-kind = 'function';
+      sec-mem-id   = 'classSignalHandler_1a8030ca5796b5a5b4b0f54c3ff9405e84';
+      sec-mem-virt = normal;
+      sec-mem-prot = public;
+      sec-mem-type = <<_EnD_oF_dEf_TeXt_
+bool
+_EnD_oF_dEf_TeXt_;
+      sec-mem-name = 'isShutdownRequested';
+      sec-mem-desc-file = '/home/antony_c/autre/buildroot-2023.08/linux_emb/sortirDansParis/include/service/signalHandler.h';
+      sec-mem-desc-line = '48';
+      sec-mem-briefdesc =    <<_EnD_oF_dEf_TeXt_
+Determine if a shutdown signal has been received.
+_EnD_oF_dEf_TeXt_;
+      sec-mem-documentation = <<_EnD_oF_dEf_TeXt_
+@return true if a shutdown signal is detected.
+@return false otherwise.
+_EnD_oF_dEf_TeXt_;
+      sec-mem-referenceto = {
+        sec-mem-ref-id = 'signalHandler_8h_1a341bb6348f9e951f87757bb9685b9734';
+        sec-mem-ref-line = '79';
+        sec-mem-ref-name = 'shutdownRequested';
+    };
+    }; /* sec-member */
+  }; /* cp-section */
+  cp-section = {
+    sec-kind = 'public-static-func';
+    sec-member = {
+      sec-mem-kind = 'function';
+      sec-mem-id   = 'classSignalHandler_1a15631110fc9c8fee4c1b2bf3bced2de3';
+      sec-mem-virt = normal;
+      sec-mem-prot = public;
+      sec-mem-type = <<_EnD_oF_dEf_TeXt_
+static SignalHandler &
+_EnD_oF_dEf_TeXt_;
+      sec-mem-name = 'getInstance';
+      sec-mem-desc-file = '/home/antony_c/autre/buildroot-2023.08/linux_emb/sortirDansParis/include/service/signalHandler.h';
+      sec-mem-desc-line = '35';
+      sec-mem-briefdesc =    <<_EnD_oF_dEf_TeXt_
+Retrieve the singleton instance of SignalHandler.
+_EnD_oF_dEf_TeXt_;
+      sec-mem-documentation = <<_EnD_oF_dEf_TeXt_
+@return SignalHandler& Singleton instance of the SignalHandler.
+_EnD_oF_dEf_TeXt_;
+      sec-mem-referencedby = {
+        sec-mem-ref-id = 'periodicFetcher_8cpp_1a97424bbb533281b98e837ea0a9a0fdc7';
+        sec-mem-ref-line = '5';
+        sec-mem-ref-name = 'PeriodicFetcher::PeriodicFetcher';
+    };
+      sec-mem-referencedby = {
+        sec-mem-ref-id = 'periodicFetcher_8cpp_1a84f9a218ccb184feb1a8027b2ac9ac44';
+        sec-mem-ref-line = '10';
+        sec-mem-ref-name = 'PeriodicFetcher::start';
+    };
+    }; /* sec-member */
+  }; /* cp-section */
+  cp-section = {
+    sec-kind = 'private-func';
+    sec-member = {
+      sec-mem-kind = 'function';
+      sec-mem-id   = 'classSignalHandler_1a3149ab1b5e1c8940d11b182f8059d916';
+      sec-mem-virt = normal;
+      sec-mem-prot = private;
+      sec-mem-type = <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+      sec-mem-name = 'SignalHandler';
+      sec-mem-desc-file = '/home/antony_c/autre/buildroot-2023.08/linux_emb/sortirDansParis/include/service/signalHandler.h';
+      sec-mem-desc-line = '54';
+      sec-mem-briefdesc =    <<_EnD_oF_dEf_TeXt_
+Private constructor to ensure the singleton pattern.
+_EnD_oF_dEf_TeXt_;
+      sec-mem-documentation = <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+    }; /* sec-member */
+    sec-member = {
+      sec-mem-kind = 'function';
+      sec-mem-id   = 'classSignalHandler_1addc8b5b0b969eb405376a77a369de007';
+      sec-mem-virt = normal;
+      sec-mem-prot = private;
+      sec-mem-type = <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+      sec-mem-name = '~SignalHandler';
+      sec-mem-desc-file = '/home/antony_c/autre/buildroot-2023.08/linux_emb/sortirDansParis/include/service/signalHandler.h';
+      sec-mem-desc-line = '59';
+      sec-mem-briefdesc =    <<_EnD_oF_dEf_TeXt_
+Private destructor to prevent external deletion.
+_EnD_oF_dEf_TeXt_;
+      sec-mem-documentation = <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+    }; /* sec-member */
+    sec-member = {
+      sec-mem-kind = 'function';
+      sec-mem-id   = 'classSignalHandler_1aa974b64751e65547b746c5fbfa4877c0';
+      sec-mem-virt = normal;
+      sec-mem-prot = private;
+      sec-mem-type = <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+      sec-mem-name = 'SignalHandler';
+      sec-mem-param = {
+        sec-mem-param-type = <<_EnD_oF_dEf_TeXt_
+const SignalHandler &
+_EnD_oF_dEf_TeXt_;
+      }; /*        sec-mem-param--param */
+      sec-mem-desc-file = '/home/antony_c/autre/buildroot-2023.08/linux_emb/sortirDansParis/include/service/signalHandler.h';
+      sec-mem-desc-line = '62';
+      sec-mem-briefdesc =    <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+      sec-mem-documentation = <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+    }; /* sec-member */
+    sec-member = {
+      sec-mem-kind = 'function';
+      sec-mem-id   = 'classSignalHandler_1a4b822693a1aefcd12bb830b54ec3b988';
+      sec-mem-virt = normal;
+      sec-mem-prot = private;
+      sec-mem-type = <<_EnD_oF_dEf_TeXt_
+SignalHandler &
+_EnD_oF_dEf_TeXt_;
+      sec-mem-name = 'operator=';
+      sec-mem-param = {
+        sec-mem-param-type = <<_EnD_oF_dEf_TeXt_
+const SignalHandler &
+_EnD_oF_dEf_TeXt_;
+      }; /*        sec-mem-param--param */
+      sec-mem-desc-file = '/home/antony_c/autre/buildroot-2023.08/linux_emb/sortirDansParis/include/service/signalHandler.h';
+      sec-mem-desc-line = '63';
+      sec-mem-briefdesc =    <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+      sec-mem-documentation = <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+    }; /* sec-member */
+  }; /* cp-section */
+  cp-section = {
+    sec-kind = 'private-static-func';
+    sec-member = {
+      sec-mem-kind = 'function';
+      sec-mem-id   = 'classSignalHandler_1a0899d0c83b42582e862d2f4879e6a2e7';
+      sec-mem-virt = normal;
+      sec-mem-prot = private;
+      sec-mem-type = <<_EnD_oF_dEf_TeXt_
+static void
+_EnD_oF_dEf_TeXt_;
+      sec-mem-name = 'handleSignal';
+      sec-mem-param = {
+        sec-mem-param-type = <<_EnD_oF_dEf_TeXt_
+int
+_EnD_oF_dEf_TeXt_;
+        sec-mem-param-declname = 'signum';
+      }; /*        sec-mem-param--param */
+      sec-mem-desc-file = '/home/antony_c/autre/buildroot-2023.08/linux_emb/sortirDansParis/include/service/signalHandler.h';
+      sec-mem-desc-line = '74';
+      sec-mem-briefdesc =    <<_EnD_oF_dEf_TeXt_
+Internal handler for system signals.
+_EnD_oF_dEf_TeXt_;
+      sec-mem-documentation = <<_EnD_oF_dEf_TeXt_
+This function is invoked when specific signals (e.g., SIGINT) are received by 
+the program. Its primary role is to set the shutdown flag, facilitating a 
+graceful program termination.
+
+@param signum The number of the received signal.
+_EnD_oF_dEf_TeXt_;
+      sec-mem-referenceto = {
+        sec-mem-ref-id = 'signalHandler_8h_1a341bb6348f9e951f87757bb9685b9734';
+        sec-mem-ref-line = '79';
+        sec-mem-ref-name = 'shutdownRequested';
+    };
+      sec-mem-referencedby = {
+        sec-mem-ref-id = 'signalHandler_8cpp_1a90eff6c9610cdcd77a1706491f2ce28a';
+        sec-mem-ref-line = '14';
+        sec-mem-ref-name = 'setupSignalHandlers';
+    };
+    }; /* sec-member */
+  }; /* cp-section */
+  cp-section = {
+    sec-kind = 'private-static-attrib';
+    sec-member = {
+      sec-mem-kind = 'variable';
+      sec-mem-id   = 'classSignalHandler_1a341bb6348f9e951f87757bb9685b9734';
+      sec-mem-virt = normal;
+      sec-mem-prot = private;
+      sec-mem-type = <<_EnD_oF_dEf_TeXt_
+static std::atomic< bool >
+_EnD_oF_dEf_TeXt_;
+      sec-mem-name = 'shutdownRequested';
+      sec-mem-desc-file = '/home/antony_c/autre/buildroot-2023.08/linux_emb/sortirDansParis/include/service/signalHandler.h';
+      sec-mem-desc-line = '79';
+      sec-mem-briefdesc =    <<_EnD_oF_dEf_TeXt_
+Atomic flag to track if a shutdown signal has been received.
+_EnD_oF_dEf_TeXt_;
+      sec-mem-documentation = <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+      sec-mem-referencedby = {
+        sec-mem-ref-id = 'signalHandler_8cpp_1a0899d0c83b42582e862d2f4879e6a2e7';
+        sec-mem-ref-line = '22';
+        sec-mem-ref-name = 'handleSignal';
+    };
+      sec-mem-referencedby = {
+        sec-mem-ref-id = 'signalHandler_8cpp_1a8030ca5796b5a5b4b0f54c3ff9405e84';
+        sec-mem-ref-line = '18';
+        sec-mem-ref-name = 'isShutdownRequested';
+    };
+    }; /* sec-member */
+  }; /* cp-section */
+  cp-filename  = '/home/antony_c/autre/buildroot-2023.08/linux_emb/sortirDansParis/include/service/signalHandler.h';
+  cp-fileline  = '28';
+  cp-briefdesc = <<_EnD_oF_dEf_TeXt_
+Singleton-based handler for system signals.
+_EnD_oF_dEf_TeXt_;
+  cp-documentation = <<_EnD_oF_dEf_TeXt_
+The SignalHandler class provides methods to set up handlers for system signals,
+particularly for enabling graceful shutdown mechanisms. Being designed as a 
+singleton ensures that only one instance handles all signals in a consistent manner.
+_EnD_oF_dEf_TeXt_;
+}; /* class */
+file = {
+  file-id   = 'apiHandler_8h';
+  file-name = 'apiHandler.h';
+  file-full-name  = '/home/antony_c/autre/buildroot-2023.08/linux_emb/sortirDansParis/include/connectApi/apiHandler.h';
+  file-first-line = '1';
+  file-briefdesc  = <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+  file-documentation = <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+}; /* file */
+file = {
+  file-id   = 'concreteObserver_8h';
+  file-name = 'concreteObserver.h';
+  file-full-name  = '/home/antony_c/autre/buildroot-2023.08/linux_emb/sortirDansParis/include/connectApi/concreteObserver.h';
+  file-first-line = '1';
+  file-briefdesc  = <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+  file-documentation = <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+}; /* file */
+file = {
+  file-id   = 'observable_8h';
+  file-name = 'observable.h';
+  file-full-name  = '/home/antony_c/autre/buildroot-2023.08/linux_emb/sortirDansParis/include/connectApi/observable.h';
+  file-first-line = '1';
+  file-briefdesc  = <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+  file-documentation = <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+}; /* file */
+file = {
+  file-id   = 'observer_8h';
+  file-name = 'observer.h';
+  file-full-name  = '/home/antony_c/autre/buildroot-2023.08/linux_emb/sortirDansParis/include/connectApi/observer.h';
+  file-first-line = '1';
+  file-briefdesc  = <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+  file-documentation = <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+}; /* file */
+file = {
+  file-id   = 'fileHelper_8h';
+  file-name = 'fileHelper.h';
+  file-full-name  = '/home/antony_c/autre/buildroot-2023.08/linux_emb/sortirDansParis/include/fileManagement/fileHelper.h';
+  file-first-line = '1';
+  file-briefdesc  = <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+  file-documentation = <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+}; /* file */
+file = {
+  file-id   = 'BarPlotGenerator_8h';
+  file-name = 'BarPlotGenerator.h';
+    define = {
+    define-member = {
+      define-mem-kind = 'define';
+      define-mem-id   = 'BarPlotGenerator_8h_1af326d9b4cced6fd44a9f9567dc666014';
+      define-mem-virt = normal;
+      define-mem-prot = public;
+      define-mem-name = 'FONT_PATH';
+      define-mem-initializer = <<_EnD_oF_dEf_TeXt_
+"/usr/share/fonts/truetype/dejavu/DejaVuSans-Bold.ttf"
+_EnD_oF_dEf_TeXt_;
+      define-mem-desc-file = '/home/antony_c/autre/buildroot-2023.08/linux_emb/sortirDansParis/include/gdGeneration/BarPlotGenerator.h';
+      define-mem-desc-line = '13';
+      define-mem-briefdesc =    <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+      define-mem-documentation = <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+    }; /* define-member */
+    define-member = {
+      define-mem-kind = 'define';
+      define-mem-id   = 'BarPlotGenerator_8h_1a3d277f5a5dec260aa85c464f96800b9e';
+      define-mem-virt = normal;
+      define-mem-prot = public;
+      define-mem-name = 'SIZE_TITLE';
+      define-mem-initializer = <<_EnD_oF_dEf_TeXt_
+64
+_EnD_oF_dEf_TeXt_;
+      define-mem-desc-file = '/home/antony_c/autre/buildroot-2023.08/linux_emb/sortirDansParis/include/gdGeneration/BarPlotGenerator.h';
+      define-mem-desc-line = '14';
+      define-mem-briefdesc =    <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+      define-mem-documentation = <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+    }; /* define-member */
+    define-member = {
+      define-mem-kind = 'define';
+      define-mem-id   = 'BarPlotGenerator_8h_1a241aeeb764887ae5e3de58b98f04b16d';
+      define-mem-virt = normal;
+      define-mem-prot = public;
+      define-mem-name = 'WIDTH';
+      define-mem-initializer = <<_EnD_oF_dEf_TeXt_
+4000
+_EnD_oF_dEf_TeXt_;
+      define-mem-desc-file = '/home/antony_c/autre/buildroot-2023.08/linux_emb/sortirDansParis/include/gdGeneration/BarPlotGenerator.h';
+      define-mem-desc-line = '15';
+      define-mem-briefdesc =    <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+      define-mem-documentation = <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+    }; /* define-member */
+    define-member = {
+      define-mem-kind = 'define';
+      define-mem-id   = 'BarPlotGenerator_8h_1aed89bd71aee8be823e8a20ec4e093c1e';
+      define-mem-virt = normal;
+      define-mem-prot = public;
+      define-mem-name = 'HEIGHT';
+      define-mem-initializer = <<_EnD_oF_dEf_TeXt_
+3000
+_EnD_oF_dEf_TeXt_;
+      define-mem-desc-file = '/home/antony_c/autre/buildroot-2023.08/linux_emb/sortirDansParis/include/gdGeneration/BarPlotGenerator.h';
+      define-mem-desc-line = '16';
+      define-mem-briefdesc =    <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+      define-mem-documentation = <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+    }; /* define-member */
+    };
+  file-full-name  = '/home/antony_c/autre/buildroot-2023.08/linux_emb/sortirDansParis/include/gdGeneration/BarPlotGenerator.h';
+  file-first-line = '1';
+  file-briefdesc  = <<_EnD_oF_dEf_TeXt_
+Header for the BarPlotGenerator class that manages bar plot creation.
+_EnD_oF_dEf_TeXt_;
+  file-documentation = <<_EnD_oF_dEf_TeXt_
+@author Antony Coco (antony.coco.pro@gmail.com)
+@version 0.1
+@date 2023-09-22
+@copyright Copyright (c) 2023
+_EnD_oF_dEf_TeXt_;
+}; /* file */
+file = {
+  file-id   = 'GraphicsUtils_8h';
+  file-name = 'GraphicsUtils.h';
+    typedef = {
+    typedef-member = {
+      typedef-mem-kind = 'typedef';
+      typedef-mem-id   = 'GraphicsUtils_8h_1ab33e4c738cf60cbc3a0fc112a1e403cd';
+      typedef-mem-virt = normal;
+      typedef-mem-prot = public;
+      typedef-mem-type = <<_EnD_oF_dEf_TeXt_
+struct Color
+_EnD_oF_dEf_TeXt_;
+      typedef-mem-name = 'Color';
+      typedef-mem-desc-file = '/home/antony_c/autre/buildroot-2023.08/linux_emb/sortirDansParis/include/gdGeneration/GraphicsUtils.h';
+      typedef-mem-desc-line = '28';
+      typedef-mem-briefdesc =    <<_EnD_oF_dEf_TeXt_
+Structure to represent a color in the RGB color space.
+_EnD_oF_dEf_TeXt_;
+      typedef-mem-documentation = <<_EnD_oF_dEf_TeXt_
+This structure is used to define a color using its red (r), green (g), and blue (b) components.
+It can be used to represent a specific color for various graphical elements.
+_EnD_oF_dEf_TeXt_;
+    }; /* typedef-member */
+    };
+  file-full-name  = '/home/antony_c/autre/buildroot-2023.08/linux_emb/sortirDansParis/include/gdGeneration/GraphicsUtils.h';
+  file-first-line = '1';
+  file-briefdesc  = <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+  file-documentation = <<_EnD_oF_dEf_TeXt_
+@author Antony Coco (antony.coco.pro@gmail.com)
+@version 0.1
+@date 2023-09-22
+
+@copyright Copyright (c) 2023
+_EnD_oF_dEf_TeXt_;
+}; /* file */
+file = {
+  file-id   = 'PieChartGenerator_8h';
+  file-name = 'PieChartGenerator.h';
+    define = {
+    define-member = {
+      define-mem-kind = 'define';
+      define-mem-id   = 'PieChartGenerator_8h_1af326d9b4cced6fd44a9f9567dc666014';
+      define-mem-virt = normal;
+      define-mem-prot = public;
+      define-mem-name = 'FONT_PATH';
+      define-mem-initializer = <<_EnD_oF_dEf_TeXt_
+"/usr/share/fonts/truetype/dejavu/DejaVuSans-Bold.ttf"
+_EnD_oF_dEf_TeXt_;
+      define-mem-desc-file = '/home/antony_c/autre/buildroot-2023.08/linux_emb/sortirDansParis/include/gdGeneration/PieChartGenerator.h';
+      define-mem-desc-line = '14';
+      define-mem-briefdesc =    <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+      define-mem-documentation = <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+    }; /* define-member */
+    define-member = {
+      define-mem-kind = 'define';
+      define-mem-id   = 'PieChartGenerator_8h_1a3d277f5a5dec260aa85c464f96800b9e';
+      define-mem-virt = normal;
+      define-mem-prot = public;
+      define-mem-name = 'SIZE_TITLE';
+      define-mem-initializer = <<_EnD_oF_dEf_TeXt_
+64
+_EnD_oF_dEf_TeXt_;
+      define-mem-desc-file = '/home/antony_c/autre/buildroot-2023.08/linux_emb/sortirDansParis/include/gdGeneration/PieChartGenerator.h';
+      define-mem-desc-line = '15';
+      define-mem-briefdesc =    <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+      define-mem-documentation = <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+    }; /* define-member */
+    define-member = {
+      define-mem-kind = 'define';
+      define-mem-id   = 'PieChartGenerator_8h_1a241aeeb764887ae5e3de58b98f04b16d';
+      define-mem-virt = normal;
+      define-mem-prot = public;
+      define-mem-name = 'WIDTH';
+      define-mem-initializer = <<_EnD_oF_dEf_TeXt_
+4000
+_EnD_oF_dEf_TeXt_;
+      define-mem-desc-file = '/home/antony_c/autre/buildroot-2023.08/linux_emb/sortirDansParis/include/gdGeneration/PieChartGenerator.h';
+      define-mem-desc-line = '16';
+      define-mem-briefdesc =    <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+      define-mem-documentation = <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+    }; /* define-member */
+    define-member = {
+      define-mem-kind = 'define';
+      define-mem-id   = 'PieChartGenerator_8h_1aed89bd71aee8be823e8a20ec4e093c1e';
+      define-mem-virt = normal;
+      define-mem-prot = public;
+      define-mem-name = 'HEIGHT';
+      define-mem-initializer = <<_EnD_oF_dEf_TeXt_
+3000
+_EnD_oF_dEf_TeXt_;
+      define-mem-desc-file = '/home/antony_c/autre/buildroot-2023.08/linux_emb/sortirDansParis/include/gdGeneration/PieChartGenerator.h';
+      define-mem-desc-line = '17';
+      define-mem-briefdesc =    <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+      define-mem-documentation = <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+    }; /* define-member */
+    };
+    typedef = {
+    typedef-member = {
+      typedef-mem-kind = 'typedef';
+      typedef-mem-id   = 'PieChartGenerator_8h_1afeb3dab77a1ef161adb7da9667c16637';
+      typedef-mem-virt = normal;
+      typedef-mem-prot = public;
+      typedef-mem-type = <<_EnD_oF_dEf_TeXt_
+struct PieChartSegment
+_EnD_oF_dEf_TeXt_;
+      typedef-mem-name = 'PieChartSegment';
+      typedef-mem-desc-file = '/home/antony_c/autre/buildroot-2023.08/linux_emb/sortirDansParis/include/gdGeneration/PieChartGenerator.h';
+      typedef-mem-desc-line = '44';
+      typedef-mem-briefdesc =    <<_EnD_oF_dEf_TeXt_
+Structure to represent a segment in a pie chart.
+_EnD_oF_dEf_TeXt_;
+      typedef-mem-documentation = <<_EnD_oF_dEf_TeXt_
+This structure is used to define a segment of a pie chart, including
+its percentage representation, label, and color.
+_EnD_oF_dEf_TeXt_;
+    }; /* typedef-member */
+    };
+  file-full-name  = '/home/antony_c/autre/buildroot-2023.08/linux_emb/sortirDansParis/include/gdGeneration/PieChartGenerator.h';
+  file-first-line = '1';
+  file-briefdesc  = <<_EnD_oF_dEf_TeXt_
+Provides functionality to generate pie charts using the GD library.
+_EnD_oF_dEf_TeXt_;
+  file-documentation = <<_EnD_oF_dEf_TeXt_
+@author Antony Coco (antony.coco.pro@gmail.com)
+@version 0.1
+@date 2023-09-22
+@copyright Copyright (c) 2023
+_EnD_oF_dEf_TeXt_;
+}; /* file */
+file = {
+  file-id   = 'utils_8h';
+  file-name = 'utils.h';
+    define = {
+    define-member = {
+      define-mem-kind = 'define';
+      define-mem-id   = 'utils_8h_1a3acffbd305ee72dcd4593c0d8af64a4f';
+      define-mem-virt = normal;
+      define-mem-prot = public;
+      define-mem-name = 'MIN';
+      define-mem-param  = {
+        define-mem-def-name = 'a';
+      }; /*        define-mem-def--param */
+      define-mem-param  = {
+        define-mem-def-name = 'b';
+      }; /*        define-mem-def--param */
+      define-mem-initializer = <<_EnD_oF_dEf_TeXt_
+((a) < (b) ? (a) : (b))
+_EnD_oF_dEf_TeXt_;
+      define-mem-desc-file = '/home/antony_c/autre/buildroot-2023.08/linux_emb/sortirDansParis/include/gdGeneration/utils.h';
+      define-mem-desc-line = '23';
+      define-mem-briefdesc =    <<_EnD_oF_dEf_TeXt_
+Macro to determine the minimum of two values.
+_EnD_oF_dEf_TeXt_;
+      define-mem-documentation = <<_EnD_oF_dEf_TeXt_
+@param a First value.
+@param b Second value.
+@return The lesser value between a and b.
+_EnD_oF_dEf_TeXt_;
+    }; /* define-member */
+    };
+  file-full-name  = '/home/antony_c/autre/buildroot-2023.08/linux_emb/sortirDansParis/include/gdGeneration/utils.h';
+  file-first-line = '1';
+  file-briefdesc  = <<_EnD_oF_dEf_TeXt_
+Provides utility macros and definitions.
+_EnD_oF_dEf_TeXt_;
+  file-documentation = <<_EnD_oF_dEf_TeXt_
+@author Antony Coco (antony.coco.pro@gmail.com)
+@version 0.1
+@date 2023-09-22
+@copyright Copyright (c) 2023
+
+This header defines utility macros and functions that can be reused 
+across different parts of the project.
+_EnD_oF_dEf_TeXt_;
+}; /* file */
+file = {
+  file-id   = 'fetchIntervalTimeUnit_8h';
+  file-name = 'fetchIntervalTimeUnit.h';
+    enum = {
+    enum-member = {
+      enum-mem-kind = 'enum';
+      enum-mem-id   = 'namespaceFetchIntervalTimeUnit_1a258941b40a5a04eaa12b02e927572d24';
+      enum-mem-virt = normal;
+      enum-mem-prot = public;
+      enum-mem-name = 'fitu';
+      enum-mem-enum = { enum-name = SEC; };
+      enum-mem-enum = { enum-name = MIN; };
+      enum-mem-enum = { enum-name = HR; };
+      enum-mem-enum = { enum-name = UNKNOWN; };
+      enum-mem-desc-file = '/home/antony_c/autre/buildroot-2023.08/linux_emb/sortirDansParis/include/service/fetchIntervalTimeUnit.h';
+      enum-mem-desc-line = '22';
+      enum-mem-briefdesc =    <<_EnD_oF_dEf_TeXt_
+Enumeration to represent different time interval units.
+_EnD_oF_dEf_TeXt_;
+      enum-mem-documentation = <<_EnD_oF_dEf_TeXt_
+This enumeration provides different units of time that can be used
+throughout the application to denote intervals for fetching or any
+other time-related functionality.
+_EnD_oF_dEf_TeXt_;
+    }; /* enum-member */
+    };
+  file-full-name  = '/home/antony_c/autre/buildroot-2023.08/linux_emb/sortirDansParis/include/service/fetchIntervalTimeUnit.h';
+  file-first-line = '1';
+  file-briefdesc  = <<_EnD_oF_dEf_TeXt_
+Provides utility macros and definitions related to time interval units.
+_EnD_oF_dEf_TeXt_;
+  file-documentation = <<_EnD_oF_dEf_TeXt_
+@author Antony Coco (antony.coco.pro@gmail.com)
+@version 0.1
+@date 2023-09-22
+@copyright Copyright (c) 2023
+_EnD_oF_dEf_TeXt_;
+}; /* file */
+file = {
+  file-id   = 'periodicFetcher_8h';
+  file-name = 'periodicFetcher.h';
+  file-full-name  = '/home/antony_c/autre/buildroot-2023.08/linux_emb/sortirDansParis/include/service/periodicFetcher.h';
+  file-first-line = '1';
+  file-briefdesc  = <<_EnD_oF_dEf_TeXt_
+Provides the PeriodicFetcher class for periodic data fetching and processing.
+_EnD_oF_dEf_TeXt_;
+  file-documentation = <<_EnD_oF_dEf_TeXt_
+@author Antony Coco (antony.coco.pro@gmail.com)
+\ilinebr\ilinebr The PeriodicFetcher class is responsible for periodic retrieval of data,
+         processing the data, and updating any associated Observables. Furthermore,
+         this class leverages the PieChartGenerator for visualization needs.
+@version 0.1
+@date 2023-09-22
+@copyright Copyright (c) 2023
+_EnD_oF_dEf_TeXt_;
+}; /* file */
+file = {
+  file-id   = 'signalHandler_8h';
+  file-name = 'signalHandler.h';
+  file-full-name  = '/home/antony_c/autre/buildroot-2023.08/linux_emb/sortirDansParis/include/service/signalHandler.h';
+  file-first-line = '1';
+  file-briefdesc  = <<_EnD_oF_dEf_TeXt_
+Provides a singleton-based handler for system signals.
+_EnD_oF_dEf_TeXt_;
+  file-documentation = <<_EnD_oF_dEf_TeXt_
+@author Antony Coco (antony.coco.pro@gmail.com)
+\ilinebr\ilinebr This header defines the SignalHandler class responsible for managing
+         system signals (like SIGINT) to ensure graceful shutdown of the program.
+@version 0.1
+@date 2023-09-22
+@copyright Copyright (c) 2023
+_EnD_oF_dEf_TeXt_;
+}; /* file */
+file = {
+  file-id   = 'dataStorage_8h';
+  file-name = 'dataStorage.h';
+  file-full-name  = '/home/antony_c/autre/buildroot-2023.08/linux_emb/sortirDansParis/include/storage/dataStorage.h';
+  file-first-line = '1';
+  file-briefdesc  = <<_EnD_oF_dEf_TeXt_
+Provides the DataStorage class for handling data persistence in JSON format.
+_EnD_oF_dEf_TeXt_;
+  file-documentation = <<_EnD_oF_dEf_TeXt_
+@author Antony Coco (antony.coco.pro@gmail.com)
+\ilinebr\ilinebr This header defines the DataStorage class which offers methods for saving and
+reading JSON data from files. It utilizes the nlohmann::json library for JSON processing
+and the FileHelper class for file management.
+@version 0.1
+@date 2023-09-22
+@copyright Copyright (c) 2023
+_EnD_oF_dEf_TeXt_;
+}; /* file */
+file = {
+  file-id   = 'apiHandler_8cpp';
+  file-name = 'apiHandler.cpp';
+    func = {
+    func-member = {
+      func-mem-kind = 'function';
+      func-mem-id   = 'apiHandler_8cpp_1ab54064eb3c1650bc846b7731da4b07b1';
+      func-mem-virt = normal;
+      func-mem-prot = public;
+      func-mem-type = <<_EnD_oF_dEf_TeXt_
+static size_t
+_EnD_oF_dEf_TeXt_;
+      func-mem-name = 'WriteCallback';
+      func-mem-param = {
+        func-mem-param-type = <<_EnD_oF_dEf_TeXt_
+void *
+_EnD_oF_dEf_TeXt_;
+        func-mem-param-declname = 'contents';
+      }; /*        func-mem-param--param */
+      func-mem-param = {
+        func-mem-param-type = <<_EnD_oF_dEf_TeXt_
+size_t
+_EnD_oF_dEf_TeXt_;
+        func-mem-param-declname = 'size';
+      }; /*        func-mem-param--param */
+      func-mem-param = {
+        func-mem-param-type = <<_EnD_oF_dEf_TeXt_
+size_t
+_EnD_oF_dEf_TeXt_;
+        func-mem-param-declname = 'nmemb';
+      }; /*        func-mem-param--param */
+      func-mem-param = {
+        func-mem-param-type = <<_EnD_oF_dEf_TeXt_
+void *
+_EnD_oF_dEf_TeXt_;
+        func-mem-param-declname = 'userp';
+      }; /*        func-mem-param--param */
+      func-mem-desc-file = '/home/antony_c/autre/buildroot-2023.08/linux_emb/sortirDansParis/src/connectApi/apiHandler.cpp';
+      func-mem-desc-line = '4';
+      func-mem-briefdesc =    <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+      func-mem-documentation = <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+    }; /* func-member */
+    };
+  file-full-name  = '/home/antony_c/autre/buildroot-2023.08/linux_emb/sortirDansParis/src/connectApi/apiHandler.cpp';
+  file-first-line = '1';
+  file-briefdesc  = <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+  file-documentation = <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+}; /* file */
+file = {
+  file-id   = 'concreteObserver_8cpp';
+  file-name = 'concreteObserver.cpp';
+  file-full-name  = '/home/antony_c/autre/buildroot-2023.08/linux_emb/sortirDansParis/src/connectApi/concreteObserver.cpp';
+  file-first-line = '1';
+  file-briefdesc  = <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+  file-documentation = <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+}; /* file */
+file = {
+  file-id   = 'observable_8cpp';
+  file-name = 'observable.cpp';
+  file-full-name  = '/home/antony_c/autre/buildroot-2023.08/linux_emb/sortirDansParis/src/connectApi/observable.cpp';
+  file-first-line = '1';
+  file-briefdesc  = <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+  file-documentation = <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+}; /* file */
+file = {
+  file-id   = 'fileHelper_8cpp';
+  file-name = 'fileHelper.cpp';
+  file-full-name  = '/home/antony_c/autre/buildroot-2023.08/linux_emb/sortirDansParis/src/fileManagement/fileHelper.cpp';
+  file-first-line = '1';
+  file-briefdesc  = <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+  file-documentation = <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+}; /* file */
+file = {
+  file-id   = 'BarPlotGenerator_8cpp';
+  file-name = 'BarPlotGenerator.cpp';
+  file-full-name  = '/home/antony_c/autre/buildroot-2023.08/linux_emb/sortirDansParis/src/gdGeneration/BarPlotGenerator.cpp';
+  file-first-line = '1';
+  file-briefdesc  = <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+  file-documentation = <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+}; /* file */
+file = {
+  file-id   = 'PieChartGenerator_8cpp';
+  file-name = 'PieChartGenerator.cpp';
+  file-full-name  = '/home/antony_c/autre/buildroot-2023.08/linux_emb/sortirDansParis/src/gdGeneration/PieChartGenerator.cpp';
+  file-first-line = '1';
+  file-briefdesc  = <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+  file-documentation = <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+}; /* file */
+file = {
+  file-id   = 'periodicFetcher_8cpp';
+  file-name = 'periodicFetcher.cpp';
+  file-full-name  = '/home/antony_c/autre/buildroot-2023.08/linux_emb/sortirDansParis/src/service/periodicFetcher.cpp';
+  file-first-line = '1';
+  file-briefdesc  = <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+  file-documentation = <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+}; /* file */
+file = {
+  file-id   = 'signalHandler_8cpp';
+  file-name = 'signalHandler.cpp';
+  file-full-name  = '/home/antony_c/autre/buildroot-2023.08/linux_emb/sortirDansParis/src/service/signalHandler.cpp';
+  file-first-line = '1';
+  file-briefdesc  = <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+  file-documentation = <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+}; /* file */
+file = {
+  file-id   = 'dataStorage_8cpp';
+  file-name = 'dataStorage.cpp';
+  file-full-name  = '/home/antony_c/autre/buildroot-2023.08/linux_emb/sortirDansParis/src/storage/dataStorage.cpp';
+  file-first-line = '1';
+  file-briefdesc  = <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+  file-documentation = <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+}; /* file */
+  namespace = {
+    ns-id   = 'namespaceFetchIntervalTimeUnit';
+    ns-name = 'FetchIntervalTimeUnit';
+    enum = {
+    enum-member = {
+      enum-mem-kind = 'enum';
+      enum-mem-id   = 'namespaceFetchIntervalTimeUnit_1a258941b40a5a04eaa12b02e927572d24';
+      enum-mem-virt = normal;
+      enum-mem-prot = public;
+      enum-mem-name = 'fitu';
+      enum-mem-enum = { enum-name = SEC; };
+      enum-mem-enum = { enum-name = MIN; };
+      enum-mem-enum = { enum-name = HR; };
+      enum-mem-enum = { enum-name = UNKNOWN; };
+      enum-mem-desc-file = '/home/antony_c/autre/buildroot-2023.08/linux_emb/sortirDansParis/include/service/fetchIntervalTimeUnit.h';
+      enum-mem-desc-line = '22';
+      enum-mem-briefdesc =    <<_EnD_oF_dEf_TeXt_
+Enumeration to represent different time interval units.
+_EnD_oF_dEf_TeXt_;
+      enum-mem-documentation = <<_EnD_oF_dEf_TeXt_
+This enumeration provides different units of time that can be used
+throughout the application to denote intervals for fetching or any
+other time-related functionality.
+_EnD_oF_dEf_TeXt_;
+    }; /* enum-member */
+    };
+  ns-filename  = '/home/antony_c/autre/buildroot-2023.08/linux_emb/sortirDansParis/include/service/fetchIntervalTimeUnit.h';
+  ns-fileline  = '13';
+  ns-briefdesc = <<_EnD_oF_dEf_TeXt_
+Contains definitions related to time unit intervals.
+_EnD_oF_dEf_TeXt_;
+  ns-documentation = <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+  };

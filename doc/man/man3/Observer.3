@@ -1,0 +1,74 @@
+.TH "Observer" 3 "Fri Sep 22 2023" "Version v0.1" "API de Paris - Documentation du Gestionnaire" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+Observer \- Interface for the \fBObserver\fP in the \fBObserver\fP design pattern\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <observer\&.h>\fP
+.PP
+Inherited by \fBConcreteObserver\fP\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "virtual void \fBupdate\fP (const std::map< std::string, nlohmann::json > &newEvents)=0"
+.br
+.RI "Updates the \fBObserver\fP with general events\&. "
+.ti -1c
+.RI "virtual void \fBdailyUpdate\fP (const std::map< std::string, nlohmann::json > &newDailyEvents)=0"
+.br
+.RI "Provides the \fBObserver\fP with daily-specific updates\&. "
+.ti -1c
+.RI "virtual void \fBremoveExpiredEvents\fP ()=0"
+.br
+.RI "Commands the \fBObserver\fP to address expired events\&. "
+.in -1c
+.SH "Detailed Description"
+.PP 
+Interface for the \fBObserver\fP in the \fBObserver\fP design pattern\&. 
+
+In the context of the \fBObserver\fP design pattern, this interface establishes the contract that all observers must fulfill\&. The observers are expected to receive updates about new events, daily activities, and the removal of expired events\&. Concrete observer classes should implement this interface to define their reactions to such notifications\&. 
+.PP
+Definition at line \fB28\fP of file \fBobserver\&.h\fP\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "virtual void Observer::dailyUpdate (const std::map< std::string, nlohmann::json > & newDailyEvents)\fC [pure virtual]\fP"
+
+.PP
+Provides the \fBObserver\fP with daily-specific updates\&. Observers receive daily-specific events via this method\&. Concrete observers should handle these events and adapt based on their individual business logic\&.
+.PP
+\fBParameters\fP
+.RS 4
+\fInewDailyEvents\fP A map of daily events characterized by key-value pairs\&. 
+.RE
+.PP
+
+.PP
+Implemented in \fBConcreteObserver\fP\&.
+.SS "virtual void Observer::removeExpiredEvents ()\fC [pure virtual]\fP"
+
+.PP
+Commands the \fBObserver\fP to address expired events\&. Implementing classes should take the necessary actions upon receiving this instruction, such as removing or archiving the expired events\&. 
+.PP
+Implemented in \fBConcreteObserver\fP\&.
+.SS "virtual void Observer::update (const std::map< std::string, nlohmann::json > & newEvents)\fC [pure virtual]\fP"
+
+.PP
+Updates the \fBObserver\fP with general events\&. This method notifies the observer about general events\&. Implementing classes should process and react to these events as per their specific requirements\&.
+.PP
+\fBParameters\fP
+.RS 4
+\fInewEvents\fP A map of the latest events represented as key-value pairs\&. 
+.RE
+.PP
+
+.PP
+Implemented in \fBConcreteObserver\fP\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for API de Paris - Documentation du Gestionnaire from the source code\&.

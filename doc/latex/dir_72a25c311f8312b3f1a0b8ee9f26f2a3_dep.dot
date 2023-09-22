@@ -1,0 +1,15 @@
+digraph "include/connectApi"
+{
+ // LATEX_PDF_SIZE
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  compound=true
+  subgraph clusterdir_d44c64559bbebec7f509842c48db8b23 {
+    graph [ bgcolor="#edf0f7", pencolor="grey25", style="filled,dashed,", label="include", fontname="Helvetica", fontsize="10", URL="dir_d44c64559bbebec7f509842c48db8b23.html"]
+  dir_5c878092e0fc84e9ec68d194cabc16d2 [shape=box, label="storage", style="filled,", fillcolor="#a2b4d6", color="grey25", URL="dir_5c878092e0fc84e9ec68d194cabc16d2.html"];
+  dir_e855dbd974b4eb35dadd9675fa3108cc [shape=box, label="gdGeneration", style="filled,", fillcolor="#a2b4d6", color="grey25", URL="dir_e855dbd974b4eb35dadd9675fa3108cc.html"];
+  dir_72a25c311f8312b3f1a0b8ee9f26f2a3 [shape=box, label="connectApi", style="filled,bold,", fillcolor="#edf0f7", color="grey25", URL="dir_72a25c311f8312b3f1a0b8ee9f26f2a3.html"];
+  }
+  dir_72a25c311f8312b3f1a0b8ee9f26f2a3->dir_5c878092e0fc84e9ec68d194cabc16d2 [headlabel="1", labeldistance=1.5 headhref="dir_000000_000010.html"];
+  dir_72a25c311f8312b3f1a0b8ee9f26f2a3->dir_e855dbd974b4eb35dadd9675fa3108cc [headlabel="1", labeldistance=1.5 headhref="dir_000000_000004.html"];
+}

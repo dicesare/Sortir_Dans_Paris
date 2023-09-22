@@ -1,0 +1,10 @@
+digraph "Observable::notifyDailyObservers"
+{
+ // LATEX_PDF_SIZE
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  rankdir="RL";
+  Node1 [label="Observable::notifyDailyObservers",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip="Sends daily-specific updates to all observers."];
+  Node1 -> Node2 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+  Node2 [label="PeriodicFetcher::start",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classPeriodicFetcher.html#a84f9a218ccb184feb1a8027b2ac9ac44",tooltip="Begin the periodic fetching and processing of data."];
+}

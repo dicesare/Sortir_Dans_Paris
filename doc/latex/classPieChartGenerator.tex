@@ -1,0 +1,298 @@
+\hypertarget{classPieChartGenerator}{}\doxysection{Pie\+Chart\+Generator Class Reference}
+\label{classPieChartGenerator}\index{PieChartGenerator@{PieChartGenerator}}
+
+
+Class responsible for generating pie charts.  
+
+
+
+
+{\ttfamily \#include $<$Pie\+Chart\+Generator.\+h$>$}
+
+
+
+Collaboration diagram for Pie\+Chart\+Generator\+:
+% FIG 0
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classPieChartGenerator_a83ee6fdb562d564d764d48ee3ebe71c7}{Pie\+Chart\+Generator}} ()
+\item 
+\mbox{\hyperlink{classPieChartGenerator_a43cdb09cfde85f6d76d798cdbd0bf448}{$\sim$\+Pie\+Chart\+Generator}} ()
+\item 
+\mbox{\hyperlink{structColor}{Color}} \mbox{\hyperlink{classPieChartGenerator_a11d2d5f8dfc51fcebd7ea1dfce678629}{generate\+\_\+random\+\_\+color}} ()
+\begin{DoxyCompactList}\small\item\em Loads data from the given file. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classPieChartGenerator_a2f367ee64a37d9b971b24090f9842251}{generate\+Pie\+Chart}} (const std\+::map$<$ std\+::string, nlohmann\+::json $>$ \&data\+For\+Pie)
+\begin{DoxyCompactList}\small\item\em Loads data from the given file. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+gd\+Image\+Ptr \mbox{\hyperlink{classPieChartGenerator_aa95dd31c6170513a9d82004d6db6cf15}{create\+\_\+pie\+\_\+chart\+\_\+image}} (\mbox{\hyperlink{structPieChartSegment}{Pie\+Chart\+Segment}} $\ast$segments, int segments\+\_\+count, const char $\ast$title)
+\begin{DoxyCompactList}\small\item\em Creates an image representing the pie chart. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classPieChartGenerator_a5362987c296f3dfee24390ee2881ff2a}{calculate\+\_\+coordinates}} (int x, int y, int radius, int angle, int $\ast$coord\+\_\+x, int $\ast$coord\+\_\+y)
+\begin{DoxyCompactList}\small\item\em Calculates the coordinates for a given angle on the pie chart. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classPieChartGenerator_a7a57c299567e171bc40bbd817e95954e}{draw\+\_\+segment\+\_\+and\+\_\+label}} (gd\+Image\+Ptr img, \mbox{\hyperlink{structPieChartSegment}{Pie\+Chart\+Segment}} $\ast$segments, int length, int x, int y, double start\+\_\+angle, int radius, int black)
+\begin{DoxyCompactList}\small\item\em Draws a segment and its corresponding label on the pie chart image. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classPieChartGenerator_a8ef9b7f0d5bf8aecb441c1bfbaf389f9}{draw\+\_\+title}} (gd\+Image\+Ptr img, const char $\ast$title, int x, int y, int color)
+\begin{DoxyCompactList}\small\item\em Draws the title of the pie chart on the image. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classPieChartGenerator_a2ef1ac6cd4ed58d5402b16daed87b773}{save\+Image}} (gd\+Image\+Ptr img, const std\+::string \&filename)
+\begin{DoxyCompactList}\small\item\em Saves the pie chart image to a file. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classFileHelper}{File\+Helper}} \mbox{\hyperlink{classPieChartGenerator_a1444353e0ccde4f5efdf29735b2209be}{file\+Helper}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Class responsible for generating pie charts. 
+
+This class provides the necessary methods and tools to generate pie charts based on input data. The charts are generated using the GD library. 
+
+Definition at line \mbox{\hyperlink{PieChartGenerator_8h_source_l00052}{52}} of file \mbox{\hyperlink{PieChartGenerator_8h_source}{Pie\+Chart\+Generator.\+h}}.
+
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classPieChartGenerator_a83ee6fdb562d564d764d48ee3ebe71c7}\label{classPieChartGenerator_a83ee6fdb562d564d764d48ee3ebe71c7}} 
+\index{PieChartGenerator@{PieChartGenerator}!PieChartGenerator@{PieChartGenerator}}
+\index{PieChartGenerator@{PieChartGenerator}!PieChartGenerator@{PieChartGenerator}}
+\doxysubsubsection{\texorpdfstring{PieChartGenerator()}{PieChartGenerator()}}
+{\footnotesize\ttfamily Pie\+Chart\+Generator\+::\+Pie\+Chart\+Generator (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{PieChartGenerator_8cpp_source_l00004}{4}} of file \mbox{\hyperlink{PieChartGenerator_8cpp_source}{Pie\+Chart\+Generator.\+cpp}}.
+
+\mbox{\Hypertarget{classPieChartGenerator_a43cdb09cfde85f6d76d798cdbd0bf448}\label{classPieChartGenerator_a43cdb09cfde85f6d76d798cdbd0bf448}} 
+\index{PieChartGenerator@{PieChartGenerator}!````~PieChartGenerator@{$\sim$PieChartGenerator}}
+\index{````~PieChartGenerator@{$\sim$PieChartGenerator}!PieChartGenerator@{PieChartGenerator}}
+\doxysubsubsection{\texorpdfstring{$\sim$PieChartGenerator()}{~PieChartGenerator()}}
+{\footnotesize\ttfamily Pie\+Chart\+Generator\+::$\sim$\+Pie\+Chart\+Generator (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{PieChartGenerator_8cpp_source_l00005}{5}} of file \mbox{\hyperlink{PieChartGenerator_8cpp_source}{Pie\+Chart\+Generator.\+cpp}}.
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classPieChartGenerator_a5362987c296f3dfee24390ee2881ff2a}\label{classPieChartGenerator_a5362987c296f3dfee24390ee2881ff2a}} 
+\index{PieChartGenerator@{PieChartGenerator}!calculate\_coordinates@{calculate\_coordinates}}
+\index{calculate\_coordinates@{calculate\_coordinates}!PieChartGenerator@{PieChartGenerator}}
+\doxysubsubsection{\texorpdfstring{calculate\_coordinates()}{calculate\_coordinates()}}
+{\footnotesize\ttfamily void Pie\+Chart\+Generator\+::calculate\+\_\+coordinates (\begin{DoxyParamCaption}\item[{int}]{x,  }\item[{int}]{y,  }\item[{int}]{radius,  }\item[{int}]{angle,  }\item[{int $\ast$}]{coord\+\_\+x,  }\item[{int $\ast$}]{coord\+\_\+y }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Calculates the coordinates for a given angle on the pie chart. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em x} & The x-\/coordinate of the pie chart\textquotesingle{}s center. \\
+\hline
+{\em y} & The y-\/coordinate of the pie chart\textquotesingle{}s center. \\
+\hline
+{\em radius} & The radius of the pie chart. \\
+\hline
+{\em angle} & The angle at which to calculate the coordinates. \\
+\hline
+{\em coord\+\_\+x} & Pointer to store the calculated x-\/coordinate. \\
+\hline
+{\em coord\+\_\+y} & Pointer to store the calculated y-\/coordinate. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{PieChartGenerator_8cpp_source_l00108}{108}} of file \mbox{\hyperlink{PieChartGenerator_8cpp_source}{Pie\+Chart\+Generator.\+cpp}}.
+
+Here is the caller graph for this function\+:
+% FIG 1
+\mbox{\Hypertarget{classPieChartGenerator_aa95dd31c6170513a9d82004d6db6cf15}\label{classPieChartGenerator_aa95dd31c6170513a9d82004d6db6cf15}} 
+\index{PieChartGenerator@{PieChartGenerator}!create\_pie\_chart\_image@{create\_pie\_chart\_image}}
+\index{create\_pie\_chart\_image@{create\_pie\_chart\_image}!PieChartGenerator@{PieChartGenerator}}
+\doxysubsubsection{\texorpdfstring{create\_pie\_chart\_image()}{create\_pie\_chart\_image()}}
+{\footnotesize\ttfamily gd\+Image\+Ptr Pie\+Chart\+Generator\+::create\+\_\+pie\+\_\+chart\+\_\+image (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structPieChartSegment}{Pie\+Chart\+Segment}} $\ast$}]{segments,  }\item[{int}]{segments\+\_\+count,  }\item[{const char $\ast$}]{title }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Creates an image representing the pie chart. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em segments} & Array of segments to be drawn in the pie chart. \\
+\hline
+{\em segments\+\_\+count} & The number of segments. \\
+\hline
+{\em title} & The title of the pie chart. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+gd\+Image\+Ptr Pointer to the generated image. 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{PieChartGenerator_8cpp_source_l00085}{85}} of file \mbox{\hyperlink{PieChartGenerator_8cpp_source}{Pie\+Chart\+Generator.\+cpp}}.
+
+Here is the call graph for this function\+:
+% FIG 2
+Here is the caller graph for this function\+:
+% FIG 3
+\mbox{\Hypertarget{classPieChartGenerator_a7a57c299567e171bc40bbd817e95954e}\label{classPieChartGenerator_a7a57c299567e171bc40bbd817e95954e}} 
+\index{PieChartGenerator@{PieChartGenerator}!draw\_segment\_and\_label@{draw\_segment\_and\_label}}
+\index{draw\_segment\_and\_label@{draw\_segment\_and\_label}!PieChartGenerator@{PieChartGenerator}}
+\doxysubsubsection{\texorpdfstring{draw\_segment\_and\_label()}{draw\_segment\_and\_label()}}
+{\footnotesize\ttfamily void Pie\+Chart\+Generator\+::draw\+\_\+segment\+\_\+and\+\_\+label (\begin{DoxyParamCaption}\item[{gd\+Image\+Ptr}]{img,  }\item[{\mbox{\hyperlink{structPieChartSegment}{Pie\+Chart\+Segment}} $\ast$}]{segments,  }\item[{int}]{length,  }\item[{int}]{x,  }\item[{int}]{y,  }\item[{double}]{start\+\_\+angle,  }\item[{int}]{radius,  }\item[{int}]{black }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Draws a segment and its corresponding label on the pie chart image. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em img} & The image on which to draw. \\
+\hline
+{\em segments} & The array of segments. \\
+\hline
+{\em length} & The number of segments. \\
+\hline
+{\em x} & The x-\/coordinate of the pie chart\textquotesingle{}s center. \\
+\hline
+{\em y} & The y-\/coordinate of the pie chart\textquotesingle{}s center. \\
+\hline
+{\em start\+\_\+angle} & The starting angle for the segment. \\
+\hline
+{\em radius} & The radius of the pie chart. \\
+\hline
+{\em black} & The color to use for drawing (usually black). \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{PieChartGenerator_8cpp_source_l00114}{114}} of file \mbox{\hyperlink{PieChartGenerator_8cpp_source}{Pie\+Chart\+Generator.\+cpp}}.
+
+Here is the call graph for this function\+:
+% FIG 4
+Here is the caller graph for this function\+:
+% FIG 5
+\mbox{\Hypertarget{classPieChartGenerator_a8ef9b7f0d5bf8aecb441c1bfbaf389f9}\label{classPieChartGenerator_a8ef9b7f0d5bf8aecb441c1bfbaf389f9}} 
+\index{PieChartGenerator@{PieChartGenerator}!draw\_title@{draw\_title}}
+\index{draw\_title@{draw\_title}!PieChartGenerator@{PieChartGenerator}}
+\doxysubsubsection{\texorpdfstring{draw\_title()}{draw\_title()}}
+{\footnotesize\ttfamily void Pie\+Chart\+Generator\+::draw\+\_\+title (\begin{DoxyParamCaption}\item[{gd\+Image\+Ptr}]{img,  }\item[{const char $\ast$}]{title,  }\item[{int}]{x,  }\item[{int}]{y,  }\item[{int}]{color }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Draws the title of the pie chart on the image. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em img} & The image on which to draw. \\
+\hline
+{\em title} & The title to draw. \\
+\hline
+{\em x} & The x-\/coordinate for the title. \\
+\hline
+{\em y} & The y-\/coordinate for the title. \\
+\hline
+{\em color} & The color to use for the title text. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{PieChartGenerator_8cpp_source_l00169}{169}} of file \mbox{\hyperlink{PieChartGenerator_8cpp_source}{Pie\+Chart\+Generator.\+cpp}}.
+
+Here is the caller graph for this function\+:
+% FIG 6
+\mbox{\Hypertarget{classPieChartGenerator_a11d2d5f8dfc51fcebd7ea1dfce678629}\label{classPieChartGenerator_a11d2d5f8dfc51fcebd7ea1dfce678629}} 
+\index{PieChartGenerator@{PieChartGenerator}!generate\_random\_color@{generate\_random\_color}}
+\index{generate\_random\_color@{generate\_random\_color}!PieChartGenerator@{PieChartGenerator}}
+\doxysubsubsection{\texorpdfstring{generate\_random\_color()}{generate\_random\_color()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structColor}{Color}} Pie\+Chart\+Generator\+::generate\+\_\+random\+\_\+color (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Loads data from the given file. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em filename} & The name of the file from which to load the data. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+std\+::map$<$std\+::string, nlohmann\+::json$>$ A map of data items, where each key-\/value pair represents a unique data item identified by the string key and its corresponding JSON value. Generates a random color. 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{PieChartGenerator_8cpp_source_l00008}{8}} of file \mbox{\hyperlink{PieChartGenerator_8cpp_source}{Pie\+Chart\+Generator.\+cpp}}.
+
+Here is the caller graph for this function\+:
+% FIG 7
+\mbox{\Hypertarget{classPieChartGenerator_a2f367ee64a37d9b971b24090f9842251}\label{classPieChartGenerator_a2f367ee64a37d9b971b24090f9842251}} 
+\index{PieChartGenerator@{PieChartGenerator}!generatePieChart@{generatePieChart}}
+\index{generatePieChart@{generatePieChart}!PieChartGenerator@{PieChartGenerator}}
+\doxysubsubsection{\texorpdfstring{generatePieChart()}{generatePieChart()}}
+{\footnotesize\ttfamily void Pie\+Chart\+Generator\+::generate\+Pie\+Chart (\begin{DoxyParamCaption}\item[{const std\+::map$<$ std\+::string, nlohmann\+::json $>$ \&}]{data\+For\+Pie }\end{DoxyParamCaption})}
+
+
+
+Loads data from the given file. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em filename} & The name of the file from which to load the data. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+std\+::map$<$std\+::string, nlohmann\+::json$>$ A map of data items, where each key-\/value pair represents a unique data item identified by the string key and its corresponding JSON value. Generates a pie chart based on the input data. 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{PieChartGenerator_8cpp_source_l00022}{22}} of file \mbox{\hyperlink{PieChartGenerator_8cpp_source}{Pie\+Chart\+Generator.\+cpp}}.
+
+Here is the call graph for this function\+:
+% FIG 8
+Here is the caller graph for this function\+:
+% FIG 9
+\mbox{\Hypertarget{classPieChartGenerator_a2ef1ac6cd4ed58d5402b16daed87b773}\label{classPieChartGenerator_a2ef1ac6cd4ed58d5402b16daed87b773}} 
+\index{PieChartGenerator@{PieChartGenerator}!saveImage@{saveImage}}
+\index{saveImage@{saveImage}!PieChartGenerator@{PieChartGenerator}}
+\doxysubsubsection{\texorpdfstring{saveImage()}{saveImage()}}
+{\footnotesize\ttfamily void Pie\+Chart\+Generator\+::save\+Image (\begin{DoxyParamCaption}\item[{gd\+Image\+Ptr}]{img,  }\item[{const std\+::string \&}]{filename }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Saves the pie chart image to a file. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em img} & The pie chart image. \\
+\hline
+{\em filename} & The name of the file where the image will be saved. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{PieChartGenerator_8cpp_source_l00192}{192}} of file \mbox{\hyperlink{PieChartGenerator_8cpp_source}{Pie\+Chart\+Generator.\+cpp}}.
+
+Here is the caller graph for this function\+:
+% FIG 10
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{classPieChartGenerator_a1444353e0ccde4f5efdf29735b2209be}\label{classPieChartGenerator_a1444353e0ccde4f5efdf29735b2209be}} 
+\index{PieChartGenerator@{PieChartGenerator}!fileHelper@{fileHelper}}
+\index{fileHelper@{fileHelper}!PieChartGenerator@{PieChartGenerator}}
+\doxysubsubsection{\texorpdfstring{fileHelper}{fileHelper}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classFileHelper}{File\+Helper}} Pie\+Chart\+Generator\+::file\+Helper\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \mbox{\hyperlink{PieChartGenerator_8h_source_l00074}{74}} of file \mbox{\hyperlink{PieChartGenerator_8h_source}{Pie\+Chart\+Generator.\+h}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+include/gd\+Generation/\mbox{\hyperlink{PieChartGenerator_8h}{Pie\+Chart\+Generator.\+h}}\item 
+src/gd\+Generation/\mbox{\hyperlink{PieChartGenerator_8cpp}{Pie\+Chart\+Generator.\+cpp}}\end{DoxyCompactItemize}

@@ -1,0 +1,122 @@
+.TH "APIHandler" 3 "Fri Sep 22 2023" "Version v0.1" "API de Paris - Documentation du Gestionnaire" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+APIHandler \- The \fBAPIHandler\fP class is responsible for fetching data from a given API\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <apiHandler\&.h>\fP
+.PP
+Inherits \fBObservable\fP\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBAPIHandler\fP ()"
+.br
+.RI "Default constructor for \fBAPIHandler\fP\&. "
+.ti -1c
+.RI "\fB~APIHandler\fP ()"
+.br
+.RI "Destructor for \fBAPIHandler\fP\&. "
+.ti -1c
+.RI "void \fBfetchData\fP ()"
+.br
+.RI "Fetches data from the API and notifies its observers\&. "
+.ti -1c
+.RI "std::map< std::string, nlohmann::json > \fBfetchTodaysEvents\fP ()"
+.br
+.RI "Fetches today's events from the API\&. "
+.in -1c
+.SS "Private Member Functions"
+
+.in +1c
+.ti -1c
+.RI "std::map< std::string, nlohmann::json > \fBmakeRequest\fP (const std::string &url)"
+.br
+.RI "Makes a request to the provided URL and returns the fetched data\&. "
+.in -1c
+.SS "Private Attributes"
+
+.in +1c
+.ti -1c
+.RI "const std::string \fBbaseUrl\fP = 'https://opendata\&.paris\&.fr/api/explore/v2\&.1/catalog/datasets/que\-faire\-a\-paris\-/records?'"
+.br
+.RI "The base URL for the API\&. "
+.in -1c
+.SS "Additional Inherited Members"
+.SH "Detailed Description"
+.PP 
+The \fBAPIHandler\fP class is responsible for fetching data from a given API\&. 
+
+The class provides methods to make requests to an external API and process the returned data\&. Once the data is fetched, it acts as an \fBObservable\fP, notifying its observers of the new data\&. This class abstracts the details of making API requests and provides a clean interface to obtain data for the application\&. 
+.PP
+Definition at line \fB38\fP of file \fBapiHandler\&.h\fP\&.
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "APIHandler::APIHandler ()"
+
+.PP
+Default constructor for \fBAPIHandler\fP\&. 
+.PP
+Definition at line \fB10\fP of file \fBapiHandler\&.cpp\fP\&.
+.SS "APIHandler::~APIHandler ()"
+
+.PP
+Destructor for \fBAPIHandler\fP\&. 
+.PP
+Definition at line \fB14\fP of file \fBapiHandler\&.cpp\fP\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "void APIHandler::fetchData ()"
+
+.PP
+Fetches data from the API and notifies its observers\&. This method communicates with the base URL of the API, retrieves data, and then notifies all registered observers with this new data\&. 
+.PP
+Definition at line \fB18\fP of file \fBapiHandler\&.cpp\fP\&.
+.SS "std::map< std::string, nlohmann::json > APIHandler::fetchTodaysEvents ()"
+
+.PP
+Fetches today's events from the API\&. 
+.PP
+\fBReturns\fP
+.RS 4
+std::map<std::string, nlohmann::json> A map containing data about today's events\&. 
+.RE
+.PP
+
+.PP
+Definition at line \fB38\fP of file \fBapiHandler\&.cpp\fP\&.
+.SS "std::map< std::string, nlohmann::json > APIHandler::makeRequest (const std::string & url)\fC [private]\fP"
+
+.PP
+Makes a request to the provided URL and returns the fetched data\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIurl\fP The specific URL endpoint to fetch data from\&. 
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+std::map<std::string, nlohmann::json> A map containing the fetched data\&. 
+.RE
+.PP
+
+.PP
+Definition at line \fB68\fP of file \fBapiHandler\&.cpp\fP\&.
+.SH "Member Data Documentation"
+.PP 
+.SS "const std::string APIHandler::baseUrl = 'https://opendata\&.paris\&.fr/api/explore/v2\&.1/catalog/datasets/que\-faire\-a\-paris\-/records?'\fC [private]\fP"
+
+.PP
+The base URL for the API\&. 
+.PP
+Definition at line \fB73\fP of file \fBapiHandler\&.h\fP\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for API de Paris - Documentation du Gestionnaire from the source code\&.

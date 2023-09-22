@@ -1,0 +1,168 @@
+\hypertarget{classAPIHandler}{}\doxysection{APIHandler Class Reference}
+\label{classAPIHandler}\index{APIHandler@{APIHandler}}
+
+
+The \mbox{\hyperlink{classAPIHandler}{APIHandler}} class is responsible for fetching data from a given API.  
+
+
+
+
+{\ttfamily \#include $<$api\+Handler.\+h$>$}
+
+
+
+Inheritance diagram for APIHandler\+:
+% FIG 0
+
+
+Collaboration diagram for APIHandler\+:
+% FIG 1
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classAPIHandler_ac33916a544c830ab1248410cb855bf59}{APIHandler}} ()
+\begin{DoxyCompactList}\small\item\em Default constructor for \mbox{\hyperlink{classAPIHandler}{APIHandler}}. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classAPIHandler_ab91de6f9d05aa213b671f54f2a0315eb}{$\sim$\+APIHandler}} ()
+\begin{DoxyCompactList}\small\item\em Destructor for \mbox{\hyperlink{classAPIHandler}{APIHandler}}. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classAPIHandler_a1f4ab7c08b86cfa50d2840a7c2c49a8f}{fetch\+Data}} ()
+\begin{DoxyCompactList}\small\item\em Fetches data from the API and notifies its observers. \end{DoxyCompactList}\item 
+std\+::map$<$ std\+::string, nlohmann\+::json $>$ \mbox{\hyperlink{classAPIHandler_a9689d8f7c4ec016cca6ef5fa047b3b05}{fetch\+Todays\+Events}} ()
+\begin{DoxyCompactList}\small\item\em Fetches today\textquotesingle{}s events from the API. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+std\+::map$<$ std\+::string, nlohmann\+::json $>$ \mbox{\hyperlink{classAPIHandler_a4bfdc7673d871bce4390ced1fe56dcaa}{make\+Request}} (const std\+::string \&url)
+\begin{DoxyCompactList}\small\item\em Makes a request to the provided URL and returns the fetched data. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+const std\+::string \mbox{\hyperlink{classAPIHandler_adbf28a22bb5e388af13e7c190a6cefc1}{base\+Url}} = \char`\"{}https\+://opendata.\+paris.\+fr/api/explore/v2.\+1/catalog/datasets/que-\/faire-\/a-\/paris-\//records?\char`\"{}
+\begin{DoxyCompactList}\small\item\em The base URL for the API. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Detailed Description}
+The \mbox{\hyperlink{classAPIHandler}{APIHandler}} class is responsible for fetching data from a given API. 
+
+The class provides methods to make requests to an external API and process the returned data. Once the data is fetched, it acts as an \mbox{\hyperlink{classObservable}{Observable}}, notifying its observers of the new data. This class abstracts the details of making API requests and provides a clean interface to obtain data for the application. 
+
+Definition at line \mbox{\hyperlink{apiHandler_8h_source_l00038}{38}} of file \mbox{\hyperlink{apiHandler_8h_source}{api\+Handler.\+h}}.
+
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classAPIHandler_ac33916a544c830ab1248410cb855bf59}\label{classAPIHandler_ac33916a544c830ab1248410cb855bf59}} 
+\index{APIHandler@{APIHandler}!APIHandler@{APIHandler}}
+\index{APIHandler@{APIHandler}!APIHandler@{APIHandler}}
+\doxysubsubsection{\texorpdfstring{APIHandler()}{APIHandler()}}
+{\footnotesize\ttfamily APIHandler\+::\+APIHandler (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Default constructor for \mbox{\hyperlink{classAPIHandler}{APIHandler}}. 
+
+
+
+Definition at line \mbox{\hyperlink{apiHandler_8cpp_source_l00010}{10}} of file \mbox{\hyperlink{apiHandler_8cpp_source}{api\+Handler.\+cpp}}.
+
+\mbox{\Hypertarget{classAPIHandler_ab91de6f9d05aa213b671f54f2a0315eb}\label{classAPIHandler_ab91de6f9d05aa213b671f54f2a0315eb}} 
+\index{APIHandler@{APIHandler}!````~APIHandler@{$\sim$APIHandler}}
+\index{````~APIHandler@{$\sim$APIHandler}!APIHandler@{APIHandler}}
+\doxysubsubsection{\texorpdfstring{$\sim$APIHandler()}{~APIHandler()}}
+{\footnotesize\ttfamily APIHandler\+::$\sim$\+APIHandler (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Destructor for \mbox{\hyperlink{classAPIHandler}{APIHandler}}. 
+
+
+
+Definition at line \mbox{\hyperlink{apiHandler_8cpp_source_l00014}{14}} of file \mbox{\hyperlink{apiHandler_8cpp_source}{api\+Handler.\+cpp}}.
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classAPIHandler_a1f4ab7c08b86cfa50d2840a7c2c49a8f}\label{classAPIHandler_a1f4ab7c08b86cfa50d2840a7c2c49a8f}} 
+\index{APIHandler@{APIHandler}!fetchData@{fetchData}}
+\index{fetchData@{fetchData}!APIHandler@{APIHandler}}
+\doxysubsubsection{\texorpdfstring{fetchData()}{fetchData()}}
+{\footnotesize\ttfamily void APIHandler\+::fetch\+Data (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Fetches data from the API and notifies its observers. 
+
+This method communicates with the base URL of the API, retrieves data, and then notifies all registered observers with this new data. 
+
+Definition at line \mbox{\hyperlink{apiHandler_8cpp_source_l00018}{18}} of file \mbox{\hyperlink{apiHandler_8cpp_source}{api\+Handler.\+cpp}}.
+
+Here is the call graph for this function\+:
+% FIG 2
+\mbox{\Hypertarget{classAPIHandler_a9689d8f7c4ec016cca6ef5fa047b3b05}\label{classAPIHandler_a9689d8f7c4ec016cca6ef5fa047b3b05}} 
+\index{APIHandler@{APIHandler}!fetchTodaysEvents@{fetchTodaysEvents}}
+\index{fetchTodaysEvents@{fetchTodaysEvents}!APIHandler@{APIHandler}}
+\doxysubsubsection{\texorpdfstring{fetchTodaysEvents()}{fetchTodaysEvents()}}
+{\footnotesize\ttfamily std\+::map$<$ std\+::string, nlohmann\+::json $>$ APIHandler\+::fetch\+Todays\+Events (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Fetches today\textquotesingle{}s events from the API. 
+
+\begin{DoxyReturn}{Returns}
+std\+::map$<$std\+::string, nlohmann\+::json$>$ A map containing data about today\textquotesingle{}s events. 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{apiHandler_8cpp_source_l00038}{38}} of file \mbox{\hyperlink{apiHandler_8cpp_source}{api\+Handler.\+cpp}}.
+
+Here is the call graph for this function\+:
+% FIG 3
+Here is the caller graph for this function\+:
+% FIG 4
+\mbox{\Hypertarget{classAPIHandler_a4bfdc7673d871bce4390ced1fe56dcaa}\label{classAPIHandler_a4bfdc7673d871bce4390ced1fe56dcaa}} 
+\index{APIHandler@{APIHandler}!makeRequest@{makeRequest}}
+\index{makeRequest@{makeRequest}!APIHandler@{APIHandler}}
+\doxysubsubsection{\texorpdfstring{makeRequest()}{makeRequest()}}
+{\footnotesize\ttfamily std\+::map$<$ std\+::string, nlohmann\+::json $>$ APIHandler\+::make\+Request (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{url }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Makes a request to the provided URL and returns the fetched data. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em url} & The specific URL endpoint to fetch data from. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+std\+::map$<$std\+::string, nlohmann\+::json$>$ A map containing the fetched data. 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{apiHandler_8cpp_source_l00068}{68}} of file \mbox{\hyperlink{apiHandler_8cpp_source}{api\+Handler.\+cpp}}.
+
+Here is the caller graph for this function\+:
+% FIG 5
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{classAPIHandler_adbf28a22bb5e388af13e7c190a6cefc1}\label{classAPIHandler_adbf28a22bb5e388af13e7c190a6cefc1}} 
+\index{APIHandler@{APIHandler}!baseUrl@{baseUrl}}
+\index{baseUrl@{baseUrl}!APIHandler@{APIHandler}}
+\doxysubsubsection{\texorpdfstring{baseUrl}{baseUrl}}
+{\footnotesize\ttfamily const std\+::string APIHandler\+::base\+Url = \char`\"{}https\+://opendata.\+paris.\+fr/api/explore/v2.\+1/catalog/datasets/que-\/faire-\/a-\/paris-\//records?\char`\"{}\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+The base URL for the API. 
+
+
+
+Definition at line \mbox{\hyperlink{apiHandler_8h_source_l00073}{73}} of file \mbox{\hyperlink{apiHandler_8h_source}{api\+Handler.\+h}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+include/connect\+Api/\mbox{\hyperlink{apiHandler_8h}{api\+Handler.\+h}}\item 
+src/connect\+Api/\mbox{\hyperlink{apiHandler_8cpp}{api\+Handler.\+cpp}}\end{DoxyCompactItemize}

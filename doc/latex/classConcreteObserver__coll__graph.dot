@@ -1,0 +1,16 @@
+digraph "ConcreteObserver"
+{
+ // LATEX_PDF_SIZE
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  Node1 [label="ConcreteObserver",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip="Represents a specific observer that reacts to changes in the observable."];
+  Node2 -> Node1 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+  Node2 [label="Observer",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classObserver.html",tooltip="Interface for the Observer in the Observer design pattern."];
+  Node3 -> Node1 [dir="back",color="darkorchid3",fontsize="10",style="dashed",label=" dataStorage" ];
+  Node3 [label="DataStorage",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classDataStorage.html",tooltip="Responsible for persisting data in JSON format."];
+  Node4 -> Node3 [dir="back",color="darkorchid3",fontsize="10",style="dashed",label=" fileHelper" ];
+  Node4 [label="FileHelper",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classFileHelper.html",tooltip="Utility class for file and directory management."];
+  Node5 -> Node1 [dir="back",color="darkorchid3",fontsize="10",style="dashed",label=" barPlotGenerator" ];
+  Node5 [label="BarPlotGenerator",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classBarPlotGenerator.html",tooltip="Responsible for generating bar plots based on given data."];
+  Node4 -> Node5 [dir="back",color="darkorchid3",fontsize="10",style="dashed",label=" fileHelper" ];
+}
