@@ -6,8 +6,8 @@
  * @date 2023-09-22
  * @copyright Copyright (c) 2023
  * 
- * This header defines the DataStorage class which facilitates saving, loading, 
- * and reading JSON data from files. The class leverages the nlohmann::json library 
+ * This header defines the DataStorage class which facilitates saving and reading 
+ * JSON data from files. The class leverages the nlohmann::json library 
  * for JSON parsing and the FileHelper class for file operations.
  */
 #ifndef DATASTORAGE_H
@@ -19,15 +19,13 @@
 #include <map>
 #include <string>
 #include <nlohmann/json.hpp>
-
 #include "../fileManagement/fileHelper.h"
 
 /**
  * @brief The DataStorage class handles the persistence of data in JSON format.
  * 
- * The class offers methods to load data from files, save data to files, 
- * and read data from files. Each data item is represented as a JSON object 
- * and is stored in a map with a string key.
+ * The class offers methods to save data to files and read data from files. 
+ * Each data item is represented as a JSON object and is stored in a map with a string key.
  */
 class DataStorage
 {
@@ -36,15 +34,6 @@ public:
      * @brief Default constructor for DataStorage.
      */
     DataStorage();
-
-    /**
-     * @brief Loads data from the given file.
-     * 
-     * @param filename The name of the file from which to load the data.
-     * @return std::map<std::string, nlohmann::json> A map of data items, where each key-value pair 
-     * represents a unique data item identified by the string key and its corresponding JSON value.
-     */
-    std::map<std::string, nlohmann::json> loadFromFile(const std::string& filename);
 
     /**
      * @brief Saves the provided data to the given file.
@@ -58,12 +47,21 @@ public:
      * @brief Reads data from the given file.
      * 
      * @param filename The name of the file from which to read the data.
-     * @return std::map<std::string, nlohmann::json> A map of data items, similar to the loadFromFile method.
+     * @return std::map<std::string, nlohmann::json> A map of data items.
      */
     std::map<std::string, nlohmann::json> readFromFile(const std::string& filename);
 
 private:
     FileHelper fileHelper; ///< Helper object for file-related operations.
+
+    /**
+     * @brief Helper function to validate and get the file path.
+     * 
+     * @param filename The name of the file for which to get the path.
+     * @return std::string The valid file path for the given filename.
+     * @throws std::runtime_error if unable to retrieve the user's home directory.
+     */
+    std::string getValidFilePath(const std::string& filename);
 };
 
 #endif // DATASTORAGE_H

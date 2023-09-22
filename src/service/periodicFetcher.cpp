@@ -2,41 +2,36 @@
 
 PeriodicFetcher* PeriodicFetcher::instance = nullptr;
 
-PeriodicFetcher::PeriodicFetcher(Observable& observable)
-    : observable(observable), stopRequested(false), pieChartGen()
-{
-    if (!instance) {
-        instance = this;
-        // Associer le signal SIGINT (CTRL+C) à notre gestionnaire de signal
-        std::signal(SIGINT, signalHandler);
-    }
-}
-
-void PeriodicFetcher::signalHandler(int signum)
-{
-    std::cout << "[PeriodicFetcher] Signal d'arrêt reçu : " << signum << std::endl;
-    if (instance) {
-        instance->stopRequested.store(true);
-    }
+PeriodicFetcher::PeriodicFetcher(Observable& observable, int interval, fitu unit)
+    : observable(observable), stopRequested(false), pieChartGen(), fetchInterval(interval), timeUnit(unit) {
+    SignalHandler::getInstance().setupSignalHandlers(); //// Setup signal handlers
 }
 
 void PeriodicFetcher::start() {
     APIHandler apiHandler;
-    while (!stopRequested.load()) {
+    while (!SignalHandler::getInstance().isShutdownRequested()) {
         {
             std::lock_guard<std::mutex> lock(mtx);
             std::map<std::string, nlohmann::json> newEvents = apiHandler.fetchTodaysEvents();
             observable.notifyDailyObservers(newEvents);
             pieChartGen.generatePieChart(newEvents);
         }
-
-        //std::cout << "[PeriodicFetcher] Nouveaux événements récupérés et traités." << std::endl;
-
-        // permet de temporiser l'intervale de temps entre chaque appel à l'API ici une heure,
-        // pour tester on peut passer à 5 secondes par exemple, et voir notre graphique s'actualiser à chaque requête.
-        std::this_thread::sleep_for(std::chrono::seconds(5)); 
-
-        //std::cout << "[PeriodicFetcher] Thread fetcher : encore en exécution." << std::endl;
+        
+        // Sleep for the configured fetch interval.
+        switch (timeUnit) {
+            case fitu::SEC:
+                std::this_thread::sleep_for(std::chrono::seconds(fetchInterval));
+                break;
+            case fitu::MIN:
+                std::this_thread::sleep_for(std::chrono::minutes(fetchInterval));
+                break;
+            case fitu::HR:
+                std::this_thread::sleep_for(std::chrono::hours(fetchInterval));
+                break;
+            default:
+                std::cerr << "Intervalle non reconnu!" << std::endl;
+                return;
+        }
     }
 
     std::cout << "[PeriodicFetcher] Arrêt en cours..." << std::endl;

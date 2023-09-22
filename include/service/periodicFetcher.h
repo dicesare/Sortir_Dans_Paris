@@ -26,6 +26,10 @@
 #include "../connectApi/observable.h"
 #include "../connectApi/apiHandler.h"
 #include "../gdGeneration/PieChartGenerator.h"
+#include "fetchIntervalTimeUnit.h"
+#include "signalHandler.h"
+
+using namespace FetchIntervalTimeUnit;
 
 /**
  * @brief The PeriodicFetcher class handles periodic data fetching and processing.
@@ -40,7 +44,7 @@ public:
      * 
      * @param observable A reference to the Observable object to be updated.
      */
-    PeriodicFetcher(Observable& observable);
+    PeriodicFetcher(Observable& observable, int interval, fitu unit);
 
     /**
      * @brief Starts the periodic fetching and processing of data.
@@ -48,17 +52,13 @@ public:
     void start();
 
 private:
+    int fetchInterval; ///< The fetch interval in seconds.
+    fitu timeUnit; ///< The unit of the fetch interval.
     PieChartGenerator pieChartGen; ///< Object for pie chart generation.
     Observable& observable; ///< Reference to the Observable to be updated.
     std::atomic<bool> stopRequested; ///< Flag to indicate if stopping the fetcher is requested.
     std::mutex mtx; ///< Mutex for thread-safety.
     static PeriodicFetcher* instance; ///< Static pointer to the instance of PeriodicFetcher.
-    /**
-     * @brief Signal handler to handle external signals (e.g., SIGINT).
-     * 
-     * @param signum The signal number.
-     */
-    static void signalHandler(int signum);
 };
 
 #endif // PERIODICFETCHER_H
